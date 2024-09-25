@@ -1,0 +1,143 @@
+ /* 기본 스타일 */
+ body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* 상단 네비게이션 스타일 */
+header {
+    background-color: #f4f4f4;
+    border-bottom: 2px solid #ddd;
+}
+
+/* 상단 메뉴 */
+.top-nav {
+    display: flex;
+    justify-content: center; /* 중앙 정렬 */
+    align-items: center;
+    padding: 10px 20px;
+}
+
+/* 왼쪽: 예약하기 */
+.left-menu {
+    margin-right: 520px; /* 왼쪽 메뉴와 간격 */
+}
+
+.left-menu a {
+    color: #333;
+    text-decoration: none;
+    margin-right: 20px;
+    font-weight: bold;
+}
+
+.left-menu a:hover {
+    text-decoration: underline;
+}
+
+/* 로고 이미지 스타일 */
+.logo {
+    display: flex;
+    justify-content: center;
+    margin: 0 20px;      /* 좌우 간격 조정 */
+    position: relative;  /* 위치를 상대적으로 조정 */
+    left: -100px;        /* 로고를 왼쪽으로 이동 */
+}
+
+.logo img {
+    height: 70px;        /* 로고 크기는 필요에 맞게 조정 */
+}
+
+/* 오른쪽: 로그인, 예약확인, FAQ */
+.right-menu {
+    margin-left: 200px; /* 로고와 오른쪽 메뉴 사이 200px 간격 */
+}
+
+.right-menu a {
+    color: #333;
+    text-decoration: none;
+    margin-left: 20px;
+}
+
+.right-menu a:hover {
+    text-decoration: underline;
+}
+
+/* 하단 메인 메뉴: 리조트 소개, 시설 소개 등 */
+.main-menu {
+    display: flex;
+    justify-content: flex-start;
+    background-color: #fff;
+    border-top: 1px solid #ddd;
+    padding: 10px 0;
+    padding-left: 750px;
+}
+
+.main-menu a {
+    color: #333;
+    text-decoration: none;
+    margin: 0 20px;
+    font-weight: bold;
+}
+
+.main-menu a:hover {
+    text-decoration: underline;
+}
+
+/* 메인 콘텐츠 스타일 */
+.main {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+.intro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.intro img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+.intro p {
+    font-size: 18px;
+    color: #555;
+}
+
+/* 지도 및 교통 정보 스타일 */
+.map-info {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+}
+
+.map, .traffic-info {
+    width: 48%;
+}
+
+iframe {
+    width: 100%;
+    height: 300px;
+}
+
+/* 푸터 스타일 */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+footer a {
+    color: #ddd;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
