@@ -727,6 +727,7 @@
     object-fit: cover;
   }
   
+
   /* hover 효과 추가 */
 .main-page .text-wrapper-2:hover,
 .main-page .overlap:hover {
@@ -767,4 +768,13 @@
   background-color: #2e8b57;
   color: #ffffff;
   cursor: pointer;
+}
+
+/* 시설소개, 테마파크, 객실, 공지사항 hover 효과 추가 */
+.main-page .text-wrapper-5:hover, /* 시설소개 */
+.main-page .text-wrapper-6:hover, /* 테마파크 */
+.main-page .text-wrapper-7:hover, /* 객실 */
+.main-page .text-wrapper-8:hover { /* 공지사항 */
+  color: #2e8b57; /* hover 시 텍스트 색상 변경 */
+  cursor: pointer; /* 마우스 커서를 포인터로 변경 */
 }
