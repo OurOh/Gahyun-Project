@@ -1,0 +1,743 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+@import url("https://fonts.googleapis.com/css?family=Noto+Sans+KR:300,700,500,400,600");
+* {
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+}
+html,
+body {
+  margin: 0px;
+  height: 100%;
+}
+/* a blue color as a generic focus style */
+button:focus-visible {
+  outline: 2px solid #4a90e2 ;
+  outline: -webkit-focus-ring-color auto 5px !;
+}
+a {
+  text-decoration: none;
+}
+
+.reservation-select {
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .reservation-select .div {
+    background-color: #ffffff;
+    overflow: hidden;
+    width: 1440px;
+    height: 2703px;
+    position: relative;
+  }
+  
+  .reservation-select .footer {
+    position: absolute;
+    width: 1452px;
+    height: 482px;
+    top: 2221px;
+    left: 0;
+    background-color: transparent;
+  }
+  
+  .reservation-select .overlap-group {
+    position: relative;
+    width: 1440px;
+    height: 482px;
+    background-color: #1a4d2e;
+  }
+  
+  .reservation-select .text-wrapper {
+    position: absolute;
+    top: 421px;
+    left: 65px;
+    font-family: "Noto Sans KR", Helvetica;
+    font-weight: 300;
+    color: #f5efe6;
+    font-size: 16px;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .reservation-select .element {
+    position: absolute;
+    top: 218px;
+    left: 65px;
+    font-family: "Noto Sans KR", Helvetica;
+    font-weight: 400;
+    color: #f5efe6;
+    font-size: 20px;
+    letter-spacing: -0.2px;
+    line-height: normal;
+  }
+  
+  .reservation-select .span {
+    letter-spacing: -0.04px;
+  }
+  
+  .reservation-select .p {
+    top: 39px;
+    left: 927px;
+    font-weight: 400;
+    color: #f5efe6;
+    font-size: 24px;
+    letter-spacing: -0.24px;
+    line-height: 40px;
+    position: absolute;
+    font-family: "Noto Sans KR", Helvetica;
+  }
+  
+  .reservation-select .text-wrapper-2 {
+    font-weight: 500;
+    letter-spacing: -0.06px;
+  }
+  
+  .reservation-select .text-wrapper-3 {
+    font-size: 20px;
+    letter-spacing: -0.04px;
+  }
+  
+  .reservation-select .div-2 {
+    top: 39px;
+    left: 1208px;
+    font-weight: 400;
+    color: #f5efe6;
+    font-size: 24px;
+    letter-spacing: -0.24px;
+    line-height: 40px;
+    position: absolute;
+    font-family: "Noto Sans KR", Helvetica;
+  }
+  
+  .reservation-select .a-b-c {
+    position: absolute;
+    top: 259px;
+    left: 927px;
+    font-family: "Noto Sans KR", Helvetica;
+    font-weight: 400;
+    color: #f5efe6;
+    font-size: 24px;
+    letter-spacing: -0.24px;
+    line-height: 40px;
+  }
+  
+  .reservation-select .qn-a {
+    position: absolute;
+    top: 265px;
+    left: 1208px;
+    font-family: "Noto Sans KR", Helvetica;
+    font-weight: 400;
+    color: #f5efe6;
+    font-size: 24px;
+    letter-spacing: -0.24px;
+    line-height: 40px;
+  }
+  
+  .reservation-select .logo {
+    position: absolute;
+    width: 247px;
+    height: 129px;
+    top: 52px;
+    left: 65px;
+    object-fit: cover;
+  }
+  
+  .reservation-select .overlap {
+    position: absolute;
+    width: 1448px;
+    height: 227px;
+    top: 102px;
+    left: 0;
+  }
+  
+  .reservation-select .rectangle {
+    position: absolute;
+    width: 1440px;
+    height: 227px;
+    top: 0;
+    left: 0;
+    background-color: #4f6f52;
+  }
+  
+  .reservation-select .text-wrapper-4 {
+    top: 94px;
+    left: 88px;
+    font-weight: 400;
+    color: #f5efe6;
+    font-size: 64px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    font-family: "Noto Sans KR", Helvetica;
+  }
+  
+  .reservation-select .main-nav {
+    position: absolute;
+    width: 1448px;
+    height: 71px;
+    top: 0;
+    left: 0;
+  }
+  
+  .reservation-select .navbar {
+    position: relative;
+    width: 1440px;
+    height: 71px;
+    background-color: #f5efe699;
+  }
+  
+  .reservation-select .text-wrapper-5 {
+    width: 139px;
+    left: 88px;
+    position: absolute;
+    top: 9px;
+    font-family: "Noto Sans KR", Helvetica;
+    font-weight: 500;
+    color: #1a4d2e;
+    font-size: 36px;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .reservation-select .text-wrapper-6 {
+    width: 135px;
+    left: 485px;
+    position: absolute;
+    top: 9px;
+    font-family: "Noto Sans KR", Helvetica;
+    font-weight: 500;
+    color: #1a4d2e;
+    font-size: 36px;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .reservation-select .text-wrapper-7 {
+    width: 76px;
+    left: 888px;
+    position: absolute;
+    top: 9px;
+    font-family: "Noto Sans KR", Helvetica;
+    font-weight: 500;
+    color: #1a4d2e;
+    font-size: 36px;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .reservation-select .text-wrapper-8 {
+    width: 138px;
+    left: 1223px;
+    position: absolute;
+    top: 9px;
+    font-family: "Noto Sans KR", Helvetica;
+    font-weight: 500;
+    color: #1a4d2e;
+    font-size: 36px;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .reservation-select .select-section {
+    position: absolute;
+    width: 1442px;
+    height: 540px;
+    top: 460px;
+    left: 0;
+  }
+  
+  .reservation-select .text-wrapper-9 {
+    top: 0;
+    left: 113px;
+    font-weight: 500;
+    color: #1a4d2e;
+    font-size: 40px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    font-family: "Noto Sans KR", Helvetica;
+  }
+  
+  .reservation-select .overlap-2 {
+    position: absolute;
+    width: 1442px;
+    height: 435px;
+    top: 105px;
+    left: 0;
+  }
+  
+  .reservation-select .callender-api {
+    position: absolute;
+    width: 979px;
+    height: 435px;
+    top: 0;
+    left: 0;
+  }
+  
+  .reservation-select .div-wrapper {
+    position: relative;
+    width: 977px;
+    height: 435px;
+    background-color: #d9d9d9;
+  }
+  
+  .reservation-select .text-wrapper-10 {
+    position: absolute;
+    top: 189px;
+    left: 373px;
+    font-family: "Noto Sans KR", Helvetica;
+    font-weight: 400;
+    color: #000000;
+    font-size: 40px;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .reservation-select .room-people {
+    position: absolute;
+    width: 470px;
+    height: 435px;
+    top: 0;
+    left: 972px;
+  }
+  
+  .reservation-select .overlap-3 {
+    position: relative;
+    width: 468px;
+    height: 435px;
+    background-color: #f5f5f5;
+  }
+  
+  .reservation-select .text-wrapper-11 {
+    top: 22px;
+    left: 44px;
+    font-weight: 300;
+    color: #000000;
+    font-size: 32px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    font-family: "Noto Sans KR", Helvetica;
+  }
+  
+  .reservation-select .room-quantity {
+    position: absolute;
+    width: 376px;
+    height: 86px;
+    top: 103px;
+    left: 44px;
+  }
+  
+  .reservation-select .overlap-group-2 {
+    position: relative;
+    width: 370px;
+    height: 86px;
+  }
+  
+  .reservation-select .rectangle-2 {
+    position: absolute;
+    width: 370px;
+    height: 85px;
+    top: 0;
+    left: 0;
+    background-color: #ffffff;
+    border: 1px solid;
+    border-color: #a1a1a1;
+  }
+  
+  .reservation-select .text-wrapper-12 {
+    top: 0px;
+    left: 285px;
+    color: #4e4e4e;
+    padding: 16px 33px;
+    font-size: 36px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    font-family: "Noto Sans KR", Helvetica;
+  }
+  
+  .reservation-select .text-wrapper-13 {
+    top: 0px;
+    left: 0px;
+    padding: 16px 36px;
+    font-weight: 300;
+    color: #4e4e4e;
+    font-size: 36px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    font-family: "Noto Sans KR", Helvetica;
+  }
+  
+  .reservation-select .line {
+    width: 1px;
+    height: 85px;
+    top: 0;
+    left: 84px;
+    position: absolute;
+    object-fit: cover;
+  }
+  
+  .reservation-select .img {
+    width: 1px;
+    height: 86px;
+    top: 0;
+    left: 286px;
+    position: absolute;
+    object-fit: cover;
+  }
+  
+  .reservation-select .text-wrapper-14 {
+    top: 25px;
+    left: 135px;
+    font-weight: 300;
+    color: #4e4e4e;
+    font-size: 24px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    font-family: "Noto Sans KR", Helvetica;
+  }
+  
+  .reservation-select .people-quantity {
+    position: absolute;
+    width: 376px;
+    height: 86px;
+    top: 204px;
+    left: 44px;
+  }
+  
+  .reservation-select .text-wrapper-15 {
+    top: 25px;
+    left: 150px;
+    font-weight: 300;
+    color: #4e4e4e;
+    font-size: 24px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    font-family: "Noto Sans KR", Helvetica;
+  }
+  
+  .reservation-select .button-search {
+    position: absolute;
+    width: 372px;
+    height: 85px;
+    top: 315px;
+    left: 44px;
+  }
+  
+  .reservation-select .overlap-4 {
+    position: relative;
+    width: 370px;
+    height: 85px;
+    background-color: #1a4d2e;
+    border-radius: 5px;
+  }
+  
+  .reservation-select .text-wrapper-16 {
+    top: 20px;
+    left: 126px;
+    font-weight: 500;
+    color: #f5efe6;
+    font-size: 32px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    font-family: "Noto Sans KR", Helvetica;
+  }
+  
+  .reservation-select .suggestion-section {
+    position: absolute;
+    width: 1213px;
+    height: 916px;
+    top: 1133px;
+    left: 113px;
+  }
+  
+  .reservation-select .text-wrapper-17 {
+    top: 0;
+    left: 0;
+    font-weight: 500;
+    color: #1a4d2e;
+    font-size: 40px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    font-family: "Noto Sans KR", Helvetica;
+  }
+  
+  .reservation-select .line-2 {
+    width: 1203px;
+    height: 1px;
+    top: 97px;
+    left: 2px;
+    position: absolute;
+    object-fit: cover;
+  }
+  
+  .reservation-select .suggest {
+    position: absolute;
+    width: 402px;
+    height: 400px;
+    top: 114px;
+    left: 3px;
+  }
+  
+  .reservation-select .overlap-group-3 {
+    position: relative;
+    width: 400px;
+    height: 400px;
+    
+  }
+  
+  .reservation-select .rectangle-3 {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    top: 6px;
+    left: 50px;
+    object-fit: cover;
+  }
+ 
+  .reservation-select .a {
+    font-weight: 400;
+    color: #000000;
+    position: absolute;
+    top: 306px;
+    left: 50px;
+    font-family: "Noto Sans KR", Helvetica;
+    font-size: 32px;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .reservation-select .suggest-2 {
+    position: absolute;
+    width: 402px;
+    height: 400px;
+    top: 114px;
+    left: 407px;
+  }
+  
+  .reservation-select .a-2 {
+    font-weight: 400;
+    color: #000000;
+    position: absolute;
+    top: 306px;
+    left: 50px;
+    font-family: "Noto Sans KR", Helvetica;
+    font-size: 32px;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .reservation-select .suggest-3 {
+    position: absolute;
+    width: 402px;
+    height: 400px;
+    top: 114px;
+    left: 811px;
+  }
+  
+  .reservation-select .overlap-5 {
+    position: absolute;
+    width: 802px;
+    height: 402px;
+    top: 514px;
+    left: 409px;
+  }
+  
+  .reservation-select .suggest-4 {
+    position: absolute;
+    width: 402px;
+    height: 400px;
+    top: 2px;
+    left: 400px;
+  }
+  
+  .reservation-select .suggest-5 {
+    position: absolute;
+    width: 402px;
+    height: 400px;
+    top: 0;
+    left: 0;
+  }
+  
+  .reservation-select .suggest-6 {
+    position: absolute;
+    width: 402px;
+    height: 400px;
+    top: 516px;
+    left: 5px;
+  }
+  
+  .reservation-select .header {
+    position: absolute;
+    width: 1444px;
+    height: 102px;
+    top: 0;
+    left: 0;
+    background-color: transparent;
+  }
+  
+  .reservation-select .overlap-6 {
+    position: relative;
+    width: 1440px;
+    height: 102px;
+    background-color: #1a4d2e;
+  }
+  
+  .reservation-select .text-wrapper-18 {
+    width: 89px;
+    top: 8px;
+    left: 1316px;
+    font-weight: 700;
+    color: #f5efe6;
+    font-size: 24px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    font-family: "Noto Sans KR", Helvetica;
+  }
+  
+  .reservation-select .overlap-group-4 {
+    position: absolute;
+    width: 197px;
+    height: 58px;
+    top: 22px;
+    left: 59px;
+    background-color: #f5efe6;
+  }
+  
+  .reservation-select .text-wrapper-19 {
+    width: 96px;
+    top: 10px;
+    left: 54px;
+    font-weight: 700;
+    color: #1a4d2e;
+    font-size: 24px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    font-family: "Noto Sans KR", Helvetica;
+  }
+  
+  .reservation-select .logo-small {
+    position: absolute;
+    width: 225px;
+    height: 102px;
+    top: 0;
+    left: 607px;
+  }
+  
+  .reservation-select .image {
+    position: absolute;
+    width: 37px;
+    height: 43px;
+    top: 0;
+    left: 1261px;
+    object-fit: cover;
+  }
+  
+  .reservation-select .button-next {
+    position: absolute;
+    width: 352px;
+    height: 90px;
+    top: 2090px;
+    left: 545px;
+  }
+  
+  .reservation-select .overlap-7 {
+    position: relative;
+    width: 350px;
+    height: 90px;
+    background-color: #1a4d2e;
+    border-radius: 5px;
+  }
+  
+  .reservation-select .text-wrapper-20 {
+    top: 19px;
+    left: 103px;
+    font-weight: 600;
+    color: #f5efe6;
+    font-size: 36px;
+    letter-spacing: 3.6px;
+    line-height: normal;
+    position: absolute;
+    font-family: "Noto Sans KR", Helvetica;
+  }
+  
+
+  :root {
+    --variable-collection-12: 0px;
+  }
+
+  .overlap-4:hover, .overlap-7:hover{
+    background-color: #2e8b57 !important; /* hover 시 텍스트 색상 변경 */
+    cursor: pointer !important; /* 마우스 커서를 포인터로 변경 */
+  }
+
+  .text-wrapper-13:hover{
+    color: #1a4d2e;
+    background-color: #d1c4a0;
+    cursor: pointer !important;
+  }
+
+  .text-wrapper-12:hover{
+    color: #1a4d2e;
+    background-color: #d1c4a0;
+    cursor: pointer !important;
+  }
+
+
+  .reservation-select .overlap-group-3:hover,
+  .reservation-select .overlap-group-3:hover * {
+    background-color: #f5efe6 !important; /* 원하는 배경 색상 */
+    color: #1a4d2e !important; /* 원하는 글씨 색상 */
+    font-weight: 600 !important; /* 글씨 굵기를 굵게 설정 */
+    cursor: pointer;
+  }
+
+  .reservation-select .suggest-2:hover,
+  .reservation-select .suggest-2:hover * {
+    background-color: #f5efe6 !important; /* 원하는 배경 색상 */
+    color: #1a4d2e !important; /* 원하는 글씨 색상 */
+    font-weight: 600 !important; /* 글씨 굵기를 굵게 설정 */
+    cursor: pointer;
+  }
+  .reservation-select .suggest-3:hover,
+  .reservation-select .suggest-3:hover * {
+    background-color: #f5efe6 !important; /* 원하는 배경 색상 */
+    color: #1a4d2e !important; /* 원하는 글씨 색상 */
+    font-weight: 600 !important; /* 글씨 굵기를 굵게 설정 */
+    cursor: pointer;
+  }
+  .reservation-select .suggest-4:hover,
+  .reservation-select .suggest-4:hover * {
+    background-color: #f5efe6 !important; /* 원하는 배경 색상 */
+    color: #1a4d2e !important; /* 원하는 글씨 색상 */
+    font-weight: 600 !important; /* 글씨 굵기를 굵게 설정 */
+    cursor: pointer;
+  }
+  .reservation-select .suggest-5:hover,
+  .reservation-select .suggest-5:hover * {
+    background-color: #f5efe6 !important; /* 원하는 배경 색상 */
+    color: #1a4d2e !important; /* 원하는 글씨 색상 */
+    font-weight: 600 !important; /* 글씨 굵기를 굵게 설정 */
+    cursor: pointer;
+  }
+  .reservation-select .suggest-6:hover,
+  .reservation-select .suggest-6:hover * {
+    background-color: #f5efe6 !important; /* 원하는 배경 색상 */
+    color: #1a4d2e !important; /* 원하는 글씨 색상 */
+    font-weight: 600 !important; /* 글씨 굵기를 굵게 설정 */
+    cursor: pointer;
+  }
+  
+
+  
