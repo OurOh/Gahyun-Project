@@ -1,0 +1,49 @@
+header {
+    position: fixed;
+    width: 100%;
+    height: 102px;
+    top: 0;
+    left: 0;
+    background-color: #1a4d2e;
+  }
+  .user_login{
+    position: absolute;
+    top: 8px;
+    right: 150px;
+    font-family: "Noto Sans KR-Bold", Helvetica;
+    font-weight: 700;
+    color: #f5efe6;
+    font-size: 24px;
+    text-decoration: none;
+  }
+  .reserv_view {
+    position: absolute;
+    top: 8px;
+    right: 30px;
+    font-family: "Noto Sans KR-Bold", Helvetica;
+    font-weight: 700;
+    color: #f5efe6;
+    font-size: 24px;
+    text-decoration: none;
+  }
+  .logo-small {
+    position: absolute;
+    width: 225px;
+    height: 102px;
+    top: 0;
+    left: calc(50% - 112.5px);
+  }
+  .reserv_make{
+    position: absolute;
+    text-decoration: none;
+    top: 22px;
+    left: 59px;
+    font-family: "Noto Sans KR-Bold", Helvetica;
+    font-weight: 700;
+    color: #1a4d2e;
+    font-size: 24px;
+    text-align: center;
+    background-color: #f5efe6;
+    border-radius: 5px;
+    padding: 12px 40px;
+  }
