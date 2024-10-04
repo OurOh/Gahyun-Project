@@ -1,0 +1,177 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+header {
+    background-color: #334F3D; /* 상단 배경색 */
+}
+
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #334F3D; /* 상단 버튼 영역 배경색 */
+    padding: 10px 0;
+}
+
+.top-btn {
+    background-color: #EAEDED;
+    color: black;
+    border: 1px solid #ccc;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+}
+
+.logo img {
+    width: 150px; /* 로고 이미지 크기 */
+}
+
+nav {
+    background-color: #AAB7B8; /* 네비게이션 바 색상 */
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 10px 0;
+}
+
+nav ul li {
+    margin: 0 30px;
+    color: #334F3D;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.page-header {
+    background-color: #4A7043;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    font-size: 24px;
+}
+
+.reservation-status, .reservation-history {
+    margin: 20px 0;
+}
+
+.reservation-card {
+    display: flex;
+    border-bottom: 1px solid #ccc;
+    padding: 20px 0;
+}
+
+.reservation-card img {
+    width: 150px;
+    height: 150px;
+    margin-right: 20px;
+}
+
+.reservation-info p {
+    margin: 5px 0;
+}
+
+footer {
+    background-color: #334F3D;
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+footer .footer-content {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+footer .footer-links ul {
+    list-style: none;
+}
+
+footer .footer-links ul li {
+    margin-bottom: 10px;
+}
+
+footer .contact-info p {
+    margin-bottom: 5px;
+}
+
+
+nav ul {
+    display: flex;
+    justify-content: space-between; /* 항목 사이의 간격을 균등하게 조정 */
+    list-style: none;
+    padding: 10px 0;
+    margin: 0 10px; /* 네비게이션 바의 좌우 여백 추가 */
+}
+
+nav ul li {
+    margin: 0 95px; /* 각 항목 사이의 간격을 40px로 설정 */
+    color: #334F3D;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.top-btn {
+    background-color: #EAEDED;
+    color: black;
+    border: 1px solid #ccc;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.logo img, .logo-footer img {
+    width: 150px; /* 이미지 너비를 100px로 줄임 */
+    height: auto; /* 비율에 맞춰 높이 자동 조정 */
+}
+
+
+
+
+/** hover 처리**/
+
+.top-btn:hover {
+    background-color: #007BFF; /* hover 시 배경색 변경 */
+    color: white; /* hover 시 글자색 변경 */
+}
+
+nav ul li {
+    margin: 0 40px;
+    color: #334F3D;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+nav ul li:hover {
+    background-color: #007BFF; /* hover 시 배경색 변경 */
+    color: white; /* hover 시 글자색 변경 */
+    padding: 5px 10px; /* hover 시 추가적인 패딩 적용 */
+    border-radius: 5px; /* 테두리 라운딩 추가 */
+}
