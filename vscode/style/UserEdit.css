@@ -1,0 +1,288 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    font-family: Arial, sans-serif;
+    background-color: #f3f3f3;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    min-height: 100vh; /* 화면 전체를 채우기 위한 설정 */
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+}
+
+header {
+    width: 100%;
+    background-color: #1a4d2e;
+}
+
+.top-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #1a4d2e;
+    position: relative;
+}
+
+.logo-small {
+    width: 200px; /* 이미지의 너비를 원하는 크기로 설정 */
+    height: 80px; /* 이미지의 높이를 원하는 크기로 설정 */
+    margin-top: -20px; /* 위쪽 여백 조정 */
+    margin-bottom:-20px; /* 아래쪽 여백 조정 */
+    margin-left: 230px; /* 왼쪽 여백 조정 */
+    margin-right: 10px; /* 오른쪽 여백 조정 */
+    object-fit: cover; /* 이미지가 설정된 영역에 맞게 잘리거나 맞춰짐 */
+}
+
+
+.user_login {
+    font-family: "Noto Sans KR-Bold", Helvetica;
+    font-weight: 700;
+    color: #f5efe6;
+    font-size: 18px;
+    text-decoration: none;
+    position: relative;
+    right: -130px; /* 로그인 텍스트를 오른쪽으로 60px 이동 */
+}
+
+.user_login:hover {
+    text-decoration: underline;
+}
+
+.reserv_view {
+    font-family: "Noto Sans KR-Bold", Helvetica;
+    font-weight: 700;
+    color: #f5efe6;
+    font-size: 18px;
+    text-decoration: none;
+}
+
+.reserv_view:hover {
+    text-decoration: underline;
+}
+
+.reserv_make {
+    font-family: "Noto Sans KR-Bold", Helvetica;
+    font-weight: 700;
+    color: #1a4d2e;
+    background-color: #f5efe6;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.reserv_make:hover {
+    background-color: #4f6f52;
+    color: #f5efe6;
+}
+
+.main-nav {
+    background-color: #b2b59b;
+    padding: 10px 0;
+    display: flex;
+    justify-content: center; /* 중앙 정렬 */
+}
+
+.main-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 110px; /* 각 항목 사이에 60px 간격 설정 */
+}
+
+.main-nav ul li {
+    list-style: none;
+}
+
+.main-nav ul li a {
+    text-decoration: none;
+    color: #1a4d2e;
+    font-size: 18px;
+    font-family: "Noto Sans KR-Bold", Helvetica;
+}
+
+.main-nav ul li a:hover {
+    color: #f5efe6;
+    text-decoration: underline;
+}
+
+
+/*****본문******/
+
+.form-section {
+    flex: 1;
+    padding: 30px;
+    text-align: center;
+}
+
+.form-section h1 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+form {
+    width: 50%;
+    margin: 0 auto;
+}
+
+form label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 18px;
+    text-align: left;
+}
+
+form input[type="text"],
+form input[type="password"],
+form select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.birthdate,
+.phone {
+    display: flex;
+    justify-content: space-between;
+}
+
+.birthdate select,
+.phone input {
+    width: 32%;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.submit-btn,
+.cancel-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.submit-btn {
+    background-color: #3b5338;
+    color: #fff;
+}
+
+.cancel-btn {
+    background-color: #ccc;
+    color: #333;
+}
+
+
+/***footer***/
+
+
+footer {
+    width: 100%;
+    background-color: #4f6f52;;
+    color: #f5efe6;
+    padding: 20px 80px; /* padding을 전체적으로 줄여서 높이를 줄임 */
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; /* 내용이 상단에 정렬되도록 설정 */
+    box-sizing: border-box;
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.left-col {
+    width: 40%;
+}
+
+.logo {
+    width: 150px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.company-info {
+    margin-bottom: 20px;
+}
+
+.company-info p {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+.company-info a {
+    color: #f5efe6;
+    text-decoration: underline;
+}
+
+.company-info a:hover {
+    color: #ddd;
+}
+
+.menu-col {
+    display: flex;
+    flex-wrap: wrap;
+    width: 55%;
+    justify-content: flex-start;
+}
+
+.footmenu {
+    width: 45%;
+    margin-bottom: 20px; /* 높이를 줄이기 위해 여백 조정 */
+}
+
+.footmenu h5,
+.footmenu ul li {
+    padding-left: 165px; /* 메뉴 제목과 항목들을 오른쪽으로 20px 이동 */
+}
+
+.footmenu h5 {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.footmenu ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footmenu ul li {
+    margin-bottom: 5px; /* 리스트 항목 간 여백을 줄임 */
+}
+
+.footmenu ul li a {
+    text-decoration: none;
+    color: #f5efe6;
+    font-size: 14px;
+}
+
+.footmenu ul li a:hover {
+    text-decoration: underline;
+}
+
+.copywrite {
+    margin-top: 20px;
+    font-size: 12px;
+    color: #ccc;
+    text-align: center;
+    width: 100%;
+}
