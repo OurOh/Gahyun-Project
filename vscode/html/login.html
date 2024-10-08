@@ -1,65 +1,114 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8" />
-    <link rel="stylesheet" href="/vscode/style/login.css" />
-  </head>
-  <body>
-    <div class="login-page">
-      <div class="div">
-        <div class="overlap">
-          <div class="body"></div>
-          <div class="login-section">
-            <img class="rectangle" src="../images/gym003.jpg" />
-            <div class="login-form">
-              <div class="overlap-group">
-                <div class="div-wrapper"><div class="text-wrapper">아이디</div></div>
-                <div class="overlap-2"><div class="text-wrapper">비밀번호</div></div>
-                <img class="kakaotalk" src="../images/logo1.jpg" />
-                <div class="overlap-3"><div class="text-wrapper-2">로그인</div></div>
-                <div class="overlap-4"><div class="text-wrapper-3">회원가입</div></div>
-                <div class="text-wrapper-4">아이디/비밀번호 찾기</div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <footer class="footer">
-          <div class="overlap-5">
-            <div class="text-wrapper-5">COPYRIGHT ⓒ 2024 가현리조트컴퍼니</div>
-            <p class="element">
-              <span class="span"
-                >(주)가현리조트컴퍼니<br />호텔 이용약관 |&nbsp;&nbsp;이용약관 | 개인정보처리방침<br /><br />대표자(성명)
-                : 김가현 | 주소 : 경기 김포시 김포한강8로 162번길<br />사업자등록번호 : 106-00-00000 <br /><br />TEL :
-                031-988-8888 | KakaoTalk : 가현리조트 | Instagram : @gahyeon_resort</span
-              >
-            </p>
-            <p class="p">
-              <span class="text-wrapper-6">시설소개<br /></span>
-              <span class="text-wrapper-7">리조트소개<br />다이닝<br />편의시설<br />오락</span>
-            </p>
-            <p class="div-2">
-              <span class="text-wrapper-6">테마파크<br /></span>
-              <span class="text-wrapper-7">루프탑<br />스파<br />휘트니스센터</span>
-            </p>
-            <p class="a-b-c">
-              <span class="text-wrapper-6">객실<br /></span>
-              <span class="text-wrapper-7">타입A<br />타입B<br />타입C</span>
-            </p>
-            <p class="qn-a">
-              <span class="text-wrapper-6">공지사항<br /></span>
-              <span class="text-wrapper-7">이달의 이벤트<br />QnA<br />고객센터</span>
-            </p>
-            <img class="logo" src="../images/logo1.jpg" />
-          </div>
-        </footer>
-        <header class="header">
-          <div class="overlap-6">
-            <div class="text-wrapper-8">예약확인</div>
-            <div class="overlap-group-2"><div class="text-wrapper-9">예약하기</div></div>
-            <img class="logo-small" src="../images/logo1.jpg" />
-          </div>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gahyeon Resort</title>
+    <link rel="stylesheet" href="/vscode/style/login.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <nav>
+                <ul class="header-menu">
+                    <li><a href="#" class="header-btn">예약하기</a></li>
+                    <li class="logo">
+                        <a href="#"><img src="/vscode/images/logo1.jpg" alt="Gahyeon Resort 로고"></a>
+                    </li>
+                    <li><a href="#" class="header-btn">예약확인</a></li>
+                </ul>
+            </nav>
         </header>
-      </div>
+        
+
+        <!-- 헤더와 메인 사이 색상 구분 -->
+        <div class="section-divider"></div>
+
+        <main class="main-content">
+            <section class="image-section">
+                <div class="image-slider">
+                    <img src="/vscode/images/pool003.jpg" alt="리조트 이미지 1" class="active">
+                    <img src="/vscode/images/outside001.jpg" alt="리조트 이미지 1">
+                    <img src="/vscode/images/yoga003.jpg" alt="리조트 이미지 3">
+                </div>
+            </section>
+
+            <section class="login-section">
+                <div class="login-container">
+                    <h2>로그인</h2>
+                    <form>
+                        <input type="text" placeholder="아이디">
+                        <input type="password" placeholder="비밀번호">
+                        <button type="submit">로그인</button>
+                        <button type="button">회원가입</button>
+                        <p><a href="#">아이디/비밀번호 찾기</a></p>
+                    </form>
+                </div>
+            </section>
+        </main>
+
+        <!-- 메인과 푸터 사이 색상 구분 -->
+        <div class="section-divider-footer"></div>
+
+        <footer>
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="/vscode/images/logo1.jpg" alt="Gahyeon Resort 로고">
+                    <p>(주)가현리조트 컴퍼니<br>호텔 이용약관 | 개인정보처리방침</p>
+                    <p>대표자명: 정가현 | 주소: 경기 김포시 포로정리 호도공원로 326번길<br>사업자등록번호: 105-00-00000</p>
+                    <p>TEL: 031-988-8888 | KakaoTalk: 가현리조트 | Instagram: @gahyeon_resort</p>
+                    <p>COPYRIGHT © 2023 가현리조트. ALL RIGHTS RESERVED.</p>
+                </div>
+                <div class="footer-links">
+                    <ul>
+                        <li><strong>시설소개</strong></li>
+                        <li><a href="#">리조트소개</a></li>
+                        <li><a href="#">다이닝</a></li>
+                        <li><a href="#">편의시설</a></li>
+                        <li><a href="#">오락</a></li>
+                    </ul>
+                    <ul>
+                        <li><strong>테마파크</strong></li>
+                        <li><a href="#">루프탑</a></li>
+                        <li><a href="#">스파</a></li>
+                        <li><a href="#">휘트니스센터</a></li>
+                    </ul>
+                    <ul>
+                        <li><strong>객실</strong></li>
+                        <li><a href="#">타입A</a></li>
+                        <li><a href="#">타입B</a></li>
+                        <li><a href="#">타입C</a></li>
+                    </ul>
+                    <ul>
+                        <li><strong>공지사항</strong></li>
+                        <li><a href="#">이달의 이벤트</a></li>
+                        <li><a href="#">QnA</a></li>
+                        <li><a href="#">고객센터</a></li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+        
     </div>
-  </body>
+
+    <script>
+        // 슬라이드 이미지 변경을 위한 JavaScript
+        let slideIndex = 0;
+        const slides = document.querySelectorAll('.image-slider img');
+        const totalSlides = slides.length;
+
+        function showSlides() {
+            slides.forEach((slide, index) => {
+                slide.style.display = (index === slideIndex) ? 'block' : 'none';
+            });
+            slideIndex = (slideIndex + 1) % totalSlides; // 다음 이미지로 넘어감
+        }
+
+        // 2초마다 이미지 변경
+        setInterval(showSlides, 5000);
+
+        // 초기 첫 이미지 표시
+        showSlides();
+    </script>
+</body>
 </html>

@@ -1,751 +1,258 @@
-.event {
-    background-color: #ffffff;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    width: 100%;
-  }
-  
-  .event .div {
-    background-color: #ffffff;
-    overflow: hidden;
-    width: 1440px;
-    height: 2703px;
-    position: relative;
-  }
-  
-  .event .footer {
-    position: absolute;
-    width: 1452px;
-    height: 482px;
-    top: 2221px;
-    left: 0;
-    background-color: transparent;
-  }
-  
-  .event .overlap-group {
-    position: relative;
-    width: 1440px;
-    height: 482px;
-    background-color: #1a4d2e;
-  }
-  
-  .event .text-wrapper {
-    position: absolute;
-    top: 421px;
-    left: 65px;
-    font-family: "Noto Sans KR-Light", Helvetica;
-    font-weight: 300;
-    color: #f5efe6;
-    font-size: 16px;
-    letter-spacing: 0;
-    line-height: normal;
-  }
-  
-  .event .element {
-    position: absolute;
-    top: 218px;
-    left: 65px;
-    font-family: "Noto Sans KR-Regular", Helvetica;
-    font-weight: 400;
-    color: #f5efe6;
-    font-size: 20px;
-    letter-spacing: -0.2px;
-    line-height: normal;
-  }
-  
-  .event .span {
-    letter-spacing: -0.04px;
-  }
-  
-  .event .p {
-    position: absolute;
-    top: 39px;
-    left: 927px;
-    font-family: "Noto Sans KR-Medium", Helvetica;
-    font-weight: 400;
-    color: #f5efe6;
-    font-size: 24px;
-    letter-spacing: -0.24px;
-    line-height: 40px;
-  }
-  
-  .event .text-wrapper-2 {
-    font-weight: 500;
-    letter-spacing: -0.06px;
-  }
-  
-  .event .text-wrapper-3 {
-    font-family: "Noto Sans KR-Regular", Helvetica;
-    font-size: 20px;
-    letter-spacing: -0.04px;
-  }
-  
-  .event .div-2 {
-    position: absolute;
-    top: 39px;
-    left: 1208px;
-    font-family: "Noto Sans KR-Medium", Helvetica;
-    font-weight: 400;
-    color: #f5efe6;
-    font-size: 24px;
-    letter-spacing: -0.24px;
-    line-height: 40px;
-  }
-  
-  .event .a-b-c {
-    position: absolute;
-    top: 259px;
-    left: 927px;
-    font-family: "Noto Sans KR-Medium", Helvetica;
-    font-weight: 400;
-    color: #f5efe6;
-    font-size: 24px;
-    letter-spacing: -0.24px;
-    line-height: 40px;
-  }
-  
-  .event .qn-a {
-    position: absolute;
-    top: 265px;
-    left: 1208px;
-    font-family: "Noto Sans KR-Medium", Helvetica;
-    font-weight: 400;
-    color: #f5efe6;
-    font-size: 24px;
-    letter-spacing: -0.24px;
-    line-height: 40px;
-  }
-  
-  .event .logo {
-    position: absolute;
-    width: 247px;
-    height: 129px;
-    top: 52px;
-    left: 65px;
-    object-fit: cover;
-  }
-  
-  .event .overlap {
-    position: absolute;
-    width: 1448px;
-    height: 328px;
-    top: 0;
-    left: 0;
-  }
-  
-  .event .rectangle {
-    position: absolute;
-    width: 1440px;
-    height: 227px;
-    top: 101px;
-    left: 0;
-    background-color: #4f6f52;
-  }
-  
-  .event .header {
-    position: absolute;
-    width: 1446px;
-    height: 102px;
-    top: 0;
-    left: 0;
-    background-color: transparent;
-  }
-  
-  .event .overlap-2 {
-    position: relative;
-    width: 1440px;
-    height: 102px;
-    background-color: #1a4d2e;
-  }
-  
-  .event .text-wrapper-4 {
-    position: absolute;
-    width: 89px;
-    top: 8px;
-    left: 1316px;
-    font-family: "Noto Sans KR-Bold", Helvetica;
-    font-weight: 700;
-    color: #f5efe6;
-    font-size: 24px;
-    letter-spacing: 0;
-    line-height: normal;
-  }
-  
-  .event .div-wrapper {
-    position: absolute;
-    width: 197px;
-    height: 58px;
-    top: 22px;
-    left: 59px;
-    background-color: #f5efe6;
-  }
-  
-  .event .text-wrapper-5 {
-    position: absolute;
-    width: 96px;
-    top: 10px;
-    left: 54px;
-    font-family: "Noto Sans KR-Bold", Helvetica;
-    font-weight: 700;
-    color: #1a4d2e;
-    font-size: 24px;
-    letter-spacing: 0;
-    line-height: normal;
-  }
-  
-  .event .text-wrapper-6 {
-    position: absolute;
-    width: 67px;
-    top: 8px;
-    left: 1216px;
-    font-family: "Noto Sans KR-Bold", Helvetica;
-    font-weight: 700;
-    color: #f5efe6;
-    font-size: 24px;
-    letter-spacing: 0;
-    line-height: normal;
-  }
-  
-  .event .logo-small {
-    position: absolute;
-    width: 225px;
-    height: 102px;
-    top: 0;
-    left: 607px;
-  }
-  
-  .event .main-nav {
-    position: absolute;
-    width: 1448px;
-    height: 71px;
-    top: 102px;
-    left: 0;
-  }
-  
-  .event .navbar {
-    position: relative;
-    width: 1440px;
-    height: 71px;
-    background-color: #f5efe699;
-  }
-  
-  .event .text-wrapper-7 {
-    width: 139px;
-    left: 88px;
-    position: absolute;
-    top: 9px;
-    font-family: "Noto Sans KR-Medium", Helvetica;
-    font-weight: 500;
-    color: #1a4d2e;
-    font-size: 36px;
-    letter-spacing: 0;
-    line-height: normal;
-  }
-  
-  .event .text-wrapper-8 {
-    width: 135px;
-    left: 485px;
-    position: absolute;
-    top: 9px;
-    font-family: "Noto Sans KR-Medium", Helvetica;
-    font-weight: 500;
-    color: #1a4d2e;
-    font-size: 36px;
-    letter-spacing: 0;
-    line-height: normal;
-  }
-  
-  .event .text-wrapper-9 {
-    width: 76px;
-    left: 888px;
-    position: absolute;
-    top: 9px;
-    font-family: "Noto Sans KR-Medium", Helvetica;
-    font-weight: 500;
-    color: #1a4d2e;
-    font-size: 36px;
-    letter-spacing: 0;
-    line-height: normal;
-  }
-  
-  .event .text-wrapper-10 {
-    width: 138px;
-    left: 1223px;
-    position: absolute;
-    top: 9px;
-    font-family: "Noto Sans KR-Medium", Helvetica;
-    font-weight: 500;
-    color: #1a4d2e;
-    font-size: 36px;
-    letter-spacing: 0;
-    line-height: normal;
-  }
-  
-  .event .head-text {
-    position: absolute;
-    width: 1281px;
-    height: 141px;
-    top: 173px;
-    left: 88px;
-  }
-  
-  .event .overlap-3 {
-    position: absolute;
-    width: 346px;
-    height: 140px;
-    top: 0;
-    left: 0;
-  }
-  
-  .event .text-wrapper-11 {
-    position: absolute;
-    top: 0;
-    left: 0;
-    -webkit-text-stroke: 1px #e8dfca;
-    font-family: "Playfair Display-MediumItalic", Helvetica;
-    font-weight: 500;
-    font-style: italic;
-    color: #f5efe6;
-    font-size: 64px;
-    letter-spacing: 0;
-    line-height: normal;
-  }
-  
-  .event .text-wrapper-12 {
-    position: absolute;
-    top: 42px;
-    left: 146px;
-    -webkit-text-stroke: 1px #e8dfca;
-    font-family: "Playfair Display-MediumItalic", Helvetica;
-    font-weight: 500;
-    font-style: italic;
-    color: #f5efe6;
-    font-size: 52px;
-    letter-spacing: 0;
-    line-height: normal;
-  }
-  
-  .event .text-wrapper-13 {
-    position: absolute;
-    top: 55px;
-    left: 176px;
-    -webkit-text-stroke: 1px #e8dfca;
-    font-family: "Playfair Display-MediumItalic", Helvetica;
-    font-weight: 500;
-    font-style: italic;
-    color: #f5efe6;
-    font-size: 64px;
-    letter-spacing: 0;
-    line-height: normal;
-  }
-  
-  .event .text-wrapper-14 {
-    position: absolute;
-    top: 106px;
-    left: 588px;
-    font-family: "Noto Sans KR-Regular", Helvetica;
-    font-weight: 400;
-    color: #f5efe6;
-    font-size: 24px;
-    letter-spacing: 0;
-    line-height: normal;
-  }
-  
-  .event .event-section {
-    position: absolute;
-    width: 1442px;
-    height: 648px;
-    top: 1352px;
-    left: 0;
-  }
-  
-  .event .text-wrapper-15 {
-    position: absolute;
-    top: 0;
-    left: 88px;
-    font-family: "Noto Sans KR-Medium", Helvetica;
-    font-weight: 500;
-    color: #1a4d2e;
-    font-size: 40px;
-    letter-spacing: 4px;
-    line-height: normal;
-  }
-  
-  .event .overlap-4 {
-    position: absolute;
-    width: 1450px;
-    height: 564px;
-    top: 84px;
-    left: 0;
-  }
-  
-  .event .event-bannerbox {
-    position: absolute;
-    width: 1440px;
-    height: 564px;
-    top: 0;
-    left: 0;
-    background-color: #d9d9d9;
-  }
-  
-  .event .event-banner {
-    position: absolute;
-    width: 1450px;
-    height: 564px;
-    top: 0;
-    left: 0;
-  }
-  
-  .event .overlap-group-2 {
-    position: relative;
-    width: 1440px;
-    height: 564px;
-  }
-  
-  .event .img {
-    position: absolute;
-    width: 1019px;
-    height: 564px;
-    top: 0;
-    left: 0;
-    object-fit: cover;
-  }
-  
-  .event .rectangle-2 {
-    position: absolute;
-    width: 389px;
-    height: 564px;
-    top: 0;
-    left: 1051px;
-    background-color: #ffffff;
-  }
-  
-  .event .rectangle-3 {
-    position: absolute;
-    width: 162px;
-    height: 564px;
-    top: 0;
-    left: 889px;
-    background: linear-gradient(
-      180deg,
-      rgba(255, 255, 255, 0) 0%,
-      rgba(255, 255, 255, 0.25) 25%,
-      rgba(255, 255, 255, 0.5) 46%,
-      rgba(255, 255, 255, 0.72) 63%,
-      rgba(255, 255, 255, 0.81) 77.5%,
-      rgba(255, 255, 255, 0.9) 87%,
-      rgb(255, 255, 255) 100%
-    );
-  }
-  
-  .event .text-wrapper-16 {
-    position: absolute;
-    top: 59px;
-    left: 1037px;
-    text-shadow: 1px 1px 3px #93b096;
-    font-family: "Playfair Display-MediumItalic", Helvetica;
-    font-weight: 500;
-    font-style: italic;
-    color: #4f6f52;
-    font-size: 64px;
-    letter-spacing: 3.2px;
-    line-height: normal;
-  }
-  
-  .event .text-wrapper-17 {
-    position: absolute;
-    top: 128px;
-    left: 1096px;
-    text-shadow: 1px 1px 3px #93b096;
-    font-family: "Playfair Display-MediumItalic", Helvetica;
-    font-weight: 500;
-    font-style: italic;
-    color: #4f6f52;
-    font-size: 48px;
-    letter-spacing: 0;
-    line-height: normal;
-  }
-  
-  .event .gahyeon {
-    position: absolute;
-    top: 160px;
-    left: 1135px;
-    text-shadow: 1px 1px 3px #93b096;
-    font-family: "Playfair Display-Medium", Helvetica;
-    font-weight: 500;
-    color: #4f6f52;
-    font-size: 64px;
-    line-height: normal;
-  }
-  
-  .event .text-wrapper-18 {
-    font-family: "Playfair Display-MediumItalic", Helvetica;
-    font-style: italic;
-    letter-spacing: 2.05px;
-  }
-  
-  .event .text-wrapper-19 {
-    font-family: "Playfair Display-MediumItalic", Helvetica;
-    font-style: italic;
-    letter-spacing: 4.1px;
-  }
-  
-  .event .text-wrapper-20 {
-    position: absolute;
-    top: 380px;
-    left: 1057px;
-    font-family: "Noto Sans KR-Regular", Helvetica;
-    font-weight: 400;
-    color: #4e4e4e;
-    font-size: 24px;
-    text-align: center;
-    letter-spacing: 1.2px;
-    line-height: normal;
-  }
-  
-  .event .text-wrapper-21 {
-    position: absolute;
-    top: 466px;
-    left: 1113px;
-    font-family: "Noto Sans KR-Light", Helvetica;
-    font-weight: 300;
-    color: #000000;
-    font-size: 20px;
-    text-align: center;
-    letter-spacing: 1px;
-    line-height: normal;
-  }
-  
-  .event .event-section-2 {
-    position: absolute;
-    width: 1442px;
-    height: 645px;
-    top: 474px;
-    left: 0;
-  }
-  
-  .event .overlap-5 {
-    position: absolute;
-    width: 1450px;
-    height: 564px;
-    top: 81px;
-    left: 0;
-  }
-  
-  .event .rectangle-wrapper {
-    position: absolute;
-    width: 1051px;
-    height: 564px;
-    top: 0;
-    left: 0;
-    background-image: url(./img/rectangle-110.png);
-    background-size: cover;
-    background-position: 50% 50%;
-  }
-  
-  .event .rectangle-4 {
-    position: relative;
-    width: 162px;
-    height: 564px;
-    left: 889px;
-    background: linear-gradient(
-      180deg,
-      rgba(68, 68, 68, 0) 0%,
-      rgba(68, 68, 68, 0.25) 25%,
-      rgba(68, 68, 68, 0.5) 50%,
-      rgba(68, 68, 68, 0.72) 69.5%,
-      rgba(68, 68, 68, 0.81) 80.5%,
-      rgba(68, 68, 68, 0.9) 90.5%,
-      rgb(68, 68, 68) 100%
-    );
-  }
-  
-  .event .overlap-group-3 {
-    position: absolute;
-    width: 389px;
-    height: 564px;
-    top: 0;
-    left: 1051px;
-    background-color: #444444;
-  }
-  
-  .event .overlap-6 {
-    position: absolute;
-    width: 313px;
-    height: 154px;
-    top: 33px;
-    left: 38px;
-  }
-  
-  .event .text-wrapper-22 {
-    position: absolute;
-    top: 0;
-    left: 0;
-    text-shadow: 1px 1px 4px #fff1c5;
-    font-family: "Playfair Display-MediumItalic", Helvetica;
-    font-weight: 500;
-    font-style: italic;
-    color: #ffd9c5;
-    font-size: 64px;
-    letter-spacing: 0;
-    line-height: normal;
-  }
-  
-  .event .text-wrapper-23 {
-    position: absolute;
-    top: 69px;
-    left: 159px;
-    text-shadow: 1px 1px 4px #fff1c5;
-    font-family: "Playfair Display-MediumItalic", Helvetica;
-    font-weight: 500;
-    font-style: italic;
-    color: #ffd9c5;
-    font-size: 64px;
-    letter-spacing: 0;
-    line-height: normal;
-  }
-  
-  .event .text-wrapper-24 {
-    position: absolute;
-    top: 187px;
-    left: 46px;
-    font-family: "Playfair Display-Regular", Helvetica;
-    font-weight: 400;
-    color: #ffd9c5;
-    font-size: 48px;
-    text-align: center;
-    letter-spacing: 0;
-    line-height: normal;
-  }
-  
-  .event .text-wrapper-25 {
-    position: absolute;
-    top: 384px;
-    left: 56px;
-    font-family: "Noto Sans KR-Regular", Helvetica;
-    font-weight: 400;
-    color: #ffffff;
-    font-size: 24px;
-    text-align: center;
-    letter-spacing: 0;
-    line-height: normal;
-  }
-  
-  .event .text-wrapper-26 {
-    position: absolute;
-    top: 454px;
-    left: 85px;
-    font-family: "Noto Sans KR-Regular", Helvetica;
-    font-weight: 400;
-    color: #ffffff;
-    font-size: 20px;
-    text-align: center;
-    letter-spacing: 0;
-    line-height: normal;
-  }
-  
-
-  /* Hover 효과 추가 */
-.event .text-wrapper-4:hover, /* 예약확인 */
-.event .text-wrapper-5:hover, /* 예약하기 */
-.event .text-wrapper-6:hover { /* 로그인 */
-  color: #2e8b57;
-  cursor: pointer;
+/* 기본 스타일 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.event .div-wrapper:hover {
-  background-color: #d1c4a0;
-  cursor: pointer;
+body {
+  font-family: 'Arial', sans-serif;
 }
 
-/* '매달 가현리조트에서 준비한 특별한 이벤트와 가격 혜택을 만나보세요' 텍스트를 위로 10px */
-.event .text-wrapper-14 {
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* 헤더 스타일 */
+header {
+  background-color: #004d1a;
+  padding: 10px 0;
+}
+
+.header-menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+.header-menu li {
+  flex: 1;
+  text-align: center;
+}
+
+.header-menu .logo {
   position: absolute;
-  top: 96px; /* 기존 top 값에서 10px 위로 이동 */
-  left: 588px;
-  font-family: "Noto Sans KR-Regular", Helvetica;
-  font-weight: 400;
-  color: #f5efe6;
-  font-size: 24px;
-  letter-spacing: 0;
-  line-height: normal;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.header-menu .right-menu {
+  display: flex;
+  gap: 10px; /* 로그인과 예약확인 사이에 간격 추가 */
+}
+
+.header-btn {
+  background-color: #f5f1e7;
+  color: #004d1a;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  border: 2px solid #004d1a;
+  transition: background-color 0.3s ease;
+  white-space: nowrap;
+}
+
+.header-btn:hover {
+  background-color: #004d1a;
+  color: white;
+}
+
+.logo img {
+  width: 150px;
+  height: auto;
+}
+
+/* 하단 메뉴 스타일 */
+.bottom-menu {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #c0c7b0;
+  list-style: none;
+  padding: 10px 0;
+  margin: 0;
+}
+
+.bottom-menu li a {
+  text-decoration: none;
+  color: #004d1a;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.bottom-menu li a:hover {
+  color: #333;
+}
+
+/* 반응형 디자인 */
+@media screen and (max-width: 768px) {
+  .header-menu {
+      flex-direction: row;
+      justify-content: space-between;
+  }
+
+  .header-btn {
+      font-size: 12px;
+      padding: 8px 15px;
+      min-width: 100px;
+  }
+
+  .logo img {
+      width: 120px;
+  }
+
+  .bottom-menu {
+      flex-direction: column;
+  }
+
+  .bottom-menu li {
+      margin-bottom: 10px;
+  }
+}
+
+/* 매우 작은 화면에서 버튼 크기 추가 조정 */
+@media screen and (max-width: 480px) {
+  .header-btn {
+      font-size: 10px;
+      padding: 5px 10px;
+      min-width: 80px;
+  }
+
+  .logo img {
+      width: 100px;
+  }
 }
 
 
-/* 시설소개, 테마파크, 객실, 공지사항 hover 효과 추가 */
-.event .text-wrapper-7:hover, /* 시설소개 */
-.event .text-wrapper-8:hover, /* 테마파크 */
-.event .text-wrapper-9:hover, /* 객실 */
-.event .text-wrapper-10:hover { /* 공지사항 */
-  color: #2e8b57; /* hover 시 텍스트 색상 변경 */
-  cursor: pointer; /* 마우스 커서를 포인터로 변경 */
+
+/****2*****/
+
+/* 헤더와 메인 사이 색상 구분 */
+.section-divider {
+  background-color: #6f8b57;
+  height: 50px;
 }
 
-/* '특별행사'와 '프로모션' hover 효과 추가 */
-.event .text-wrapper-15:hover { /* 특별행사 */
-    color: #2e8b57; /* hover 시 텍스트 색상 변경 */
-    cursor: pointer; /* 마우스 커서를 포인터로 변경 */
-  }
-  
-  .event .text-wrapper-15:hover { /* 프로모션 */
-    color: #2e8b57; /* hover 시 텍스트 색상 변경 */
-    cursor: pointer; /* 마우스 커서를 포인터로 변경 */
-  }
-  
+/* 메인 컨텐츠 스타일 */
+.main-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 80vh;
+  padding: 40px 0;
+}
 
-/* '여름밤 루프탑에서 펼쳐지는 환상적인 파티' 텍스트를 위로 30px 이동 */
-.event .text-wrapper-25 {
-    position: absolute;
-    top: 354px; /* 기존 top 값에서 30px 위로 이동 (374px -> 354px) */
-    left: 56px;
-    font-family: "Noto Sans KR-Regular", Helvetica;
-    font-weight: 400;
-    color: #ffffff;
-    font-size: 24px;
+.event-section, .promo-section {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.event-slider, .promo-slider {
+  width: 100%;
+  height: auto;
+  position: relative;
+}
+
+.event-slider img, .promo-slider img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: none;
+}
+
+.event-slider img.active, .promo-slider img.active {
+  display: block;
+}
+
+/* 메인과 푸터 사이 색상 구분 */
+.section-divider-footer {
+  background-color: #6f8b57;
+  height: 60px;
+}
+
+/* 푸터 스타일 */
+footer {
+  background-color: #004d1a;
+  color: white;
+  padding: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  font-size: 14px;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.footer-logo {
+  max-width: 400px;
+}
+
+.footer-logo img {
+  width: 150px;
+  margin-bottom: 15px;
+}
+
+.footer-logo p {
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.footer-links ul {
+  list-style-type: none;
+}
+
+.footer-links li {
+  margin-bottom: 10px;
+}
+
+.footer-links a {
+  color: white;
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+
+
+/* 반응형 푸터 디자인 */
+@media screen and (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
     text-align: center;
-    letter-spacing: 0;
-    line-height: normal;
   }
 
-  /* '풍성한 가현리조트의 조식 뷔페를 반값에 즐길 수 있는 기회' 텍스트를 위로 20px 이동하고 글씨체 수정 */
-.event .text-wrapper-20 {
-    position: absolute;
-    top: 360px; /* 기존 top 값에서 20px 위로 이동 (380px -> 360px) */
-    left: 1057px;
-    font-family: "Noto Sans KR-Regular", Helvetica; /* 동일한 글씨체로 변경 */
-    font-weight: 400;
-    color:  #4e4e4e
-    font-size: 24px;
-    text-align: center;
-    letter-spacing: 0;
-    line-height: normal;
-  }
-  
-  /* '여름밤 루프탑에서 펼쳐지는 환상적인 파티' 텍스트를 위로 10px */
-.event .text-wrapper-25 {
-    position: absolute;
-    top: 374px; /* 기존 top 값에서 10px 위로 이동 */
-    left: 56px;
-    font-family: "Noto Sans KR-Regular", Helvetica;
-    font-weight: 400;
-    color: #ffffff;
-    font-size: 24px;
-    text-align: center;
-    letter-spacing: 0;
-    line-height: normal;
+  .footer-logo {
+    margin-bottom: 20px;
   }
 
-  /* '매달 가현리조트에서 준비한 특별한 이벤트와 가격 혜택을 만나보세요' 텍스트를 위로 20px 이동 */
-.event .text-wrapper-14 {
-    position: absolute;
-    top: 70px; /* 기존 top 값에서 20px 위로 이동 (96px -> 76px) */
-    left: 585px;
-    font-family: "Noto Sans KR-Regular", Helvetica;
-    font-weight: 400;
-    color: #f5efe6;
-    font-size: 24px;
-    letter-spacing: 0;
-    line-height: normal;
+  .footer-links {
+    flex-direction: row;
+    gap: 20px;
   }
-  
+}
+

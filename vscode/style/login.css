@@ -1,374 +1,282 @@
-.login-page {
-  background-color: #ffffff;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  width: 100%;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.login-page .div {
-  background-color: #ffffff;
-  overflow: hidden;
-  width: 1440px;
-  height: 2703px;
-  position: relative;
+body {
+    font-family: 'Arial', sans-serif;
 }
 
-.login-page .overlap {
-  position: absolute;
-  width: 1444px;
-  height: 2119px;
-  top: 102px;
-  left: 0;
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
-.login-page .body {
-  position: absolute;
-  width: 1440px;
-  height: 2119px;
-  top: 0;
-  left: 0;
-  background-color: #4f6f52;
+/* 헤더 스타일 */
+header {
+    background-color: #004d1a;
+    padding: 10px 0;
 }
 
-.login-page .login-section {
-  position: absolute;
-  width: 1444px;
-  height: 1000px;
-  top: 562px;
-  left: 0;
-  background-color: #1a4d2e;
+.header-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
-.login-page .rectangle {
-  position: absolute;
-  width: 848px;
-  height: 769px;
-  top: 112px;
-  left: 0;
-  object-fit: cover;
+.header-btn {
+    background-color: #f5f1e7;
+    color: #004d1a;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    border: 2px solid #004d1a;
+    transition: background-color 0.3s ease;
+    white-space: nowrap; /* 텍스트가 버튼 안에서 줄 바꿈되지 않도록 설정 */
 }
 
-.login-page .login-form {
-  position: absolute;
-  width: 606px;
-  height: 769px;
-  top: 112px;
-  left: 848px;
+.header-btn:hover {
+    background-color: gray;
+    color: white;
 }
 
-.login-page .overlap-group {
-  position: relative;
-  width: 596px;
-  height: 769px;
-  background-color: #f5efe6;
+.logo img {
+    width: 150px;
+    height: auto;
 }
 
-.login-page .div-wrapper {
-  position: absolute;
-  width: 500px;
-  height: 80px;
-  top: 345px;
-  left: 48px;
-  background-color: #ffffff;
-  border-radius: 5px;
+/* 버튼 위치 조정 */
+.header-menu li:first-child {
+    margin-left: 20px;
 }
 
-.login-page .text-wrapper {
-  position: absolute;
-  top: 18px;
-  left: 37px;
-  font-family: "Inter-Medium", Helvetica;
-  font-weight: 500;
-  color: #d9d9d9;
-  font-size: 36px;
-  letter-spacing: 0;
-  line-height: normal;
-}
-
-.login-page .overlap-2 {
-  position: absolute;
-  width: 500px;
-  height: 80px;
-  top: 447px;
-  left: 48px;
-  background-color: #ffffff;
-  border-radius: 5px;
-}
-
-.login-page .kakaotalk {
-  position: absolute;
-  width: 379px;
-  height: 197px;
-  top: 89px;
-  left: 108px;
-  object-fit: cover;
-}
-
-.login-page .overlap-3 {
-  position: absolute;
-  width: 220px;
-  height: 80px;
-  top: 549px;
-  left: 48px;
-  background-color: #4f6f52;
-  border-radius: 5px;
-}
-
-.login-page .text-wrapper-2 {
-  position: absolute;
-  top: 18px;
-  left: 60px;
-  font-family: "Inter-Bold", Helvetica;
-  font-weight: 700;
-  color: #f5efe6;
-  font-size: 36px;
-  letter-spacing: 0;
-  line-height: normal;
-}
-
-.login-page .overlap-4 {
-  position: absolute;
-  width: 220px;
-  height: 80px;
-  top: 549px;
-  left: 325px;
-  background-color: #ffffff;
-  border-radius: 5px;
-  border: 2px solid;
-  border-color: #4f6f52;
-}
-
-.login-page .text-wrapper-3 {
-  position: absolute;
-  top: 16px;
-  left: 41px;
-  font-family: "Inter-Medium", Helvetica;
-  font-weight: 500;
-  color: #1a4d2e;
-  font-size: 36px;
-  letter-spacing: 0;
-  line-height: normal;
-}
-
-.login-page .text-wrapper-4 {
-  position: absolute;
-  top: 687px;
-  left: 190px;
-  font-family: "Inter-Regular", Helvetica;
-  font-weight: 400;
-  color: #1a4d2e;
-  font-size: 24px;
-  letter-spacing: 0;
-  line-height: normal;
-}
-
-.login-page .footer {
-  position: absolute;
-  width: 1452px;
-  height: 482px;
-  top: 2221px;
-  left: 0;
-  background-color: transparent;
-}
-
-.login-page .overlap-5 {
-  position: relative;
-  width: 1440px;
-  height: 482px;
-  background-color: #1a4d2e;
-}
-
-.login-page .text-wrapper-5 {
-  position: absolute;
-  top: 421px;
-  left: 65px;
-  font-family: "Noto Sans KR-Light", Helvetica;
-  font-weight: 300;
-  color: #f5efe6;
-  font-size: 16px;
-  letter-spacing: 0;
-  line-height: normal;
-}
-
-.login-page .element {
-  position: absolute;
-  top: 218px;
-  left: 65px;
-  font-family: "Noto Sans KR-Regular", Helvetica;
-  font-weight: 400;
-  color: #f5efe6;
-  font-size: 20px;
-  letter-spacing: -0.2px;
-  line-height: normal;
-}
-
-.login-page .span {
-  letter-spacing: -0.04px;
-}
-
-.login-page .p {
-  position: absolute;
-  top: 39px;
-  left: 927px;
-  font-family: "Noto Sans KR-Medium", Helvetica;
-  font-weight: 400;
-  color: #f5efe6;
-  font-size: 24px;
-  letter-spacing: -0.24px;
-  line-height: 40px;
-}
-
-.login-page .text-wrapper-6 {
-  font-weight: 500;
-  letter-spacing: -0.06px;
-}
-
-.login-page .text-wrapper-7 {
-  font-family: "Noto Sans KR-Regular", Helvetica;
-  font-size: 20px;
-  letter-spacing: -0.04px;
-}
-
-.login-page .div-2 {
-  position: absolute;
-  top: 39px;
-  left: 1208px;
-  font-family: "Noto Sans KR-Medium", Helvetica;
-  font-weight: 400;
-  color: #f5efe6;
-  font-size: 24px;
-  letter-spacing: -0.24px;
-  line-height: 40px;
-}
-
-.login-page .a-b-c {
-  position: absolute;
-  top: 259px;
-  left: 927px;
-  font-family: "Noto Sans KR-Medium", Helvetica;
-  font-weight: 400;
-  color: #f5efe6;
-  font-size: 24px;
-  letter-spacing: -0.24px;
-  line-height: 40px;
-}
-
-.login-page .qn-a {
-  position: absolute;
-  top: 265px;
-  left: 1208px;
-  font-family: "Noto Sans KR-Medium", Helvetica;
-  font-weight: 400;
-  color: #f5efe6;
-  font-size: 24px;
-  letter-spacing: -0.24px;
-  line-height: 40px;
-}
-
-.login-page .logo {
-  position: absolute;
-  width: 247px;
-  height: 129px;
-  top: 52px;
-  left: 65px;
-  object-fit: cover;
-}
-
-.login-page .header {
-  position: absolute;
-  width: 1444px;
-  height: 102px;
-  top: 0;
-  left: 0;
-  background-color: transparent;
-}
-
-.login-page .overlap-6 {
-  position: relative;
-  width: 1440px;
-  height: 102px;
-  background-color: #1a4d2e;
-}
-
-.login-page .text-wrapper-8 {
-  position: absolute;
-  width: 89px;
-  top: 8px;
-  left: 1316px;
-  font-family: "Noto Sans KR-Bold", Helvetica;
-  font-weight: 700;
-  color: #f5efe6;
-  font-size: 24px;
-  letter-spacing: 0;
-  line-height: normal;
-}
-
-.login-page .overlap-group-2 {
-  position: absolute;
-  width: 197px;
-  height: 58px;
-  top: 22px;
-  left: 59px;
-  background-color: #f5efe6;
-}
-
-.login-page .text-wrapper-9 {
-  position: absolute;
-  width: 96px;
-  top: 10px;
-  left: 54px;
-  font-family: "Noto Sans KR-Bold", Helvetica;
-  font-weight: 700;
-  color: #1a4d2e;
-  font-size: 24px;
-  letter-spacing: 0;
-  line-height: normal;
-}
-
-.login-page .logo-small {
-  position: absolute;
-  width: 225px;
-  height: 102px;
-  top: 0;
-  left: 607px;
+.header-menu li:last-child {
+    margin-right: 20px;
 }
 
 
 
-
-/* 예약확인 hover 효과 */
-.login-page .text-wrapper-8:hover {
-  color: #2e8b57; /* hover 시 텍스트 색상 변경 */
-  cursor: pointer; /* 마우스 커서를 포인터로 변경 */
+/* 헤더와 메인 사이 색상 구분 */
+.section-divider {
+    background-color: #6f8b57;
+    height: 50px;
 }
 
-/* 예약하기 hover 효과 */
-.login-page .overlap-group-2:hover {
-  background-color: #d1c4a0; /* hover 시 배경 색상 변경 */
-  cursor: pointer; /* 마우스 커서를 포인터로 변경 */
+.main-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 80vh;
+    padding: 40px 0;
 }
 
-.login-page .text-wrapper-9:hover {
-  color: #ffffff; /* hover 시 텍스트 색상 변경 */
+.image-section {
+    flex: 1;
+    padding-right: 20px;
 }
 
-/* 로그인 hover 효과 */
-.login-page .overlap-3:hover {
-  background-color: #2e8b57; /* hover 시 배경 색상 변경 */
-  cursor: pointer; /* 마우스 커서를 포인터로 변경 */
+.image-slider {
+    width: 100%;
+    height: 100%;
+    position: relative;
 }
 
-.login-page .text-wrapper-2:hover {
-  color: #ffffff; /* hover 시 텍스트 색상 변경 */
+.image-slider img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: none; /* 슬라이드 이미지를 처음엔 숨김 */
 }
 
-/* 회원가입 hover 효과 */
-.login-page .overlap-4:hover {
-  background-color: #d1c4a0; /* hover 시 배경 색상 변경 */
-  cursor: pointer; /* 마우스 커서를 포인터로 변경 */
+.image-slider img.active {
+    display: block; /* 활성화된 이미지 표시 */
 }
 
-.login-page .text-wrapper-3:hover {
-  color: #ffffff; /* hover 시 텍스트 색상 변경 */
+.login-section {
+    flex: 0.4;
+    background-color: #f5f1e7;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+
+.login-container h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.login-container form {
+    display: flex;
+    flex-direction: column;
+}
+
+.login-container input {
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.login-container button {
+    padding: 15px;
+    margin-bottom: 10px;
+    background-color: #004d1a;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.login-container p {
+    font-size: 14px;
+}
+
+
+
+/* 메인과 푸터 사이 색상 구분 */
+.section-divider-footer {
+    background-color: #6f8b57;
+    height: 60px;
+}
+
+
+/* 푸터 스타일 */
+footer {
+    background-color: #004d1a;
+    color: white;
+    padding: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    font-size: 14px;
+  }
+  
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+  }
+  
+  .footer-logo {
+    max-width: 400px;
+  }
+  
+  .footer-logo img {
+    width: 150px;
+    margin-bottom: 15px;
+  }
+  
+  .footer-logo p {
+    margin-bottom: 10px;
+    line-height: 1.6;
+  }
+  
+  .footer-links {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+  }
+  
+  .footer-links ul {
+    list-style-type: none;
+  }
+  
+  .footer-links li {
+    margin-bottom: 10px;
+  }
+  
+  .footer-links a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  .footer-links a:hover {
+    text-decoration: underline;
+  }
+
+
+/* 반응형 푸터 디자인 */
+@media screen and (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+  
+    .footer-logo {
+        margin-bottom: 20px;
+    }
+  
+    .footer-links {
+        flex-direction: row;
+        gap: 20px;
+    }
+}
+
+
+  
+
+
+/* 작은 화면에서도 가로로 나란히 유지, 텍스트 크기 조정 */
+@media screen and (max-width: 768px) {
+    .header-menu {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .header-menu li {
+        flex: 1;
+        text-align: center;
+    }
+
+    .header-btn {
+        font-size: 12px; /* 작은 화면에서 텍스트 크기 축소 */
+        padding: 8px 15px; /* 버튼의 패딩 축소 */
+        min-width: 100px; /* 버튼의 최소 너비 설정 */
+    }
+
+    .logo img {
+        width: 120px; /* 작은 화면에서 로고 크기 축소 */
+    }
+}
+
+
+
+/* 매우 작은 화면에서 버튼과 로고가 깨지지 않도록 대응 */
+@media screen and (max-width: 480px) {
+    .header-btn {
+        font-size: 10px; /* 더 작은 화면에서 텍스트 크기 더 축소 */
+        padding: 5px 10px; /* 버튼 패딩 더 축소 */
+        min-width: 80px; /* 버튼 최소 너비 더 줄임 */
+    }
+
+    .logo img {
+        width: 100px; /* 로고 크기 더 축소 */
+    }
+}
+
+
+/* 작은 화면에서 이미지 숨기기 */
+@media screen and (max-width: 768px) {
+    .image-section {
+        display: none; /* 작은 화면에서 이미지 숨김 */
+    }
+
+    .login-section {
+        flex: 1; /* 로그인 폼이 전체 너비를 차지하도록 설정 */
+        max-width: 100%;
+    }
+}
+
+
+
