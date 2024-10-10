@@ -1,4 +1,4 @@
-/* 기본 스타일 */
+/* 공통 스타일 */
 * {
   margin: 0;
   padding: 0;
@@ -7,89 +7,116 @@
 
 body {
   font-family: 'Arial', sans-serif;
+  background-color: #f9f9f9;
+  padding-left: 15%;
+  padding-right: 15%;
 }
 
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 20px;
 }
 
-/* 헤더 스타일 */
+/*****/
 header {
-  background-color: #004d1a;
-  padding: 10px 0;
+  width: 100%;
+  background-color: #1a4d2e;
 }
 
-.header-menu {
+.top-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  list-style: none;
-  margin: 0;
-  padding: 0;
+  padding: 20px;
+  background-color: #1a4d2e;
   position: relative;
 }
 
-.header-menu li {
-  flex: 1;
-  text-align: center;
+.logo-small {
+  width: 200px; /* 이미지의 너비를 원하는 크기로 설정 */
+  height: 80px; /* 이미지의 높이를 원하는 크기로 설정 */
+  margin-top: -20px; /* 위쪽 여백 조정 */
+  margin-bottom:-20px; /* 아래쪽 여백 조정 */
+  margin-left: 230px; /* 왼쪽 여백 조정 */
+  margin-right: 10px; /* 오른쪽 여백 조정 */
+  object-fit: cover; /* 이미지가 설정된 영역에 맞게 잘리거나 맞춰짐 */
 }
 
-.header-menu .logo {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-}
 
-.header-menu .right-menu {
-  display: flex;
-  gap: 10px;
-}
-
-.header-btn {
-  background-color: #f5f1e7;
-  color: #004d1a;
-  padding: 10px 20px;
-  border-radius: 5px;
-  text-decoration: none;
-  font-weight: bold;
-  border: 2px solid #004d1a;
-  transition: background-color 0.3s ease;
-  white-space: nowrap;
-}
-
-.header-btn:hover {
-  background-color: #004d1a;
-  color: white;
-}
-
-.logo img {
-  width: 150px;
-  height: auto;
-}
-
-/* 하단 메뉴 스타일 */
-.bottom-menu {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  background-color: #c0c7b0;
-  list-style: none;
-  padding: 10px 0;
-  margin: 0;
-}
-
-.bottom-menu li a {
-  text-decoration: none;
-  color: #004d1a;
-  font-weight: bold;
+.user_login {
+  font-family: "Noto Sans KR-Bold", Helvetica;
+  font-weight: 700;
+  color: #f5efe6;
   font-size: 18px;
+  text-decoration: none;
+  position: relative;
+  right: -130px; /* 로그인 텍스트를 오른쪽으로 60px 이동 */
 }
 
-.bottom-menu li a:hover {
-  color: #333;
+.user_login:hover {
+  text-decoration: underline;
 }
+
+.reserv_view {
+  font-family: "Noto Sans KR-Bold", Helvetica;
+  font-weight: 700;
+  color: #f5efe6;
+  font-size: 18px;
+  text-decoration: none;
+}
+
+.reserv_view:hover {
+  text-decoration: underline;
+}
+
+.reserv_make {
+  font-family: "Noto Sans KR-Bold", Helvetica;
+  font-weight: 700;
+  color: #1a4d2e;
+  background-color: #f5efe6;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.reserv_make:hover {
+  background-color: #4f6f52;
+  color: #f5efe6;
+}
+
+.main-nav {
+  background-color: #b2b59b;
+  padding: 10px 0;
+  display: flex;
+  justify-content: center; /* 중앙 정렬 */
+}
+
+.main-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 110px; /* 각 항목 사이에 60px 간격 설정 */
+}
+
+.main-nav ul li {
+  list-style: none;
+}
+
+.main-nav ul li a {
+  text-decoration: none;
+  color: #1a4d2e;
+  font-size: 18px;
+  font-family: "Noto Sans KR-Bold", Helvetica;
+}
+
+.main-nav ul li a:hover {
+  color: #f5efe6;
+  text-decoration: underline;
+}
+
+/***header***/
 
 /* 특별 행사와 특가 프로모션 텍스트 왼쪽 정렬 및 20px 오른쪽으로 이동 */
 .event-section h2, .promo-section h2 {

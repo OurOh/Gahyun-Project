@@ -11,16 +11,14 @@
 <body>
 
     <header>
-        <div class="header-container">
-            <button class="reservation-btn">예약하기</button>
-            <img src="/vscode/images/logo1.jpg" alt="Gahyeon Resort 로고" class="logo">
-            <div class="right-nav">
-                <span>로그인</span>
-                <span>예약확인</span>
-            </div>
+        <div class="top-header">
+            <a href="#" id="reserv_make"><button type="button" class="reserv_make btn">예약하기</button></a>
+            <img class="logo-small" src="/vscode/images/logo1.jpg" alt="Gahyeon Logo" />
+            <a href="#" id="user_login" class="user_login">로그인</a>
+            <a href="#" id="reserv_view" class="reserv_view">예약확인</a>
         </div>
-        <nav>
-            <ul class="nav-menu">
+        <nav class="main-nav">
+            <ul>
                 <li><a href="#">시설소개</a></li>
                 <li><a href="#">테마파크</a></li>
                 <li><a href="#">객실</a></li>
@@ -28,9 +26,6 @@
             </ul>
         </nav>
     </header>
-
-    <!-- 헤더와 메인 사이 색상 구분 -->
-    <div class="section-divider"></div>
 
     <main>
         <!-- 객실소개 섹션 -->

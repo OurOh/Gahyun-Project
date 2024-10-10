@@ -1,15 +1,15 @@
+/* 공통 스타일 */
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box; /* 패딩과 테두리를 포함한 크기 계산 */
+  box-sizing: border-box;
 }
 
 body {
   font-family: 'Arial', sans-serif;
   background-color: #f9f9f9;
-  /*양쪽 사이드의 여백을 줄임.*/
-  padding-left: 13%;  
-  padding-right: 13%; 
+  padding-left: 15%;
+  padding-right: 15%;
 }
 
 .container {
@@ -17,88 +17,106 @@ body {
   margin: 0 auto;
 }
 
-
-/****header 부분 손 볼 것.****/
-
-/* 기본적인 헤더 스타일 */
+/*****/
 header {
-background-color: #004d1a; /* 헤더 상단 배경색 */
-padding: 10px 0;
-display: flex;
-flex-direction: column;
-align-items: center;
+  width: 100%;
+  background-color: #1a4d2e;
 }
 
-/* 상단 네비게이션 바 (예약하기, 로고, 로그인) */
-.nav-bar {
-display: flex;
-justify-content: space-between;
-align-items: center;
-width: 100%;
-max-width: 1200px;
-padding: 10px 0;
-background-color: #004d1a;
+.top-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #1a4d2e;
+  position: relative;
 }
 
-.logo {
-height: 50px;
+.logo-small {
+  width: 200px; /* 이미지의 너비를 원하는 크기로 설정 */
+  height: 80px; /* 이미지의 높이를 원하는 크기로 설정 */
+  margin-top: -20px; /* 위쪽 여백 조정 */
+  margin-bottom:-20px; /* 아래쪽 여백 조정 */
+  margin-left: 230px; /* 왼쪽 여백 조정 */
+  margin-right: 10px; /* 오른쪽 여백 조정 */
+  object-fit: cover; /* 이미지가 설정된 영역에 맞게 잘리거나 맞춰짐 */
 }
 
-/* 메뉴 항목 (시설소개, 테마파크, 객실, 공지사항) - nav-bar 아래에 배치 */
-nav {
-background-color: #c0c7b0;
-width: 100%;
-padding: 10px 0;
-margin-bottom: -10px; /* 아래쪽 여백 제거 */
+
+.user_login {
+  font-family: "Noto Sans KR-Bold", Helvetica;
+  font-weight: 700;
+  color: #f5efe6;
+  font-size: 18px;
+  text-decoration: none;
+  position: relative;
+  right: -130px; /* 로그인 텍스트를 오른쪽으로 60px 이동 */
 }
 
-.header-menu {
-display: flex;
-justify-content: space-between;
-list-style: none;
-padding: 0;
-margin: 0; /* 아래쪽 여백 제거 */
-max-width: 1200px;
-width: 100%;
+.user_login:hover {
+  text-decoration: underline;
 }
 
-.header-menu li {
-flex: 1;
-text-align: center;
+.reserv_view {
+  font-family: "Noto Sans KR-Bold", Helvetica;
+  font-weight: 700;
+  color: #f5efe6;
+  font-size: 18px;
+  text-decoration: none;
 }
 
-.header-menu li a {
-text-decoration: none;
-color: #2b5e31;
-font-weight: bold;
-font-size: 18px;
-padding: 15px 0;
-display: block;
-transition: background-color 0.3s ease, color 0.3s ease;
+.reserv_view:hover {
+  text-decoration: underline;
 }
 
-/* 호버 효과 */
-.header-menu li a:hover {
-background-color: #46684a;
-color: #fff;
+.reserv_make {
+  font-family: "Noto Sans KR-Bold", Helvetica;
+  font-weight: 700;
+  color: #1a4d2e;
+  background-color: #f5efe6;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
-/* 예약하기, 로그인, 예약확인 버튼 스타일 */
-.nav-bar button, .nav-bar a {
-background-color: #f5f1e7;
-color: #004d1a;
-border: 2px solid #004d1a;
-padding: 10px 15px;
-font-weight: bold;
-text-decoration: none;
-border-radius: 5px;
-transition: background-color 0.3s ease, color 0.3s ease;
+.reserv_make:hover {
+  background-color: #4f6f52;
+  color: #f5efe6;
 }
 
-.nav-bar button:hover, .nav-bar a:hover {
-background-color: #004d1a;
-color: #fff;
+.main-nav {
+  background-color: #b2b59b;
+  padding: 10px 0;
+  display: flex;
+  justify-content: center; /* 중앙 정렬 */
 }
+
+.main-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 110px; /* 각 항목 사이에 60px 간격 설정 */
+}
+
+.main-nav ul li {
+  list-style: none;
+}
+
+.main-nav ul li a {
+  text-decoration: none;
+  color: #1a4d2e;
+  font-size: 18px;
+  font-family: "Noto Sans KR-Bold", Helvetica;
+}
+
+.main-nav ul li a:hover {
+  color: #f5efe6;
+  text-decoration: underline;
+}
+
+/***header***/
 
 
 /**********/

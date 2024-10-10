@@ -3,26 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gahyeon Resort</title>
+    <title>Gahyeon Resort Login</title>
     <link rel="stylesheet" href="/vscode/style/login.css">
 </head>
 <body>
     <div class="container">
-        <header>
-            <nav>
-                <ul class="header-menu">
-                    <li><a href="#" class="header-btn">예약하기</a></li>
-                    <li class="logo">
-                        <a href="#"><img src="/vscode/images/logo1.jpg" alt="Gahyeon Resort 로고"></a>
-                    </li>
-                    <li><a href="#" class="header-btn">예약확인</a></li>
-                </ul>
-            </nav>
-        </header>
-        
+    <header>
 
-        <!-- 헤더와 메인 사이 색상 구분 -->
-        <div class="section-divider"></div>
+        <div class="top-header">
+            <a href="#" id="reserv_make"><button type="button" class="reserv_make btn">예약하기</button></a>
+            <img class="logo-small" src="/vscode/images/logo1.jpg" alt="Gahyeon Logo" />
+            <a href="#" id="user_login" class="user_login">로그인</a>
+            <a href="#" id="reserv_view" class="reserv_view">예약확인</a>
+        </div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="#">시설소개</a></li>
+                <li><a href="#">테마파크</a></li>
+                <li><a href="#">객실</a></li>
+                <li><a href="#">공지사항</a></li>
+            </ul>
+        </nav>
+    </header>
+
+      
 
         <main class="main-content">
             <section class="image-section">
