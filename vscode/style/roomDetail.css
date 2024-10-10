@@ -1,0 +1,319 @@
+/* 공통 스타일 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f9f9f9;
+    padding-left: 15%;
+    padding-right: 15%;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* 헤더 스타일 */
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    background-color: #004d1a;
+    color: white;
+}
+
+.reservation-btn {
+    background-color: #fff;
+    color: #004d1a;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+.logo {
+    width: 150px;
+}
+
+.right-nav {
+    display: flex;
+    gap: 20px;
+}
+
+.right-nav span {
+    cursor: pointer;
+    color: white;
+}
+
+.nav-menu {
+    display: flex;
+    justify-content: space-between;
+    background-color: #6f8b57;
+    padding: 15px;
+}
+
+.nav-menu li {
+    list-style: none;
+}
+
+.nav-menu a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    transition: background-color 0.3s;
+}
+
+.nav-menu a:hover {
+    background-color: #00a05c;
+    color: white;
+}
+
+/* 메인 콘텐츠 스타일 */
+main {
+    padding: 20px 0;
+}
+
+.room-intro h1 {
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.room-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.room-tabs button {
+    background-color: #004d1a;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+.room-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+/***room image***/
+.room-image {
+    width: 50%;
+}
+
+.room-info {
+    width: 50%;
+    background-color: #eaeaea;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.room-info h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.room-info p {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.warnings {
+    margin-top: 20px;
+    background-color: #f8f8f8;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.reserve-btn {
+    display: block;
+    background-color: #004d1a;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    margin: 20px 0;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.reserve-btn:hover {
+    background-color: #00a05c;
+}
+
+/*****/
+/* 슬라이드 컨테이너 */
+.slider {
+    width: 100%;
+    max-width: 600px;
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+}
+
+/* 슬라이드 안의 이미지들을 나란히 배치 */
+.slides {
+    display: flex;
+    width: 300%; /* 3개의 슬라이드가 한 줄에 배치되도록 */
+    animation: slide 12s infinite; /* 슬라이드가 12초 동안 돌아감 */
+}
+
+/* 각 슬라이드의 개별 설정 */
+.slide {
+    width: 33.3333%; /* 슬라이드 각각의 너비 */
+}
+
+.slide img {
+    width: 100%;
+    display: block;
+}
+
+/* 애니메이션 설정 */
+@keyframes slide {
+    0% { transform: translateX(0); }
+    33% { transform: translateX(-33.3333%); }
+    66% { transform: translateX(-66.6666%); }
+    100% { transform: translateX(0); }
+}
+
+
+
+/* 메인과 푸터 사이 색상 구분 */
+.section-divider-footer {
+    background-color: #6f8b57;
+    height: 30px;
+  }
+
+
+/* 푸터 스타일 */
+footer {
+    background-color: #004d1a;
+    color: white;
+    padding: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    font-size: 14px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.footer-logo {
+    max-width: 400px;
+}
+
+.footer-logo img {
+    width: 150px;
+    margin-bottom: 15px;
+}
+
+.footer-logo p {
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.footer-links ul {
+    list-style-type: none;
+}
+
+.footer-links li {
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    color: white;
+    text-decoration: none;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+/* 반응형 스타일 */
+@media screen and (max-width: 768px) {
+    body {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    .header-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+
+    .reservation-btn {
+        margin-top: 10px;
+        order: 1; /* 로고 아래로 이동 */
+    }
+
+    .right-nav {
+        order: 2; /* 로그인과 예약확인 버튼이 예약하기 아래로 이동 */
+        flex-direction: row;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .nav-menu {
+        flex-direction: row;
+        justify-content: center;
+        gap: 20px;
+        text-align: center;
+        margin-top: 15px;
+    }
+
+    .room-content {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .room-image, .room-info {
+        width: 100%;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-links {
+        flex-direction: row;
+        gap: 20px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .nav-menu {
+        flex-direction: column;
+        gap: 10px;
+        font-size: 14px;
+    }
+
+    .footer-links {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+}
