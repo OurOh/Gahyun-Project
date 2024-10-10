@@ -44,7 +44,7 @@ header {
 
 .header-menu .right-menu {
   display: flex;
-  gap: 10px; /* 로그인과 예약확인 사이에 간격 추가 */
+  gap: 10px;
 }
 
 .header-btn {
@@ -91,53 +91,17 @@ header {
   color: #333;
 }
 
-/* 반응형 디자인 */
-@media screen and (max-width: 768px) {
-  .header-menu {
-      flex-direction: row;
-      justify-content: space-between;
-  }
-
-  .header-btn {
-      font-size: 12px;
-      padding: 8px 15px;
-      min-width: 100px;
-  }
-
-  .logo img {
-      width: 120px;
-  }
-
-  .bottom-menu {
-      flex-direction: column;
-  }
-
-  .bottom-menu li {
-      margin-bottom: 10px;
-  }
+/* 특별 행사와 특가 프로모션 텍스트 왼쪽 정렬 및 20px 오른쪽으로 이동 */
+.event-section h2, .promo-section h2 {
+  text-align: left;
+  font-size: 24px;
+  margin-bottom: 20px;
+  margin-left: 20px; /* 오른쪽으로 20px 이동 */
 }
 
-/* 매우 작은 화면에서 버튼 크기 추가 조정 */
-@media screen and (max-width: 480px) {
-  .header-btn {
-      font-size: 10px;
-      padding: 5px 10px;
-      min-width: 80px;
-  }
-
-  .logo img {
-      width: 100px;
-  }
-}
-
-
-
-/****2*****/
-
-/* 헤더와 메인 사이 색상 구분 */
-.section-divider {
-  background-color: #6f8b57;
-  height: 50px;
+.event-section, .promo-section {
+  width: 100%;
+  margin-bottom: 40px;
 }
 
 /* 메인 컨텐츠 스타일 */
@@ -148,12 +112,6 @@ header {
   justify-content: center;
   min-height: 80vh;
   padding: 40px 0;
-}
-
-.event-section, .promo-section {
-  width: 100%;
-  text-align: center;
-  margin-bottom: 40px;
 }
 
 .event-slider, .promo-slider {
@@ -236,8 +194,6 @@ footer {
   text-decoration: underline;
 }
 
-
-
 /* 반응형 푸터 디자인 */
 @media screen and (max-width: 768px) {
   .footer-content {
@@ -255,4 +211,3 @@ footer {
     gap: 20px;
   }
 }
-
