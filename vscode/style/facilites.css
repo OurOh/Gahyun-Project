@@ -1,0 +1,294 @@
+/* 공통 스타일 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f9f9f9;
+  padding-left: 15%;
+  padding-right: 15%;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/*****/
+header {
+  width: 100%;
+  background-color: #1a4d2e;
+}
+
+.top-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #1a4d2e;
+  position: relative;
+}
+
+.logo-small {
+  width: 200px; /* 이미지의 너비를 원하는 크기로 설정 */
+  height: 80px; /* 이미지의 높이를 원하는 크기로 설정 */
+  margin-top: -20px; /* 위쪽 여백 조정 */
+  margin-bottom:-20px; /* 아래쪽 여백 조정 */
+  margin-left: 230px; /* 왼쪽 여백 조정 */
+  margin-right: 10px; /* 오른쪽 여백 조정 */
+  object-fit: cover; /* 이미지가 설정된 영역에 맞게 잘리거나 맞춰짐 */
+}
+
+
+.user_login {
+  font-family: "Noto Sans KR-Bold", Helvetica;
+  font-weight: 700;
+  color: #f5efe6;
+  font-size: 18px;
+  text-decoration: none;
+  position: relative;
+  right: -130px; /* 로그인 텍스트를 오른쪽으로 60px 이동 */
+}
+
+.user_login:hover {
+  text-decoration: underline;
+}
+
+.reserv_view {
+  font-family: "Noto Sans KR-Bold", Helvetica;
+  font-weight: 700;
+  color: #f5efe6;
+  font-size: 18px;
+  text-decoration: none;
+}
+
+.reserv_view:hover {
+  text-decoration: underline;
+}
+
+.reserv_make {
+  font-family: "Noto Sans KR-Bold", Helvetica;
+  font-weight: 700;
+  color: #1a4d2e;
+  background-color: #f5efe6;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.reserv_make:hover {
+  background-color: #4f6f52;
+  color: #f5efe6;
+}
+
+.main-nav {
+  background-color: #b2b59b;
+  padding: 10px 0;
+  display: flex;
+  justify-content: center; /* 중앙 정렬 */
+}
+
+.main-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 110px; /* 각 항목 사이에 60px 간격 설정 */
+}
+
+.main-nav ul li {
+  list-style: none;
+}
+
+.main-nav ul li a {
+  text-decoration: none;
+  color: #1a4d2e;
+  font-size: 18px;
+  font-family: "Noto Sans KR-Bold", Helvetica;
+}
+
+.main-nav ul li a:hover {
+  color: #f5efe6;
+  text-decoration: underline;
+}
+
+/***header***/
+
+
+/**********/
+
+
+
+/* 섹션 타이틀 */
+.section-title {
+  background-color: #46684a;
+  padding: 10px;
+  text-align: center;
+  color: white;
+  margin-bottom: 20px;
+}
+
+/* 시설 섹션 */
+.facilities {
+  margin: 0px;
+}
+
+.facilities h3 {
+  margin: 15px 0;
+  color: #2b5e31;
+  text-align: center;
+}
+
+/*******/
+
+.image-card {
+  position: relative;
+  width: calc(33.333% - 20px); /* 3열 유지: 여백 포함하여 3등분 */
+  margin: 10px; /* 이미지 카드 간격 조정 */
+  background-color: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease; /* 마우스 오버 시 확대 효과 */
+}
+
+.image-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.image-card p {
+  padding: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #2b5e31;
+}
+
+.image-card:hover {
+  transform: scale(1.05); /* 마우스를 올렸을 때 살짝 확대 */
+}
+
+/* 설명 박스 스타일 */
+.description-hover {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.7); /* 반투명 배경 */
+  color: white;
+  padding: 10px;
+  font-size: 14px;
+  line-height: 1.5;
+  text-align: center;
+  opacity: 0; /* 기본적으로 숨김 */
+  transition: opacity 0.3s ease; /* 서서히 나타남 */
+  max-height: 50%; /* 설명 텍스트 높이 제한 */
+}
+
+/* 마우스를 올렸을 때 설명이 나타나도록 설정 */
+.image-card:hover .description-hover {
+  opacity: 1;
+}
+
+.image-grid {
+  display: flex;
+  justify-content: space-between; /* 카드 사이 간격 균등 */
+  flex-wrap: wrap;
+}
+
+/* 반응형 설정: 작은 화면에서도 3열 유지 */
+@media screen and (max-width: 768px) {
+  .image-card {
+    width: calc(33.333% - 20px); /* 작은 화면에서도 3열 유지 */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .image-card {
+    width: calc(33.333% - 10px); /* 매우 작은 화면에서도 3열 유지 */
+  }
+}
+
+
+
+
+/* 푸터 스타일 */
+  footer {
+      background-color: #004d1a;
+      color: white;
+      padding: 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      font-size: 14px;
+  }
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.footer-logo {
+  max-width: 400px;
+}
+
+.footer-logo img {
+  width: 150px;
+  margin-bottom: 15px;
+}
+
+.footer-logo p {
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.footer-links ul {
+  list-style-type: none;
+}
+
+.footer-links li {
+  margin-bottom: 10px;
+}
+
+.footer-links a {
+  color: white;
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+/* 반응형 푸터 디자인 */
+@media screen and (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-logo {
+    margin-bottom: 20px;
+  }
+
+  .footer-links {
+    flex-direction: row;
+    gap: 20px;
+  }
+} 
