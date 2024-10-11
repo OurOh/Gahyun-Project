@@ -168,6 +168,7 @@
 .login-container h2 {
     margin-bottom: 20px;
     font-size: 24px;
+    color: #1a4d2e;
 }
 
 .login-container form {
@@ -182,19 +183,33 @@
     border-radius: 5px;
 }
 
-.login-container button {
+#loginsubmit {
     padding: 15px;
     margin-bottom: 10px;
     background-color: #004d1a;
     color: white;
-    border: none;
     border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
+    border: none;
+    font-size: 18px;
 }
-
-.login-container p {
+#userregister {
+  padding: 15px;
+  margin-bottom: 10px;
+  background-color: #c4bcb599;
+  color: #fff;
+  border-radius: 5px;
+  border: none;
+  font-size: 18px;
+}
+.login-container a {
     font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    color: #1a4d2e;
+    text-align: center;
+}
+.login-container a:hover{
+  text-decoration: underline;
 }
 
 
