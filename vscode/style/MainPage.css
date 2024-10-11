@@ -1,780 +1,328 @@
+/* 공통 스타일 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f9f9f9;
+  padding: 0 5%; /* 좌우 패딩 설정 */
+}
+
 .main-page {
-    background-color: #ffffff;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    width: 100%;
-  }
-  
-  .main-page .div {
-    background-color: #ffffff;
-    overflow: hidden;
-    width: 1440px;
-    height: 2703px;
-    position: relative;
-  }
-  
-  .main-page .header {
-    position: absolute;
-    width: 1446px;
-    height: 102px;
-    top: 0;
-    left: 0;
-    background-color: transparent;
-  }
-  
-  .main-page .overlap-group {
-    position: relative;
-    width: 1440px;
-    height: 102px;
-    background-color: #1a4d2e;
-  }
-  
-  .main-page .text-wrapper {
-    width: 89px;
-    left: 1316px;
-    color: #f5efe6;
-    font-size: 24px;
-    position: absolute;
-    top: 8px;
-    font-family: "Noto Sans KR-Bold", Helvetica;
-    font-weight: 700;
-    letter-spacing: 0;
-    line-height: normal;
-  }
-  
-  .main-page .overlap {
-    position: absolute;
-    width: 197px;
-    height: 58px;
-    top: 22px;
-    left: 59px;
-    background-color: #f5efe6;
-  }
-  
-  .main-page .text-wrapper-2 {
-    position: absolute;
-    width: 96px;
-    top: 10px;
-    left: 54px;
-    font-family: "Noto Sans KR-Bold", Helvetica;
-    font-weight: 700;
-    color: #1a4d2e;
-    font-size: 24px;
-    letter-spacing: 0;
-    line-height: normal;
-  }
-  
-  .main-page .text-wrapper-3 {
-    position: absolute;
-    width: 67px;
-    top: 8px;
-    left: 1216px;
-    font-family: "Noto Sans KR-Bold", Helvetica;
-    font-weight: 700;
-    color: #f5efe6;
-    font-size: 24px;
-    letter-spacing: 0;
-    line-height: normal;
-  }
-  
-  .main-page .logo-small {
-    position: absolute;
-    width: 225px;
-    height: 102px;
-    top: 0;
-    left: 607px;
-  }
-  
-  .main-page .overlap-2 {
-    position: absolute;
-    width: 1551px;
-    height: 1413px;
-    top: 102px;
-    left: 0;
-  }
-  
-  .main-page .slide-image {
-    position: absolute;
-    width: 1442px;
-    height: 697px;
-    top: 0;
-    left: 0;
-  }
-  
-  .main-page .div-wrapper {
-    position: relative;
-    width: 1440px;
-    height: 697px;
-    background-color: #a1a1a1;
-  }
-  
-  .main-page .text-wrapper-4 {
-    position: absolute;
-    top: 319px;
-    left: 551px;
-    font-family: "Inter-Bold", Helvetica;
-    font-weight: 700;
-    color: #000000;
-    font-size: 48px;
-    letter-spacing: 0;
-    line-height: normal;
-  }
-  
-  .main-page .main-nav {
-    position: absolute;
-    width: 1448px;
-    height: 71px;
-    top: 0;
-    left: 0;
-  }
-  
-  .main-page .navbar {
-    position: relative;
-    width: 1440px;
-    height: 71px;
-    background-color: #f5efe699;
-  }
-  
-  .main-page .text-wrapper-5 {
-    width: 139px;
-    left: 88px;
-    position: absolute;
-    top: 9px;
-    font-family: "Noto Sans KR-Medium", Helvetica;
-    font-weight: 500;
-    color: #1a4d2e;
-    font-size: 36px;
-    letter-spacing: 0;
-    line-height: normal;
-  }
-  
-  .main-page .text-wrapper-6 {
-    width: 135px;
-    left: 485px;
-    position: absolute;
-    top: 9px;
-    font-family: "Noto Sans KR-Medium", Helvetica;
-    font-weight: 500;
-    color: #1a4d2e;
-    font-size: 36px;
-    letter-spacing: 0;
-    line-height: normal;
-  }
-  
-  .main-page .text-wrapper-7 {
-    width: 76px;
-    left: 888px;
-    position: absolute;
-    top: 9px;
-    font-family: "Noto Sans KR-Medium", Helvetica;
-    font-weight: 500;
-    color: #1a4d2e;
-    font-size: 36px;
-    letter-spacing: 0;
-    line-height: normal;
-  }
-  
-  .main-page .text-wrapper-8 {
-    width: 138px;
-    left: 1223px;
-    position: absolute;
-    top: 9px;
-    font-family: "Noto Sans KR-Medium", Helvetica;
-    font-weight: 500;
-    color: #1a4d2e;
-    font-size: 36px;
-    letter-spacing: 0;
-    line-height: normal;
-  }
-  
-  .main-page .section-event {
-    width: 1551px;
-    height: 716px;
-    top: 697px;
-    position: absolute;
-    left: 0;
-  }
-  
-  .main-page .overlap-3 {
-    position: relative;
-    height: 716px;
-  }
-  
-  .main-page .rectangle {
-    position: absolute;
-    width: 1440px;
-    height: 716px;
-    top: 0;
-    left: 0;
-    background-color: #4f6f52;
-  }
-  
-  .main-page .text-wrapper-9 {
-    position: absolute;
-    top: 276px;
-    left: 126px;
-    font-family: "Inter-Bold", Helvetica;
-    font-weight: 700;
-    color: #f5efe6;
-    font-size: 48px;
-    letter-spacing: 0;
-    line-height: normal;
-  }
-  
-  .main-page .event {
-    position: absolute;
-    width: 351px;
-    height: 465px;
-    top: 198px;
-    left: 376px;
-  }
-  
-  .main-page .text-wrapper-10 {
-    position: absolute;
-    top: 436px;
-    left: 5px;
-    font-family: "Inter-Regular", Helvetica;
-    font-weight: 400;
-    color: #f5efe6;
-    font-size: 24px;
-    letter-spacing: 0;
-    line-height: normal;
-  }
-  
-  .main-page .text-wrapper-11 {
-    position: absolute;
-    top: 391px;
-    left: 5px;
-    font-family: "Inter-SemiBold", Helvetica;
-    font-weight: 600;
-    color: #f5efe6;
-    font-size: 24px;
-    letter-spacing: 0;
-    line-height: normal;
-  }
-  
-  .main-page .img {
-    position: absolute;
-    width: 357px;
-    height: 380px;
-    top: -1px;
-    left: -1px;
-    object-fit: cover;
-  }
-  
-  .main-page .event-2 {
-    position: absolute;
-    width: 351px;
-    height: 465px;
-    top: 198px;
-    left: 788px;
-  }
-  
-  .main-page .text-wrapper-12 {
-    top: 436px;
-    left: 8px;
-    position: absolute;
-    font-family: "Inter-Regular", Helvetica;
-    font-weight: 400;
-    color: #f5efe6;
-    font-size: 24px;
-    letter-spacing: 0;
-    line-height: normal;
-  }
-  
-  .main-page .text-wrapper-13 {
-    position: absolute;
-    top: 396px;
-    left: 8px;
-    font-family: "Inter-SemiBold", Helvetica;
-    font-weight: 600;
-    color: #f5efe6;
-    font-size: 24px;
-    letter-spacing: 0;
-    line-height: normal;
-  }
-  
-  .main-page .event-3 {
-    position: absolute;
-    width: 351px;
-    height: 458px;
-    top: 198px;
-    left: 1200px;
-  }
-  
-  .main-page .text-wrapper-14 {
-    top: 429px;
-    left: 11px;
-    position: absolute;
-    font-family: "Inter-Regular", Helvetica;
-    font-weight: 400;
-    color: #f5efe6;
-    font-size: 24px;
-    letter-spacing: 0;
-    line-height: normal;
-  }
-  
-  .main-page .text-wrapper-15 {
-    position: absolute;
-    top: 391px;
-    left: 11px;
-    font-family: "Inter-SemiBold", Helvetica;
-    font-weight: 600;
-    color: #f5efe6;
-    font-size: 24px;
-    letter-spacing: 0;
-    line-height: normal;
-  }
-  
-  .main-page .rectangle-2 {
-    position: absolute;
-    width: 241px;
-    height: 380px;
-    top: -1px;
-    left: -1px;
-    object-fit: cover;
-  }
-  
-  .main-page .flexcontainer {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
-    position: absolute;
-    width: 228px;
-    height: 107px;
-    top: 394px;
-    left: 79px;
-  }
-  
-  .main-page .text {
-    position: relative;
-    align-self: stretch;
-    font-family: "Inter-Regular", Helvetica;
-    font-weight: 400;
-    color: #f5efe6;
-    font-size: 24px;
-    letter-spacing: 0;
-    line-height: normal;
-  }
-  
-  .main-page .span {
-    font-family: "Inter-Regular", Helvetica;
-    font-weight: 400;
-    color: #f5efe6;
-    font-size: 24px;
-    letter-spacing: 0;
-  }
-  
-  .main-page .left-button {
-    position: absolute;
-    width: 57px;
-    height: 55px;
-    top: 552px;
-    left: 98px;
-  }
-  
-  .main-page .overlap-group-2 {
-    position: relative;
-    width: 55px;
-    height: 55px;
-    border-radius: 27.5px;
-    border: 3px solid;
-    border-color: #f5efe6;
-  }
-  
-  .main-page .text-wrapper-16 {
-    position: absolute;
-    top: -3px;
-    left: 11px;
-    font-family: "Inter-Bold", Helvetica;
-    font-weight: 700;
-    color: #f5efe6;
-    font-size: 40px;
-    letter-spacing: 0;
-    line-height: normal;
-    white-space: nowrap;
-  }
-  
-  .main-page .right-button {
-    position: absolute;
-    width: 57px;
-    height: 55px;
-    top: 552px;
-    left: 231px;
-  }
-  
-  .main-page .reservation-bar {
-    position: absolute;
-    width: 1064px;
-    height: 317px;
-    top: 548px;
-    left: 0;
-    background-color: #e8dfca;
-  }
-  
-  .main-page .button-date {
-    position: absolute;
-    width: 202px;
-    height: 150px;
-    top: 28px;
-    left: 314px;
-  }
-  
-  .main-page .overlap-group-3 {
-    position: relative;
-    width: 200px;
-    height: 150px;
-    background-color: #4f6f52;
-  }
-  
-  .main-page .text-wrapper-17 {
-    left: 70px;
-    color: #ffffff;
-    font-size: 32px;
-    position: absolute;
-    top: 8px;
-    font-family: "Noto Sans KR-Bold", Helvetica;
-    font-weight: 700;
-    letter-spacing: 0;
-    line-height: normal;
-  }
-  
-  .main-page .button-room {
-    position: absolute;
-    width: 202px;
-    height: 150px;
-    top: 28px;
-    left: 551px;
-  }
-  
-  .main-page .text-wrapper-18 {
-    position: absolute;
-    top: 8px;
-    left: 52px;
-    font-family: "Noto Sans KR-Bold", Helvetica;
-    font-weight: 700;
-    color: #ffffff;
-    font-size: 32px;
-    letter-spacing: 0;
-    line-height: normal;
-  }
-  
-  .main-page .button-person {
-    position: absolute;
-    width: 202px;
-    height: 150px;
-    top: 28px;
-    left: 788px;
-  }
-  
-  .main-page .button-reservation {
-    position: absolute;
-    width: 676px;
-    height: 69px;
-    top: 207px;
-    left: 314px;
-  }
-  
-  .main-page .overlap-4 {
-    position: relative;
-    width: 674px;
-    height: 69px;
-    background-color: #1a4d2e;
-  }
-  
-  .main-page .text-wrapper-19 {
-    position: absolute;
-    top: 11px;
-    left: 278px;
-    font-family: "Noto Sans KR-Bold", Helvetica;
-    font-weight: 700;
-    color: #ffffff;
-    font-size: 32px;
-    letter-spacing: 0;
-    line-height: normal;
-  }
-  
-  .main-page .reserv-icon {
-    position: absolute;
-    width: 120px;
-    height: 146px;
-    top: 82px;
-    left: 84px;
-  }
-  
-  .main-page .text-wrapper-20 {
-    position: absolute;
-    top: 0;
-    left: 0;
-    font-family: "Noto Sans KR-Bold", Helvetica;
-    font-weight: 700;
-    color: #1a4d2e;
-    font-size: 32px;
-    letter-spacing: 0;
-    line-height: normal;
-  }
-  
-  .main-page .image-wrapper {
-    position: absolute;
-    width: 100px;
-    height: 100px;
-    top: 46px;
-    left: 9px;
-    background-color: #4f6f52;
-  }
-  
-  .main-page .image {
-    width: 90px;
-    height: 90px;
-    top: 5px;
-    left: 5px;
-    position: absolute;
-    object-fit: cover;
-  }
-  
-  .main-page .section-facilities {
-    width: 1446px;
-    height: 706px;
-    top: 1515px;
-    position: absolute;
-    left: 0;
-  }
-  
-  .main-page .overlap-5 {
-    position: relative;
-    width: 1440px;
-    height: 706px;
-    background-color: #f5efe6;
-  }
-  
-  .main-page .rectangle-3 {
-    position: absolute;
-    width: 810px;
-    height: 610px;
-    top: 52px;
-    left: 64px;
-    object-fit: cover;
-  }
-  
-  .main-page .overlap-group-4 {
-    position: absolute;
-    width: 412px;
-    height: 178px;
-    top: 175px;
-    left: 949px;
-  }
-  
-  .main-page .text-wrapper-21 {
-    position: absolute;
-    top: 0;
-    left: 0;
-    text-shadow: 2px 2px 4px #00000040;
-    font-family: "Inter-LightItalic", Helvetica;
-    font-weight: 300;
-    font-style: italic;
-    color: #1a4d2e;
-    font-size: 64px;
-    letter-spacing: 0;
-    line-height: normal;
-  }
-  
-  .main-page .text-wrapper-22 {
-    position: absolute;
-    top: 62px;
-    left: 236px;
-    text-shadow: 2px 2px 4px #00000040;
-    font-family: "Inter-MediumItalic", Helvetica;
-    font-weight: 500;
-    font-style: italic;
-    color: #1a4d2e;
-    font-size: 96px;
-    letter-spacing: 0;
-    line-height: normal;
-  }
-  
-  .main-page .image-2 {
-    width: 25px;
-    height: 25px;
-    top: 577px;
-    left: 1279px;
-    position: absolute;
-    object-fit: cover;
-  }
-  
-  .main-page .p {
-    position: absolute;
-    top: 570px;
-    left: 981px;
-    font-family: "Noto Sans KR-Regular", Helvetica;
-    font-weight: 400;
-    color: #1a4d2e;
-    font-size: 24px;
-    letter-spacing: 0;
-    line-height: normal;
-  }
-  
-  .main-page .footer {
-    position: absolute;
-    width: 1452px;
-    height: 482px;
-    top: 2221px;
-    left: 0;
-    background-color: transparent;
-  }
-  
-  .main-page .overlap-6 {
-    position: relative;
-    width: 1440px;
-    height: 482px;
-    background-color: #1a4d2e;
-  }
-  
-  .main-page .text-wrapper-23 {
-    position: absolute;
-    top: 421px;
-    left: 65px;
-    font-family: "Noto Sans KR-Light", Helvetica;
-    font-weight: 300;
-    color: #f5efe6;
-    font-size: 16px;
-    letter-spacing: 0;
-    line-height: normal;
-  }
-  
-  .main-page .element {
-    position: absolute;
-    top: 218px;
-    left: 65px;
-    font-family: "Noto Sans KR-Regular", Helvetica;
-    font-weight: 400;
-    color: #f5efe6;
-    font-size: 20px;
-    letter-spacing: -0.2px;
-    line-height: normal;
-  }
-  
-  .main-page .text-wrapper-24 {
-    letter-spacing: -0.04px;
-  }
-  
-  .main-page .div-2 {
-    position: absolute;
-    top: 39px;
-    left: 927px;
-    font-family: "Noto Sans KR-Medium", Helvetica;
-    font-weight: 400;
-    color: #f5efe6;
-    font-size: 24px;
-    letter-spacing: -0.24px;
-    line-height: 40px;
-  }
-  
-  .main-page .text-wrapper-25 {
-    font-weight: 500;
-    letter-spacing: -0.06px;
-  }
-  
-  .main-page .text-wrapper-26 {
-    font-family: "Noto Sans KR-Regular", Helvetica;
-    font-size: 20px;
-    letter-spacing: -0.04px;
-  }
-  
-  .main-page .div-3 {
-    position: absolute;
-    top: 39px;
-    left: 1208px;
-    font-family: "Noto Sans KR-Medium", Helvetica;
-    font-weight: 400;
-    color: #f5efe6;
-    font-size: 24px;
-    letter-spacing: -0.24px;
-    line-height: 40px;
-  }
-  
-  .main-page .a-b-c {
-    position: absolute;
-    top: 259px;
-    left: 927px;
-    font-family: "Noto Sans KR-Medium", Helvetica;
-    font-weight: 400;
-    color: #f5efe6;
-    font-size: 24px;
-    letter-spacing: -0.24px;
-    line-height: 40px;
-  }
-  
-  .main-page .qn-a {
-    position: absolute;
-    top: 265px;
-    left: 1208px;
-    font-family: "Noto Sans KR-Medium", Helvetica;
-    font-weight: 400;
-    color: #f5efe6;
-    font-size: 24px;
-    letter-spacing: -0.24px;
-    line-height: 40px;
-  }
-  
-  .main-page .logo {
-    position: absolute;
-    width: 247px;
-    height: 129px;
-    top: 52px;
-    left: 65px;
-    object-fit: cover;
-  }
-  
-
-  /* hover 효과 추가 */
-.main-page .text-wrapper-2:hover,
-.main-page .overlap:hover {
-  background-color: #d1c4a0;
-  cursor: pointer;
+  max-width: 1200px; /* 최대 너비 설정 */
+  margin: 0 auto; /* 중앙 정렬 */
 }
 
-.main-page .text-wrapper-2:hover {
-  color: #ffffff;
+/*****/
+/* 헤더 스타일 */
+.header {
+  width: 100%;
+  background-color: #1a4d2e;
+  display: flex;
+  flex-direction: column;
 }
 
-.main-page .text-wrapper-3:hover {
-  color: #d1c4a0;
-  cursor: pointer;
+.overlap-group {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
 }
 
-.main-page .text-wrapper:hover {
-  color: #d1c4a0;
-  cursor: pointer;
+.logo-small {
+  width: 200px; /* 이미지의 너비를 원하는 크기로 설정 */
+  height: auto; /* 비율에 맞게 높이 자동 조절 */
 }
 
-.main-page .button-date:hover .overlap-group-3,
-.main-page .button-date:hover .text-wrapper-17 {
-  background-color: #2e8b57;
-  color: #ffffff;
-  cursor: pointer;
+.main-nav {
+  background-color: #b2b59b;
+  padding: 10px 0;
 }
 
-.main-page .button-room:hover .overlap-group-3,
-.main-page .button-room:hover .text-wrapper-18 {
-  background-color: #2e8b57;
-  color: #ffffff;
-  cursor: pointer;
+.main-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center; /* 중앙 정렬 */
+  gap: 40px; /* 각 항목 사이에 간격 설정 */
 }
 
-.main-page .button-person:hover .overlap-group-3,
-.main-page .button-person:hover .text-wrapper-17 {
-  background-color: #2e8b57;
-  color: #ffffff;
-  cursor: pointer;
+.main-nav a {
+  text-decoration: none;
+  color: #1a4d2e;
+  font-size: 18px;
 }
 
-/* 시설소개, 테마파크, 객실, 공지사항 hover 효과 추가 */
-.main-page .text-wrapper-5:hover, /* 시설소개 */
-.main-page .text-wrapper-6:hover, /* 테마파크 */
-.main-page .text-wrapper-7:hover, /* 객실 */
-.main-page .text-wrapper-8:hover { /* 공지사항 */
-  color: #2e8b57; /* hover 시 텍스트 색상 변경 */
-  cursor: pointer; /* 마우스 커서를 포인터로 변경 */
+
+/* 슬라이드 이미지 스타일 */
+.slide-image {
+  position: relative; /* 자식 요소를 절대 위치로 설정하기 위해 상대적으로 위치 설정 */
+  width: 100%; /* 슬라이드 이미지 너비 설정 */
+  height: 600px; /* 슬라이드 이미지 높이 설정 */
+  overflow: hidden; /* 넘치는 부분 숨기기 */
+}
+
+.slide-image img {
+  width: 100%; /* 이미지 너비를 100%로 설정하여 반응형 */
+  height: 100%; /* 이미지 높이를 슬라이드 높이에 맞춤 */
+  object-fit: cover; /* 이미지 비율 유지하면서 잘리도록 설정 */
+  position: absolute; /* 절대 위치 설정 */
+  top: 0; /* 상단에 위치 */
+  left: 0; /* 좌측에 위치 */
+  opacity: 0; /* 초기 불투명도 설정 */
+  transition: opacity 0.5s ease; /* 불투명도 변경 시 애니메이션 설정 */
+}
+
+.slide-image img.active {
+  opacity: 1; /* 활성화된 이미지는 보이게 설정 */
+}
+
+
+
+/* 예약 바 스타일 */
+/*****/
+
+.container {
+  display: flex; /* 플렉스 박스를 사용하여 가로로 정렬 */
+  justify-content: center; /* 예약 바와 이벤트 섹션을 중앙 정렬 */
+  margin: 20px 0; /* 상하 여백 설정 */
+}
+
+.reservation-bar {
+  background-color: #f0f0f0; /* 예약 바 배경색 설정 */
+  padding: 20px; /* 내부 여백 설정 */
+  border-radius: 8px; /* 모서리 둥글게 처리 */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* 그림자 추가 */
+  width: 50%; /* 예약 바 너비 설정 */
+}
+
+.button-container {
+  display: grid; /* 그리드 레이아웃 사용 */
+  grid-template-columns: repeat(2, 1fr); /* 2개의 열로 설정 */
+  gap: 10px; /* 버튼 간의 간격 설정 */
+  margin-top: 80px; /* 버튼 컨테이너를 아래로 10px 내리기 */
+}
+
+
+.button-date,
+.button-room,
+.button-person,
+.button-reservation {
+    background-color: #b2b59b; /* 버튼 배경색 */
+    color: white; /* 버튼 텍스트 색상 */
+    text-align: center; /* 텍스트 중앙 정렬 */
+    padding: 20px; /* 패딩 설정 */
+    border-radius: 4px; /* 모서리 둥글게 처리 */
+    cursor: pointer; /* 커서 모양 설정 */
+    font-size: 18px; /* 글자 크기 설정 */
+    transition: transform 0.2s ease; /* 애니메이션 효과 추가 */
+}
+
+.button-date:hover,
+.button-room:hover,
+.button-person:hover,
+.button-reservation:hover {
+    transform: scale(1.1); /* 크기 증가 */
+    background-color: #b2b59b; /* 호버 시 배경색 변경 */
+}
+
+
+
+
+/* 이벤트 섹션 스타일 */
+.section-event {
+  background-color: #1a4d2e; /* 배경색 설정 */
+  color: white; /* 글자 색상 설정 */
+  text-align: center; /* 텍스트 중앙 정렬 */
+  padding: 20px;
+  margin: 20px 0; /* 상하 여백 설정 */
+}
+
+.event-slider {
+  display: flex; /* 플렉스 박스를 사용하여 이벤트 정렬 */
+  justify-content: center; /* 중앙 정렬 */
+  overflow: hidden; /* 넘치는 부분 숨기기 */
+  position: relative; /* 위치 설정 */
+}
+
+.event {
+  margin: 0 10px; /* 좌우 여백 설정 */
+  flex-shrink: 0; /* 줄어들지 않도록 설정 */
+  width: 300px; /* 각 이벤트의 너비 설정 */
+  transition: transform 0.5s ease; /* 슬라이드 애니메이션 설정 */
+}
+
+.event img {
+  width: 90%; /* 이미지 너비를 100%로 설정하여 반응형 */
+  height: auto; /* 비율에 맞게 높이 자동 조절 */
+  border-radius: 10px; /* 이미지 모서리 둥글게 처리 */
+}
+
+.event-info {
+  margin-top: 10px; /* 상단 여백 설정 */
+}
+
+.slider-controls {
+  margin-top: 15px; /* 상단 여백 설정 */
+  display: flex; /* 버튼을 가로로 정렬 */
+  justify-content: center; /* 중앙 정렬 */
+}
+
+.slider-controls button {
+  background-color: #b2b59b; /* 버튼 배경색 설정 */
+  border: none; /* 테두리 제거 */
+  color: white; /* 글자 색상 설정 */
+  padding: 10px 15px; /* 패딩 설정 */
+  cursor: pointer; /* 커서 모양 설정 */
+  border-radius: 5px; /* 둥근 모서리 */
+  margin: 0 5px; /* 좌우 여백 설정 */
+}
+
+.slider-controls button:hover {
+  background-color: #1a4d2e; /* 호버시 배경색 변경 */
+}
+
+
+
+
+
+/****/
+/* 시설 섹션 스타일 */
+.section-facilities {
+  display: flex; /* 플렉스 박스를 사용하여 가로로 정렬 */
+  align-items: center; /* 수직 중앙 정렬 */
+  margin: 20px 0; /* 상하 여백 설정 */
+}
+
+.spa-image {
+  flex: 1; /* 이미지 영역을 가로로 설정 */
+}
+
+.rectangle-3 {
+  width: 150%; /* 이미지의 너비를 100%로 설정하여 반응형 */
+  height: auto; /* 비율에 맞게 높이 자동 조절 */
+  max-height: 450px; /* 최대 높이를 설정하여 이미지 크기 조정 */
+}
+
+.spa-text {
+  flex: 1; /* 텍스트 영역을 가로로 설정 */
+  padding: 20px; /* 텍스트 영역 여백 설정 */
+  text-align: right; /* 텍스트 왼쪽 정렬 */
+}
+
+.spa-text h2 {
+  font-size: 32px; /* 제목 크기를 증가 */
+  color: #1a4d2e; /* 제목 색상 조정 */
+}
+
+.spa-text p {
+  font-size: 20px; /* 텍스트 크기를 증가 */
+  color: #333; /* 텍스트 색상 조정 */
+}
+
+
+/*******/
+
+
+/* 푸터 스타일 */
+footer {
+  background-color: #004d1a;
+  color: white;
+  padding: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  font-size: 14px;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.footer-logo {
+  max-width: 400px;
+}
+
+.footer-logo img {
+  width: 150px;
+  margin-bottom: 15px;
+}
+
+.footer-logo p {
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.footer-links ul {
+  list-style-type: none;
+}
+
+.footer-links li {
+  margin-bottom: 10px;
+}
+
+.footer-links a {
+  color: white;
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+/* 반응형 스타일 */
+@media screen and (max-width: 768px) {
+  body {
+      padding: 0 5%;
+  }
+
+  .main-nav {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .reservation-bar {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .footer-content {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+  }
+
+  .footer-links {
+      flex-direction: row;
+      gap: 20px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .nav-menu {
+      flex-direction: column;
+      gap: 10px;
+      font-size: 14px;
+  }
+
+  .footer-links {
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+  }
 }
