@@ -136,8 +136,30 @@
 		    <artifactId>commons-dbcp2</artifactId>
 		    <version>2.12.0</version>
 		</dependency>
+			<!-- db접속 mybatis -->
+			<dependency>
+		    <groupId>org.mybatis</groupId>
+		    <artifactId>mybatis-spring</artifactId>
+		    <version>2.0.4</version>
+		</dependency>
+
+		<dependency>
+		    <groupId>org.mybatis</groupId>
+		    <artifactId>mybatis</artifactId>
+		    <version>3.5.10</version>
+		</dependency>
+		<!-- .db접속 mybatis -->
+		<!--  //db 접속 추가부분 끝 --> 
 		
-		<!--  //db 접속 추가부분 끝 -->        
+		<!--  getter setter 관리 lombok -->
+		<dependency>
+		    <groupId>org.projectlombok</groupId>
+		    <artifactId>lombok</artifactId>
+		    <version>1.18.34</version>
+		    <scope>provided</scope>
+		</dependency>
+		<!--  /getter setter 관리 lombok -->
+		       
 		<!-- include 위한 tiles -->
 		<dependency>
     		<groupId>org.apache.tiles</groupId>
@@ -160,6 +182,25 @@
     		<version>3.0.8</version>
 		</dependency>
 		<!-- /include 위한 tiles -->
+		
+		<!-- security -->
+		<dependency>
+		    <groupId>org.springframework.security</groupId>
+		    <artifactId>spring-security-web</artifactId>
+		    <version>5.4.11</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.springframework.security</groupId>
+		    <artifactId>spring-security-config</artifactId>
+		    <version>5.4.11</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.springframework.security</groupId>
+		    <artifactId>spring-security-taglibs</artifactId>
+		    <version>5.4.11</version>
+		</dependency>
+		<!-- /security -->
+	
 	</dependencies>
     <build>
         <plugins>

@@ -21,7 +21,3 @@
 <!-- footer -->
 	<tiles:insertAttribute name="footer" />
 <!-- /footer -->	
- 		</div>
-    </div>
-  </body>
-</html>
