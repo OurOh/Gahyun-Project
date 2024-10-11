@@ -187,100 +187,127 @@ form select {
 }
 
 
-/***footer***/
-
-
+/* 푸터 스타일 */
 footer {
-    width: 100%;
-    background-color: #4f6f52;;
-    color: #f5efe6;
-    padding: 20px 80px; /* padding을 전체적으로 줄여서 높이를 줄임 */
+    background-color: #004d1a;
+    color: white;
+    padding: 30px;
     display: flex;
     justify-content: space-between;
-    align-items: flex-start; /* 내용이 상단에 정렬되도록 설정 */
-    box-sizing: border-box;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    font-size: 14px;
 }
 
 .footer-content {
     display: flex;
-    flex-wrap: wrap;
     justify-content: space-between;
     width: 100%;
+    max-width: 1200px;
+    margin: auto;
 }
 
-.left-col {
-    width: 40%;
+.footer-logo {
+    max-width: 400px;
 }
 
-.logo {
+.footer-logo img {
     width: 150px;
-    height: auto;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 
-.company-info {
-    margin-bottom: 20px;
+.footer-logo p {
+    margin-bottom: 10px;
+    line-height: 1.6;
 }
 
-.company-info p {
-    margin: 5px 0;
-    font-size: 14px;
-}
-
-.company-info a {
-    color: #f5efe6;
-    text-decoration: underline;
-}
-
-.company-info a:hover {
-    color: #ddd;
-}
-
-.menu-col {
+.footer-links {
     display: flex;
-    flex-wrap: wrap;
-    width: 55%;
-    justify-content: flex-start;
+    justify-content: space-between;
+    gap: 40px;
 }
 
-.footmenu {
-    width: 45%;
-    margin-bottom: 20px; /* 높이를 줄이기 위해 여백 조정 */
+.footer-links ul {
+    list-style-type: none;
 }
 
-.footmenu h5,
-.footmenu ul li {
-    padding-left: 165px; /* 메뉴 제목과 항목들을 오른쪽으로 20px 이동 */
-}
-
-.footmenu h5 {
-    font-size: 16px;
+.footer-links li {
     margin-bottom: 10px;
 }
 
-.footmenu ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-.footmenu ul li {
-    margin-bottom: 5px; /* 리스트 항목 간 여백을 줄임 */
-}
-
-.footmenu ul li a {
+.footer-links a {
+    color: white;
     text-decoration: none;
-    color: #f5efe6;
-    font-size: 14px;
 }
 
-.footmenu ul li a:hover {
+.footer-links a:hover {
     text-decoration: underline;
 }
 
-.copywrite {
-    margin-top: 20px;
-    font-size: 12px;
-    color: #ccc;
-    text-align: center;
-    width: 100%;
+/* 반응형 스타일 */
+@media screen and (max-width: 768px) {
+    body {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    .header-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+
+    .reservation-btn {
+        margin-top: 10px;
+        order: 1; /* 로고 아래로 이동 */
+    }
+
+    .right-nav {
+        order: 2; /* 로그인과 예약확인 버튼이 예약하기 아래로 이동 */
+        flex-direction: row;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .nav-menu {
+        flex-direction: row;
+        justify-content: center;
+        gap: 20px;
+        text-align: center;
+        margin-top: 15px;
+    }
+
+    .room-content {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .room-image, .room-info {
+        width: 100%;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-links {
+        flex-direction: row;
+        gap: 20px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .nav-menu {
+        flex-direction: column;
+        gap: 10px;
+        font-size: 14px;
+    }
+
+    .footer-links {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
 }

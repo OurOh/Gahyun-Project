@@ -1,724 +1,428 @@
-.user-register {
-    background-color: #ffffff;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    width: 100%;
-  }
-  
-  .user-register .div {
-    background-color: #ffffff;
-    overflow: hidden;
-    width: 1440px;
-    height: 2703px;
-    position: relative;
-  }
-  
-  .user-register .overlap {
-    position: absolute;
-    width: 1448px;
-    height: 227px;
-    top: 102px;
-    left: 0;
-  }
-  
-  .user-register .rectangle {
-    width: 1440px;
-    height: 227px;
-    left: 0;
-    background-color: #4f6f52;
-    position: absolute;
-    top: 0;
-  }
-  
-  .user-register .text-wrapper {
-    position: absolute;
-    top: 94px;
-    left: 88px;
-    font-family: "Noto Sans KR-Medium", Helvetica;
-    font-weight: 500;
-    color: #f5efe6;
-    font-size: 64px;
-    letter-spacing: 0;
-    line-height: normal;
-  }
-  
-  .user-register .main-nav {
-    position: absolute;
-    width: 1448px;
-    height: 71px;
-    top: 0;
-    left: 0;
-  }
-  
-  .user-register .navbar {
-    position: relative;
-    width: 1440px;
-    height: 71px;
-    background-color: #f5efe699;
-  }
-  
-  .user-register .text-wrapper-2 {
-    width: 139px;
-    left: 88px;
-    position: absolute;
-    top: 9px;
-    font-family: "Noto Sans KR-Medium", Helvetica;
-    font-weight: 500;
-    color: #1a4d2e;
-    font-size: 36px;
-    letter-spacing: 0;
-    line-height: normal;
-  }
-  
-  .user-register .text-wrapper-3 {
-    width: 135px;
-    left: 485px;
-    position: absolute;
-    top: 9px;
-    font-family: "Noto Sans KR-Medium", Helvetica;
-    font-weight: 500;
-    color: #1a4d2e;
-    font-size: 36px;
-    letter-spacing: 0;
-    line-height: normal;
-  }
-  
-  .user-register .text-wrapper-4 {
-    width: 76px;
-    left: 888px;
-    position: absolute;
-    top: 9px;
-    font-family: "Noto Sans KR-Medium", Helvetica;
-    font-weight: 500;
-    color: #1a4d2e;
-    font-size: 36px;
-    letter-spacing: 0;
-    line-height: normal;
-  }
-  
-  .user-register .text-wrapper-5 {
-    width: 138px;
-    left: 1223px;
-    position: absolute;
-    top: 9px;
-    font-family: "Noto Sans KR-Medium", Helvetica;
-    font-weight: 500;
-    color: #1a4d2e;
-    font-size: 36px;
-    letter-spacing: 0;
-    line-height: normal;
-  }
-  
-  .user-register .user-form {
-    position: absolute;
-    width: 1125px;
-    height: 762px;
-    top: 495px;
-    left: 157px;
-  }
-  
-  .user-register .name {
-    position: absolute;
-    width: 637px;
-    height: 52px;
-    top: 0;
-    left: 0;
-  }
-  
-  .user-register .text-wrapper-6 {
-    position: absolute;
-    width: 59px;
-    top: 13px;
-    left: 0;
-    font-family: "Noto Sans KR-Medium", Helvetica;
-    font-weight: 500;
-    color: #000000;
-    font-size: 32px;
-    letter-spacing: 0;
-    line-height: normal;
-  }
-  
-  .user-register .rectangle-2 {
-    width: 395px;
-    height: 52px;
-    left: 240px;
-    background-color: #ffffff;
-    border-radius: 5px;
-    border: 1px solid;
-    border-color: #a1a1a1;
-    position: absolute;
-    top: 0;
-  }
-  
-  .user-register .password-confirm {
-    position: absolute;
-    width: 1127px;
-    height: 55px;
-    top: 422px;
-    left: 0;
-  }
-  
-  .user-register .text-wrapper-7 {
-    position: absolute;
-    width: 177px;
-    top: 12px;
-    left: 0;
-    font-family: "Noto Sans KR-Medium", Helvetica;
-    font-weight: 500;
-    color: #000000;
-    font-size: 32px;
-    letter-spacing: 0;
-    line-height: normal;
-    white-space: nowrap;
-  }
-  
-  .user-register .rectangle-3 {
-    width: 885px;
-    height: 55px;
-    left: 240px;
-    background-color: #ffffff;
-    border-radius: 5px;
-    border: 1px solid;
-    border-color: #a1a1a1;
-    position: absolute;
-    top: 0;
-  }
-  
-  .user-register .password {
-    position: absolute;
-    width: 1127px;
-    height: 55px;
-    top: 290px;
-    left: 0;
-  }
-  
-  .user-register .text-wrapper-8 {
-    position: absolute;
-    width: 118px;
-    top: 4px;
-    left: 0;
-    font-family: "Noto Sans KR-Medium", Helvetica;
-    font-weight: 500;
-    color: #000000;
-    font-size: 32px;
-    letter-spacing: 0;
-    line-height: normal;
-    white-space: nowrap;
-  }
-  
-  .user-register .birth {
-    position: absolute;
-    width: 1114px;
-    height: 55px;
-    top: 575px;
-    left: 0;
-  }
-  
-  .user-register .text-wrapper-9 {
-    position: absolute;
-    width: 118px;
-    top: 0;
-    left: 0;
-    font-family: "Noto Sans KR-Medium", Helvetica;
-    font-weight: 500;
-    color: #000000;
-    font-size: 32px;
-    letter-spacing: 0;
-    line-height: normal;
-    white-space: nowrap;
-  }
-  
-  .user-register .rectangle-4 {
-    width: 220px;
-    height: 55px;
-    left: 238px;
-    background-color: #ffffff;
-    border-radius: 5px;
-    border: 1px solid;
-    border-color: #a1a1a1;
-    position: absolute;
-    top: 0;
-  }
-  
-  .user-register .rectangle-5 {
-    width: 220px;
-    height: 55px;
-    left: 536px;
-    background-color: #ffffff;
-    border-radius: 5px;
-    border: 1px solid;
-    border-color: #a1a1a1;
-    position: absolute;
-    top: 0;
-  }
-  
-  .user-register .rectangle-6 {
-    width: 220px;
-    height: 55px;
-    left: 839px;
-    background-color: #ffffff;
-    border-radius: 5px;
-    border: 1px solid;
-    border-color: #a1a1a1;
-    position: absolute;
-    top: 0;
-  }
-  
-  .user-register .text-wrapper-10 {
-    position: absolute;
-    top: 11px;
-    left: 479px;
-    font-family: "Noto Sans KR-Light", Helvetica;
-    font-weight: 300;
-    color: #000000;
-    font-size: 28px;
-    letter-spacing: 0;
-    line-height: normal;
-  }
-  
-  .user-register .text-wrapper-11 {
-    position: absolute;
-    top: 11px;
-    left: 777px;
-    font-family: "Noto Sans KR-Light", Helvetica;
-    font-weight: 300;
-    color: #000000;
-    font-size: 28px;
-    letter-spacing: 0;
-    line-height: normal;
-  }
-  
-  .user-register .text-wrapper-12 {
-    position: absolute;
-    top: 11px;
-    left: 1080px;
-    font-family: "Noto Sans KR-Light", Helvetica;
-    font-weight: 300;
-    color: #000000;
-    font-size: 28px;
-    letter-spacing: 0;
-    line-height: normal;
-  }
-  
-  .user-register .tel {
-    position: absolute;
-    width: 1065px;
-    height: 55px;
-    top: 707px;
-    left: 0;
-  }
-  
-  .user-register .text-wrapper-13 {
-    position: absolute;
-    width: 89px;
-    top: 8px;
-    left: 0;
-    font-family: "Noto Sans KR-Medium", Helvetica;
-    font-weight: 500;
-    color: #000000;
-    font-size: 32px;
-    letter-spacing: 0;
-    line-height: normal;
-  }
-  
-  .user-register .text-wrapper-14 {
-    position: absolute;
-    top: 3px;
-    left: 795px;
-    font-family: "Noto Sans KR-Light", Helvetica;
-    font-weight: 300;
-    color: #000000;
-    font-size: 28px;
-    letter-spacing: 0;
-    line-height: normal;
-  }
-  
-  .user-register .text-wrapper-15 {
-    position: absolute;
-    top: 3px;
-    left: 497px;
-    font-family: "Noto Sans KR-Light", Helvetica;
-    font-weight: 300;
-    color: #000000;
-    font-size: 28px;
-    letter-spacing: 0;
-    line-height: normal;
-  }
-  
-  .user-register .ID {
-    position: absolute;
-    width: 804px;
-    height: 56px;
-    top: 149px;
-    left: 0;
-  }
-  
-  .user-register .text-wrapper-16 {
-    position: absolute;
-    width: 148px;
-    top: 4px;
-    left: 0;
-    font-family: "Noto Sans KR-Medium", Helvetica;
-    font-weight: 500;
-    color: #000000;
-    font-size: 32px;
-    letter-spacing: 0;
-    line-height: normal;
-    white-space: nowrap;
-  }
-  
-  .user-register .rectangle-7 {
-    width: 400px;
-    height: 55px;
-    left: 240px;
-    background-color: #ffffff;
-    border-radius: 5px;
-    border: 1px solid;
-    border-color: #a1a1a1;
-    position: absolute;
-    top: 0;
-  }
-  
-  .user-register .button-confirm {
-    position: absolute;
-    width: 122px;
-    height: 55px;
-    top: 1px;
-    left: 682px;
-  }
-  
-  .user-register .overlap-group {
-    position: relative;
-    width: 120px;
-    height: 55px;
-    background-color: #4f6f52;
-    border-radius: 5px;
-  }
-  
-  .user-register .text-wrapper-17 {
-    position: absolute;
-    top: 6px;
-    left: 10px;
-    font-family: "Noto Sans KR-Bold", Helvetica;
-    font-weight: 700;
-    color: #ffffff;
-    font-size: 28px;
-    letter-spacing: 0;
-    line-height: normal;
-  }
-  
-  .user-register .marketing-agree {
-    position: absolute;
-    width: 1444px;
-    height: 653px;
-    top: 1512px;
-    left: 0;
-  }
-  
-  .user-register .text-wrapper-18 {
-    position: absolute;
-    width: 268px;
-    top: 0;
-    left: 157px;
-    font-family: "Noto Sans KR-Medium", Helvetica;
-    font-weight: 500;
-    color: #000000;
-    font-size: 32px;
-    letter-spacing: 0;
-    line-height: normal;
-    white-space: nowrap;
-  }
-  
-  .user-register .element-SMS-wrapper {
-    position: absolute;
-    width: 1440px;
-    height: 492px;
-    top: 66px;
-    left: 0;
-    background-color: #d9d9d9;
-  }
-  
-  .user-register .element-SMS {
-    width: 1377px;
-    top: 18px;
-    left: 31px;
-    font-family: "Noto Sans KR-ExtraLight", Helvetica;
-    color: #000000;
-    letter-spacing: 0;
-    line-height: 27px;
-    position: absolute;
-    font-weight: 400;
-    font-size: 20px;
-  }
-  
-  .user-register .span {
-    font-weight: 200;
-  }
-  
-  .user-register .text-wrapper-19 {
-    font-family: "Noto Sans KR-Medium", Helvetica;
-    font-weight: 500;
-  }
-  
-  .user-register .confirm-check {
-    position: absolute;
-    width: 593px;
-    height: 35px;
-    top: 618px;
-    left: 422px;
-  }
-  
-  .user-register .p {
-    position: absolute;
-    top: 0;
-    left: 43px;
-    font-family: "Noto Sans KR-Medium", Helvetica;
-    font-weight: 500;
-    color: #000000;
-    font-size: 22px;
-    letter-spacing: 0;
-    line-height: normal;
-  }
-  
-  .user-register .rectangle-8 {
-    width: 30px;
-    height: 30px;
-    left: 0;
-    border-radius: 5px;
-    border: 1px solid;
-    border-color: #a1a1a1;
-    position: absolute;
-    top: 0;
-  }
-  
-  .user-register .footer {
-    position: absolute;
-    width: 1452px;
-    height: 482px;
-    top: 2221px;
-    left: 0;
-    background-color: transparent;
-  }
-  
-  .user-register .overlap-2 {
-    position: relative;
-    width: 1440px;
-    height: 482px;
-    background-color: #1a4d2e;
-  }
-  
-  .user-register .text-wrapper-20 {
-    position: absolute;
-    top: 421px;
-    left: 65px;
-    font-family: "Noto Sans KR-Light", Helvetica;
-    font-weight: 300;
-    color: #f5efe6;
-    font-size: 16px;
-    letter-spacing: 0;
-    line-height: normal;
-  }
-  
-  .user-register .element {
-    top: 218px;
-    left: 65px;
-    font-family: "Noto Sans KR-Regular", Helvetica;
-    color: #f5efe6;
-    letter-spacing: -0.2px;
-    line-height: normal;
-    position: absolute;
-    font-weight: 400;
-    font-size: 20px;
-  }
-  
-  .user-register .text-wrapper-21 {
-    letter-spacing: -0.04px;
-  }
-  
-  .user-register .div-2 {
-    position: absolute;
-    top: 39px;
-    left: 927px;
-    font-family: "Noto Sans KR-Medium", Helvetica;
-    font-weight: 400;
-    color: #f5efe6;
-    font-size: 24px;
-    letter-spacing: -0.24px;
-    line-height: 40px;
-  }
-  
-  .user-register .text-wrapper-22 {
-    font-weight: 500;
-    letter-spacing: -0.06px;
-  }
-  
-  .user-register .text-wrapper-23 {
-    font-family: "Noto Sans KR-Regular", Helvetica;
-    font-size: 20px;
-    letter-spacing: -0.04px;
-  }
-  
-  .user-register .div-3 {
-    position: absolute;
-    top: 39px;
-    left: 1208px;
-    font-family: "Noto Sans KR-Medium", Helvetica;
-    font-weight: 400;
-    color: #f5efe6;
-    font-size: 24px;
-    letter-spacing: -0.24px;
-    line-height: 40px;
-  }
-  
-  .user-register .a-b-c {
-    position: absolute;
-    top: 259px;
-    left: 927px;
-    font-family: "Noto Sans KR-Medium", Helvetica;
-    font-weight: 400;
-    color: #f5efe6;
-    font-size: 24px;
-    letter-spacing: -0.24px;
-    line-height: 40px;
-  }
-  
-  .user-register .qn-a {
-    position: absolute;
-    top: 265px;
-    left: 1208px;
-    font-family: "Noto Sans KR-Medium", Helvetica;
-    font-weight: 400;
-    color: #f5efe6;
-    font-size: 24px;
-    letter-spacing: -0.24px;
-    line-height: 40px;
-  }
-  
-  .user-register .logo {
-    position: absolute;
-    width: 247px;
-    height: 129px;
-    top: 52px;
-    left: 65px;
-    object-fit: cover;
-  }
-  
-  .user-register .header {
-    position: absolute;
-    width: 1446px;
-    height: 102px;
-    top: 0;
-    left: 0;
-    background-color: transparent;
-  }
-  
-  .user-register .overlap-3 {
-    position: relative;
-    width: 1440px;
-    height: 102px;
-    background-color: #1a4d2e;
-  }
-  
-  .user-register .text-wrapper-24 {
-    position: absolute;
-    width: 89px;
-    top: 8px;
-    left: 1316px;
-    font-family: "Noto Sans KR-Bold", Helvetica;
-    font-weight: 700;
-    color: #f5efe6;
-    font-size: 24px;
-    letter-spacing: 0;
-    line-height: normal;
-  }
-  
-  .user-register .div-wrapper {
-    position: absolute;
-    width: 197px;
-    height: 58px;
-    top: 22px;
-    left: 59px;
-    background-color: #f5efe6;
-  }
-  
-  .user-register .text-wrapper-25 {
-    position: absolute;
-    width: 96px;
-    top: 10px;
-    left: 54px;
-    font-family: "Noto Sans KR-Bold", Helvetica;
-    font-weight: 700;
-    color: #1a4d2e;
-    font-size: 24px;
-    letter-spacing: 0;
-    line-height: normal;
-  }
-  
-  .user-register .text-wrapper-26 {
-    position: absolute;
-    width: 67px;
-    top: 8px;
-    left: 1216px;
-    font-family: "Noto Sans KR-Bold", Helvetica;
-    font-weight: 700;
-    color: #f5efe6;
-    font-size: 24px;
-    letter-spacing: 0;
-    line-height: normal;
-  }
-  
-  .user-register .logo-small {
-    position: absolute;
-    width: 225px;
-    height: 102px;
-    top: 0;
-    left: 607px;
-  }
-  
-
-  .confirm-check {
-    display: flex;
-    align-items: center; /* 세로로 가운데 정렬 */
-    justify-content: center; /* 가로로 가운데 정렬 */
-    margin-top: 10px; /* 상단 간격 조절 */
-  }
-  
-  .confirm-label {
-    display: flex;
-    align-items: center;
-    font-family: "Noto Sans KR-Medium", Helvetica;
-    font-size: 24px;
-    font-weight: 500;
-  }
-  
-  .rectangle-8 {
-    width: 30px;
-    height: 30px;
-    margin-right: 10px; /* 텍스트와 체크박스 간 간격 조절 */
-  }
-  
-
-  /* 예약하기, 로그인, 예약확인 hover 효과 */
-.text-wrapper-24:hover,
-.text-wrapper-25:hover,
-.text-wrapper-26:hover {
-  color: gray; /* hover 시 색상 변경 (예시: coral 색상) */
-  cursor: pointer; /* 마우스 커서를 손 모양으로 변경 */
+/* 공통 스타일 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/* 시설소개, 테마파크, 객실, 공지사항 hover 효과 */
-.text-wrapper-2:hover,
-.text-wrapper-3:hover,
-.text-wrapper-4:hover,
-.text-wrapper-5:hover {
-  color: gray; /* hover 시 색상 변경 */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f9f9f9;
+  padding-left: 15%;
+  padding-right: 15%;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* 헤더 스타일 */
+header {
+  width: 100%;
+  background-color: #1a4d2e;
+}
+
+.top-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #1a4d2e;
+}
+
+.logo-small {
+  width: 200px;
+  height: 80px;
+  margin-top: -20px;
+  margin-bottom: -20px;
+  margin-left: 230px;
+  margin-right: 10px;
+  object-fit: cover;
+}
+
+.user_login, .reserv_view {
+  font-family: "Noto Sans KR-Bold", Helvetica;
+  font-weight: 700;
+  color: #f5efe6;
+  font-size: 18px;
+  text-decoration: none;
+}
+
+.user_login:hover, .reserv_view:hover {
+  text-decoration: underline;
+}
+
+.reserv_make {
+  font-family: "Noto Sans KR-Bold", Helvetica;
+  font-weight: 700;
+  color: #1a4d2e;
+  background-color: #f5efe6;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
   cursor: pointer;
 }
 
-/* 중복확인 버튼 hover 효과 */
-.text-wrapper-17:hover {
-  color: #ffffff;
-  background-color: gray; /* hover 시 배경색 변경 */
+.reserv_make:hover {
+  background-color: #4f6f52;
+  color: #f5efe6;
+}
+
+/* 네비게이션 메뉴 */
+.main-nav {
+  background-color: #b2b59b;
+  padding: 10px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.main-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 110px;
+}
+
+.main-nav ul li a {
+  text-decoration: none;
+  color: #1a4d2e;
+  font-size: 18px;
+  font-family: "Noto Sans KR-Bold", Helvetica;
+}
+
+.main-nav ul li a:hover {
+  color: #f5efe6;
+  text-decoration: underline;
+}
+
+/* 폼 스타일 */
+.form-section {
+  padding: 30px;
+  text-align: center;
+}
+
+.form-section h1 {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+form {
+  width: 50%;
+  margin: 0 auto;
+}
+
+form label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 18px;
+  text-align: left;
+}
+
+form input[type="text"], 
+form input[type="password"],
+form select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.birthdate, .phone {
+  display: flex;
+  justify-content: space-between;
+}
+
+.birthdate select, .phone input {
+  width: 32%;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.submit-btn, .cancel-btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.submit-btn {
+  background-color: #3b5338;
+  color: #fff;
+}
+
+.cancel-btn {
+  background-color: #ccc;
+  color: #333;
+}
+
+/* 중복확인 버튼 스타일 */
+.username-field {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.username-field input[type="text"] {
+  width: 75%;
+}
+
+.duplicate-check-btn {
+  background-color: #3b5338;
+  color: #fff;
+  border: none;
+  padding: 8px 15px;
+  font-size: 14px;
+  border-radius: 5px;
   cursor: pointer;
+  margin-top: -3px;
+}
+
+/* 반응형: 작은 화면에서는 중복확인 버튼 숨기기 */
+@media screen and (max-width: 768px) {
+  .duplicate-check-btn {
+      display: none;
+  }
+}
+
+
+/* 연락처 스타일 */
+.phone {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.phone input[type="text"] {
+  width: 32%; /* 생년월일 입력 필드와 동일한 크기 */
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+
+
+/* 마케팅 수신동의 섹션 스타일 */
+.marketing-section {
+  margin-top: 30px;
+  padding: 20px;
+  background-color: #f0f4f3;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  text-align: left;
+}
+
+.marketing-section h2 {
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+.marketing-section p {
+  font-size: 14px;
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+
+.marketing-section ol {
+  padding-left: 20px;
+  margin-bottom: 15px;
+}
+
+.marketing-section ol li {
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 5px;
+}
+
+.marketing-section label {
+  font-size: 14px;
+}
+
+/* 반응형: 작은 화면에서는 마케팅 수신동의 섹션 숨기기 */
+@media screen and (max-width: 768px) {
+  .marketing-section {
+      display: none;
+  }
+}
+
+
+
+/****/
+.username-field input[type="text"] {
+  width: 75%;
+}
+
+.duplicate-check-btn {
+  background-color: #3b5338;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.duplicate-check-btn:hover {
+  background-color: #2f4330;
+}
+/****/
+
+/* 링크 버튼 스타일 */
+.submit-btn, .cancel-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  text-align: center;
+  text-decoration: none;
+  margin-top: 10px; /* 버튼을 아래로 3px 이동 */
+}
+
+.submit-btn {
+  background-color: #3b5338;
+  color: #fff;
+}
+
+.cancel-btn {
+  background-color: #ccc;
+  color: #333;
+}
+
+.submit-btn:hover {
+  background-color: #2f4330;
+}
+
+.cancel-btn:hover {
+  background-color: #aaa;
+}
+
+
+
+
+/* 푸터 스타일 */
+footer {
+  background-color: #004d1a;
+  color: white;
+  padding: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  font-size: 14px;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.footer-logo {
+  max-width: 400px;
+}
+
+.footer-logo img {
+  width: 150px;
+  margin-bottom: 15px;
+}
+
+.footer-logo p {
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.footer-links ul {
+  list-style-type: none;
+}
+
+.footer-links li {
+  margin-bottom: 10px;
+}
+
+.footer-links a {
+  color: white;
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+/* 반응형 스타일 */
+@media screen and (max-width: 768px) {
+  body {
+      padding-left: 5%;
+      padding-right: 5%;
+  }
+
+  .header-container {
+      flex-direction: column;
+      text-align: center;
+      gap: 10px;
+  }
+
+  .reservation-btn {
+      margin-top: 10px;
+  }
+
+  .right-nav {
+      flex-direction: row;
+      justify-content: center;
+      gap: 15px;
+  }
+
+  .nav-menu {
+      flex-direction: row;
+      justify-content: center;
+      gap: 20px;
+      text-align: center;
+      margin-top: 15px;
+  }
+
+  .room-content {
+      flex-direction: column;
+      gap: 20px;
+  }
+
+  .room-image, .room-info {
+      width: 100%;
+  }
+
+  .footer-content {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+  }
+
+  .footer-links {
+      flex-direction: row;
+      gap: 20px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .nav-menu {
+      flex-direction: column;
+      gap: 10px;
+      font-size: 14px;
+  }
+
+  .footer-links {
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+  }
 }

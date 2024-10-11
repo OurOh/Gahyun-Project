@@ -1,134 +1,135 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8" />
-    <link rel="stylesheet" href="/style/UserRegister.css" />
-  </head>
-
-  <body>
-    <div class="user-register">
-      <div class="div">
-        <div class="overlap">
-          <div class="rectangle"></div>
-          <div class="text-wrapper">회원가입</div>
-          <div class="main-nav">
-            <div class="navbar">
-              <div class="text-wrapper-2">시설소개</div>
-              <div class="text-wrapper-3">테마파크</div>
-              <div class="text-wrapper-4">객실</div>
-              <div class="text-wrapper-5">공지사항</div>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입</title>
+    <link rel="stylesheet" href="/vscode/style/UserRegister.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="top-header">
+                <a href="#" id="reserv_make"><button type="button" class="reserv_make btn">예약하기</button></a>
+                <img class="logo-small" src="/vscode/images/logo1.jpg" alt="Gahyeon Logo" />
+                <a href="#" id="user_login" class="user_login">로그인</a>
+                <a href="#" id="reserv_view" class="reserv_view">예약확인</a>
             </div>
-          </div>
-        </div>
-        <div class="user-form">
-          <div class="name">
-            <div class="text-wrapper-6">이름</div>
-            <div class="rectangle-2"></div>
-          </div>
-          <div class="password-confirm">
-            <div class="text-wrapper-7">비밀번호확인</div>
-            <div class="rectangle-3"></div>
-          </div>
-          <div class="password">
-            <div class="text-wrapper-8">비밀번호</div>
-            <div class="rectangle-3"></div>
-          </div>
-          <div class="birth">
-            <div class="text-wrapper-9">생년월일</div>
-            <div class="rectangle-4"></div>
-            <div class="rectangle-5"></div>
-            <div class="rectangle-6"></div>
-            <div class="text-wrapper-10">년</div>
-            <div class="text-wrapper-11">월</div>
-            <div class="text-wrapper-12">일</div>
-          </div>
-          <div class="tel">
-            <div class="text-wrapper-13">연락처</div>
-            <div class="rectangle-4"></div>
-            <div class="rectangle-5"></div>
-            <div class="rectangle-6"></div>
-            <div class="text-wrapper-14">-</div>
-            <div class="text-wrapper-15">-</div>
-          </div>
-          <div class="ID">
-            <div class="text-wrapper-16">회원아이디</div>
-            <div class="rectangle-7"></div>
-            <div class="button-confirm">
-              <div class="overlap-group"><div class="text-wrapper-17">중복확인</div></div>
-            </div>
-          </div>
-        </div>
-        <div class="marketing-agree">
-          <div class="text-wrapper-18">마케팅문자수신동의</div>
-          <div class="element-SMS-wrapper">
-            <p class="element-SMS">
-              <span class="span">가현리조트컴퍼니 (이하 &#39;가현리조트&#39;)는</span>
-              <span class="text-wrapper-19"> 개인정보보호법 및 정보통신망이용촉진 및 정보보호 등에 관한 법률</span>
-              <span class="span">
-                등 관계법령에 따라 광고성 정보를 전송하기 위해 이용자의 사전 수신 동의를 받고 있습니다. 본 내용은
-                가현리조트 회원 서비스가 적용되는 개별서비스의 마케팅 수신동의를 포함하고 있으며, 마케팅 정보 수신 동의
-                시개별서비스의 마케팅 수신에 일괄 동의한 것으로 처리됩니다. <br />1. 전송방법<br />마케팅 정보 전송
-                방법은 가현리조트의 각 개별서비스에서 정한 방식에 따라 전송됩니다.<br />2. 전송내용<br />발송되는 마케팅
-                정보는 수신자에게 가현리조트에서 제공하는 혜택 정보, 각종 이벤트, 신규 상품 관련 소식 등 광고성 정보로
-                관련 법의 규정을 준수하여 발송됩니다. 단, 광고성 정보 이외에 의무적으로 안내 되어야 하는 정보성 내용은
-                수신동의 여부와 무관하게 제공됩니다.<br />3. 이용목적<br />- 소식지 서비스 제공, 신제품 및 이벤트 안내,
-                이벤트 경품/사은품 제공, 할인행사, 고객 맞춤 마케팅/판촉 등 관련 SMS 발송<br />4. 철회안내<br />-
-                수신동의 이후에라도 언제든지 동의를 철회할 수 있으며, 수신을 동의하지 않아도 회사가 제공하는 기본적인
-                서비스를 이용하실 수 있습니다. 다만 수신 거부할 경우 신규 서비스나 상품 관련 소식 등의 마케팅 정보를
-                제공받지 못할 수 있습니다.<br />5. 수신동의 변경 및 보유기간<br />- 보유 기간 : 마케팅 정보 수신
-                동의로부터 2년, 기간 초과 시 동의 절차 재진행 (미동의 시, 즉시 파기)   <br />가현리조트 정보수정
-                페이지에서 개별서비스의 마케팅 수신동의를 변경(동의/철회)할 수 있으며, 동의일로부터 회원 탈퇴 혹은
-                마케팅 수신 동의 해제 시까지 광고성 정보 전달을 위하여 보유ㆍ이용 됩니다.  </span
-              >
-            </p>
-          </div>
-          <div class="confirm-check">
-            <label class="confirm-label">
-              <input type="checkbox" class="rectangle-8" />
-              <span class="p">위 내용을 확인하였으며 마케팅 문자 수신에 동의합니다.</span>
-            </label>
-          </div>
-        </div>
-        <footer class="footer">
-          <div class="overlap-2">
-            <div class="text-wrapper-20">COPYRIGHT ⓒ 2024 가현리조트컴퍼니</div>
-            <p class="element">
-              <span class="text-wrapper-21"
-                >(주)가현리조트컴퍼니<br />호텔 이용약관 |&nbsp;&nbsp;이용약관 | 개인정보처리방침<br /><br />대표자(성명)
-                : 김가현 | 주소 : 경기 김포시 김포한강8로 162번길<br />사업자등록번호 : 106-00-00000 <br /><br />TEL :
-                031-988-8888 | KakaoTalk : 가현리조트 | Instagram : @gahyeon_resort</span
-              >
-            </p>
-            <p class="div-2">
-              <span class="text-wrapper-22">시설소개<br /></span>
-              <span class="text-wrapper-23">리조트소개<br />다이닝<br />편의시설<br />오락</span>
-            </p>
-            <p class="div-3">
-              <span class="text-wrapper-22">테마파크<br /></span>
-              <span class="text-wrapper-23">루프탑<br />스파<br />휘트니스센터</span>
-            </p>
-            <p class="a-b-c">
-              <span class="text-wrapper-22">객실<br /></span>
-              <span class="text-wrapper-23">타입A<br />타입B<br />타입C</span>
-            </p>
-            <p class="qn-a">
-              <span class="text-wrapper-22">공지사항<br /></span>
-              <span class="text-wrapper-23">이달의 이벤트<br />QnA<br />고객센터</span>
-            </p>
-            <img class="logo" src="/images/logo1.jpg" />
-          </div>
-        </footer>
-
-        <header class="header">
-          <div class="overlap-3">
-            <div class="text-wrapper-24">예약확인</div>
-            <div class="div-wrapper"><div class="text-wrapper-25">예약하기</div></div>
-            <div class="text-wrapper-26">로그인</div>
-            <img class="logo-small" src="/images/logo1.jpg" />
-          </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#">시설소개</a></li>
+                    <li><a href="#">테마파크</a></li>
+                    <li><a href="#">객실</a></li>
+                    <li><a href="#">공지사항</a></li>
+                </ul>
+            </nav>
         </header>
 
-      </div>
+        <section class="form-section">
+            <h1>회원가입</h1>
+            <form action="/register" method="POST">
+                <label for="name">이름</label>
+                <input type="text" id="name" name="name" placeholder="이름을 입력하세요">
+        
+                <label for="username">아이디</label>
+                <div class="username-field">
+                    <input type="text" id="username" name="username" placeholder="아이디를 입력하세요">
+                    <button type="button" class="duplicate-check-btn">중복확인</button>
+                </div>
+        
+                <label for="password">비밀번호</label>
+                <input type="password" id="password" name="password" placeholder="비밀번호를 입력하세요">
+        
+                <label for="confirm_password">비밀번호 확인</label>
+                <input type="password" id="confirm_password" name="confirm_password" placeholder="비밀번호를 확인하세요">
+        
+                <label for="birthdate">생년월일</label>
+                <div class="birthdate">
+                    <select name="year" id="year">
+                        <option value="1999">1999</option>
+                    </select>
+                    <select name="month" id="month">
+                        <option value="1">1</option>
+                    </select>
+                    <select name="day" id="day">
+                        <option value="10">10</option>
+                    </select>
+                </div>
+        
+                <label for="phone">연락처</label>
+                    <div class="phone">
+                        <input type="text" id="phone1" name="phone1" value="010" maxlength="3">
+                        <input type="text" id="phone2" name="phone2" maxlength="4">
+                        <input type="text" id="phone3" name="phone3" maxlength="4">
+                    </div>
+
+        
+                <!-- 마케팅 수신동의 섹션 -->
+                <div class="marketing-section">
+                    <h2>마케팅문자수신동의</h2>
+                    <p>
+                        가현리조트(이하 “회사”)는 개인정보보호법 및 정보통신망법 등에 따라 회원님의 개인정보 및 서비스 이용정보를 활용한 마케팅 동의 절차를 운영하고 있으며, 
+                        이에 따라 회원님께서 서비스 이용 중에 개인정보 수집, 이용, 제공 동의 시 마케팅 수신동의를 하신 경우에만 마케팅 및 광고 정보를 수신하실 수 있습니다. 
+                        회원님은 아래 내용을 확인하고 동의 여부를 선택할 수 있습니다.
+                    </p>
+                    <p>동의 내용:</p>
+                    <ol>
+                        <li>마케팅 정보 제공(이벤트, 혜택 안내 등), 맞춤형 서비스 제공</li>
+                        <li>기타 관련 서비스 및 상품에 대한 정보 제공</li>
+                    </ol>
+        
+                    <label>
+                        <input type="checkbox" id="marketing_agree" name="marketing_agree"> 
+                        위 내용을 확인하였으며 마케팅 문자 수신에 동의합니다.
+                    </label>
+                </div>
+        
+                <div class="buttons">
+                    <a href="/register" class="submit-btn">가입하기</a>
+                    <a href="#" class="cancel-btn">취소</a>
+                </div>
+                
+            </form>
+        </section>
+
+        <footer>
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="/vscode/images/logo1.jpg" alt="Gahyeon Resort 로고">
+                    <p>(주)가현리조트 컴퍼니<br>호텔 이용약관 | 개인정보처리방침</p>
+                    <p>대표자명: 정가현 | 주소: 경기 김포시 포로정리 호도공원로 326번길<br>사업자등록번호: 105-00-00000</p>
+                    <p>TEL: 031-988-8888 | KakaoTalk: 가현리조트 | Instagram: @gahyeon_resort</p>
+                    <p>COPYRIGHT © 2023 가현리조트. ALL RIGHTS RESERVED.</p>
+                </div>
+                <div class="footer-links">
+                    <ul>
+                        <li><strong>시설소개</strong></li>
+                        <li><a href="#">리조트소개</a></li>
+                        <li><a href="#">다이닝</a></li>
+                        <li><a href="#">편의시설</a></li>
+                        <li><a href="#">오락</a></li>
+                    </ul>
+                    <ul>
+                        <li><strong>테마파크</strong></li>
+                        <li><a href="#">루프탑</a></li>
+                        <li><a href="#">스파</a></li>
+                        <li><a href="#">휘트니스센터</a></li>
+                    </ul>
+                    <ul>
+                        <li><strong>객실</strong></li>
+                        <li><a href="#">타입A</a></li>
+                        <li><a href="#">타입B</a></li>
+                        <li><a href="#">타입C</a></li>
+                    </ul>
+                    <ul>
+                        <li><strong>공지사항</strong></li>
+                        <li><a href="#">이달의 이벤트</a></li>
+                        <li><a href="#">QnA</a></li>
+                        <li><a href="#">고객센터</a></li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
     </div>
-  </body>
+</body>
 </html>
