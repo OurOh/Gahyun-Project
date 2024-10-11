@@ -4,18 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>리조트 시설</title>
-  <link rel="stylesheet" href="/vscode/style/facilites.css">
+  <link rel="stylesheet" href="../style/facilites.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
   
-  <!--header 부분 손 볼것-->
-  
-
   <header>
-
     <div class="top-header">
         <a href="#" id="reserv_make"><button type="button" class="reserv_make btn">예약하기</button></a>
-        <img class="logo-small" src="../images/logo1.jpg" alt="Gahyeon Logo" />
+        <img class="logo-small" src="logo1.jpg" alt="Gahyeon Logo" />
         <a href="#" id="user_login" class="user_login">로그인</a>
         <a href="#" id="reserv_view" class="reserv_view">예약확인</a>
     </div>
@@ -36,132 +33,88 @@
   
     <section class="facilities">
       <h3>다이닝</h3>
-      <div class="image-grid">
-        <div class="image-card">
-          <img src="/vscode/images/breakfast001.jpg" alt="조식뷔페">
-          <p>조식뷔페 <span>Tiffany</span></p>
-          <div class="description-hover">
-            조식뷔페 Tiffany - 다양한 음식을 즐길 수 있는 뷔페입니다.
+
+      <!-- Image slider with drag functionality -->
+      <div class="image-slider-container">
+        <div class="image-grid-slider">
+          <div class="image-card">
+            <img src="../images/breakfast001.jpg" alt="조식뷔페">
+            <p>조식뷔페 <span>Tiffany</span></p>
           </div>
-        </div>
-        <div class="image-card">
-          <img src="/vscode/images/breakfast001.jpg" alt="비건전문">
-          <p>비건전문 <span>La'bia</span></p>
-          <div class="description-hover">
-            비건전문 La'bia - 건강한 비건 요리를 제공하는 레스토랑입니다.
+          <div class="image-card">
+            <img src="../images/breakfast001.jpg" alt="비건전문">
+            <p>비건전문 <span>La'bia</span></p>
           </div>
-        </div>
-        <div class="image-card">
-          <img src="/vscode/images/breakfast001.jpg" alt="조식">
-          <p>조식 <span>Tiffany</span></p>
-          <div class="description-hover">
-            조식 Tiffany - 다양한 아침 메뉴를 제공합니다.
+          <div class="image-card">
+            <img src="../images/breakfast001.jpg" alt="조식">
+            <p>조식 <span>Tiffany</span></p>
           </div>
-        </div>
-      </div>
-  
-      <h3>편의시설</h3>
-      <div class="image-grid">
-        <div class="image-card">
-          <img src="/vscode/images/breakfast001.jpg" alt="피트니스센터">
-          <p>피트니스센터 <span>Ramu</span></p>
-          <div class="description-hover">
-            피트니스센터 Ramu - 최신 장비를 갖춘 피트니스 시설입니다.
+          <div class="image-card">
+            <img src="../images/breakfast001.jpg" alt="조식">
+            <p>조식 <span>Tiffany</span></p>
           </div>
-        </div>
-        <div class="image-card">
-          <img src="/vscode/images/breakfast001.jpg" alt="스파">
-          <p>스파 <span>Hygge</span></p>
-          <div class="description-hover">
-            스파 Hygge - 편안한 휴식을 제공하는 스파입니다.
+          <div class="image-card">
+            <img src="../images/breakfast001.jpg" alt="조식">
+            <p>조식 <span>Tiffany</span></p>
           </div>
-        </div>
-        <div class="image-card">
-          <img src="/vscode/images/breakfast001.jpg" alt="피트니스센터">
-          <p>피트니스센터 <span>Ramu</span></p>
-          <div class="description-hover">
-            피트니스센터 Ramu - 편안한 운동 공간을 제공합니다.
+          <div class="image-card">
+            <img src="../images/breakfast001.jpg" alt="조식">
+            <p>조식 <span>Tiffany</span></p>
           </div>
+          <!-- Add more image cards as needed -->
         </div>
       </div>
-  
-      <h3>오락</h3>
-      <div class="image-grid">
-        <div class="image-card">
-          <img src="/vscode/images/breakfast001.jpg" alt="오락실">
-          <p>오락실 <span>Jolly</span></p>
-          <div class="description-hover">
-            오락실 Jolly - 다양한 게임을 즐길 수 있는 공간입니다.
-          </div>
-        </div>
-        <div class="image-card">
-          <img src="/vscode/images/breakfast001.jpg" alt="당구장">
-          <p>당구장 <span>Hit'O</span></p>
-          <div class="description-hover">
-            당구장 Hit'O - 휴식과 재미를 동시에 느낄 수 있는 당구장입니다.
-          </div>
-        </div>
-        <div class="image-card">
-          <img src="/vscode/images/breakfast001.jpg" alt="아케이드">
-          <p>아케이드 <span>Arcade</span></p>
-          <div class="description-hover">
-            아케이드 Arcade - 다양한 아케이드 게임을 즐길 수 있습니다.
-          </div>
-        </div>
-      </div>
+
     </section>
   </main>
 
-    <div id="description-box" class="description-box"></div>
-  </main>
-
-
-  <!--footer-->
   <footer>
     <div class="footer-content">
-      <div class="footer-logo">
-        <img src="/vscode/images/logo1.jpg" alt="Gahyeon Resort 로고">
-        <p>(주)가현리조트 컴퍼니<br>호텔 이용약관 | 개인정보처리방침</p>
-        <p>대표자명: 정가현 | 주소: 경기 김포시 포로정리 호도공원로 326번길<br>사업자등록번호: 105-00-00000</p>
-        <p>TEL: 031-988-8888 | KakaoTalk: 가현리조트 | Instagram: @gahyeon_resort</p>
-        <p>COPYRIGHT © 2023 가현리조트. ALL RIGHTS RESERVED.</p>
-      </div>
-      <div class="footer-links">
-        <ul>
-          <li><strong>시설소개</strong></li>
-          <li><a href="#">리조트소개</a></li>
-          <li><a href="#">다이닝</a></li>
-          <li><a href="#">편의시설</a></li>
-          <li><a href="#">오락</a></li>
-        </ul>
-        <ul>
-          <li><strong>테마파크</strong></li>
-          <li><a href="#">루프탑</a></li>
-          <li><a href="#">스파</a></li>
-          <li><a href="#">휘트니스센터</a></li>
-        </ul>
-        <ul>
-          <li><strong>객실</strong></li>
-          <li><a href="#">타입A</a></li>
-          <li><a href="#">타입B</a></li>
-          <li><a href="#">타입C</a></li>
-        </ul>
-        <ul>
-          <li><strong>공지사항</strong></li>
-          <li><a href="#">이달의 이벤트</a></li>
-          <li><a href="#">QnA</a></li>
-          <li><a href="#">고객센터</a></li>
-        </ul>
-      </div>
+      <p>COPYRIGHT © 2023 가현리조트. ALL RIGHTS RESERVED.</p>
     </div>
   </footer>
-  
 
   <script>
-    function showDescription(description) {
-      document.getElementById('description-box').innerText = description;
-      document.getElementById('description-box').style.display = 'block';
+$(document).ready(function() {
+  const $sliderContainer = $('.image-slider-container');
+  let isDragging = false;
+  let startX;
+  let scrollLeft;
+
+  // mousedown event to start the drag
+  $sliderContainer.on('mousedown', function(e) {
+    isDragging = true;
+    startX = e.pageX - $sliderContainer.offset().left; // Get the initial X position
+    scrollLeft = $sliderContainer.scrollLeft(); // Store initial scroll position
+    $sliderContainer.css('cursor', 'grabbing'); // Change cursor to 'grabbing'
+    e.preventDefault(); // Prevent default behavior
+  });
+
+  // mousemove event to handle dragging
+  $(window).on('mousemove', function(e) {
+    if (!isDragging) return; // Only run if the mouse is down (dragging)
+    const x = e.pageX - $sliderContainer.offset().left; // Calculate current X position
+    const walk = (x - startX) * 2; // Multiply the difference to increase scroll speed
+    $sliderContainer.scrollLeft(scrollLeft - walk); // Set the new scroll position
+  });
+
+  // mouseup event to stop dragging
+  $(window).on('mouseup', function() {
+    if (isDragging) {
+      isDragging = false;
+      $sliderContainer.css('cursor', 'grab'); // Change cursor back to 'grab'
     }
+  });
+
+  // mouseleave event to stop dragging if the cursor leaves the container
+  $sliderContainer.on('mouseleave', function() {
+    if (isDragging) {
+      isDragging = false;
+      $sliderContainer.css('cursor', 'grab');
+    }
+  });
+});
+
 
   </script>
 </body>
