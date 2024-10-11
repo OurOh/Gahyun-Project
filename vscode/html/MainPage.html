@@ -1,127 +1,179 @@
 <!DOCTYPE html>
-<html>
-  <head>
+<html lang="ko">
+<head>
     <meta charset="utf-8" />
-    <link rel="stylesheet" href="../style/MainPage.css" />
-  </head>
+    <link rel="stylesheet" href="/vscode/style/MainPage.css" />
+</head>
 
-  <body>
+<body>
     <div class="main-page">
-      <div class="div">
         <header class="header">
-          <div class="overlap-group">
-            <div class="text-wrapper">예약확인</div>
-            <div class="overlap"><div class="text-wrapper-2">예약하기</div></div>
-            <div class="text-wrapper-3">로그인</div>
-            <img class="logo-small" src="../images/logo1.jpg" />
-          </div>
+            <div class="overlap-group">
+                <div class="text-wrapper">예약확인</div>
+                <div class="overlap"><div class="text-wrapper-2">예약하기</div></div>
+                <div class="text-wrapper-3">로그인</div>
+                <img class="logo-small" src="../images/logo1.jpg" alt="Logo" />
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#">시설소개</a></li>
+                    <li><a href="#">테마파크</a></li>
+                    <li><a href="#">객실</a></li>
+                    <li><a href="#">공지사항</a></li>
+                </ul>
+            </nav>
         </header>
-        <div class="overlap-2">
-          <div class="slide-image">
-            <div class="div-wrapper"><div class="text-wrapper-4">IMAGES SLIDE</div></div>
-          </div>
-          <div class="main-nav">
-            <div class="navbar">
-              <div class="text-wrapper-5">시설소개</div>
-              <div class="text-wrapper-6">테마파크</div>
-              <div class="text-wrapper-7">객실</div>
-              <div class="text-wrapper-8">공지사항</div>
-            </div>
-          </div>
-          <div class="section-event">
-            <div class="overlap-3">
-              <div class="rectangle"></div>
-              <div class="text-wrapper-9">이벤트</div>
-              <div class="event">
-                <div class="text-wrapper-10">24.01.01 ~ 24.12.12</div>
-                <div class="text-wrapper-11">특가 이벤트 1</div>
-                <img class="img" src="../images/breakfast004.jpg" />
-              </div>
-              <div class="event-2">
-                <div class="text-wrapper-12">24.01.01 ~ 24.12.12</div>
-                <div class="text-wrapper-13">특가 이벤트 2</div>
-                <img class="img" src="../images/breakfast003.jpg" />
-              </div>
-              <div class="event-3">
-                <div class="text-wrapper-14">24.01.01 ~ 24.12.12</div>
-                <div class="text-wrapper-15">특가 이벤트 3</div>
-                <img class="rectangle-2" src="../images/breakfast002.jpg" />
-              </div>
-              <div class="flexcontainer">
-                <p class="text">
-                  <span class="span">가현리조트에서 준비한 특별한 이벤트들을 만나보세요<br /></span>
-                </p>
-              
-               
-              </div>
-              <div class="left-button">
-                <div class="overlap-group-2"><div class="text-wrapper-16">&lt;</div></div>
-              </div>
-              <div class="right-button">
-                <div class="overlap-group-2"><div class="text-wrapper-16">&gt;</div></div>
-              </div>
-            </div>
-          </div>
+
+
+        <div class="slide-image">
+            <img src="/vscode/images/outside001.jpg" alt="Image Slider" />
+            <img src="/vscode/images/pool001.jpg" alt="Image Slider" />
+            <img src="/vscode/images/waterfall.jpg" alt="Image Slider" />
+            <img src="/vscode/images/rooftop007.jpg" alt="Image Slider" />
+        </div>
+
+        <div class="container">
           <div class="reservation-bar">
-            <div class="button-date">
-              <div class="overlap-group-3"><div class="text-wrapper-17">날짜</div></div>
-            </div>
-            <div class="button-room">
-              <div class="overlap-group-3"><div class="text-wrapper-18">룸 타입</div></div>
-            </div>
-            <div class="button-person">
-              <div class="overlap-group-3"><div class="text-wrapper-17">인원</div></div>
-            </div>
-            <div class="button-reservation">
-              <div class="overlap-4"><div class="text-wrapper-19">예약하기</div></div>
-            </div>
-            <div class="reserv-icon">
-              <div class="text-wrapper-20">예약하기</div>
-              <div class="image-wrapper"><img class="image" src="img/image-15.png" /></div>
-            </div>
+              <div class="button-container">
+                  <div class="button-date">날짜</div>
+                  <div class="button-room">객실 타입</div>
+                  <div class="button-person">인원</div>
+                  <div class="button-reservation">예약</div>
+              </div>
           </div>
-        </div>
-        <div class="section-facilities">
-          <div class="overlap-5">
-            <img class="rectangle-3" src="../images/gym003.jpg" />
-            <div class="overlap-group-4">
-              <div class="text-wrapper-21">Relaxable</div>
-              <div class="text-wrapper-22">Spa</div>
-            </div>
-            <img class="image-2" src="img/image-16.png" />
-            <p class="p">스파에대해 더 알아보기</p>
+      
+          <div class="section-event">
+              <h2>이벤트</h2>
+              <p>가현리조트에서 준비한 특별한 이벤트들을 만나보세요.</p>
+              <div class="event-slider">
+                  <div class="event">
+                      <img class="img" src="../images/breakfast004.jpg" alt="Event 1" />
+                      <div class="event-info">
+                          <strong>특가 이벤트 1</strong><br>
+                          24.01.01 ~ 24.12.12
+                      </div>
+                  </div>
+                  <div class="event">
+                      <img class="img" src="../images/breakfast003.jpg" alt="Event 2" />
+                      <div class="event-info">
+                          <strong>특가 이벤트 2</strong><br>
+                          24.01.01 ~ 24.12.12
+                      </div>
+                  </div>
+                  <div class="event">
+                      <img class="img" src="../images/breakfast002.jpg" alt="Event 3" />
+                      <div class="event-info">
+                          <strong>특가 이벤트 3</strong><br>
+                          24.01.01 ~ 24.12.12
+                      </div>
+                  </div>
+              </div>
+              <div class="slider-controls">
+                  <button class="prev">&#60;</button>
+                  <button class="next">&#62;</button>
+              </div>
           </div>
-        </div>
-        <footer class="footer">
-          <div class="overlap-6">
-            <div class="text-wrapper-23">COPYRIGHT ⓒ 2024 가현리조트컴퍼니</div>
-            <p class="element">
-              <span class="text-wrapper-24"
-                >(주)가현리조트컴퍼니<br />호텔 이용약관 |&nbsp;&nbsp;이용약관 | 개인정보처리방침<br /><br />대표자(성명)
-                : 김가현 | 주소 : 경기 김포시 김포한강8로 162번길<br />사업자등록번호 : 106-00-00000 <br /><br />TEL :
-                031-988-8888 | KakaoTalk : 가현리조트 | Instagram : @gahyeon_resort</span
-              >
-            </p>
-            <p class="div-2">
-              <span class="text-wrapper-25">시설소개<br /></span>
-              <span class="text-wrapper-26">리조트소개<br />다이닝<br />편의시설<br />오락</span>
-            </p>
-            <p class="div-3">
-              <span class="text-wrapper-25">테마파크<br /></span>
-              <span class="text-wrapper-26">루프탑<br />스파<br />휘트니스센터</span>
-            </p>
-            <p class="a-b-c">
-              <span class="text-wrapper-25">객실<br /></span>
-              <span class="text-wrapper-26">타입A<br />타입B<br />타입C</span>
-            </p>
-            <p class="qn-a">
-              <span class="text-wrapper-25">공지사항<br /></span>
-              <span class="text-wrapper-26">이달의 이벤트<br />QnA<br />고객센터</span>
-            </p>
-            <img class="logo" src="../images/logo1.jpg" />
-          </div>
-        </footer>
       </div>
+      
+      
+
+        <div class="section-facilities">
+          <div class="spa-image">
+              <img class="rectangle-3" src="/vscode/images/spa001.jpg" alt="Spa" />
+          </div>
+          <div class="spa-text">
+              <h2>Relaxable Spa</h2>
+              <p>스파에 대해 더 알아보기</p>
+          </div>
+        </div>
+      
+      
+      
+
+        <footer>
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="/vscode/images/logo1.jpg" alt="Gahyeon Resort 로고">
+                    <p>(주)가현리조트 컴퍼니<br>호텔 이용약관 | 개인정보처리방침</p>
+                    <p>대표자명: 정가현 | 주소: 경기 김포시 포로정리 호도공원로 326번길<br>사업자등록번호: 105-00-00000</p>
+                    <p>TEL: 031-988-8888 | KakaoTalk: 가현리조트 | Instagram: @gahyeon_resort</p>
+                    <p>COPYRIGHT © 2023 가현리조트. ALL RIGHTS RESERVED.</p>
+                </div>
+                <div class="footer-links">
+                    <ul>
+                        <li><strong>시설소개</strong></li>
+                        <li><a href="#">리조트소개</a></li>
+                        <li><a href="#">다이닝</a></li>
+                        <li><a href="#">편의시설</a></li>
+                        <li><a href="#">오락</a></li>
+                    </ul>
+                    <ul>
+                        <li><strong>테마파크</strong></li>
+                        <li><a href="#">루프탑</a></li>
+                        <li><a href="#">스파</a></li>
+                        <li><a href="#">휘트니스센터</a></li>
+                    </ul>
+                    <ul>
+                        <li><strong>객실</strong></li>
+                        <li><a href="#">타입A</a></li>
+                        <li><a href="#">타입B</a></li>
+                        <li><a href="#">타입C</a></li>
+                    </ul>
+                    <ul>
+                        <li><strong>공지사항</strong></li>
+                        <li><a href="#">이달의 이벤트</a></li>
+                        <li><a href="#">QnA</a></li>
+                        <li><a href="#">고객센터</a></li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
     </div>
-  </body>
+
+    <script>
+        // 이벤트 슬라이더
+        const events = document.querySelectorAll('.event');
+        const prevButton = document.querySelector('.prev');
+        const nextButton = document.querySelector('.next');
+        let currentIndex = 0;
+
+        function updateSlider() {
+            const offset = currentIndex * -320; // 이벤트 너비 + 여백 계산
+            events.forEach((event, index) => {
+                event.style.transform = `translateX(${offset}px)`;
+            });
+        }
+
+        nextButton.addEventListener('click', () => {
+            currentIndex++;
+            if (currentIndex >= events.length) {
+                currentIndex = 0; // 마지막 이미지 이후 첫 이미지로 돌아감
+            }
+            updateSlider();
+        });
+
+        prevButton.addEventListener('click', () => {
+            currentIndex--;
+            if (currentIndex < 0) {
+                currentIndex = events.length - 1; // 첫 이미지 이전에 마지막 이미지로 이동
+            }
+            updateSlider();
+        });
+
+        // 이미지 슬라이더
+        const images = document.querySelectorAll('.slide-image img'); // 모든 이미지 선택
+        currentIndex = 0; // 현재 인덱스 초기화
+
+        function changeImage() {
+            images[currentIndex].classList.remove('active'); // 현재 이미지 숨김
+            currentIndex = (currentIndex + 1) % images.length; // 인덱스 증가 및 순환
+            images[currentIndex].classList.add('active'); // 다음 이미지 보임
+        }
+
+        // 첫 번째 이미지를 보이게 설정
+        images[currentIndex].classList.add('active');
+        // 4초마다 이미지 변경
+        setInterval(changeImage, 4000);
+    </script>
+</body>
 </html>
