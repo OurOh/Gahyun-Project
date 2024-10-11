@@ -1,328 +1,179 @@
-/* 공통 스타일 */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="/vscode/style/MainPage.css" />
+</head>
 
-body {
-  font-family: 'Arial', sans-serif;
-  background-color: #f9f9f9;
-  padding: 0 5%; /* 좌우 패딩 설정 */
-}
-
-.main-page {
-  max-width: 1200px; /* 최대 너비 설정 */
-  margin: 0 auto; /* 중앙 정렬 */
-}
-
-/*****/
-/* 헤더 스타일 */
-.header {
-  width: 100%;
-  background-color: #1a4d2e;
-  display: flex;
-  flex-direction: column;
-}
-
-.overlap-group {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px;
-}
-
-.logo-small {
-  width: 200px; /* 이미지의 너비를 원하는 크기로 설정 */
-  height: auto; /* 비율에 맞게 높이 자동 조절 */
-}
-
-.main-nav {
-  background-color: #b2b59b;
-  padding: 10px 0;
-}
-
-.main-nav ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  justify-content: center; /* 중앙 정렬 */
-  gap: 40px; /* 각 항목 사이에 간격 설정 */
-}
-
-.main-nav a {
-  text-decoration: none;
-  color: #1a4d2e;
-  font-size: 18px;
-}
+<body>
+    <div class="main-page">
+        <header class="header">
+            <div class="overlap-group">
+                <div class="text-wrapper">예약확인</div>
+                <div class="overlap"><div class="text-wrapper-2">예약하기</div></div>
+                <div class="text-wrapper-3">로그인</div>
+                <img class="logo-small" src="../images/logo1.jpg" alt="Logo" />
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#">시설소개</a></li>
+                    <li><a href="#">테마파크</a></li>
+                    <li><a href="#">객실</a></li>
+                    <li><a href="#">공지사항</a></li>
+                </ul>
+            </nav>
+        </header>
 
 
-/* 슬라이드 이미지 스타일 */
-.slide-image {
-  position: relative; /* 자식 요소를 절대 위치로 설정하기 위해 상대적으로 위치 설정 */
-  width: 100%; /* 슬라이드 이미지 너비 설정 */
-  height: 600px; /* 슬라이드 이미지 높이 설정 */
-  overflow: hidden; /* 넘치는 부분 숨기기 */
-}
+        <div class="slide-image">
+            <img src="/vscode/images/outside001.jpg" alt="Image Slider" />
+            <img src="/vscode/images/pool001.jpg" alt="Image Slider" />
+            <img src="/vscode/images/waterfall.jpg" alt="Image Slider" />
+            <img src="/vscode/images/rooftop007.jpg" alt="Image Slider" />
+        </div>
 
-.slide-image img {
-  width: 100%; /* 이미지 너비를 100%로 설정하여 반응형 */
-  height: 100%; /* 이미지 높이를 슬라이드 높이에 맞춤 */
-  object-fit: cover; /* 이미지 비율 유지하면서 잘리도록 설정 */
-  position: absolute; /* 절대 위치 설정 */
-  top: 0; /* 상단에 위치 */
-  left: 0; /* 좌측에 위치 */
-  opacity: 0; /* 초기 불투명도 설정 */
-  transition: opacity 0.5s ease; /* 불투명도 변경 시 애니메이션 설정 */
-}
+        <div class="container">
+          <div class="reservation-bar">
+              <div class="button-container">
+                  <div class="button-date">날짜</div>
+                  <div class="button-room">객실 타입</div>
+                  <div class="button-person">인원</div>
+                  <div class="button-reservation">예약</div>
+              </div>
+          </div>
+      
+          <div class="section-event">
+              <h2>이벤트</h2>
+              <p>가현리조트에서 준비한 특별한 이벤트들을 만나보세요.</p>
+              <div class="event-slider">
+                  <div class="event">
+                      <img class="img" src="../images/breakfast004.jpg" alt="Event 1" />
+                      <div class="event-info">
+                          <strong>특가 이벤트 1</strong><br>
+                          24.01.01 ~ 24.12.12
+                      </div>
+                  </div>
+                  <div class="event">
+                      <img class="img" src="../images/breakfast003.jpg" alt="Event 2" />
+                      <div class="event-info">
+                          <strong>특가 이벤트 2</strong><br>
+                          24.01.01 ~ 24.12.12
+                      </div>
+                  </div>
+                  <div class="event">
+                      <img class="img" src="../images/breakfast002.jpg" alt="Event 3" />
+                      <div class="event-info">
+                          <strong>특가 이벤트 3</strong><br>
+                          24.01.01 ~ 24.12.12
+                      </div>
+                  </div>
+              </div>
+              <div class="slider-controls">
+                  <button class="prev">&#60;</button>
+                  <button class="next">&#62;</button>
+              </div>
+          </div>
+      </div>
+      
+      
 
-.slide-image img.active {
-  opacity: 1; /* 활성화된 이미지는 보이게 설정 */
-}
+        <div class="section-facilities">
+          <div class="spa-image">
+              <img class="rectangle-3" src="/vscode/images/spa001.jpg" alt="Spa" />
+          </div>
+          <div class="spa-text">
+              <h2>Relaxable Spa</h2>
+              <p>스파에 대해 더 알아보기</p>
+          </div>
+        </div>
+      
+      
+      
 
+        <footer>
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="/vscode/images/logo1.jpg" alt="Gahyeon Resort 로고">
+                    <p>(주)가현리조트 컴퍼니<br>호텔 이용약관 | 개인정보처리방침</p>
+                    <p>대표자명: 정가현 | 주소: 경기 김포시 포로정리 호도공원로 326번길<br>사업자등록번호: 105-00-00000</p>
+                    <p>TEL: 031-988-8888 | KakaoTalk: 가현리조트 | Instagram: @gahyeon_resort</p>
+                    <p>COPYRIGHT © 2023 가현리조트. ALL RIGHTS RESERVED.</p>
+                </div>
+                <div class="footer-links">
+                    <ul>
+                        <li><strong>시설소개</strong></li>
+                        <li><a href="#">리조트소개</a></li>
+                        <li><a href="#">다이닝</a></li>
+                        <li><a href="#">편의시설</a></li>
+                        <li><a href="#">오락</a></li>
+                    </ul>
+                    <ul>
+                        <li><strong>테마파크</strong></li>
+                        <li><a href="#">루프탑</a></li>
+                        <li><a href="#">스파</a></li>
+                        <li><a href="#">휘트니스센터</a></li>
+                    </ul>
+                    <ul>
+                        <li><strong>객실</strong></li>
+                        <li><a href="#">타입A</a></li>
+                        <li><a href="#">타입B</a></li>
+                        <li><a href="#">타입C</a></li>
+                    </ul>
+                    <ul>
+                        <li><strong>공지사항</strong></li>
+                        <li><a href="#">이달의 이벤트</a></li>
+                        <li><a href="#">QnA</a></li>
+                        <li><a href="#">고객센터</a></li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+    </div>
 
+    <script>
+        // 이벤트 슬라이더
+        const events = document.querySelectorAll('.event');
+        const prevButton = document.querySelector('.prev');
+        const nextButton = document.querySelector('.next');
+        let currentIndex = 0;
 
-/* 예약 바 스타일 */
-/*****/
+        function updateSlider() {
+            const offset = currentIndex * -320; // 이벤트 너비 + 여백 계산
+            events.forEach((event, index) => {
+                event.style.transform = `translateX(${offset}px)`;
+            });
+        }
 
-.container {
-  display: flex; /* 플렉스 박스를 사용하여 가로로 정렬 */
-  justify-content: center; /* 예약 바와 이벤트 섹션을 중앙 정렬 */
-  margin: 20px 0; /* 상하 여백 설정 */
-}
+        nextButton.addEventListener('click', () => {
+            currentIndex++;
+            if (currentIndex >= events.length) {
+                currentIndex = 0; // 마지막 이미지 이후 첫 이미지로 돌아감
+            }
+            updateSlider();
+        });
 
-.reservation-bar {
-  background-color: #f0f0f0; /* 예약 바 배경색 설정 */
-  padding: 20px; /* 내부 여백 설정 */
-  border-radius: 8px; /* 모서리 둥글게 처리 */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* 그림자 추가 */
-  width: 50%; /* 예약 바 너비 설정 */
-}
+        prevButton.addEventListener('click', () => {
+            currentIndex--;
+            if (currentIndex < 0) {
+                currentIndex = events.length - 1; // 첫 이미지 이전에 마지막 이미지로 이동
+            }
+            updateSlider();
+        });
 
-.button-container {
-  display: grid; /* 그리드 레이아웃 사용 */
-  grid-template-columns: repeat(2, 1fr); /* 2개의 열로 설정 */
-  gap: 10px; /* 버튼 간의 간격 설정 */
-  margin-top: 80px; /* 버튼 컨테이너를 아래로 10px 내리기 */
-}
+        // 이미지 슬라이더
+        const images = document.querySelectorAll('.slide-image img'); // 모든 이미지 선택
+        currentIndex = 0; // 현재 인덱스 초기화
 
+        function changeImage() {
+            images[currentIndex].classList.remove('active'); // 현재 이미지 숨김
+            currentIndex = (currentIndex + 1) % images.length; // 인덱스 증가 및 순환
+            images[currentIndex].classList.add('active'); // 다음 이미지 보임
+        }
 
-.button-date,
-.button-room,
-.button-person,
-.button-reservation {
-    background-color: #b2b59b; /* 버튼 배경색 */
-    color: white; /* 버튼 텍스트 색상 */
-    text-align: center; /* 텍스트 중앙 정렬 */
-    padding: 20px; /* 패딩 설정 */
-    border-radius: 4px; /* 모서리 둥글게 처리 */
-    cursor: pointer; /* 커서 모양 설정 */
-    font-size: 18px; /* 글자 크기 설정 */
-    transition: transform 0.2s ease; /* 애니메이션 효과 추가 */
-}
-
-.button-date:hover,
-.button-room:hover,
-.button-person:hover,
-.button-reservation:hover {
-    transform: scale(1.1); /* 크기 증가 */
-    background-color: #b2b59b; /* 호버 시 배경색 변경 */
-}
-
-
-
-
-/* 이벤트 섹션 스타일 */
-.section-event {
-  background-color: #1a4d2e; /* 배경색 설정 */
-  color: white; /* 글자 색상 설정 */
-  text-align: center; /* 텍스트 중앙 정렬 */
-  padding: 20px;
-  margin: 20px 0; /* 상하 여백 설정 */
-}
-
-.event-slider {
-  display: flex; /* 플렉스 박스를 사용하여 이벤트 정렬 */
-  justify-content: center; /* 중앙 정렬 */
-  overflow: hidden; /* 넘치는 부분 숨기기 */
-  position: relative; /* 위치 설정 */
-}
-
-.event {
-  margin: 0 10px; /* 좌우 여백 설정 */
-  flex-shrink: 0; /* 줄어들지 않도록 설정 */
-  width: 300px; /* 각 이벤트의 너비 설정 */
-  transition: transform 0.5s ease; /* 슬라이드 애니메이션 설정 */
-}
-
-.event img {
-  width: 90%; /* 이미지 너비를 100%로 설정하여 반응형 */
-  height: auto; /* 비율에 맞게 높이 자동 조절 */
-  border-radius: 10px; /* 이미지 모서리 둥글게 처리 */
-}
-
-.event-info {
-  margin-top: 10px; /* 상단 여백 설정 */
-}
-
-.slider-controls {
-  margin-top: 15px; /* 상단 여백 설정 */
-  display: flex; /* 버튼을 가로로 정렬 */
-  justify-content: center; /* 중앙 정렬 */
-}
-
-.slider-controls button {
-  background-color: #b2b59b; /* 버튼 배경색 설정 */
-  border: none; /* 테두리 제거 */
-  color: white; /* 글자 색상 설정 */
-  padding: 10px 15px; /* 패딩 설정 */
-  cursor: pointer; /* 커서 모양 설정 */
-  border-radius: 5px; /* 둥근 모서리 */
-  margin: 0 5px; /* 좌우 여백 설정 */
-}
-
-.slider-controls button:hover {
-  background-color: #1a4d2e; /* 호버시 배경색 변경 */
-}
-
-
-
-
-
-/****/
-/* 시설 섹션 스타일 */
-.section-facilities {
-  display: flex; /* 플렉스 박스를 사용하여 가로로 정렬 */
-  align-items: center; /* 수직 중앙 정렬 */
-  margin: 20px 0; /* 상하 여백 설정 */
-}
-
-.spa-image {
-  flex: 1; /* 이미지 영역을 가로로 설정 */
-}
-
-.rectangle-3 {
-  width: 150%; /* 이미지의 너비를 100%로 설정하여 반응형 */
-  height: auto; /* 비율에 맞게 높이 자동 조절 */
-  max-height: 450px; /* 최대 높이를 설정하여 이미지 크기 조정 */
-}
-
-.spa-text {
-  flex: 1; /* 텍스트 영역을 가로로 설정 */
-  padding: 20px; /* 텍스트 영역 여백 설정 */
-  text-align: right; /* 텍스트 왼쪽 정렬 */
-}
-
-.spa-text h2 {
-  font-size: 32px; /* 제목 크기를 증가 */
-  color: #1a4d2e; /* 제목 색상 조정 */
-}
-
-.spa-text p {
-  font-size: 20px; /* 텍스트 크기를 증가 */
-  color: #333; /* 텍스트 색상 조정 */
-}
-
-
-/*******/
-
-
-/* 푸터 스타일 */
-footer {
-  background-color: #004d1a;
-  color: white;
-  padding: 30px;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  flex-wrap: wrap;
-  font-size: 14px;
-}
-
-.footer-content {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  max-width: 1200px;
-  margin: auto;
-}
-
-.footer-logo {
-  max-width: 400px;
-}
-
-.footer-logo img {
-  width: 150px;
-  margin-bottom: 15px;
-}
-
-.footer-logo p {
-  margin-bottom: 10px;
-  line-height: 1.6;
-}
-
-.footer-links {
-  display: flex;
-  justify-content: space-between;
-  gap: 40px;
-}
-
-.footer-links ul {
-  list-style-type: none;
-}
-
-.footer-links li {
-  margin-bottom: 10px;
-}
-
-.footer-links a {
-  color: white;
-  text-decoration: none;
-}
-
-.footer-links a:hover {
-  text-decoration: underline;
-}
-
-/* 반응형 스타일 */
-@media screen and (max-width: 768px) {
-  body {
-      padding: 0 5%;
-  }
-
-  .main-nav {
-      flex-direction: column;
-      align-items: center;
-  }
-
-  .reservation-bar {
-      flex-direction: column;
-      align-items: center;
-  }
-
-  .footer-content {
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-  }
-
-  .footer-links {
-      flex-direction: row;
-      gap: 20px;
-  }
-}
-
-@media screen and (max-width: 480px) {
-  .nav-menu {
-      flex-direction: column;
-      gap: 10px;
-      font-size: 14px;
-  }
-
-  .footer-links {
-      flex-direction: column;
-      align-items: center;
-      gap: 10px;
-  }
-}
+        // 첫 번째 이미지를 보이게 설정
+        images[currentIndex].classList.add('active');
+        // 4초마다 이미지 변경
+        setInterval(changeImage, 4000);
+    </script>
+</body>
+</html>
