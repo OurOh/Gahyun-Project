@@ -8,7 +8,8 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath}/res/css/main/bootstrap.min.css" />
     <link rel="stylesheet" href="${pageContext.request.contextPath}/res/css/footer/style.css">   
     <link rel="stylesheet" href="${pageContext.request.contextPath}/res/css/header/style.css">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/res/css/main/style.css" />
+    <!--  <link rel="stylesheet" href="${pageContext.request.contextPath}/res/css/main/style.css" />-->
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/res/css/UserRegister/UserRegister.css" />
 
 
 </head>

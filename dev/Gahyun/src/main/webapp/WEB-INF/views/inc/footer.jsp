@@ -3,7 +3,7 @@
     <footer>
 		<div class="footer-content">
                 <div class="left-col">
-                    <img class="logo" src="../images/logo1.jpg" alt="Gahyeon Logo">
+                    <img class="logo" src="${pageContext.request.contextPath}/res/images/logo1.jpg" alt="Gahyeon Logo">
                     <div class="company-info">
                         <p>(주)가현리조트컴퍼니</p>
                         <p><a href="#">호텔 이용약관</a> | <a href="#">이용약관</a> | <a href="#">개인정보처리방침</a></p>

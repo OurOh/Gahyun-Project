@@ -18,7 +18,7 @@
     </bean>
     	<!-- MyBatis Mapper 스캔 -->
 	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-      <property name="basePackage" value="net.musecom.comunity.mapper" />
+      <property name="basePackage" value="com.gahyun.dev.mapper" />
       <property name="sqlSessionFactory" ref="sqlSessionFactory" />
     </bean>  
     
