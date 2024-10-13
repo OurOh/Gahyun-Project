@@ -1,6 +1,7 @@
 package com.gahyun.dev.model;
 
 import java.sql.Timestamp;
+import java.time.LocalDate;
 
 import lombok.Data;
 
@@ -13,6 +14,7 @@ public class UserDto {
 	private String password;
 	private String phone_num;
 	private Timestamp created_at;
-	
+	private LocalDate user_birth;
+	private String userid;
 	
 }

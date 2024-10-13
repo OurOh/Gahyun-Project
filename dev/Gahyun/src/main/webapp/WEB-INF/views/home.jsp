@@ -11,7 +11,7 @@
         
                 <label for="username">아이디</label>
                 <div class="username-field">
-                    <input type="text" id="username" name="username" placeholder="아이디를 입력하세요">
+                    <input type="text" id="userid" name="userid" placeholder="아이디를 입력하세요">
                     <button type="button" class="duplicate-check-btn">중복확인</button>
                 </div>
         

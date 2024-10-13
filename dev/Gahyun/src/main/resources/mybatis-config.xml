@@ -6,6 +6,7 @@
   <settings>
      <setting name="cacheEnabled" value="true" />
      <setting name="mapUnderscoreToCamelCase" value="true" />
+     <setting name="logImpl" value="LOG4J"/>
   </settings>
   <!-- 별칭등록 -->
   <typeAliases>
@@ -16,4 +17,5 @@
     <mapper resource="org/mybatis/example/BlogMapper.xml"/>
   </mappers>
   -->
+
 </configuration>

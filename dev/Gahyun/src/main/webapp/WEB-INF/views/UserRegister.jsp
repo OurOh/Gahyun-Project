@@ -5,13 +5,13 @@
 
         <section class="form-section">
             <h1>회원가입</h1>
-            <form action="/register" method="POST">
+            <form action="register" id="register" method="POST">
                 <label for="name">이름</label>
                 <input type="text" id="name" name="name" placeholder="이름을 입력하세요">
         
                 <label for="username">아이디</label>
                 <div class="username-field">
-                    <input type="text" id="username" name="username" placeholder="아이디를 입력하세요">
+                    <input type="text" id="userid" name="userid" placeholder="아이디를 입력하세요">
                     <button type="button" class="duplicate-check-btn">중복확인</button>
                 </div>
         
@@ -33,6 +33,8 @@
                         <option value="10">10</option>
                     </select>
                 </div>
+                <input type="hidden" name="birth" id="birth" />
+                
         
                 <label for="phone">연락처</label>
                     <div class="phone">
@@ -40,6 +42,7 @@
                         <input type="text" id="phone2" name="phone2" maxlength="4">
                         <input type="text" id="phone3" name="phone3" maxlength="4">
                     </div>
+                <input type="hidden" name="tel" id="tel" />
 
         
                 <!-- 마케팅 수신동의 섹션 -->
@@ -63,7 +66,7 @@
                 </div>
         
                 <div class="buttons">
-                    <a href="/register" class="submit-btn">가입하기</a>
+                    <button  class="submit-btn">가입하기</button>
                     <a href="#" class="cancel-btn">취소</a>
                 </div>
                 

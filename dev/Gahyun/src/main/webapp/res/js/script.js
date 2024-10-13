@@ -3,9 +3,9 @@ $(function(){
       //e.preventDefault();
       
       /* 아이디 검증 */
-      if(!regex.value("#username", "아이디를 입력하세요")){ return false; }      
-      if(!regex.uid("#username", "아이디는 영문과 숫자만 가능합니다. 첫 글자에 숫자는 올 수 없어요.")){ return false;}
-      if(!regex.max_length("#username", 10, "최대 10자까지만 허용해요.")){return false;}
+      if(!regex.value("#userid", "아이디를 입력하세요")){ return false; }      
+      if(!regex.uid("#userid", "아이디는 영문과 숫자만 가능합니다. 첫 글자에 숫자는 올 수 없어요.")){ return false;}
+      if(!regex.max_length("#userid", 10, "최대 10자까지만 허용해요.")){return false;}
       
       /* 비밀번호 검증 */
       if(!regex.value("#password", "비밀번호를 입력하세요.")){ return false; }
