@@ -53,39 +53,68 @@ header {
 
 /* Slider Container */
 .facilities h3{
-  margin-left: 500px;
-  margin-bottom: 20px;
+  font-size: 22px;
+  color: #46684a;
+  margin-bottom: 13px;
 }
 
 .image-slider-container {
-  overflow-x: hidden; /* 스크롤바를 숨김 */
-  white-space: nowrap;
+  display: flex;
+  flex-direction: column;
   cursor: grab; /* Default cursor */
   width: 100%;
   scroll-behavior: smooth;
+  margin-bottom: 80px;
 }
 
 .image-grid-slider {
   display: flex;
-  transition: transform 0.3s ease-in-out;
-  margin-left: 500px;
+  overflow-x: scroll; /* 스크롤 기능 유지 */
+  white-space: nowrap;
+  scroll-behavior: smooth;
+  margin-bottom: 60px;
+}
+
+/* 스크롤바 숨기기 */
+.image-grid-slider::-webkit-scrollbar {
+  display: none; /* 웹킷 브라우저에서 스크롤바 숨김 */
+}
+
+.image-grid-slider {
+  -ms-overflow-style: none;  /* IE 및 Edge에서 스크롤바 숨김 */
+  scrollbar-width: none;     /* Firefox에서 스크롤바 숨김 */
 }
 
 .image-card {
   flex: 0 0 auto;
-  width: 100%;
-  max-width: 500px;
-  margin-right: 80px;
+  width: 400px;
+  margin-right: 50px;
   background-color: white;
   text-align: center;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   padding: 15px;
+  border-radius: 15px;
+}
+
+.image-card:hover {
+  background-color: #F5EFE6;
+  transform: translateY(-5px);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
 }
 
 .image-card img {
   width: 100%;
-  height: auto;
+  height: 370px;
 }
+.image-card p{
+  font-weight: 600;
+  color: #413A2B;
+  font-size: 17px;
+}
+.image-card p span{
+  font-family: "Albert Sans";
+}
+
 
 /* Footer */
 footer {
@@ -96,6 +125,22 @@ footer {
 }
 
 /* 반응형 레이아웃 */
+@media (min-width: 1200px) {
+  
+  .image-slider-container{
+    width: 100%;
+  }
+
+  .fffimg{
+    margin-left: 500px;
+  }
+
+  .facilities h3{
+    margin-left: 520px;
+  }
+
+}
+
 @media (max-width: 1200px) {
   body {
     padding-left: 5%;
@@ -109,6 +154,8 @@ footer {
   .image-card {
     max-width: 400px;
   }
+
+
 }
 
 @media (max-width: 768px) {
@@ -118,7 +165,7 @@ footer {
   }
 
   .image-card {
-    max-width: 300px;
+    width: 250px;
   }
 
   .main-nav ul {
@@ -131,11 +178,13 @@ footer {
     flex-direction: column;
     gap: 10px;
   }
+
+
 }
 
 @media (max-width: 480px) {
   .image-card {
-    max-width: 250px;
+    width: 200px;
   }
 
   .top-header {
