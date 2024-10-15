@@ -8,13 +8,14 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath}/res/css/main/bootstrap.min.css" />
     <link rel="stylesheet" href="${pageContext.request.contextPath}/res/css/footer/style.css">   
     <link rel="stylesheet" href="${pageContext.request.contextPath}/res/css/header/style.css">
-    <!--  <link rel="stylesheet" href="${pageContext.request.contextPath}/res/css/main/style.css" />-->
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.0/themes/base/jquery-ui.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/res/css/UserRegister/UserRegister.css" />
     <script src="${pageContext.request.contextPath}/res/js/jquery.min.js"></script>
 	<script src="${pageContext.request.contextPath}/res/js/bootstrap.min.js"></script>
 	<script src="${pageContext.request.contextPath}/res/js/popper.min.js"></script>
 	<script src="${pageContext.request.contextPath}/res/js/regex.js"></script>
 	<script src="${pageContext.request.contextPath}/res/js/script.js"></script>
+	<script src="https://code.jquery.com/ui/1.14.0/jquery-ui.min.js"></script>
 	
 	
 </head>

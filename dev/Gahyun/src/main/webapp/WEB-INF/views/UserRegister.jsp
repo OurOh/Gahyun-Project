@@ -23,15 +23,9 @@
         
                 <label for="birthdate">생년월일</label>
                 <div class="birthdate">
-                    <select name="year" id="year">
-                        <option value="1999">1999</option>
-                    </select>
-                    <select name="month" id="month">
-                        <option value="1">1</option>
-                    </select>
-                    <select name="day" id="day">
-                        <option value="10">10</option>
-                    </select>
+                	<input type="text" name="year" id="year" placeholder="년"/>
+                    <input type="text" name="month" id="month" placeholder="월"/>
+                    <input type="text" name="day" id="day" placeholder="일">
                 </div>
                 <input type="hidden" name="birth" id="birth" />
                 
@@ -72,3 +66,5 @@
                 
             </form>
         </section>
+        
+   

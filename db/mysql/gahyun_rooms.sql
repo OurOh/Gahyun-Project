@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 8.0.38, for Win64 (x86_64)
 --
--- Host: localhost    Database: gahyeon
+-- Host: localhost    Database: gahyun
 -- ------------------------------------------------------
 -- Server version	8.4.2
 
@@ -16,30 +16,31 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `room_availability`
+-- Table structure for table `rooms`
 --
 
-DROP TABLE IF EXISTS `room_availability`;
+DROP TABLE IF EXISTS `rooms`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `room_availability` (
-  `room_availability_id` int NOT NULL AUTO_INCREMENT,
-  `room_id` int DEFAULT NULL,
-  `date` date NOT NULL,
-  `is_available` tinyint(1) NOT NULL,
-  PRIMARY KEY (`room_availability_id`),
-  KEY `room_id` (`room_id`),
-  CONSTRAINT `room_availability_ibfk_1` FOREIGN KEY (`room_id`) REFERENCES `rooms` (`room_id`)
+CREATE TABLE `rooms` (
+  `room_id` int NOT NULL AUTO_INCREMENT,
+  `room_name` varchar(100) NOT NULL,
+  `room_type` varchar(50) NOT NULL,
+  `price_per_night` decimal(10,2) NOT NULL,
+  `capacity` int NOT NULL,
+  `description` text,
+  `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`room_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `room_availability`
+-- Dumping data for table `rooms`
 --
 
-LOCK TABLES `room_availability` WRITE;
-/*!40000 ALTER TABLE `room_availability` DISABLE KEYS */;
-/*!40000 ALTER TABLE `room_availability` ENABLE KEYS */;
+LOCK TABLES `rooms` WRITE;
+/*!40000 ALTER TABLE `rooms` DISABLE KEYS */;
+/*!40000 ALTER TABLE `rooms` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -51,4 +52,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-09-23 16:51:52
+-- Dump completed on 2024-10-15 17:28:17

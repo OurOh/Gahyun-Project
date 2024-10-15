@@ -1,4 +1,5 @@
 $(function(){
+	//register 빈칸 검증
    $("#register").submit(function(){
       //e.preventDefault();
       
@@ -43,7 +44,23 @@ $(function(){
       
       
    });
+   /*
    
+   $("#year").datepicker({
+   	changeYear: true,
+   	yearRange: "1900:" + new Date().getFullYear(),
+   	dateFormat: "yy",
+   	minDate: new Date(1900, 0, 1),
+   	maxDate: new Date() 
+   });
+   $("#month").datepicker({
+   	changeMonth: true,
+   	MonthRange: "1" + new Date().getFullYear(),
+   	dateFormat: "mm",
+   });
+   $("#day").datepicker({
+   });
+   */
    
    
 });
