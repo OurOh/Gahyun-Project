@@ -6,25 +6,25 @@
     padding: 40px 0;
 }
 
-.image-section {
+.login-image-section {
     flex: 1;
     padding-right: 20px;
 }
 
-.image-slider {
+.login-image-slider {
     width: 100%;
     height: 100%;
     position: relative;
 }
 
-.image-slider img {
+.login-image-slider img {
     width: 100%;
     height: auto;
     object-fit: cover;
     display: none; /* 슬라이드 이미지를 처음엔 숨김 */
 }
 
-.image-slider img.active {
+.login-image-slider img.active {
     display: block; /* 활성화된 이미지 표시 */
 }
 

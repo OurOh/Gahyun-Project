@@ -50,14 +50,13 @@ header {
   color: white;
   margin-bottom: 20px;
 }
-
-/* Slider Container */
 .facilities h3{
   font-size: 22px;
   color: #46684a;
   margin-bottom: 13px;
 }
 
+/* Slider Container */
 .image-slider-container {
   display: flex;
   flex-direction: column;
