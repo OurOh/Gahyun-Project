@@ -63,7 +63,6 @@ header {
   flex-direction: column;
   cursor: grab; /* Default cursor */
   width: 100%;
-  scroll-behavior: smooth;
   margin-bottom: 80px;
 }
 
@@ -73,6 +72,9 @@ header {
   white-space: nowrap;
   scroll-behavior: smooth;
   margin-bottom: 60px;
+  will-change: scroll-position; /* GPU 가속 유도 */
+  -ms-overflow-style: none;  /* IE, Edge에서 스크롤바 숨김 */
+  scrollbar-width: none;     /* Firefox에서 스크롤바 숨김 */
 }
 
 /* 스크롤바 숨기기 */
