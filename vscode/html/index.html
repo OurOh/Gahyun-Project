@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../style/style.css">\<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=4c182db7c64c150bf09b9c0fd8b9c8b0"></script>
+</head>
+<body>
+
+ <!--리조트소개, 오시는길, 주변대중교통입니다.~!-->   
+ 
+ <!-- 헤더 섹션 -->
+ <header>
+    <nav class="top-nav">
+        <!-- 왼쪽: 예약하기 -->
+        <div class="left-menu">
+            <a href="#">예약하기</a>
+        </div>
+
+        <!-- 가운데: 로고 -->
+        <div class="logo">
+            <img src="/images/images/logo.jpg" alt="리조트 로고">
+        </div>
+
+        <!-- 오른쪽: 로그인, 예약확인, FAQ -->
+        <div class="right-menu">
+            <a href="#">로그인</a>
+            <a href="#">예약확인</a>
+            <a href="#">FAQ</a>
+        </div>
+    </nav>
+
+    <!-- 하단 메인 메뉴 섹션 -->
+    <nav class="main-menu">
+        <a href="#">리조트 소개</a>
+        <a href="#">시설 소개</a>
+        <a href="#">엔터테인먼트</a>
+        <a href="#">객실 소개</a>
+        <a href="#">이벤트</a>
+    </nav>
+</header>
+
+<!-- 메인 콘텐츠 -->
+<div class="main">
+    <section class="intro">
+        <h1>리조트 소개</h1>
+        <img src="/images/images/outside001.jpg" alt="리조트 이미지">
+        <p>가현산리조트는 많은 크기의 아름다운 자연과 함께...</p>
+    </section>
+
+    <!-- 지도 및 교통 정보 -->
+    <section class="map-info">
+        <div class="map">
+            <h2>오시는 길</h2>
+            <div id="kakaoMap" style="width:100%;height:300px;"></div> <!-- 카카오 지도 영역 -->
+        </div>
+        <div class="traffic-info">
+            <h2>주변 대중교통</h2>
+            <p>2-1: 대중교통...</p>
+        </div>
+    </section>
+</div>
+
+<!-- 푸터 -->
+<footer>
+    <a href="#">시설소개</a> | <a href="#">찾아오는 길</a> | <a href="#">공지사항</a> | <a href="#">연락처</a>
+    <p>&copy; 2024 리조트 이름. All Rights Reserved.</p>
+</footer>
+
+<!-- 카카오 지도 스크립트 -->
+<script>
+    var container = document.getElementById('kakaoMap'); // 지도를 담을 영역의 DOM 레퍼런스
+    var options = {
+        center: new kakao.maps.LatLng(37.6459, 126.6755), // 지도의 중심좌표 (위도, 경도 변경 가능)
+        level: 5 // 지도의 확대 레벨
+    };
+
+    var map = new kakao.maps.Map(container, options); // 지도 생성 및 객체 리턴
+</script>
+
+</body>
+</html>
