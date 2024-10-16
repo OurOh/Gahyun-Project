@@ -21,5 +21,5 @@ public class ResController {
 	private ReservationsMapper reservationsdao;
 	
 	
-	
+
 }

@@ -8,7 +8,14 @@
             <div class="date-selection">
                 <p>날짜와 인원수를 선택하세요</p>
                 <div class="reservation-container">
-                    <div class="api-placeholder">달력 api 공간</div>
+                    <div class="api-placeholder">
+                    	<div class="startdate" name="startDate"></div>
+                    	<div class="enddate" name="endDate" ></div>
+                    	<input type="hidden" />
+                    	<input type="hidden" />
+                    	
+                    </div>
+                    
                     <div class="guest-selection">
                         <div class="input-group">
                             <label>객실 수</label>

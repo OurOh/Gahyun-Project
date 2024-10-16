@@ -44,6 +44,17 @@ $(function(){
       
       
    });
+   
+   //datepicker
+   
+    $('.startdate').datepicker({
+    	inline: true
+    });
+    $('.enddate').datepicker({
+    	inline: true
+    });
+    
+   
    /*
    
    $("#year").datepicker({
