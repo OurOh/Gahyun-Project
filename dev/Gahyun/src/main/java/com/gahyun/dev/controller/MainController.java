@@ -76,7 +76,16 @@ public class MainController {
 			return "redirect:/";
 			
 		}	
-		
+	
+	@GetMapping("/Reservation1")
+	public String Reservation1(Model model) {
+		return "Reservation_select";
+	}
+	
+	@GetMapping("/Reservation2")
+	public String Reservation2(Model model) {
+		return "Reservation_confirm";
+	}
 		
 
 	
