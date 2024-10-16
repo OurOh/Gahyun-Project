@@ -5,12 +5,13 @@ main {
 }
 .reservation-confirmation h1 {
     background-color: #4a6543;
-    color: #ffffff;
+    color: #f5efe6;
     text-align: center;
     padding: 20px 0;
     margin: 0;
     font-size: 2em;
     font-weight: bold;
+    letter-spacing: 5px;
 }
 
 .reservation-confirmation h2 {
@@ -38,7 +39,7 @@ main {
     height: 250px;
 }
 
-.reservation-info {
+.reservation-confirm-info {
     
     flex: 1;
     margin-left: 20px;
@@ -62,24 +63,24 @@ h2 {
     margin-bottom: 20px;
 }
 
-.input-fields {
+.reserv-input-fields {
     display: flex;
     flex-direction: column;
     gap: 15px;
 }
 
-.input-group {
+.reserv-input-group {
     display: flex;
     align-items: center;
     gap: 10px;
 }
 
-.input-group label {
+.reserv-input-group label {
     width: 100px;
     font-weight: bold;
 }
 
-input[type="text"] {
+.reserv-input-group>input[type="text"] {
     padding: 10px;
     border: 1px solid #d3d3d3;
     width: 200px; /* 기본 너비 설정 */
@@ -87,7 +88,7 @@ input[type="text"] {
     box-sizing: border-box; /* 패딩을 포함한 너비 계산 */
 }
 
-.checkbox {
+.sameinfo-checkbox {
     display: flex;
     align-items: center;
     gap: 10px;
@@ -105,4 +106,29 @@ input[type="text"] {
     font-size: 1.2em;
     color: #777;
     margin-top: 20px;
+}
+@media (max-width: 768px) {
+    
+    .reservation-confirmation h1 {
+        font-size: 1.5em;
+    }
+
+    .reservation-details {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .reserv-input-group>input[type="text"] {
+        width: 100%; /* 작은 화면에서 입력 필드가 가득 차도록 설정 */
+        margin-bottom: 15px; /* 입력 필드 간 간격 추가 */
+    }
+
+    .reserv-input-fields {
+        flex-direction: column; /* 작은 화면에서 필드를 세로로 배치 */
+    }
+
+
+    .room-image img {
+        width: 100%;
+    }
 }
