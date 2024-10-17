@@ -1,0 +1,14 @@
+
+예약
+reservations 테이블
+user_id 예약한 유저 id
+room_id 예약된 방 id
+check_in_date 체크인 날짜
+check_out_date 체크아웃 날짜
+
+status 상태 = 뭘로할까...
+created_at 예약한날짜
+
+검증
+room_availability방 가능여부  
+is_available(byte)
