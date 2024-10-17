@@ -407,48 +407,6 @@ footer {
     }
 }
 
-/*EVENT*/
-.event-content {
-    display: flex;
-    flex-direction: column;
-    align-items: space-between;
-    justify-content: center;
-    min-height: 80vh;
-    padding: 40px 0;
-  }
-  .event-section{
-    margin-bottom: 50px;
-  }
-  .event-slider, .promo-slider {
-    width: 100%;
-    height: 500px;
-    position: relative;
-  }
-  
-  .event-slider img, .promo-slider img {
-    width: 100%;
-    height: 500px;
-    object-fit: cover;
-    display: none;
-  }
-  
-  .event-slider img.active, .promo-slider img.active {
-    display: block;
-  }
-
-  @media screen and (max-width: 768px) {
-    .event-slider, .promo-slider {
-        width: 100%;
-        height: 800px;
-        position: relative;
-      }
-    .event-slider img, .promo-slider img {
-        width: auto;
-        height: 100%;
-        object-fit: cover;
-      }
-}
-
 /*RESEVATION-SELECTION*/
 .reservation-section {
   margin-top: 0; /* 헤더와 딱 붙게 여백 제거 */
@@ -1278,5 +1236,150 @@ h2 {
   }
   .reserv-delete{
       width: 70%;
+  }
+}
+
+/*EVENT*/
+.event-content {
+  display: flex;
+  flex-direction: column;
+  align-items: space-between;
+  justify-content: center;
+  min-height: 80vh;
+  padding: 40px 0;
+}
+.event-section{
+  margin-bottom: 50px;
+}
+.event-slider, .promo-slider {
+  width: 100%;
+  height: 500px;
+  position: relative;
+}
+
+.event-slider img, .promo-slider img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  display: none;
+}
+
+.event-slider img.active, .promo-slider img.active {
+  display: block;
+}
+
+@media screen and (max-width: 768px) {
+  .event-slider, .promo-slider {
+      width: 100%;
+      height: 800px;
+      position: relative;
+    }
+  .event-slider img, .promo-slider img {
+      width: auto;
+      height: 100%;
+      object-fit: cover;
+    }
+}
+
+/*FACILITIES*/
+.facility-title h1 {
+  background-color: #4a6543; /* 초록색 배경 */
+  color: #f5efe6; 
+  text-align: center;
+  padding: 20px 0; /* 상하 여백 추가 */
+  margin-top: 0; /* 위아래 여백 제거 */
+  margin-bottom: 40px;
+  font-size: 2em; /* 텍스트 크기 설정 */
+  font-weight: bold; /* 굵은 텍스트 */
+  letter-spacing: 5px;
+}
+.facilities h3{
+  font-size: 22px;
+  color: #46684a;
+  margin-bottom: 13px;
+}
+
+/* Slider Container */
+.facility-slider-container {
+  display: flex;
+  flex-direction: column;
+  cursor: grab; /* Default cursor */
+  width: 100%;
+  margin-bottom: 80px;
+}
+
+.facility-grid-slider {
+  display: flex;
+  overflow-x: scroll; /* 스크롤 기능 유지 */
+  white-space: nowrap;
+  scroll-behavior: smooth;
+  margin-bottom: 60px;
+  will-change: scroll-position; /* GPU 가속 유도 */
+  -ms-overflow-style: none;  /* IE, Edge에서 스크롤바 숨김 */
+  scrollbar-width: none;     /* Firefox에서 스크롤바 숨김 */
+}
+
+/* 스크롤바 숨기기 */
+.facility-grid-slider::-webkit-scrollbar {
+  display: none; /* 웹킷 브라우저에서 스크롤바 숨김 */
+}
+
+.facility-grid-slider {
+  -ms-overflow-style: none;  /* IE 및 Edge에서 스크롤바 숨김 */
+  scrollbar-width: none;     /* Firefox에서 스크롤바 숨김 */
+}
+
+.facility-card {
+  flex: 0 0 auto;
+  width: 400px;
+  margin-right: 50px;
+  background-color: white;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  border-radius: 15px;
+}
+
+.facility-card:hover {
+  background-color: #F5EFE6;
+  transform: translateY(-5px);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+}
+
+.facility-card img {
+  width: 100%;
+  height: 370px;
+}
+.facility-card p{
+  font-weight: 600;
+  color: #413A2B;
+  font-size: 17px;
+}
+.facility-card p span{
+  font-family: "Albert Sans";
+}
+@media (min-width: 1200px) {
+
+  .facility-slider-container{
+    width: 100%;
+  }
+
+  .fffimg{
+    margin-left: 20px;
+  }
+
+  .facilities h3{
+    margin-left: 20px;
+  }
+
+}
+@media (max-width: 480px) {
+  .facility-card {
+    width: 200px;
+  }
+
+  .top-header {
+    flex-direction: column;
+    gap: 5px;
   }
 }
