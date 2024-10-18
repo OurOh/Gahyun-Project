@@ -11,8 +11,8 @@
                     <div class="api-placeholder">
                     	<div class="startdate" name="startDate"></div>
                     	<div class="enddate" name="endDate" ></div>
-                    	<input type="hidden" />
-                    	<input type="hidden" />
+                    	<input type="hidden" class="startdateval" />
+                    	<input type="hidden" class="enddateval"/>
                     	
                     </div>
                     
@@ -23,6 +23,7 @@
                                 <button class="control-button" onclick="decrease('roomCount')">-</button>
                                 <span id="roomCount">1</span>
                                 <button class="control-button" onclick="increase('roomCount')">+</button>
+                                <input type="hidden" class="roomCount" value=1 />
                             </div>
                         </div>
                         <div class="input-group">
@@ -31,9 +32,10 @@
                                 <button class="control-button" onclick="decrease('guestCount')">-</button>
                                 <span id="guestCount">1</span>
                                 <button class="control-button" onclick="increase('guestCount')">+</button>
+                                <<input type="hidden" class="guestCount" value=1 />
                             </div>
                         </div>
-                        <button class="room-search-button">객실검색</button>
+                        <button class="room-search-button" onclick="test()" >객실검색</button>
                     </div>
                 </div>
             </div>

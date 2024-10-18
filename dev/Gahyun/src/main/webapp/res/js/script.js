@@ -1,3 +1,31 @@
+function test() {
+    console.log($('.startdateval').val());
+    console.log($('.enddateval').val());
+
+}
+
+    
+	// Reservation 방갯수
+	function increase(id) {
+	    let element = document.getElementById(id);
+	    let elementClass = document.querySelector(id);
+	    let value = parseInt(element.textContent);
+	    if (value < 10) { // 최대 10개로 제한
+	        element.textContent = value + 1;
+			element.Class(val) 
+	    }
+	}
+	
+	function decrease(id) {
+	    let element = document.getElementById(id);
+	    let value = parseInt(element.textContent);
+	    if (value > 1) { // 최소 1개로 제한
+	        element.textContent = value - 1;
+	    }
+	}
+		
+
+
 $(function(){
 	//register 빈칸 검증
    $("#register").submit(function(){
@@ -48,11 +76,44 @@ $(function(){
    //datepicker
    
     $('.startdate').datepicker({
-    	inline: true
+    	inline: true,
+    	dateFormat: 'mm/dd/yy',
+    	prevText: '이전 달',
+		nextText: '다음 달',
+		monthNames: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
+		monthNamesShort: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
+		dayNames: ['일', '월', '화', '수', '목', '금', '토'],
+		dayNamesShort: ['일', '월', '화', '수', '목', '금', '토'],
+		dayNamesMin: ['일', '월', '화', '수', '목', '금', '토'],
+		showMonthAfterYear: true,
+		yearSuffix: '년',
+		onSelect: function(selectedDate) {
+            // 시작 날짜 선택 후 종료 날짜는 시작 날짜보다 이후로 설정
+             $('.enddate').datepicker('option', 'minDate', selectedDate);
+             $('.startdateval').val($('.startdate').val());
+        }
     });
     $('.enddate').datepicker({
-    	inline: true
+    	inline: true,
+    	dateFormat: 'mm/dd/yy',
+    	prevText: '이전 달',
+		nextText: '다음 달',
+		monthNames: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
+		monthNamesShort: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
+		dayNames: ['일', '월', '화', '수', '목', '금', '토'],
+		dayNamesShort: ['일', '월', '화', '수', '목', '금', '토'],
+		dayNamesMin: ['일', '월', '화', '수', '목', '금', '토'],
+		showMonthAfterYear: true,
+		yearSuffix: '년',
+		onSelect: function(selectedDate) {
+            // 종료 날짜 선택 후 시작 날짜는 종료 날짜보다 이전으로 설정
+        	$('.startdate').datepicker('option', 'maxDate', selectedDate);
+        	$('.enddateval').val($('.enddate').val());
+        }
     });
+
+    $('.roomCount').val($('#roomcount').text());
+    $('.guestCount').val($('#guestcount').text());
     
    
    /*
@@ -70,6 +131,7 @@ $(function(){
    	dateFormat: "mm",
    });
    $("#day").datepicker({
+   
    });
    */
    
