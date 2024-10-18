@@ -1,0 +1,53 @@
+.main-nav {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+  
+.navbar {
+    position: relative;
+    display: flex;
+    align-content: space-between;
+    width: 100%;
+    height: 60px;
+    background-color: #f5efe699;
+}
+.navbar-menu{
+   width: 25%;
+   text-align: center;
+   padding: 8px 0;
+}
+.navbar-menu>a{
+    text-decoration: none;
+    font-family: "Noto Sans KR-Medium", Helvetica;
+    font-weight: 500;
+    color: #1a4d2e;
+    font-size: 30px;
+}
+.nav-menu{
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: #f5efe699;
+    display: flex;
+}
+.nav-col{
+    width: 25%;
+    display: none;
+}
+.nav-col>a{
+    width: 100%;
+    display: block;
+    text-decoration: none;
+    color: #1a4d2e;
+    font-weight: 500;
+    text-align: center;
+    font-family: "Noto Sans KR-Medium", Helvetica;
+    font-size: 21px;
+    padding: 15px 0;
+}
+.nav-col>a:hover{
+    background-color: #c4bcb599;
+}
