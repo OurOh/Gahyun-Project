@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath}/res/css/Reservation_select/select.css" />
     <link rel="stylesheet" href="${pageContext.request.contextPath}/res/css/facilites/facilites.css" />
     <link rel="stylesheet" href="${pageContext.request.contextPath}/res/css/login/login.css" />
-    
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/res/css/UserMyPage/UserMyPage.css" />
       
     <script src="${pageContext.request.contextPath}/res/js/jquery.min.js"></script>
 	<script src="${pageContext.request.contextPath}/res/js/bootstrap.min.js"></script>

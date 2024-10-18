@@ -1,0 +1,251 @@
+
+
+/* �뒳�씪�씠�뱶 �씠誘몄� �뒪���씪 */
+.slide-image {
+  position: relative; /* �옄�떇 �슂�냼瑜� �젅�� �쐞移섎줈 �꽕�젙�븯湲� �쐞�빐 �긽���쟻�쑝濡� �쐞移� �꽕�젙 */
+  width: 100%; /* �뒳�씪�씠�뱶 �씠誘몄� �꼫鍮� �꽕�젙 */
+  height: 600px; /* �뒳�씪�씠�뱶 �씠誘몄� �넂�씠 �꽕�젙 */
+  overflow: hidden; /* �꽆移섎뒗 遺�遺� �닲湲곌린 */
+}
+
+.slide-image img {
+  width: 100%; /* �씠誘몄� �꼫鍮꾨�� 100%濡� �꽕�젙�븯�뿬 諛섏쓳�삎 */
+  height: 100%; /* �씠誘몄� �넂�씠瑜� �뒳�씪�씠�뱶 �넂�씠�뿉 留욎땄 */
+  object-fit: cover; /* �씠誘몄� 鍮꾩쑉 �쑀吏��븯硫댁꽌 �옒由щ룄濡� �꽕�젙 */
+  position: absolute; /* �젅�� �쐞移� �꽕�젙 */
+  top: 0; /* �긽�떒�뿉 �쐞移� */
+  left: 0; /* 醫뚯륫�뿉 �쐞移� */
+  opacity: 0; /* 珥덇린 遺덊닾紐낅룄 �꽕�젙 */
+  transition: opacity 0.5s ease; /* 遺덊닾紐낅룄 蹂�寃� �떆 �븷�땲硫붿씠�뀡 �꽕�젙 */
+}
+
+.slide-image img.active {
+  opacity: 1; /* �솢�꽦�솕�맂 �씠誘몄��뒗 蹂댁씠寃� �꽕�젙 */
+}
+
+/* �삁�빟 諛� �뒪���씪 */
+
+.container {
+  display: flex; /* �뵆�젆�뒪 諛뺤뒪瑜� �궗�슜�븯�뿬 媛�濡� �젙�젹 */
+  justify-content: center; /* 以묒븰 �젙�젹 */
+  margin: 20px 0; /* �긽�븯 �뿬諛� �꽕�젙 */
+}
+
+.reservation-bar {
+  background-color: #f0f0f0; /* 諛곌꼍�깋 �꽕�젙 */
+  padding: 20px; /* �궡遺� �뿬諛� �꽕�젙 */
+  border-radius: 8px; /* 紐⑥꽌由� �뫁湲�寃� 泥섎━ */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* 洹몃┝�옄 異붽� */
+  width: 100%; /* 媛�濡� �꼫鍮� �꽕�젙 */
+  /* max-width: 600px; /* 理쒕� �꼫鍮� �젣嫄고븯�뿬 �쟾泥� �꼫鍮� �궗�슜 */
+}
+
+.reservation-bar h3 {
+  margin-bottom: 15px; /* �젣紐⑷낵 �뤌 媛꾩쓽 �뿬諛� �꽕�젙 */
+  font-size: 24px; /* �젣紐� �겕湲� �꽕�젙 */
+  color: #1a4d2e; /* �젣紐� �깋�긽 �꽕�젙 */
+  text-align: center; /* �젣紐� 以묒븰 �젙�젹 */
+}
+
+.reservation-form {
+  display: flex; /* �뵆�젆�뒪 諛뺤뒪瑜� �궗�슜 */
+  flex-direction: row; /* 媛�濡� 諛⑺뼢�쑝濡� �젙�젹 */
+  justify-content: space-between; /* �샃�뀡 �궗�씠�뿉 怨듦컙 遺꾨같 */
+}
+
+.form-group {
+  flex: 1; /* 媛� 洹몃９�씠 �룞�씪�븳 鍮꾩쑉濡� 怨듦컙 李⑥� */
+  margin-right: 10px; /* �삤瑜몄そ 媛꾧꺽 �꽕�젙 */
+}
+
+.form-group:last-child {
+  margin-right: 0; /* 留덉�留� 洹몃９�쓽 �삤瑜몄そ 媛꾧꺽 �젣嫄� */
+}
+
+.form-group label {
+  margin-bottom: 5px; /* �젅�씠釉붽낵 �엯�젰 �슂�냼 媛꾩쓽 �뿬諛� �꽕�젙 */
+  font-weight: bold; /* �젅�씠釉� �뀓�뒪�듃 援듦쾶 �꽕�젙 */
+}
+
+.form-group input,
+.form-group select {
+  padding: 10px; /* �궡遺� �뿬諛� �꽕�젙 */
+  border: 1px solid #ccc; /* �뀒�몢由� �꽕�젙 */
+  border-radius: 4px; /* 紐⑥꽌由� �뫁湲�寃� 泥섎━ */
+  width: 100%; /* 媛�濡� �꼫鍮� 100% �꽕�젙 */
+  font-size: 16px; /* �룿�듃 �겕湲� �꽕�젙 */
+}
+
+button {
+  background-color: #1a4d2e; /* 踰꾪듉 諛곌꼍�깋 �꽕�젙 */
+  color: white; /* 踰꾪듉 �뀓�뒪�듃 �깋�긽 �꽕�젙 */
+  padding: 10px; /* 踰꾪듉 �궡遺� �뿬諛� �꽕�젙 */
+  border: none; /* �뀒�몢由� �젣嫄� */
+  border-radius: 4px; /* 踰꾪듉 紐⑥꽌由� �뫁湲�寃� 泥섎━ */
+  font-size: 18px; /* 踰꾪듉 �뀓�뒪�듃 �겕湲� �꽕�젙 */
+  cursor: pointer; /* 而ㅼ꽌 紐⑥뼇 �꽕�젙 */
+}
+
+button:hover {
+  background-color: #b2b59b; /* �샇踰� �떆 諛곌꼍�깋 蹂�寃� */
+}
+
+
+
+
+/* �씠踰ㅽ듃 �꽮�뀡 �뒪���씪 */
+
+.section-event {
+  display: flex; /* �뵆�젆�뒪 諛뺤뒪瑜� �궗�슜�븯�뿬 媛�濡� �젙�젹 */
+  justify-content: space-between; /* 醫뚯슦 媛꾧꺽�쓣 議곗젙 */
+  align-items: flex-start; /* �긽�떒 �젙�젹 */
+  background-color: #004d1a; /* 諛곌꼍�깋 �꽕�젙 */
+  color: white; /* �뀓�뒪�듃 �깋�긽 �꽕�젙 */
+  padding: 20px; /* �궡遺� �뿬諛� �꽕�젙 */
+  border-radius: 8px; /* 紐⑥꽌由� �뫁湲�寃� 泥섎━ */
+}
+
+.event-info-container {
+  display: flex; /* 媛�濡� �젙�젹 */
+  flex-direction: column; /* �꽭濡� 諛⑺뼢�쑝濡� �젙�젹 */
+  justify-content: center; /* 以묒븰 �젙�젹 */
+}
+
+.event-header {
+  margin-top: 50px;
+  margin-bottom: px; /* �씠踰ㅽ듃 �뿤�뜑�� 踰꾪듉 媛꾩쓽 �뿬諛� �꽕�젙 */
+}
+
+.slider-controls {
+  display: flex; /* 踰꾪듉�쓣 媛�濡쒕줈 �젙�젹 */
+  justify-content: center; /* 以묒븰 �젙�젹 */
+  margin-top: 20px; /* 踰꾪듉怨� �뿤�뜑 媛� 媛꾧꺽 �꽕�젙 */
+}
+
+.event-slider {
+  display: flex; /* �씠踰ㅽ듃瑜� 媛�濡쒕줈 �젙�젹 */
+  overflow: hidden; /* �꽆移섎뒗 遺�遺� �닲湲곌린 */
+  position: relative; /* �쐞移� �꽕�젙 */
+  flex: 3; /* �뒳�씪�씠�뜑媛� �뜑 留롮� 怨듦컙�쓣 李⑥��븯�룄濡� �꽕�젙 */
+}
+
+.event {
+  display: flex; /* �뵆�젆�뒪瑜� �궗�슜�븯�뿬 �씠誘몄��� �젙蹂� 媛�濡� �젙�젹 */
+  flex-direction: column; /* �꽭濡� 諛⑺뼢�쑝濡� �젙�젹 */
+  align-items: center; /* 以묒븰 �젙�젹 */
+  width: 100%; /* 媛� �씠踰ㅽ듃�쓽 �꼫鍮꾨�� �꽕�젙 */
+}
+
+.event img {
+  width: 80%; /* �씠誘몄� �꼫鍮꾨�� 50%濡� �꽕�젙�븯�뿬 諛섏쓳�삎 */
+  height: 250px; /* �씠誘몄� �넂�씠瑜� 370px濡� �꽕�젙 */
+  object-fit: cover; /* �씠誘몄� 鍮꾩쑉 �쑀吏��븯硫댁꽌 �옒由щ룄濡� �꽕�젙 */
+  border-radius: 8px; /* �씠誘몄� 紐⑥꽌由� �뫁湲�寃� 泥섎━ */
+  margin: 0 0px; /* 醫뚯슦 媛꾧꺽 �꽕�젙 (�쇊履� 5px, �삤瑜몄そ 5px) */
+}
+
+
+.event-info {
+  text-align: center; /* �뀓�뒪�듃 以묒븰 �젙�젹 */
+  margin-top: 15px;
+}
+
+
+.slider-controls button {
+  background-color: #b2b59b; /* 踰꾪듉 諛곌꼍�깋 �꽕�젙 */
+  color: white; /* 踰꾪듉 �뀓�뒪�듃 �깋�긽 �꽕�젙 */
+  border: none; /* �뀒�몢由� �젣嫄� */
+  padding: 15px 25px; /* �뙣�뵫 �꽕�젙 (�긽�븯 15px, 醫뚯슦 25px) */
+  font-size: 20px; /* 踰꾪듉 �뀓�뒪�듃 �겕湲� �꽕�젙 */
+  cursor: pointer; /* 而ㅼ꽌 紐⑥뼇 �꽕�젙 */
+  margin: 0 5px; /* 踰꾪듉 媛� 媛꾧꺽 �꽕�젙 */
+  border-radius: 5px; /* �뫁洹� 紐⑥꽌由� */
+}
+
+.slider-controls button:hover {
+  background-color: #1a4d2e; /* �샇踰� �떆 諛곌꼍�깋 蹂�寃� */
+}
+
+.hidden {
+  display: none; /* �닲寃⑥쭊 �슂�냼瑜� 蹂댁씠吏� �븡寃� �꽕�젙 */
+}
+
+
+/****/
+/* �떆�꽕 �꽮�뀡 �뒪���씪 */
+.section-facilities {
+  display: flex; /* �뵆�젆�뒪 諛뺤뒪瑜� �궗�슜�븯�뿬 媛�濡쒕줈 �젙�젹 */
+  align-items: center; /* �닔吏� 以묒븰 �젙�젹 */
+  margin: 20px 0; /* �긽�븯 �뿬諛� �꽕�젙 */
+}
+
+.spa-image {
+  flex: 1; /* �씠誘몄� �쁺�뿭�쓣 媛�濡쒕줈 �꽕�젙 */
+}
+
+.rectangle-3 {
+  margin-left: 230px;
+  width: 130%; /* �씠誘몄��쓽 �꼫鍮꾨�� 100%濡� �꽕�젙�븯�뿬 諛섏쓳�삎 */
+  height: auto; /* 鍮꾩쑉�뿉 留욊쾶 �넂�씠 �옄�룞 議곗젅 */
+  max-height: 450px; /* 理쒕� �넂�씠瑜� �꽕�젙�븯�뿬 �씠誘몄� �겕湲� 議곗젙 */
+}
+
+.spa-text {
+  flex: 1; /* �뀓�뒪�듃 �쁺�뿭�쓣 媛�濡쒕줈 �꽕�젙 */
+  padding: 20px; /* �뀓�뒪�듃 �쁺�뿭 �뿬諛� �꽕�젙 */
+  text-align: right; /* �뀓�뒪�듃 �쇊履� �젙�젹 */
+  margin-right: 210px;
+}
+
+.spa-text h2 {
+  font-size: 32px; /* �젣紐� �겕湲곕�� 利앷� */
+  color: #1a4d2e; /* �젣紐� �깋�긽 議곗젙 */
+}
+
+.spa-text p {
+  font-size: 20px; /* �뀓�뒪�듃 �겕湲곕�� 利앷� */
+  color: #333; /* �뀓�뒪�듃 �깋�긽 議곗젙 */
+}
+
+
+/* 諛섏쓳�삎 �뒪���씪 */
+@media screen and (max-width: 768px) {
+  body {
+      padding: 0 5%;
+  }
+
+  .main-nav {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .reservation-bar {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .footer-content {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+  }
+
+  .footer-links {
+      flex-direction: row;
+      gap: 20px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .nav-menu {
+      flex-direction: column;
+      gap: 10px;
+      font-size: 14px;
+  }
+
+  .footer-links {
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+  }
+}

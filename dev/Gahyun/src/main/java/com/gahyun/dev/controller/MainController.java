@@ -37,6 +37,11 @@ public class MainController {
 	public String Facilites(Model model) {
 		return "facilites";
 	}
+	
+	@GetMapping("/mypage")
+	public String UserMyPage(Model model) {
+		return "UserMyPage";
+	}
 		
 	@PostMapping("/register")
 	public String RegisterForm(
