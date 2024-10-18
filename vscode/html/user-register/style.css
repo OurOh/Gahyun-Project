@@ -1,0 +1,172 @@
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+  }
+.register-section {
+    padding: 30px;
+  }
+  
+  .register-section h1 {
+    text-align: center;
+    background-color: #4a6543; /* 초록색 배경 */
+    color: #f5efe6; 
+    text-align: center;
+    padding: 20px 0; /* 상하 여백 추가 */
+    margin-top: 0; /* 위아래 여백 제거 */
+    margin-bottom: 40px;
+    font-size: 2em; /* 텍스트 크기 설정 */
+    font-weight: bold; /* 굵은 텍스트 */
+    letter-spacing: 5px;
+  }
+  
+  #register-form {
+    width: 50%;
+    margin: 0 auto;
+  }
+  
+  #register-form label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 18px;
+    text-align: left;
+  }
+
+  #register-form input[type="password"]{
+    width: 95%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  #register-form input[type="text"],
+  #register-form select {
+    width: 60%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .birthdate, .phone {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .birthdate select, .phone input {
+    width: 32%;
+  }
+  
+  .form-buttons {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .submit-btn, .cancel-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    margin-top: 10px; /* 버튼을 아래로 3px 이동 */
+  }
+  
+  .submit-btn {
+    background-color: #1a4d2e;
+    color: #fff;
+  }
+  
+  .cancel-btn {
+    background-color: #ccc;
+    color: #333;
+  }
+
+  .submit-btn:hover {
+    background-color: #4a6543;
+  }
+  
+  .cancel-btn:hover {
+    background-color: #aaa;
+  }
+  
+  /* 중복확인 버튼 스타일 */
+  .userid-field {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .duplicate-check-btn {
+    background-color: #1a4d2e;
+    color: #fff;
+    border: none;
+    padding: 10px 7px;
+    font-size: 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: -20px;
+  }
+  
+  .duplicate-check-btn:hover {
+    background-color: #4a6543;
+  }
+  
+  /* 연락처 스타일 */
+  .phone {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .phone>input[type="text"] {
+    width: 32%; /* 생년월일 입력 필드와 동일한 크기 */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  
+  
+  /* 마케팅 수신동의 섹션 스타일 */
+  .marketing-agree {
+    margin-top: 30px;
+    padding: 15px;
+    background-color: #f0f4f3;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .marketing-agree h2 {
+    font-size: 20px;
+    margin-bottom: 15px;
+  }
+  
+  .marketing-agree p {
+    font-size: 14px;
+    margin-bottom: 10px;
+    line-height: 1.6;
+  }
+  
+  .marketing-agree ol {
+    padding-left: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .marketing-agree ol li {
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 5px;
+  }
+  
+  /* 반응형: 작은 화면에서는 마케팅 수신동의 섹션 숨기기 */
+  @media screen and (max-width: 768px) {
+    .marketing-agree>span {
+        display: none;
+    }
+  }
+
+  
+  
