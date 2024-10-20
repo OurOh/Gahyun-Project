@@ -1,0 +1,374 @@
+.login-page {
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+
+.login-page .div {
+  background-color: #ffffff;
+  overflow: hidden;
+  width: 1440px;
+  height: 2703px;
+  position: relative;
+}
+
+.login-page .overlap {
+  position: absolute;
+  width: 1444px;
+  height: 2119px;
+  top: 102px;
+  left: 0;
+}
+
+.login-page .body {
+  position: absolute;
+  width: 1440px;
+  height: 2119px;
+  top: 0;
+  left: 0;
+  background-color: #4f6f52;
+}
+
+.login-page .login-section {
+  position: absolute;
+  width: 1444px;
+  height: 1000px;
+  top: 562px;
+  left: 0;
+  background-color: #1a4d2e;
+}
+
+.login-page .rectangle {
+  position: absolute;
+  width: 848px;
+  height: 769px;
+  top: 112px;
+  left: 0;
+  object-fit: cover;
+}
+
+.login-page .login-form {
+  position: absolute;
+  width: 606px;
+  height: 769px;
+  top: 112px;
+  left: 848px;
+}
+
+.login-page .overlap-group {
+  position: relative;
+  width: 596px;
+  height: 769px;
+  background-color: #f5efe6;
+}
+
+.login-page .div-wrapper {
+  position: absolute;
+  width: 500px;
+  height: 80px;
+  top: 345px;
+  left: 48px;
+  background-color: #ffffff;
+  border-radius: 5px;
+}
+
+.login-page .text-wrapper {
+  position: absolute;
+  top: 18px;
+  left: 37px;
+  font-family: "Inter-Medium", Helvetica;
+  font-weight: 500;
+  color: #d9d9d9;
+  font-size: 36px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.login-page .overlap-2 {
+  position: absolute;
+  width: 500px;
+  height: 80px;
+  top: 447px;
+  left: 48px;
+  background-color: #ffffff;
+  border-radius: 5px;
+}
+
+.login-page .kakaotalk {
+  position: absolute;
+  width: 379px;
+  height: 197px;
+  top: 89px;
+  left: 108px;
+  object-fit: cover;
+}
+
+.login-page .overlap-3 {
+  position: absolute;
+  width: 220px;
+  height: 80px;
+  top: 549px;
+  left: 48px;
+  background-color: #4f6f52;
+  border-radius: 5px;
+}
+
+.login-page .text-wrapper-2 {
+  position: absolute;
+  top: 18px;
+  left: 60px;
+  font-family: "Inter-Bold", Helvetica;
+  font-weight: 700;
+  color: #f5efe6;
+  font-size: 36px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.login-page .overlap-4 {
+  position: absolute;
+  width: 220px;
+  height: 80px;
+  top: 549px;
+  left: 325px;
+  background-color: #ffffff;
+  border-radius: 5px;
+  border: 2px solid;
+  border-color: #4f6f52;
+}
+
+.login-page .text-wrapper-3 {
+  position: absolute;
+  top: 16px;
+  left: 41px;
+  font-family: "Inter-Medium", Helvetica;
+  font-weight: 500;
+  color: #1a4d2e;
+  font-size: 36px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.login-page .text-wrapper-4 {
+  position: absolute;
+  top: 687px;
+  left: 190px;
+  font-family: "Inter-Regular", Helvetica;
+  font-weight: 400;
+  color: #1a4d2e;
+  font-size: 24px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.login-page .footer {
+  position: absolute;
+  width: 1452px;
+  height: 482px;
+  top: 2221px;
+  left: 0;
+  background-color: transparent;
+}
+
+.login-page .overlap-5 {
+  position: relative;
+  width: 1440px;
+  height: 482px;
+  background-color: #1a4d2e;
+}
+
+.login-page .text-wrapper-5 {
+  position: absolute;
+  top: 421px;
+  left: 65px;
+  font-family: "Noto Sans KR-Light", Helvetica;
+  font-weight: 300;
+  color: #f5efe6;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.login-page .element {
+  position: absolute;
+  top: 218px;
+  left: 65px;
+  font-family: "Noto Sans KR-Regular", Helvetica;
+  font-weight: 400;
+  color: #f5efe6;
+  font-size: 20px;
+  letter-spacing: -0.2px;
+  line-height: normal;
+}
+
+.login-page .span {
+  letter-spacing: -0.04px;
+}
+
+.login-page .p {
+  position: absolute;
+  top: 39px;
+  left: 927px;
+  font-family: "Noto Sans KR-Medium", Helvetica;
+  font-weight: 400;
+  color: #f5efe6;
+  font-size: 24px;
+  letter-spacing: -0.24px;
+  line-height: 40px;
+}
+
+.login-page .text-wrapper-6 {
+  font-weight: 500;
+  letter-spacing: -0.06px;
+}
+
+.login-page .text-wrapper-7 {
+  font-family: "Noto Sans KR-Regular", Helvetica;
+  font-size: 20px;
+  letter-spacing: -0.04px;
+}
+
+.login-page .div-2 {
+  position: absolute;
+  top: 39px;
+  left: 1208px;
+  font-family: "Noto Sans KR-Medium", Helvetica;
+  font-weight: 400;
+  color: #f5efe6;
+  font-size: 24px;
+  letter-spacing: -0.24px;
+  line-height: 40px;
+}
+
+.login-page .a-b-c {
+  position: absolute;
+  top: 259px;
+  left: 927px;
+  font-family: "Noto Sans KR-Medium", Helvetica;
+  font-weight: 400;
+  color: #f5efe6;
+  font-size: 24px;
+  letter-spacing: -0.24px;
+  line-height: 40px;
+}
+
+.login-page .qn-a {
+  position: absolute;
+  top: 265px;
+  left: 1208px;
+  font-family: "Noto Sans KR-Medium", Helvetica;
+  font-weight: 400;
+  color: #f5efe6;
+  font-size: 24px;
+  letter-spacing: -0.24px;
+  line-height: 40px;
+}
+
+.login-page .logo {
+  position: absolute;
+  width: 247px;
+  height: 129px;
+  top: 52px;
+  left: 65px;
+  object-fit: cover;
+}
+
+.login-page .header {
+  position: absolute;
+  width: 1444px;
+  height: 102px;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+}
+
+.login-page .overlap-6 {
+  position: relative;
+  width: 1440px;
+  height: 102px;
+  background-color: #1a4d2e;
+}
+
+.login-page .text-wrapper-8 {
+  position: absolute;
+  width: 89px;
+  top: 8px;
+  left: 1316px;
+  font-family: "Noto Sans KR-Bold", Helvetica;
+  font-weight: 700;
+  color: #f5efe6;
+  font-size: 24px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.login-page .overlap-group-2 {
+  position: absolute;
+  width: 197px;
+  height: 58px;
+  top: 22px;
+  left: 59px;
+  background-color: #f5efe6;
+}
+
+.login-page .text-wrapper-9 {
+  position: absolute;
+  width: 96px;
+  top: 10px;
+  left: 54px;
+  font-family: "Noto Sans KR-Bold", Helvetica;
+  font-weight: 700;
+  color: #1a4d2e;
+  font-size: 24px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.login-page .logo-small {
+  position: absolute;
+  width: 225px;
+  height: 102px;
+  top: 0;
+  left: 607px;
+}
+
+
+
+
+/* 예약확인 hover 효과 */
+.login-page .text-wrapper-8:hover {
+  color: #2e8b57; /* hover 시 텍스트 색상 변경 */
+  cursor: pointer; /* 마우스 커서를 포인터로 변경 */
+}
+
+/* 예약하기 hover 효과 */
+.login-page .overlap-group-2:hover {
+  background-color: #d1c4a0; /* hover 시 배경 색상 변경 */
+  cursor: pointer; /* 마우스 커서를 포인터로 변경 */
+}
+
+.login-page .text-wrapper-9:hover {
+  color: #ffffff; /* hover 시 텍스트 색상 변경 */
+}
+
+/* 로그인 hover 효과 */
+.login-page .overlap-3:hover {
+  background-color: #2e8b57; /* hover 시 배경 색상 변경 */
+  cursor: pointer; /* 마우스 커서를 포인터로 변경 */
+}
+
+.login-page .text-wrapper-2:hover {
+  color: #ffffff; /* hover 시 텍스트 색상 변경 */
+}
+
+/* 회원가입 hover 효과 */
+.login-page .overlap-4:hover {
+  background-color: #d1c4a0; /* hover 시 배경 색상 변경 */
+  cursor: pointer; /* 마우스 커서를 포인터로 변경 */
+}
+
+.login-page .text-wrapper-3:hover {
+  color: #ffffff; /* hover 시 텍스트 색상 변경 */
+}
