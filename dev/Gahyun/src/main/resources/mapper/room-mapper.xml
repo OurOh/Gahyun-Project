@@ -3,21 +3,57 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.gahyun.dev.mapper.RoomsMapper">
-  <insert id="setInsertRoom" parameterType="RoomsDto"
-  		  useGeneratedKeys="true" keyProperty="room_id">
-     insert into rooms
-     (
-        userid, password, name, user_birth, phone_num
-     )
-     values
-     (
-       #{userid}, #{password}, #{name}, #{user_birth}, #{phone_num}
-   
-     )
-  </insert>
- 
-	<select id="selectRoomsByRoomId" parameterType = "int" resultType="RoomsDto">
-		SELECT * FROM rooms WHERE roomid=#{roomid} ORDER BY categorynum;
+	
+    <select id="findRoomDetailsWithPhotos" resultMap="roomDetailMap">
+    	SELECT r.*, p.photo_id, p.photo_url  
+    	FROM rooms r
+    	LEFT JOIN room_photo p ON r.room_id = p.room_id
+    	WHERE r.room_id = #{roomId}
+    </select>
+ 	
+ 	<resultMap id="roomDetailMap" type="RoomDetailDto">
+ 		<id property="roomId" column="room_id"/>
+ 		<result property="roomName" column="room_name"/>
+ 		<result property="roomType" column="room_type"/>
+ 		<result property="pricePerNight" column="price_per_night"/>
+ 		<result property="capacity" column="capacity"/>
+ 		<result property="description" column="description"/>
+ 		<result property="createdAt" column="created_at"/>		
+ 		<collection property="photos" ofType="Room_PhotosDto">
+ 		<id property="photoId" column="photo_id"/>
+ 		<result property="photoUrl" column="photo_url"/>
+ 		</collection>
+ 	</resultMap>
+ 	
+ 	<resultMap id="roomsMap" type="RoomsDto">
+ 		<id property="roomId" column="room_id"/>
+ 		<result property="roomName" column="room_name"/>
+ 		<result property="roomType" column="room_type"/>
+ 		<result property="pricePerNight" column="price_per_night"/>
+ 		<result property="capacity" column="capacity"/>
+ 		<result property="description" column="description"/>
+ 		<result property="createdAt" column="created_at"/>		
+ 	</resultMap>
+ 	
+
+	
+	<select id="findAvailableRooms" resultMap="roomDetailMap">
+	<![CDATA[
+		SELECT r.*, p.photo_id, p.photo_url
+    	FROM rooms r
+    	LEFT JOIN room_photos p ON r.room_id = p.room_id
+    	LEFT JOIN room_availability a ON r.room_id = a.room_id
+    	WHERE r.capacity >= #{guestCount}
+    		AND a.date BETWEEN #{startDate} AND #{endDate}
+    		AND a.is_available = 1
+    		AND r.total_rooms >= #{roomCount}
+      		AND r.room_id NOT IN (
+        		SELECT room_id 
+        		FROM reservations
+        		WHERE (check_in_date < #{endDate}) 
+        		AND (check_out_date > #{startDate})
+      		)
+	]]>
 	</select>
   
 </mapper>

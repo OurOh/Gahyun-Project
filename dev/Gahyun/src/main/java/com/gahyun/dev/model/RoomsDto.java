@@ -1,17 +1,19 @@
 package com.gahyun.dev.model;
 
-import java.sql.Timestamp;
+import java.math.BigDecimal;
+import java.sql.Date;
 
 import lombok.Data;
 
 @Data
 public class RoomsDto {
-	private int room_id;
-	private String room_name;
-	private String room_type;
+	private int roomId;
+	private String roomName;
+	private String roomType;
+	private BigDecimal pricePerNight;  // 가격이 숫자 값일 경우
 	private int capacity;
 	private String description;
-	private Timestamp created_at;
+	private Date createdAt;
 	
 	
 }

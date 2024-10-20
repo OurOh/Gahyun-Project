@@ -7,7 +7,7 @@
   		  useGeneratedKeys="true" keyProperty="user_id">
      insert into user
      (
-        userid, password, name, user_birth, phone_num
+        userid, password, name, user_birth, phone_num 
      )
      values
      (

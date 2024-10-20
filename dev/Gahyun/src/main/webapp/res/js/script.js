@@ -1,26 +1,25 @@
-function test() {
-    console.log($('.startdateval').val());
-    console.log($('.enddateval').val());
-
-}
 
     
 	// Reservation 방갯수
 	function increase(id) {
 	    let element = document.getElementById(id);
-	    let elementClass = document.querySelector(id);
+	    let inputElement = document.getElementById(id + "Input");
 	    let value = parseInt(element.textContent);
 	    if (value < 10) { // 최대 10개로 제한
-	        element.textContent = value + 1;
-			element.Class(val) 
+	    	value ++;
+	        element.textContent = value
+			inputElement.value = value;
 	    }
 	}
 	
 	function decrease(id) {
 	    let element = document.getElementById(id);
+	    let inputElement = document.getElementById(id + "Input");
 	    let value = parseInt(element.textContent);
 	    if (value > 1) { // 최소 1개로 제한
-	        element.textContent = value - 1;
+	    	value --;
+	        element.textContent = value;
+	        inputElement.value = value;
 	    }
 	}
 		
@@ -77,7 +76,7 @@ $(function(){
    
     $('.startdate').datepicker({
     	inline: true,
-    	dateFormat: 'mm/dd/yy',
+    	dateFormat: 'yy/mm/dd',
     	prevText: '이전 달',
 		nextText: '다음 달',
 		monthNames: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
@@ -95,7 +94,7 @@ $(function(){
     });
     $('.enddate').datepicker({
     	inline: true,
-    	dateFormat: 'mm/dd/yy',
+    	dateFormat: 'yy/mm/dd',
     	prevText: '이전 달',
 		nextText: '다음 달',
 		monthNames: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
@@ -112,9 +111,107 @@ $(function(){
         }
     });
 
-    $('.roomCount').val($('#roomcount').text());
-    $('.guestCount').val($('#guestcount').text());
+	// 사용가능한 방 ajax 처리
+	$('form[name="findAvailableRooms"]').on('submit',function(event){
+		event.preventDefault();
+		console.log("AJAX 요청 시작");
+		
+		//ajax
+		
+		$.ajax({
+			url: '/dev/available',
+			type:'POST',
+			data:{
+				roomCount: $('#roomCountInput').val(),
+				guestCount: $('#guestCountInput').val(),
+				startDate: $('#startdateval').val(),
+				endDate: $('#enddateval').val()
+			},
+			success: function(response){
+				 console.log('Response:', response); 
+				var roomList = $('.rooms-list');
+				roomList.empty();
+				
+				if (response.length > 0) {
+                	$('.recommended-title').text('사용 가능 객실');
+            	} else {
+                	$('.recommended-title').text('추천 객실');
+            	}
+				
+				
+				//받은 데이터 표시
+				$.each(response, function(index, room){
+				
+					var imageUrl = (room.photos && room.photos.length > 0) ? room.photos[0].photoUrl : '/default/image.jpg';
+            
+				
+					var roomCard = `
+						<div class="room-card" data-room-id="${room.roomId}">
+							<img src="/dev/${imageUrl}" alt="객실 이미지">
+							<p>객실 타입: ${room.roomType}<br>조식: 불포함</p>
+						</div>
+						`;
+					roomList.append(roomCard);
+				});	
+			},
+			error:function(xhr, status, error){
+			console.error("Error입니다.",error);
+			console.log("Response Text:", xhr.responseText);  // 서버 응답 확인
+    		console.log("Status:", status);  // HTTP 상태 코드 확인
+			
+			}
+			
+		});
+	
+	});
+   // Reservation select의 값 넘기기 241021 작업중	 
+   // 방선택
+	let selectedRoomId = null;  // 선택된 방의 ID를 저장할 변수
+
+	$(document).on('click', '.room-card', function () {
+   
+    $('.room-card').removeClass('selected');
     
+    // 클릭된 방을 선택 상태로 표시
+    $(this).addClass('selected');
+
+    // 클릭된 방의 roomId를 저장
+    selectedRoomId = $(this).data('room-id');
+
+    console.log("선택된 방 ID:", selectedRoomId);  // 디버깅용 콘솔 출력
+	});
+   
+   $('.next-button').on('click', function () {
+    // 사용자가 방을 선택하지 않은 경우 경고 메시지
+    if (selectedRoomId === null) {
+        alert("먼저 방을 선택해 주세요!");
+        return;  // 선택된 방이 없으면 진행하지 않음
+    }
+
+    // 사용자가 설정한 날짜 정보 가져오기
+    const startDate = $('#startdateval').val();
+    const endDate = $('#enddateval').val();
+
+    // 선택된 방 정보와 날짜 정보를 서버로 POST 요청
+    const form = $('<form></form>');
+    form.attr('method', 'POST');
+    form.attr('action', '/nextPage');  // 정보를 전달할 서버 경로
+
+    // 선택된 방의 ID를 폼에 추가
+    const roomIdInput = $('<input>').attr('type', 'hidden').attr('name', 'roomId').val(selectedRoomId);
+    form.append(roomIdInput);
+
+    // 선택한 날짜 정보를 폼에 추가
+    const startDateInput = $('<input>').attr('type', 'hidden').attr('name', 'startDate').val(startDate);
+    const endDateInput = $('<input>').attr('type', 'hidden').attr('name', 'endDate').val(endDate);
+    form.append(startDateInput);
+    form.append(endDateInput);
+
+    // 폼을 body에 추가하고 제출
+    $('body').append(form);
+    form.submit();
+});
+      
    
    /*
    
@@ -134,7 +231,7 @@ $(function(){
    
    });
    */
-   
+   /*
    $(document).ready(function() {
    $('.image-grid-slider').each(function() {
     const $slider = $(this);
@@ -165,8 +262,11 @@ $(function(){
       isDragging = false;
       $slider.css('cursor', 'grab');
     });
+    
+    
   });
+  
 });
-   
+*/   
    
 });

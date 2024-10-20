@@ -1,12 +1,18 @@
 package com.gahyun.dev.mapper;
 
+import java.time.LocalDate;
 import java.util.List;
 
-import com.gahyun.dev.model.UserDto;
+import org.apache.ibatis.annotations.Param;
 
-// Mapper 인터페이스는 유저와 유저의 역할을 데이터베이스에 삽입하거나 조회하는 기능
+import com.gahyun.dev.model.RoomDetailDto;
+import com.gahyun.dev.model.RoomsDto;
+
 public interface RoomsMapper {
-	   UserDto getMemberUserId(String userid); //아이디 가져오기
-	   void setInsertUser(UserDto userDto); //회원가입 
-
+	List<RoomDetailDto> findAvailableRooms(
+			@Param("roomCount") int roomCount, @Param("guestCount")int guestCount, @Param("startDate")LocalDate startDate, @Param("endDate")LocalDate endDate ); 
+	void setResRooms();
+	RoomDetailDto findRoomDetailsWithPhotos(@Param("roomId") int roomId);
+	
+	
 }
