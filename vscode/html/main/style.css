@@ -115,11 +115,15 @@ main {
     display: flex; /* 가로 정렬 */
     flex-direction: column; /* 세로 방향으로 정렬 */
     justify-content: center; /* 중앙 정렬 */
+    margin-left: 15px;
   }
   
   .main-event-header {
     margin-top: 50px;
     margin-bottom: px; /* 이벤트 헤더와 버튼 간의 여백 설정 */
+    text-align: center;
+    padding: 20px;
+    margin-bottom: 30px;
   }
   
   .event-slider-controls {
@@ -127,12 +131,16 @@ main {
     justify-content: center; /* 중앙 정렬 */
     margin-top: 20px; /* 버튼과 헤더 간 간격 설정 */
   }
-  
-  .event-slider {
-    display: flex; /* 이벤트를 가로로 정렬 */
+  .event-slide-view{
     overflow: hidden; /* 넘치는 부분 숨기기 */
     position: relative; /* 위치 설정 */
-    flex: 3; /* 슬라이더가 더 많은 공간을 차지하도록 설정 */
+    width: 938.61px;
+    height: 307px;
+  }
+  .event-slider {
+    width: 2815.83px;
+    display: flex; /* 이벤트를 가로로 정렬 */
+    flex: 3;
   }
   
   .event {
@@ -157,19 +165,19 @@ main {
   }
   
   
-  .slider-controls button {
-    background-color: #b2b59b; /* 버튼 배경색 설정 */
+  .event-slider-controls button {
+    background-color: #1a4d2e; /* 버튼 배경색 설정 */
     color: white; /* 버튼 텍스트 색상 설정 */
-    border: none; /* 테두리 제거 */
-    padding: 15px 25px; /* 패딩 설정 (상하 15px, 좌우 25px) */
+    border: 1px solid #4a6543;
+    padding: 10px 25px; /* 패딩 설정 (상하 15px, 좌우 25px) */
     font-size: 20px; /* 버튼 텍스트 크기 설정 */
     cursor: pointer; /* 커서 모양 설정 */
     margin: 0 5px; /* 버튼 간 간격 설정 */
     border-radius: 5px; /* 둥근 모서리 */
   }
   
-  .slider-controls button:hover {
-    background-color: #1a4d2e; /* 호버 시 배경색 변경 */
+  .event-slider-controls button:hover {
+    background-color: #4a6543; /* 호버 시 배경색 변경 */
   }
   
   .hidden {
