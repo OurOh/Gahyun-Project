@@ -1,54 +1,46 @@
 package com.gahyun.dev.dao;
 
 import java.util.List;
-
+import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-
-import com.gahyun.dev.mapper.MemberMapper;
 import com.gahyun.dev.model.UserDto;
 
 @Repository
 public class UserDaoImpl implements UserDao {
-	
-	@Autowired
-	private MemberMapper mem;
-	
-	
-	@Override
-	public List<UserDto> getAllUser() {
-		// TODO Auto-generated method stub
-		return null;
-	}
 
-	@Override
-	public UserDto getUser(int id) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+    @Autowired
+    private SqlSession sqlSession;
 
-	@Override
-	public void insertUser(UserDto dto) {
-	    System.out.println("Inserting User in DAO: " + dto);
-	    try {
-	        mem.setInsertUser(dto);  // 실제 쿼리 실행
-	        System.out.println("Insert finished in DAO");
-	    } catch (Exception e) {
-	        System.out.println("Exception during insert in DAO: " + e.getMessage());
-	        e.printStackTrace();  // 예외 발생 시 출력
-	    }
-	}
+    private static final String NAMESPACE = "com.gahyun.dev.mapper.UserMapper";
 
-	@Override
-	public void updateUser(UserDto dto) {
-		// TODO Auto-generated method stub
+    @Override
+    public List<UserDto> getAllUser() {
+        return sqlSession.selectList(NAMESPACE + ".getAllUser");
+    }
 
-	}
+    @Override
+    public UserDto getUser(int id) {
+        return sqlSession.selectOne(NAMESPACE + ".getUser", id);
+    }
 
-	@Override
-	public void delUser(int id) {
-		// TODO Auto-generated method stub
+    @Override
+    public UserDto getUserByUserid(String userid) {
+        return sqlSession.selectOne(NAMESPACE + ".getUserByUserid", userid);
+    }
 
-	}
+    @Override
+    public void insertUser(UserDto dto) {
+        sqlSession.insert(NAMESPACE + ".insertUser", dto);
+    }
 
+    @Override
+    public void updateUser(UserDto dto) {
+        sqlSession.update(NAMESPACE + ".updateUser", dto);
+    }
+
+    @Override
+    public void delUser(int id) {
+        sqlSession.delete(NAMESPACE + ".delUser", id);
+    }
 }

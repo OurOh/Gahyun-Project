@@ -9,10 +9,9 @@
 		http://www.springframework.org/schema/beans 
 		http://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
 		
-		
-		
-	<!--  passwordEncoder -->	
+	<!-- passwordEncoder 
 	<beans:bean id="passwordEncoder" class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder"/>    
-	<beans:bean id="customUserDetailService" class="net.musecom.comunity.service.CustomUserDetailService"/>      
+	<beans:bean id="customUserDetailService" class="com.gahyen.dev.service.CustomUserDetailService"/>     
+	
+	--> 
 </beans:beans>
-		

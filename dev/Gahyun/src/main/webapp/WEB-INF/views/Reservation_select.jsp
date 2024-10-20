@@ -9,8 +9,9 @@
                 <p>날짜와 인원수를 선택하세요</p>
                 <div class="reservation-container">
                     <div class="api-placeholder">
-                    	<div class="startdate" name="startDate"></div>
-                    	<div class="enddate" name="endDate" ></div>
+                    	<div class="startdate" id="startDate"></div>
+						<div class="enddate" id="endDate"></div>
+
                     	<input type="hidden" class="startdateval" />
                     	<input type="hidden" class="enddateval"/>
                     	
@@ -32,7 +33,7 @@
                                 <button class="control-button" onclick="decrease('guestCount')">-</button>
                                 <span id="guestCount">1</span>
                                 <button class="control-button" onclick="increase('guestCount')">+</button>
-                                <<input type="hidden" class="guestCount" value=1 />
+                                <input type="hidden" class="guestCount" value=1 />
                             </div>
                         </div>
                         <button class="room-search-button" onclick="test()" >객실검색</button>

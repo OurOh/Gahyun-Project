@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="com.gahyun.dev.mapper.UserMapper">
+
+    <!-- 모든 사용자 조회 -->
+    <select id="getAllUser" resultType="com.gahyun.dev.model.UserDto">
+        SELECT * FROM users;
+    </select>
+
+    <!-- ID로 사용자 조회 -->
+    <select id="getUser" parameterType="int" resultType="com.gahyun.dev.model.UserDto">
+        SELECT * FROM users WHERE user_id = #{id};
+    </select>
+
+    <!-- userid로 사용자 조회 -->
+    <select id="getUserByUserid" parameterType="String" resultType="com.gahyun.dev.model.UserDto">
+        SELECT * FROM users WHERE userid = #{userid};
+    </select>
+
+    <!-- 사용자 삽입 -->
+    <insert id="insertUser" parameterType="com.gahyun.dev.model.UserDto">
+        INSERT INTO users (userid, name, email, password, phone_num, created_at, user_birth) 
+        VALUES (#{userid}, #{name}, #{email}, #{password}, #{phone_num}, NOW(), #{user_birth});
+    </insert>
+
+    <!-- 사용자 업데이트 -->
+    <update id="updateUser" parameterType="com.gahyun.dev.model.UserDto">
+        UPDATE users
+        SET name = #{name}, email = #{email}, password = #{password}, phone_num = #{phone_num}
+        WHERE user_id = #{user_id};
+    </update>
+
+    <!-- 사용자 삭제 -->
+    <delete id="delUser" parameterType="int">
+        DELETE FROM users WHERE user_id = #{id};
+    </delete>
+
+</mapper>

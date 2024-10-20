@@ -38,49 +38,36 @@ public class MainController {
 		return "facilites";
 	}
 		
+	
+////	
+	
 	@PostMapping("/register")
 	public String RegisterForm(
-			
-			@RequestParam("userid") String userid,
-			@RequestParam("password") String password,
-			@RequestParam("name") String name,
-			@RequestParam("birth") String user_birth,
-			@RequestParam("tel") String phone_num,
-			HttpServletRequest request,
-			RedirectAttributes redirectAttributes
-			
-			) {
+	    @RequestParam("userid") String userid,
+	    @RequestParam("password") String password,
+	    @RequestParam("name") String name,
+	    @RequestParam("birth") String user_birth,
+	    @RequestParam("tel") String phone_num,
+	    HttpServletRequest request,
+	    RedirectAttributes redirectAttributes) {
+
+	    UserDto dto = new UserDto();
+	    dto.setUserid(userid);
+	    dto.setPassword(password);
+	    dto.setName(name);
+	    dto.setPhone_num(phone_num);
+
+	    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-M-d");
+	    LocalDate birthDate = LocalDate.parse(user_birth, formatter);
+	    dto.setUser_birth(birthDate);
+
+	    dao.insertUser(dto);
+	    redirectAttributes.addFlashAttribute("registerSuccess", "회원가입 성공");
+	    return "redirect:/login";
+	}	
 	
-		
 	
-			
-			UserDto dto = new UserDto();
-		
-
-		    
-			dto.setUserid(userid);
-			dto.setPassword(password);
-			dto.setName(name);
-			dto.setPhone_num(phone_num);
-
-		    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-M-d");
-		    LocalDate birthDate = LocalDate.parse(user_birth, formatter);  // 커스텀 포매터로 날짜 변환
-		    dto.setUser_birth(birthDate);
-
-			System.out.println("Controller: insertUser called with UserDto: " + dto);
-			
-			
-			dao.insertUser(dto);
-			
-			
-
-	      //redirect 일떄 정보 전달 방법
-			redirectAttributes.addFlashAttribute("memberok", "ok");
-			
-		
-			return "redirect:/";
-			
-		}	
+	
 	
 	@GetMapping("/Reservation1")
 	public String Reservation1(Model model) {
@@ -102,7 +89,34 @@ public class MainController {
 		return "login";
 	}
 	
+///
+	
+	@PostMapping("/register")
+	public String RegisterForm(@RequestParam("userid") String userid,
+	                           @RequestParam("password") String password,
+	                           @RequestParam("name") String name,
+	                           @RequestParam("birth") String user_birth,
+	                           @RequestParam("tel") String phone_num,
+	                           RedirectAttributes redirectAttributes) {
 
+	    UserDto dto = new UserDto();
+	    dto.setUserid(userid);
+	    dto.setPassword(password); // 암호화 필요
+	    dto.setName(name);
+	    dto.setPhone_num(phone_num);
+
+	    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-M-d");
+	    LocalDate birthDate = LocalDate.parse(user_birth, formatter);
+	    dto.setUser_birth(birthDate);
+
+	    dao.insertUser(dto);
+	    redirectAttributes.addFlashAttribute("registerSuccess", "회원가입 성공");
+	    return "redirect:/login";
+	}
+
+	
+	
+	
 	
 	
 }

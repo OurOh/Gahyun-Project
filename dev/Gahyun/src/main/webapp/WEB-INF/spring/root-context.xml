@@ -1,26 +1,28 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd">
-	
-	<!-- db설정 -->
-	<bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource">
-		<property name="driverClassName" value="com.mysql.cj.jdbc.Driver"></property>
-		<property name="url" value="jdbc:mysql://localhost:3306/gahyun?serverTimezone=UTC"/>
-		<property name="username" value="root"/>
-		<property name="password" value="z1z2z3z4"/>
-	</bean>
-	
-	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
-       <property name="dataSource" ref="dataSource" />
-       <property name="configLocation" value="classpath:mybatis-config.xml" />
-       <property name="mapperLocations" value="classpath*:mapper/*-mapper.xml" />
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- DB 설정 -->
+    <bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource">
+        <property name="driverClassName" value="com.mysql.cj.jdbc.Driver" />
+        <property name="url" value="jdbc:mysql://localhost:3306/mycomu?serverTimezone=UTC" />
+        <property name="username" value="root" />
+        <property name="password" value="0321" />
     </bean>
-    	<!-- MyBatis Mapper 스캔 -->
-	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-      <property name="basePackage" value="com.gahyun.dev.mapper" />
-      <property name="sqlSessionFactory" ref="sqlSessionFactory" />
-    </bean>  
-    
-    
+
+    <!-- MyBatis SqlSessionFactory 설정 -->
+    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <property name="dataSource" ref="dataSource" />
+        <property name="configLocation" value="classpath:mybatis-config.xml" />
+    </bean>
+
+    <!-- MyBatis SqlSessionTemplate 설정 -->
+    <bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate">
+        <constructor-arg index="0" ref="sqlSessionFactory" />
+    </bean>
+
+    <!-- Mapper 스캔 설정, 최신 방식으로 변경 -->
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <property name="basePackage" value="com.gahyun.dev.mapper" />
+    </bean>
 </beans>

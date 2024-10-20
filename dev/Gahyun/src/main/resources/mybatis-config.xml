@@ -2,20 +2,23 @@
 <!DOCTYPE configuration
   PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
   "https://mybatis.org/dtd/mybatis-3-config.dtd">
+  
 <configuration>
+
   <settings>
      <setting name="cacheEnabled" value="true" />
      <setting name="mapUnderscoreToCamelCase" value="true" />
-     <setting name="logImpl" value="LOG4J"/>
+     <setting name="logImpl" value="LOG4J" />
   </settings>
-  <!-- 별칭등록 -->
-  <typeAliases>
-  	<package  name="com.gahyun.dev.model"/>
-  </typeAliases>
-  <!-- 
-  <mappers>
-    <mapper resource="org/mybatis/example/BlogMapper.xml"/>
-  </mappers>
-  -->
 
+  <!-- Type Alias 설정 -->
+  <typeAliases>
+    <package name="com.gahyun.dev.model" />
+  </typeAliases>
+
+  <!-- Mapper 설정 -->
+  <mappers>
+    <mapper resource="com/gahyun/dev/mapper/UserMapper.xml" />
+  </mappers>
+  
 </configuration>

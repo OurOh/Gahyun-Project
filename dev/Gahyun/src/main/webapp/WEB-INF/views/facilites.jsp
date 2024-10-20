@@ -19,7 +19,7 @@
             <p>조식뷔페 <span>Tiffany</span></p>
           </div>
           <div class="image-card">
-            <img src=${pageContext.request.contextPath}/res/images/breakfast002.jpg" alt="비건전문">
+            <img src="${pageContext.request.contextPath}/res/images/breakfast002.jpg" alt="비건전문">
             <p>비건전문 <span>La'bia</span></p>
           </div>
           <div class="image-card">
