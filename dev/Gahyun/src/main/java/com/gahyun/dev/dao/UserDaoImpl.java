@@ -28,6 +28,35 @@ public class UserDaoImpl implements UserDao {
         user.setName(rs.getString("name"));
         user.setEmail(rs.getString("email"));
         user.setPhone_num(rs.getString("phone_num"));
+        user.setUser_birth(rs.getString("user_birth"));
         return user;
     };
+
+    
+    //정보수정
+    @Override
+    public void updateUser(UserDto user) {
+        String sql = "UPDATE users SET password = ?, name = ?, phone_num = ?, user_birth = ? WHERE userid = ?";
+        jdbcTemplate.update(sql, 
+        		user.getPassword(), 
+        		user.getName(), 
+        		user.getPhone_num(), 
+        		user.getUser_birth(), 
+        		user.getUserid());
+    }
+
+    
+     //새로운 사용자 등록
+     @Override
+     public void insertUser(UserDto user) {
+    	 String sql = "INSERT INTO users (userid, password, name, phone_num, user_birth) VALUES (?, ?, ?, ?, ?)";
+    	 jdbcTemplate.update(sql, 
+    			 user.getUserid(), 
+    			 user.getPassword(), 
+    			 user.getName(), 
+    			 user.getPhone_num(), 
+    			 user.getUser_birth());
+    }
+    
+    
 }

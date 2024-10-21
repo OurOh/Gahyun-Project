@@ -12,17 +12,21 @@
 	<!-- 정적파일 폴더 -->
     <resources mapping="/res/**" location="/res/" />
     
+    
     <!-- 타일즈 셋팅 -->
     <beans:bean id="tilesViewResolver" class="org.springframework.web.servlet.view.UrlBasedViewResolver">
        <beans:property name="viewClass" value="org.springframework.web.servlet.view.tiles3.TilesView"/> 
        <beans:property name="order" value="1" />   
     </beans:bean>
 
+
+	<!-- ViewResolver -->
 	<beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<beans:property name="prefix" value="/WEB-INF/views/" />
 		<beans:property name="suffix" value=".jsp" />
 		<beans:property name="order" value="2" />
 	</beans:bean>
+	
 	
 	<!-- tiles xml 설정 -->
 	<beans:bean class="org.springframework.web.servlet.view.tiles3.TilesConfigurer">

@@ -19,4 +19,17 @@ public class UserServiceImpl implements UserService {
         }
         return null;
     }
+    
+    
+    @Override
+    public void updateUser(UserDto user) {
+        userDao.updateUser(user);  // DAO를 통해 사용자 정보 업데이트
+    }
+    
+    @Override
+    public void insertUser(UserDto user) {
+        // 사용자 정보를 데이터베이스에 삽입
+        userDao.insertUser(user);
+    }
+    
 }

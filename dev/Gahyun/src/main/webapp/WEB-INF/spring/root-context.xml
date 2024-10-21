@@ -16,6 +16,7 @@
        <property name="configLocation" value="classpath:mybatis-config.xml" />
        <property name="mapperLocations" value="classpath*:mapper/*-mapper.xml" />
     </bean>
+    
     	<!-- MyBatis Mapper 스캔 -->
 	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
       <property name="basePackage" value="com.gahyun.dev.mapper" />
