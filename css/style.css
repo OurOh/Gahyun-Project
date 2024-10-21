@@ -108,7 +108,7 @@ header {
     color: #555;
 }
 
-/* 지도 및 교통 정보 스타일 */
+/* 지도 및 교통 정보 스타일 ****/
 .map-info {
     display: flex;
     justify-content: space-between;

@@ -1,0 +1,195 @@
+/* 공통 스타일 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f9f9f9;
+}
+
+header {
+  width: 100%;
+  background-color: #1a4d2e;
+}
+
+.top-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #1a4d2e;
+}
+
+.main-nav {
+  background-color: #b2b59b;
+  padding: 10px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.main-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+.main-nav ul li a {
+  text-decoration: none;
+  color: #1a4d2e;
+  font-size: 18px;
+}
+
+/* Section title */
+.section-title {
+  background-color: #46684a;
+  padding: 10px;
+  text-align: center;
+  color: white;
+  margin-bottom: 20px;
+}
+.facilities h3{
+  font-size: 22px;
+  color: #46684a;
+  margin-bottom: 13px;
+}
+
+/* Slider Container */
+.image-slider-container {
+  display: flex;
+  flex-direction: column;
+  cursor: grab; /* Default cursor */
+  width: 100%;
+  margin-bottom: 80px;
+}
+
+.image-grid-slider {
+  display: flex;
+  overflow-x: scroll; /* 스크롤 기능 유지 */
+  white-space: nowrap;
+  scroll-behavior: smooth;
+  margin-bottom: 60px;
+  will-change: scroll-position; /* GPU 가속 유도 */
+  -ms-overflow-style: none;  /* IE, Edge에서 스크롤바 숨김 */
+  scrollbar-width: none;     /* Firefox에서 스크롤바 숨김 */
+}
+
+/* 스크롤바 숨기기 */
+.image-grid-slider::-webkit-scrollbar {
+  display: none; /* 웹킷 브라우저에서 스크롤바 숨김 */
+}
+
+.image-grid-slider {
+  -ms-overflow-style: none;  /* IE 및 Edge에서 스크롤바 숨김 */
+  scrollbar-width: none;     /* Firefox에서 스크롤바 숨김 */
+}
+
+.image-card {
+  flex: 0 0 auto;
+  width: 400px;
+  margin-right: 50px;
+  background-color: white;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  border-radius: 15px;
+}
+
+.image-card:hover {
+  background-color: #F5EFE6;
+  transform: translateY(-5px);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+}
+
+.image-card img {
+  width: 100%;
+  height: 370px;
+}
+.image-card p{
+  font-weight: 600;
+  color: #413A2B;
+  font-size: 17px;
+}
+.image-card p span{
+  font-family: "Albert Sans";
+}
+
+
+/* Footer */
+footer {
+  background-color: #004d1a;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+/* 반응형 레이아웃 */
+@media (min-width: 1200px) {
+  
+  .image-slider-container{
+    width: 100%;
+  }
+
+  .fffimg{
+    margin-left: 500px;
+  }
+
+  .facilities h3{
+    margin-left: 520px;
+  }
+
+}
+
+@media (max-width: 1200px) {
+  body {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+
+  .main-nav ul {
+    gap: 20px;
+  }
+
+  .image-card {
+    max-width: 400px;
+  }
+
+
+}
+
+@media (max-width: 768px) {
+  body {
+    padding-left: 2%;
+    padding-right: 2%;
+  }
+
+  .image-card {
+    width: 250px;
+  }
+
+  .main-nav ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .top-header {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+
+}
+
+@media (max-width: 480px) {
+  .image-card {
+    width: 200px;
+  }
+
+  .top-header {
+    flex-direction: column;
+    gap: 5px;
+  }
+}

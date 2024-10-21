@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>개인정보 수정</title>
+    <link rel="stylesheet" href="../style/UserEdit.css">
+</head>
+<body>
+    <div class="container">
+        
+        <header>
+            <div class="top-header">
+                <a href="#" id="reserv_make"><button type="button" class="reserv_make btn">예약하기</button></a>
+                <img class="logo-small" src="../images/logo1.jpg" alt="Gahyeon Logo" />
+                <a href="#" id="user_login" class="user_login">로그인</a>
+                <a href="#" id="reserv_view" class="reserv_view">예약확인</a>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#">시설소개</a></li>
+                    <li><a href="#">테마파크</a></li>
+                    <li><a href="#">객실</a></li>
+                    <li><a href="#">공지사항</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <section class="form-section">
+            <h1>개인정보 수정</h1>
+            <form>
+                <label for="name">이름</label>
+                <input type="text" id="name" name="name" value="홍길동" readonly>
+
+                <label for="username">회원아이디</label>
+                <input type="text" id="username" name="username" value="gildong" readonly>
+
+                <label for="password">비밀번호</label>
+                <input type="password" id="password" name="password" placeholder="비밀번호">
+
+                <label for="confirm_password">비밀번호 확인</label>
+                <input type="password" id="confirm_password" name="confirm_password" placeholder="비밀번호 확인">
+
+                <label for="birthdate">생년월일</label>
+                <div class="birthdate">
+                    <select name="year" id="year">
+                        <option value="1999">1999</option>
+                        <option value="1999">1999</option>
+                        <option value="1999">1999</option>
+                        <option value="1999">1999</option>
+                        <option value="1999">1999</option>
+                        <option value="1999">1999</option>
+                        <option value="1999">1999</option>
+                        <option value="1999">1999</option>
+                        <option value="1999">1999</option>
+                        <option value="1999">1999</option>
+                        <!-- 더 많은 연도를 추가하세요 -->
+                    </select>
+                    <select name="month" id="month">
+                        <option value="1">1</option>
+                        <option value="1">1</option>
+                        <option value="1">1</option>
+                        <option value="1">1</option>
+                        <option value="1">1</option>
+                        <option value="1">1</option>
+                        <option value="1">1</option>
+                        <option value="1">1</option>
+                        <!-- 더 많은 월을 추가하세요 -->
+                    </select>
+                    <select name="day" id="day">
+                        <option value="10">10</option>
+                        <!-- 더 많은 날짜를 추가하세요 -->
+                        <option value="10">10</option>
+                        <option value="10">10</option>
+                        <option value="10">10</option>
+                        <option value="10">10</option>
+                        <option value="10">10</option>
+                        <option value="10">10</option>
+                        <option value="10">10</option>
+                        <option value="10">10</option>
+                    </select>
+                </div>
+
+                <label for="phone">연락처</label>
+                <div class="phone">
+                    <input type="text" id="phone1" name="phone1" value="010" maxlength="3">
+                    <input type="text" id="phone2" name="phone2" maxlength="4">
+                    <input type="text" id="phone3" name="phone3" maxlength="4">
+                </div>
+
+                <div class="buttons">
+                    <button type="submit" class="submit-btn">수정완료</button>
+                    <button type="button" class="cancel-btn">취소</button>
+                </div>
+            </form>
+        </section>
+
+
+        
+        <footer>
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="/vscode/images/logo1.jpg" alt="Gahyeon Resort 로고">
+                    <p>(주)가현리조트 컴퍼니<br>호텔 이용약관 | 개인정보처리방침</p>
+                    <p>대표자명: 정가현 | 주소: 경기 김포시 포로정리 호도공원로 326번길<br>사업자등록번호: 105-00-00000</p>
+                    <p>TEL: 031-988-8888 | KakaoTalk: 가현리조트 | Instagram: @gahyeon_resort</p>
+                    <p>COPYRIGHT © 2023 가현리조트. ALL RIGHTS RESERVED.</p>
+                </div>
+                <div class="footer-links">
+                    <ul>
+                        <li><strong>시설소개</strong></li>
+                        <li><a href="#">리조트소개</a></li>
+                        <li><a href="#">다이닝</a></li>
+                        <li><a href="#">편의시설</a></li>
+                        <li><a href="#">오락</a></li>
+                    </ul>
+                    <ul>
+                        <li><strong>테마파크</strong></li>
+                        <li><a href="#">루프탑</a></li>
+                        <li><a href="#">스파</a></li>
+                        <li><a href="#">휘트니스센터</a></li>
+                    </ul>
+                    <ul>
+                        <li><strong>객실</strong></li>
+                        <li><a href="#">타입A</a></li>
+                        <li><a href="#">타입B</a></li>
+                        <li><a href="#">타입C</a></li>
+                    </ul>
+                    <ul>
+                        <li><strong>공지사항</strong></li>
+                        <li><a href="#">이달의 이벤트</a></li>
+                        <li><a href="#">QnA</a></li>
+                        <li><a href="#">고객센터</a></li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+    
+        
+
+    </div>
+</body>
+</html>
