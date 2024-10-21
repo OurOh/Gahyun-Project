@@ -140,19 +140,23 @@ main {
   .event-slider {
     width: 2815.83px;
     display: flex; /* 이벤트를 가로로 정렬 */
-    flex: 3;
+  }
+  .event-slider-box{
+    display: flex;
+    width: 938.61px;
+    transition: transform 0.5s ease;
   }
   
   .event {
     display: flex; /* 플렉스를 사용하여 이미지와 정보 가로 정렬 */
     flex-direction: column; /* 세로 방향으로 정렬 */
     align-items: center; /* 중앙 정렬 */
-    width: 100%; /* 각 이벤트의 너비를 설정 */
+    width: 33.3%; /* 각 이벤트의 너비를 설정 */
   }
   
   .event img {
     width: 80%; /* 이미지 너비를 50%로 설정하여 반응형 */
-    height: 250px; /* 이미지 높이를 370px로 설정 */
+    height: 230px; /* 이미지 높이를 370px로 설정 */
     object-fit: cover; /* 이미지 비율 유지하면서 잘리도록 설정 */
     border-radius: 8px; /* 이미지 모서리 둥글게 처리 */
     margin: 0 0px; /* 좌우 간격 설정 (왼쪽 5px, 오른쪽 5px) */
@@ -237,6 +241,37 @@ main {
     .bar-group select {
         width: 100%;
     }
+    .main-event {
+      flex-direction: column;
+      gap: 20px;
+    }
+    .main-event-container{
+      margin: 0 auto;
+    }
+    .main-event-header{
+      width: 100%;
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      margin: 0;
+    }
+    .main-event-header h2{
+      display: none;
+    }
+    .main-event p{
+      font-size: 25px;
+    }
+    .event-slider{
+      max-width: 300%;
+    }
+    .event-slider-box{
+      max-width: 100%;
+      gap: 0;
+    }
+    .event{
+      width: 22%;
+    }
+    
     .main-facilities {
         flex-direction: column;
         align-items: center;
@@ -246,7 +281,14 @@ main {
     .rectangle-3 {
         width: 100%;
     }
+
     .spa-text {
         text-align: center;
     }
+    
+}
+@media screen and (max-width: 500px) {
+  .event{
+    width: 15%;
+  }
 }

@@ -59,7 +59,7 @@
                 </div>
                 <div class="event-slide-view">
                     <div class="event-slider">
-                        
+                        <div class="event-slider-box">
                             <div class="event">
                                 <img class="img" src="../../images/breakfast004.jpg" alt="Event 1" />
                                 <div class="event-info">
@@ -81,7 +81,8 @@
                                     24.01.01 ~ 24.12.12
                                 </div>
                             </div>
-                        
+                        </div>
+                        <div class="event-slider-box">
                             <div class="event">
                                 <img class="img" src="../../images/arcade1.jpg" alt="Event 1" />
                                 <div class="event-info">
@@ -103,7 +104,8 @@
                                     24.01.01 ~ 24.12.12
                                 </div>
                             </div>
-                        
+                        </div>
+                        <div class="event-slider-box">
                             <div class="event">
                                 <img class="img" src="../../images/shopping1.jpg" alt="Event 1" />
                                 <div class="event-info">
@@ -125,7 +127,7 @@
                                     24.01.01 ~ 24.12.12
                                 </div>
                             </div>
-                        
+                        </div>
                     </div>
                 </div>
             </div>
@@ -168,15 +170,30 @@
         /***********************************************************************************************/
 
         // 이벤트 슬라이더 설정
-        let index;
-    $(".next").click(function(){
-        index = $(".event").index();
-        (".event-slider").animate({left: -(index * 312.87)}, 400);
+        let currentIndex = 0;
+
+const prevButton = document.querySelector('.prev');
+const nextButton = document.querySelector('.next');
+const sliderBoxes = document.querySelectorAll('.event-slider-box');
+
+function updateSlider() {
+    sliderBoxes.forEach((box, index) => {
+        box.style.transform = `translateX(${-currentIndex * 100}%)`;
     });
-    $(".prev").click(function(){
-        index = $(".event").index();
-        (".event-slider").animate({right: (index * 312.87)}, 400);
-    });
+}
+
+prevButton.addEventListener('click', () => {
+    currentIndex = (currentIndex > 0) ? currentIndex - 1 : sliderBoxes.length - 1;
+    updateSlider();
+});
+
+nextButton.addEventListener('click', () => {
+    currentIndex = (currentIndex < sliderBoxes.length - 1) ? currentIndex + 1 : 0;
+    updateSlider();
+});
+
+// 초기 슬라이더 상태 업데이트
+updateSlider();
 });
 </script>
 </html>
