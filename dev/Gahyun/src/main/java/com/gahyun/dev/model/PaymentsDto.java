@@ -14,6 +14,4 @@ public class PaymentsDto {
 	private Timestamp payment_date;
 	private String payment_status;
 	
-	
-	
 }

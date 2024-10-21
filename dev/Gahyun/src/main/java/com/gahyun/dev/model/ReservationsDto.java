@@ -16,6 +16,10 @@ public class ReservationsDto {
 	private BigDecimal total_price;
 	private String status;
 	private Timestamp created_at;
+	public static void updateReservation(ReservationsDto reservation) {
+		// TODO Auto-generated method stub
+		
+	}
 	
 
 	
