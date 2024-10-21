@@ -3,6 +3,8 @@ package com.gahyun.dev.controller;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -66,4 +68,36 @@ public class MainController {
     public String Reservation2(Model model) {
         return "Reservation_confirm";
     }
+    
+    
+    @Autowired
+    private UserDao userDao;
+
+    // 로그인 페이지 이동
+    @GetMapping("/login")
+    public String showLoginPage() {
+        return "login";  // login.jsp로 이동
+    }
+    
+    
+    @PostMapping("/login")
+    public String login(@RequestParam("userid") String userid,
+                        @RequestParam("password") String password,
+                        HttpSession session, Model model) {
+    	
+        UserDto loginUser = userDao.getUserByUserId(userid);
+        
+        // 사용자 정보가 있고 비밀번호가 일치할 경우
+        if (loginUser != null && loginUser.getPassword().equals(password)) {
+            session.setAttribute("user", loginUser);  // 로그인 성공 시 세션에 사용자 정보 저장
+            return "redirect:/";  // 홈 페이지로 리다이렉트
+        } else {
+            model.addAttribute("errorMessage", "아이디 또는 비밀번호가 일치하지 않습니다.");
+            return "login";  // 로그인 실패 시 로그인 페이지로 돌아감
+        }
+    }
+    
+    
+    
+    
 }

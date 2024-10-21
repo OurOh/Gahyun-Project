@@ -1,5 +1,8 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles" %>    
+
+<%@ page session="false" pageEncoding="UTF-8" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,22 +13,29 @@
 <main class="main-content">
             <section class="image-section">
                 <div class="image-slider">
-                    <img src="${pageContext.request.contextPath}/res/images/pool003.jpg" alt="∏Æ¡∂∆Æ ¿ÃπÃ¡ˆ 1" class="active">
-                    <img src="${pageContext.request.contextPath}/res/images/outside001.jpg" alt="∏Æ¡∂∆Æ ¿ÃπÃ¡ˆ 1">
-                    <img src="${pageContext.request.contextPath}/res/images/yoga003.jpg" alt="∏Æ¡∂∆Æ ¿ÃπÃ¡ˆ 3">
+                    <img src="${pageContext.request.contextPath}/res/images/pool003.jpg" alt="Î¶¨Ï°∞Ìä∏ Ïù¥ÎØ∏ÏßÄ 1" class="active">
+                    <img src="${pageContext.request.contextPath}/res/images/outside001.jpg" alt="Î¶¨Ï°∞Ìä∏ Ïù¥ÎØ∏ÏßÄ 1">
+                    <img src="${pageContext.request.contextPath}/res/images/yoga003.jpg" alt="Î¶¨Ï°∞Ìä∏ Ïù¥ÎØ∏ÏßÄ 3">
                 </div>
             </section>
 
             <section class="login-section">
                 <div class="login-container">
-                    <h2>∑Œ±◊¿Œ</h2>
-                    <form>
-                        <input type="text" placeholder="æ∆¿Ãµ">
-                        <input type="password" placeholder="∫Òπ–π¯»£">
-                        <button type="submit" id="loginsubmit">∑Œ±◊¿Œ</button>
-                        <button type="button" id="userregister">»∏ø¯∞°¿‘</button>
-                        <a href="#">æ∆¿Ãµ/∫Òπ–π¯»£ √£±‚</a>
-                    </form>
+                    <h2>Î°úÍ∑∏Ïù∏</h2>
+                    <form action="${pageContext.request.contextPath}/login" method="post">
+					    <div>
+					        <label for="userid">ÏïÑÏù¥Îîî:</label>
+					        <input type="text" id="userid" name="userid" required>
+					    </div>
+					    <div>
+					        <label for="password">ÎπÑÎ∞ÄÎ≤àÌò∏:</label>
+					        <input type="password" id="password" name="password" required>
+					    </div>
+					    <div>
+					        <button type="submit">Î°úÍ∑∏Ïù∏</button>
+					    </div>
+					</form>
+
                 </div>
             </section>
         </main>

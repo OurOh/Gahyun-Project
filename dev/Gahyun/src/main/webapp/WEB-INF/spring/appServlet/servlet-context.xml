@@ -7,19 +7,16 @@
 		http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
 
-
-	
-
 	<annotation-driven />
 
 	<!-- 정적파일 폴더 -->
     <resources mapping="/res/**" location="/res/" />
+    
     <!-- 타일즈 셋팅 -->
     <beans:bean id="tilesViewResolver" class="org.springframework.web.servlet.view.UrlBasedViewResolver">
        <beans:property name="viewClass" value="org.springframework.web.servlet.view.tiles3.TilesView"/> 
        <beans:property name="order" value="1" />   
     </beans:bean>
-
 
 	<beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<beans:property name="prefix" value="/WEB-INF/views/" />
