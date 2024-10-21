@@ -3,17 +3,20 @@
 
 <%@ page session="false" pageEncoding="UTF-8" %>
 
+
 <section class="reservation-confirmation">
             <h1>예약페이지</h1>
             <h2>예약 내역을 확인해주세요</h2>
             <div class="reservation-details">
-                <div class="room-image">
-                    <img src="../images/room001.jpg" alt="객실 이미지">
+                <div class="room-image">                	
+					<c:forEach var="photo" items="${resInfo.photos}">
+                    	<img src="${pageContext.request.contextPath}${photo.photoUrl}" alt="객실 이미지">
+                    </c:forEach>
                 </div>
                 <div class="reservation-info">
-                    <p><strong>예약일</strong><br>n월 n일 체크인 - n월 n일 체크아웃 (n박)</p>
-                    <p><strong>객실 타입</strong><br>타입 A (2인 / 더블침대)</p>
-                    <p><strong>인원</strong><br>2 명</p>
+                    <p class="checkInOutText"></p>
+                    <p><strong>객실 타입</strong><br>${resInfo.roomType} (${resInfo.capacity}인 / 더블침대)</p>
+                    <p><strong>인원</strong><br>${resGuest} 명</p>
                     <p><strong>조식여부</strong><br>불포함</p>
                 </div>
             </div>
@@ -45,5 +48,28 @@
             <h2>결제방법</h2>
             <div class="payment-api">이하 결제 api 적용</div>
         </section>
-        
+ <script>
+ 
+	const sliceSdate  = "${startDate}"; // yyyy-mm-dd
+	const sliceEdate = "${endDate}";
+	const sYears = sliceSdate.substr(0, 4);
+	const sMonth = sliceSdate.substr(5, 2);
+	const sDay = sliceSdate.substr(8, 2);
+	const eYears = sliceEdate.substr(0, 4);
+	const eMonth = sliceEdate.substr(5, 2);
+	const eDay = sliceEdate.substr(8, 2);
+	console.log(sMonth);
+	
+	var reservationinfo = document.querySelector('.reservation-info');
+	
+	var checkInOutText = document.querySelector('.checkInOutText');
+	
+	var checkInOut = 
+		"<strong>예약일</strong><br>"+sMonth+"월 "+sDay+"일 체크인 - "+eMonth+"월 " +eDay+"일 체크아웃 (n박)";
+		
+	console.log(checkInOut);
+	checkInOutText.innerHTML = checkInOut;
+	
+	
+</script>       
    

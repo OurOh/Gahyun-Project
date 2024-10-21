@@ -6,7 +6,7 @@
 	<!-- db설정 -->
 	<bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource">
 		<property name="driverClassName" value="com.mysql.cj.jdbc.Driver"></property>
-		<property name="url" value="jdbc:mysql://localhost:3306/gahyeon?serverTimezone=UTC"/>
+		<property name="url" value="jdbc:mysql://localhost:3306/gahyun?serverTimezone=UTC"/>
 		<property name="username" value="root"/>
 		<property name="password" value="z1z2z3z4"/>
 	</bean>

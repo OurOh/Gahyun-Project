@@ -3,6 +3,7 @@ package com.gahyun.dev.controller;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -15,13 +16,17 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.gahyun.dev.dao.UserDao;
+import com.gahyun.dev.model.RoomDetailDto;
 import com.gahyun.dev.model.UserDto;
+import com.gahyun.dev.service.RoomsService;
 
 @Controller
 public class MainController {
 
 	@Autowired
 	private UserDao dao;
+	@Autowired
+	private RoomsService roomService;
 	
 	/*
 	@Autowired
@@ -91,7 +96,33 @@ public class MainController {
 	public String Reservation2(Model model) {
 		return "Reservation_confirm";
 	}
-		
+	@PostMapping("/Reservation2")
+	public String Reservation22(
+			@RequestParam("roomId") int roomid,
+			@RequestParam("startDate") String startDateStr,
+			@RequestParam("endDate") String endDateStr,
+			@RequestParam("guestCount") String guestCount,
+			HttpServletRequest request,
+			Model model
+			) {
+		 	DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy/MM/dd");
+	     
+		 	LocalDate startDate = LocalDate.parse(startDateStr, formatter);
+		 	LocalDate endDate = LocalDate.parse(endDateStr, formatter);
+		 	
+		 	RoomDetailDto resRooms = roomService.getAvailableRoomsPhoto(roomid);
+		 	
+		 	System.out.println(resRooms);
+		 	
+		 	model.addAttribute("resInfo", resRooms);
+		 	model.addAttribute("resGuest", guestCount);
+		 	model.addAttribute("startDate", startDate);
+		 	model.addAttribute("endDate", endDate);
+		 	
+		 	System.out.println("model :" + model);
+		return "Reservation_confirm";
+	}
+	
 
 	
 	@GetMapping("/login")

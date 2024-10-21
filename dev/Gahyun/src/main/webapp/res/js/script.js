@@ -185,17 +185,17 @@ $(function(){
     // 사용자가 방을 선택하지 않은 경우 경고 메시지
     if (selectedRoomId === null) {
         alert("먼저 방을 선택해 주세요!");
-        return;  // 선택된 방이 없으면 진행하지 않음
+        return; 
     }
 
-    // 사용자가 설정한 날짜 정보 가져오기
+    // 정보 가져오기
     const startDate = $('#startdateval').val();
     const endDate = $('#enddateval').val();
-
+	const guestCount = $('#guestCountInput').val();
     // 선택된 방 정보와 날짜 정보를 서버로 POST 요청
     const form = $('<form></form>');
     form.attr('method', 'POST');
-    form.attr('action', '/nextPage');  // 정보를 전달할 서버 경로
+    form.attr('action', '/dev/Reservation2');  // 정보를 전달할 서버 경로
 
     // 선택된 방의 ID를 폼에 추가
     const roomIdInput = $('<input>').attr('type', 'hidden').attr('name', 'roomId').val(selectedRoomId);
@@ -204,13 +204,16 @@ $(function(){
     // 선택한 날짜 정보를 폼에 추가
     const startDateInput = $('<input>').attr('type', 'hidden').attr('name', 'startDate').val(startDate);
     const endDateInput = $('<input>').attr('type', 'hidden').attr('name', 'endDate').val(endDate);
+    const guestCountInput = $('<input>').attr('type', 'hidden').attr('name', 'guestCount').val(guestCount);
+    
     form.append(startDateInput);
     form.append(endDateInput);
-
+	form.append(guestCountInput);
+	
     // 폼을 body에 추가하고 제출
     $('body').append(form);
     form.submit();
-});
+	});
       
    
    /*

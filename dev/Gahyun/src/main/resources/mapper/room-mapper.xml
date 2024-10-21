@@ -7,7 +7,7 @@
     <select id="findRoomDetailsWithPhotos" resultMap="roomDetailMap">
     	SELECT r.*, p.photo_id, p.photo_url  
     	FROM rooms r
-    	LEFT JOIN room_photo p ON r.room_id = p.room_id
+    	LEFT JOIN room_photos p ON r.room_id = p.room_id
     	WHERE r.room_id = #{roomId}
     </select>
  	
