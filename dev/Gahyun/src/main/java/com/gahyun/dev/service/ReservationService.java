@@ -14,11 +14,11 @@ public class ReservationService {
     @Autowired
     private ReservationMapper reservationMapper;
 
-    public List<ReservationDTO> getCurrentReservations() {
+    public List<ReservationDTO> getCurrentReservations(int userId) {
         return reservationMapper.findCurrentReservations();
     }
 
-    public List<ReservationDTO> getPastReservations() {
+    public List<ReservationDTO> getPastReservations(int userId) {
         return reservationMapper.findPastReservations();
     }
 }

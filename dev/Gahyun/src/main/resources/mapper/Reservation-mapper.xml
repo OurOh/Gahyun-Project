@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.gahyun.dev.mapper.ReservationMapper">
+
+    <!-- 현재 예약 조회 -->
+    <select id="findPastReservationsByUserId" parameterType="int" resultType="com.gahyun.dev.model.ReservationDTO">
+    <![CDATA[
+    SELECT 
+        r.reservation_id AS reservationId,
+        r.check_in_date AS checkInDate,
+        r.check_out_date AS checkOutDate,
+        r.total_price AS totalPrice,
+        r.status AS status,
+        rm.room_name AS roomName,
+        rm.room_type AS roomType,
+        u.name AS userName,
+	    FROM reservations r
+	    JOIN user u ON r.user_id = u.user_id
+	    JOIN rooms rm ON r.room_id = rm.room_id
+	    WHERE r.check_in_date < CURDATE()
+	    AND r.user_id = #{userId};
+	    ]]>
+	</select>
+
+    <!-- 과거 예약 조회 -->
+    <select id="findPastReservations" parameterType="int" resultType="com.gahyun.dev.model.ReservationDTO">
+        <![CDATA[
+        SELECT 
+        r.reservation_id AS reservationId,
+        r.check_in_date AS checkInDate,
+        r.check_out_date AS checkOutDate,
+        r.total_price AS totalPrice,
+        r.status AS status,
+        rm.room_name AS roomName,
+        rm.room_type AS roomType,
+        u.name AS userName,
+    FROM reservations r
+    JOIN user u ON r.user_id = u.user_id
+    JOIN rooms rm ON r.room_id = rm.room_id
+    WHERE r.check_in_date >= CURDATE()
+    AND r.user_id = #{userId};
+        ]]>
+    </select>
+
+</mapper>

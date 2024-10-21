@@ -3,6 +3,7 @@ package com.gahyun.dev.controller;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -15,7 +16,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.gahyun.dev.dao.UserDao;
+import com.gahyun.dev.model.ReservationDTO;
 import com.gahyun.dev.model.UserDto;
+import com.gahyun.dev.service.ReservationService;
+
 
 @Controller
 public class MainController {
@@ -38,10 +42,33 @@ public class MainController {
 		return "facilites";
 	}
 	
-	@GetMapping("/mypage")
-	public String UserMyPage(Model model) {
-		return "UserMyPage";
+	@GetMapping("/event")
+	public String Event(Model model) {
+		return "event";
 	}
+	
+	@GetMapping("/edit")
+	public String UserEdit(Model model) {
+		return "UserEdit";
+	}
+    
+
+    @Autowired
+    private ReservationService reservationService;
+
+    @GetMapping("/mypage")
+    public String showMyPage(Model model) {
+    	Integer userId = (Integer) session.getAttribute("userId");
+		// 현재 예약 정보
+        List<ReservationDTO> currentReservations = reservationService.getCurrentReservations(userId);
+        // 과거 예약 정보
+        List<ReservationDTO> pastReservations = reservationService.getPastReservations(userId);
+
+        model.addAttribute("currentReservations", currentReservations);
+        model.addAttribute("pastReservations", pastReservations);
+
+        return "UserMyPage";
+    }
 		
 	@PostMapping("/register")
 	public String RegisterForm(
