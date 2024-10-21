@@ -1,3 +1,8 @@
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+  }
 .room-intro h1 {
     background-color: #4a6543; /* 초록색 배경 */
     color: #f5efe6; 
@@ -18,29 +23,54 @@
 }
 
 .room-tabs button {
-    background-color: #004d1a;
+    background-color: #1a4d2e;
+    font-size: 18px;
     color: white;
-    padding: 10px 20px;
+    padding: 10px 30px;
     border: none;
     cursor: pointer;
+}
+.room-tabs button:hover{
+    background-color: #4a6543;
+    cursor: pointer;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
 }
 
 .room-content {
     display: flex;
-    justify-content: space-between;
-    gap: 20px;
+    justify-content: center;
+    gap: 8px;
 }
 
 /***room image***/
 .showroom-image {
     width: 50%;
 }
-
-.room-info {
+.room-info-box{
     width: 50%;
+}
+.room-info-A {
+    position: absolute;
+    max-width: 29%;
     background-color: #f5efe6;
     padding: 20px;
     border-radius: 10px;
+}
+.room-info-B1 {
+    position: absolute;
+    max-width: 29%;
+    background-color: #f5efe6;
+    padding: 20px;
+    border-radius: 10px;
+    display: none;
+}
+.room-info-B2 {
+    position: absolute;
+    max-width: 29%;
+    background-color: #f5efe6;
+    padding: 20px;
+    border-radius: 10px;
+    display: none;
 }
 
 .room-info h2 {
@@ -62,7 +92,7 @@
 
 .reserve-btn {
     display: block;
-    background-color: #004d1a;
+    background-color: #1a4d2e;
     color: white;
     padding: 10px 20px;
     text-align: center;
@@ -81,16 +111,18 @@
 /*****/
 /* 슬라이드 컨테이너 */
 .showroom-slider {
-    width: 100%;
-    max-width: 600px;
+    width: 50%;
+    height: 640px;
     margin: auto;
     overflow: hidden;
     position: relative;
+    justify-content: center;
 }
 
 /* 슬라이드 안의 이미지들을 나란히 배치 */
 .showroom-slides {
     display: flex;
+    height: 100%;
     width: 300%; /* 3개의 슬라이드가 한 줄에 배치되도록 */
     animation: slide 12s infinite; /* 슬라이드가 12초 동안 돌아감 */
 }
@@ -102,6 +134,7 @@
 
 .showroom-slide img {
     width: 100%;
+    height: 100%;
     display: block;
     object-fit: cover;
 }
@@ -119,9 +152,33 @@
         flex-direction: column;
         gap: 20px;
     }
-
+    .showroom-slider{
+        width: 100%;
+        height: 400px;
+    }
     .room-image, .room-info {
         width: 90%;
         margin: 0 auto;
+    }
+    .room-info-box{
+        width: 90%;
+    }
+    .room-info-A {
+        position: absolute;
+        max-width: 100%;
+    }
+    .room-info-B1 {
+        position: absolute;
+        max-width: 100%;
+        display: none;
+    }
+    .room-info-B2 {
+        position: absolute;
+        max-width: 100%;
+        display: none;
+    }
+    .reserve-btn{
+        width: 50%;
+        margin: 20px auto 0 auto;
     }
 }

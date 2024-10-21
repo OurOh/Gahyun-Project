@@ -27,7 +27,7 @@ main {
 
 .date-selection p {
     font-size: 1.5em; /* 텍스트 크기를 크게 설정 */
-    color: #2f4e2a; /* 텍스트 색상을 헤더 색상과 동일하게 설정 */
+    color: #1a4d2e; /* 텍스트 색상을 헤더 색상과 동일하게 설정 */
     font-weight: bold; /* 강조하기 위해 굵게 설정 */
     text-align: center; /* 중앙 정렬 */
     margin-bottom: 20px; /* 아래쪽 여백 추가 */
@@ -85,7 +85,7 @@ main {
 .control-button {
     width: 35px;
     height: 35px;
-    background-color: #2f4e2a;
+    background-color: #1a4d2e;
     color: #ffffff;
     border: none;
     cursor: pointer;
@@ -93,7 +93,7 @@ main {
 }
 
 .control-button:hover {
-    background-color: #2e8b57;
+    background-color: #4a6543;
 }
 
 #roomCount, #guestCount {
@@ -104,7 +104,7 @@ main {
 }
 
 .room-search-button {
-    background-color: #2f4e2a;
+    background-color: #1a4d2e;
     color: #ffffff;
     padding: 12px 25px;
     border: none;
@@ -115,7 +115,7 @@ main {
 }
 
 .room-search-button:hover {
-    background-color: #2e8b57;
+    background-color: #4a6543;
 }
 
 .recommended-rooms {
@@ -126,7 +126,7 @@ main {
 }
 
 .recommended-rooms h2 {
-    color: #2f4e2a;
+    color: #1a4d2e;
     margin-bottom: 30px;
 }
 
@@ -149,6 +149,7 @@ main {
     background-color: #F5EFE6;
     transform: translateY(-5px);
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
 }
 
 .room-card img {
@@ -162,12 +163,11 @@ main {
 .room-card p {
     text-align: center;
     color: #333;
-    font-size: 1em;
-    line-height: 1.5;
+    font-size: 18px;
 }
 
 .next-button {
-    background-color: #2f4e2a;
+    background-color: #1a4d2e;
     color: #ffffff;
     padding: 15px 30px;
     border: none;
@@ -179,7 +179,82 @@ main {
 .next-button:hover {
     background-color: #4a6543;
 }
-
+/*팝업창*/
+.room-popup{
+    position: absolute;
+    top: 80%;
+    left: calc(50% - 400px);
+    width: 800px;
+    height: 500px;
+    background-color: #1a4d2e;
+    display: flex;
+}
+.room-popup img{
+    width: 50%;
+    height: 300px;
+    margin: auto 0;
+}
+.room-popup-text{
+    width: 50%;
+    height: 100%;
+    background-color: #f5efe6;
+    padding: 0 30px;
+    text-align: left;
+}
+.room-popup-text h2{
+    margin-top: 80px;
+}
+.room-popup-select{
+    display: block;
+    position: relative;
+    background-color: #1a4d2e;
+    border: none;
+    border-radius: 7px;
+    color: #ffffff;
+    padding: 8px 20px;
+    font-size: 15px;
+    margin: 0 auto;
+    top: 30%;
+}
+.room-popup-select:hover{
+    background-color: #4a6543;
+    cursor: pointer;
+}
+.room-popup-close{
+    position: absolute;
+    display: flex;
+    right: 0;
+    font-weight: bold;
+    color: #1a4d2e;
+    width: 100px;
+}
+.popup-close-button{
+    position: relative;
+    width: 20px;
+    height: 20px;
+    background-color: transparent;
+    border: 2px solid #1a4d2e;
+    margin: 16px 5px;
+}
+.popup-close-button::before, .popup-close-button::after{
+    position: absolute;
+    content: "";
+    width: 0;
+    height: 27px;
+    border: 1px solid #1a4d2e;
+    background-color: #1a4d2e;
+    left: 9px;
+    top: -4px;
+}
+.popup-close-button::after{
+    transform: rotate(45deg);
+}
+.popup-close-button::before{
+    transform: rotate(-45deg);
+}
+.room-popup-close:hover{
+    cursor: pointer;
+}
 @media (max-width: 768px) {
     
     .reservation-container {
@@ -189,5 +264,34 @@ main {
 
     .rooms-list {
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+    .room-popup{
+        flex-direction: column;
+        width: 100%;
+        height: 800px;
+        left: 1%;
+    }
+    .room-popup img{
+        width: 80%;
+        height: 400px;
+    }
+    .room-popup-text{
+        width: 80%;
+        height: 400px;
+        padding: 30px 0;
+    }
+    .room-popup-text>h2, .room-popup-text>p{
+        margin: 50px 30px;
+    }
+    .room-popup>img, .room-popup-text{
+        margin: 0 auto;
+    }
+    .room-popup-select{
+        position: relative;
+        width: 80%;
+        top: 10%;
+    }
+    .room-popup-close{
+        right: 10%;
     }
 }

@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <title>Document</title>
 </head>
 <body>
@@ -40,32 +41,60 @@
                 <div class="rooms-list">
                     <div class="room-card">
                         <img src="../../images/images/room001.jpg" alt="객실 이미지">
-                        <p>객실 타입: 타입A<br>조식: 불포함</p>
+                        <p>객실 타입: 타입A</p>
                     </div>
                     <div class="room-card">
                         <img src="../../images/images/room002.jpg" alt="객실 이미지">
-                        <p>객실 타입: 타입A<br>조식: 불포함</p>
+                        <p>객실 타입: 타입A</p>
                     </div>
                     <div class="room-card">
                         <img src="../../images/images/room003.jpg" alt="객실 이미지">
-                        <p>객실 타입: 타입A<br>조식: 불포함</p>
+                        <p>객실 타입: 타입A</p>
                     </div>
                     <div class="room-card">
                         <img src="../../images/images/room004.jpg" alt="객실 이미지">
-                        <p>객실 타입: 타입A<br>조식: 불포함</p>
+                        <p>객실 타입: 타입A</p>
                     </div>
                     <div class="room-card">
                         <img src="../../images/images/room005.jpg" alt="객실 이미지">
-                        <p>객실 타입: 타입A<br>조식: 불포함</p>
+                        <p>객실 타입: 타입A</p>
                     </div>
                     <div class="room-card">
                         <img src="../../images/images/room006.jpg" alt="객실 이미지">
-                        <p>객실 타입: 타입A<br>조식: 불포함</p>
+                        <p>객실 타입: 타입A</p>
                     </div>
                 </div>
                 <button class="next-button">다음으로</button>
+                <div class="room-popup">
+                    <img src="../../images/images/room001.jpg" alt="">
+                    <div class="room-popup-text">
+                        <div class="room-popup-close">
+                            <p>창 닫기</p>
+                            <div class="popup-close-button">
+                                <div></div>
+                                <div></div>
+                            </div>
+                        </div>
+                        <h2>타입A 객실</h2>
+                        <p>객실은 세련된 디자인과 편안한 분위기를 자랑하며, 넓은 침대와 고급 가구로 구성되어 있습니다. 
+                            최신 시설을 갖춘 이 객실은 최적의 휴식을 제공하며, 투숙객의 편의를 위해 다양한 편의시설을 완비하고 있습니다.</p>
+                    <button class="room-popup-select">선택하기</button>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
+    
 </body>
+<script>
+    $(document).ready(function() {
+        $(".room-popup").hide();
+        $(".room-card").click(function() {
+            $(".room-popup").show();
+        });
+        $(".room-popup-close").click(function(){
+            $(".room-popup").hide();
+        });
+    });
+</script>
 </html>
