@@ -1,54 +1,33 @@
 package com.gahyun.dev.dao;
 
-import java.util.List;
-
-import org.springframework.beans.factory.annotation.Autowired;
+import javax.sql.DataSource;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
-
-import com.gahyun.dev.mapper.MemberMapper;
 import com.gahyun.dev.model.UserDto;
 
 @Repository
 public class UserDaoImpl implements UserDao {
-	
-	@Autowired
-	private MemberMapper mem;
-	
-	
-	@Override
-	public List<UserDto> getAllUser() {
-		// TODO Auto-generated method stub
-		return null;
-	}
 
-	@Override
-	public UserDto getUser(int id) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+    private final JdbcTemplate jdbcTemplate;
 
-	@Override
-	public void insertUser(UserDto dto) {
-	    System.out.println("Inserting User in DAO: " + dto);
-	    try {
-	        mem.setInsertUser(dto);  // 실제 쿼리 실행
-	        System.out.println("Insert finished in DAO");
-	    } catch (Exception e) {
-	        System.out.println("Exception during insert in DAO: " + e.getMessage());
-	        e.printStackTrace();  // 예외 발생 시 출력
-	    }
-	}
+    public UserDaoImpl(DataSource dataSource) {
+        this.jdbcTemplate = new JdbcTemplate(dataSource);
+    }
 
-	@Override
-	public void updateUser(UserDto dto) {
-		// TODO Auto-generated method stub
+    @Override
+    public UserDto getUserByUserId(String userid) {
+        String sql = "SELECT * FROM users WHERE userid = ?";
+        return jdbcTemplate.queryForObject(sql, new Object[]{userid}, userRowMapper);
+    }
 
-	}
-
-	@Override
-	public void delUser(int id) {
-		// TODO Auto-generated method stub
-
-	}
-
+    private RowMapper<UserDto> userRowMapper = (rs, rowNum) -> {
+        UserDto user = new UserDto();
+        user.setUserid(rs.getString("userid"));
+        user.setPassword(rs.getString("password"));
+        user.setName(rs.getString("name"));
+        user.setEmail(rs.getString("email"));
+        user.setPhone_num(rs.getString("phone_num"));
+        return user;
+    };
 }
