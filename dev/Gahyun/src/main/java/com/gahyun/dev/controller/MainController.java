@@ -164,4 +164,20 @@ public class MainController {
     public String showFacilites(Model model) {
         return "facilites";
     }
+    
+    @GetMapping("/resort")
+    public String showResortDetail(Model model) {
+        return "resort-detail";
+    }
+    
+    @GetMapping("/event")
+    public String showEvent(Model model) {
+        return "event";
+    }
+    
+    @GetMapping("/room")
+    public String showRoomDetail(Model model) {
+        return "roomdetail";
+    }
+    
 }
