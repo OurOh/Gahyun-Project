@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.gahyun.dev.mapper.RoomsMapper">
+  <insert id="setInsertRoom" parameterType="RoomsDto"
+  		  useGeneratedKeys="true" keyProperty="room_id">
+     insert into rooms
+     (
+        userid, password, name, user_birth, phone_num
+     )
+     values
+     (
+       #{userid}, #{password}, #{name}, #{user_birth}, #{phone_num}
+   
+     )
+  </insert>
+ 
+	<select id="selectRoomsByRoomId" parameterType = "int" resultType="RoomsDto">
+		SELECT * FROM rooms WHERE roomid=#{roomid} ORDER BY categorynum;
+	</select>
+  
+</mapper>
