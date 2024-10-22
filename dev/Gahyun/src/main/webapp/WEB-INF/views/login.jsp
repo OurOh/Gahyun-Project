@@ -10,9 +10,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-<main class="main-content">
-            <section class="image-section">
-                <div class="image-slider">
+    <main class="login-content">
+        <section class="login-image-section">
+            <div class="login-image-slider">
                     <img src="${pageContext.request.contextPath}/res/images/pool003.jpg" alt="리조트 이미지 1" class="active">
                     <img src="${pageContext.request.contextPath}/res/images/outside001.jpg" alt="리조트 이미지 1">
                     <img src="${pageContext.request.contextPath}/res/images/yoga003.jpg" alt="리조트 이미지 3">

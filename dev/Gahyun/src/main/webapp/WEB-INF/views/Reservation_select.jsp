@@ -71,7 +71,7 @@
                         <p>객실 타입: 타입A<br>조식: 불포함</p>
                     </div>
                 </div>
-                <button class="next-button" type="button">다음으로</button>
+                <button class="next-button" type="button" onclick="location.href='/dev/Reservation2'">다음으로</button>
             </div>
         </section>
-   
+   		

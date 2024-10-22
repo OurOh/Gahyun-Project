@@ -5,43 +5,34 @@
 
 <section class="form-section">
     <h1>회원가입</h1>
-    <form action="${pageContext.request.contextPath}/register" id="register" method="POST">
-        <label for="name">이름</label>
-        <input type="text" id="name" name="name" placeholder="이름을 입력하세요" required>
+    <form action="${pageContext.request.contextPath}/register" method="POST">
+    <!-- 아이디 -->
+    <label for="userid">아이디</label>
+    <input type="text" id="userid" name="userid" required>
 
-        <label for="userid">아이디</label> <!-- for 속성 수정 -->
-        <div class="username-field">
-            <input type="text" id="userid" name="userid" placeholder="아이디를 입력하세요" required>
-            <button type="button" class="duplicate-check-btn">중복확인</button>
-        </div>
+    <!-- 비밀번호 -->
+    <label for="password">비밀번호</label>
+    <input type="password" id="password" name="password" required>
 
-        <label for="password">비밀번호</label>
-        <input type="password" id="password" name="password" placeholder="비밀번호를 입력하세요" required>
+    <!-- 이름 -->
+    <label for="name">이름</label>
+    <input type="text" id="name" name="name" required>
 
-        <label for="confirm_password">비밀번호 확인</label>
-        <input type="password" id="confirm_password" name="confirm_password" placeholder="비밀번호를 확인하세요" required>
+    <!-- 생년월일 -->
+    <label for="birth">생년월일</label>
+    <input type="text" id="year" name="year" placeholder="년" required>
+    <input type="text" id="month" name="month" placeholder="월" required>
+    <input type="text" id="day" name="day" placeholder="일" required>
 
-        <label for="birth">생년월일</label>
-        <div class="birthdate">
-            <input type="text" name="year" id="year" placeholder="년" required>
-            <input type="text" name="month" id="month" placeholder="월" required>
-            <input type="text" name="day" id="day" placeholder="일" required>
-        </div>
-        <input type="hidden" name="birth" id="birth" />
+    <!-- 전화번호 -->
+    <label for="phone">전화번호</label>
+    <input type="text" id="phone1" name="phone1" maxlength="3" required>
+    <input type="text" id="phone2" name="phone2" maxlength="4" required>
+    <input type="text" id="phone3" name="phone3" maxlength="4" required>
 
-        <label for="phone1">연락처</label> <!-- for 속성을 첫 번째 전화번호 필드와 일치시킴 -->
-        <div class="phone">
-            <input type="text" id="phone1" name="phone1" value="010" maxlength="3" required>
-            <input type="text" id="phone2" name="phone2" maxlength="4" required>
-            <input type="text" id="phone3" name="phone3" maxlength="4" required>
-        </div>
-        <input type="hidden" name="phone" id="phone" />
+    <button type="submit">가입하기</button>
+</form>
 
-        <div class="buttons">
-            <button type="submit" class="submit-btn">가입하기</button>
-            <a href="#" class="cancel-btn">취소</a>
-        </div>
-    </form>
 </section>
 
 <script>

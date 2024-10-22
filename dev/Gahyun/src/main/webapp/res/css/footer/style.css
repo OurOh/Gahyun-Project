@@ -1,94 +1,79 @@
 footer {
-    width: 100%;
-    background-color: #4f6f52;
-    color: #f5efe6;
-    padding: 20px 80px; /* padding을 전체적으로 줄여서 높이를 줄임 */
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start; /* 내용이 상단에 정렬되도록 설정 */
-    box-sizing: border-box;
+  background-color: #004d1a;
+  color: white;
+  padding: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  font-size: 14px;
 }
 
 .footer-content {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    width: 100%;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
 }
 
-.left-col {
-    width: 40%;
+.footer-logo {
+  max-width: 400px;
 }
 
-.logo {
-    width: 150px;
-    height: auto;
-    margin-bottom: 20px;
+.footer-logo img {
+  width: 150px;
+  margin-bottom: 15px;
 }
 
-.company-info {
-    margin-bottom: 20px;
+.footer-logo p {
+  margin-bottom: 10px;
+  line-height: 1.6;
 }
 
-.company-info p {
-    margin: 5px 0;
-    font-size: 14px;
+.footer-links {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
 }
 
-.company-info a {
-    color: #f5efe6;
-    text-decoration: underline;
+.footer-links ul {
+  list-style-type: none;
 }
 
-.company-info a:hover {
-    color: #ddd;
+.footer-links li {
+  margin-bottom: 10px;
 }
 
-.menu-col {
-    display: flex;
-    flex-wrap: wrap;
-    width: 55%;
-    justify-content: flex-start;
+.footer-links li strong{
+  color: #f5efe6;
+  font-size: 18px;
 }
 
-.footmenu {
-    width: 45%;
-    margin-bottom: 20px; /* 높이를 줄이기 위해 여백 조정 */
+.footer-links a {
+  color: white;
+  text-decoration: none;
 }
 
-.footmenu h5,
-.footmenu ul li {
-    padding-left: 165px; /* 메뉴 제목과 항목들을 오른쪽으로 20px 이동 */
+.footer-links a:hover {
+  text-decoration: underline;
 }
 
-.footmenu h5 {
-    font-size: 16px;
-    margin-bottom: 10px;
-}
-
-.footmenu ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-.footmenu ul li {
-    margin-bottom: 5px; /* 리스트 항목 간 여백을 줄임 */
-}
-
-.footmenu ul li a {
-    text-decoration: none;
-    color: #f5efe6;
-    font-size: 14px;
-}
-
-.footmenu ul li a:hover {
-    text-decoration: underline;
-}
-
-.copywrite {
-    margin-top: 20px;
-    font-size: 12px;
-    color: #ccc;
+/* 반응형 푸터 디자인 */
+@media screen and (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
     text-align: center;
-    width: 100%;
+    padding: 10px 0;
+  }
+
+  .footer-logo {
+    margin-bottom: 20px;
+  }
+
+  .footer-links {
+    flex-direction: row;
+    gap: 10px;
+  }
 }

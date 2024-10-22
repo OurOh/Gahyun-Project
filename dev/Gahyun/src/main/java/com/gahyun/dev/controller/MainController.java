@@ -25,7 +25,13 @@ public class MainController {
 
     @Autowired
     private UserService userService;
-
+    
+    //MainPage jsp 미제작
+    /*@GetMapping("/home")
+    public String mainPage(Model model) {
+        return "MainPage";
+    }*/
+    
     // 회원가입 페이지 이동
     @GetMapping("/register")
     public String showRegisterPage(Model model) {
@@ -153,4 +159,25 @@ public class MainController {
     public String showReservationPage2(Model model) {
         return "Reservation_confirm";
     }
+    
+    @GetMapping("/facilites")
+    public String showFacilites(Model model) {
+        return "facilites";
+    }
+    
+    @GetMapping("/resort")
+    public String showResortDetail(Model model) {
+        return "resort-detail";
+    }
+    
+    @GetMapping("/event")
+    public String showEvent(Model model) {
+        return "event";
+    }
+    
+    @GetMapping("/room")
+    public String showRoomDetail(Model model) {
+        return "roomdetail";
+    }
+    
 }
