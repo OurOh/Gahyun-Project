@@ -153,4 +153,9 @@ public class MainController {
     public String showReservationPage2(Model model) {
         return "Reservation_confirm";
     }
+    
+    @GetMapping("/facilites")
+    public String showFacilites(Model model) {
+        return "facilites";
+    }
 }

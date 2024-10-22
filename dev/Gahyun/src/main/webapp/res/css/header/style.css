@@ -1,97 +1,211 @@
+button{
+  background: inherit ; 
+  border:none; 
+  box-shadow:none; 
+  border-radius:0; 
+  padding:0; 
+  overflow:visible; 
+  cursor:pointer
+}
 header {
+    position: fixed;
     width: 100%;
+    height: 102px;
+    top: 0;
+    left: 0;
     background-color: #1a4d2e;
-}
-
-.top-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    background-color: #1a4d2e;
-    position: relative;
-}
-
-.logo-small {
-    width: 200px; /* 이미지의 너비를 원하는 크기로 설정 */
-    height: 80px; /* 이미지의 높이를 원하는 크기로 설정 */
-    margin-top: -20px; /* 위쪽 여백 조정 */
-    margin-bottom:-20px; /* 아래쪽 여백 조정 */
-    margin-left: 230px; /* 왼쪽 여백 조정 */
-    margin-right: 10px; /* 오른쪽 여백 조정 */
-    object-fit: cover; /* 이미지가 설정된 영역에 맞게 잘리거나 맞춰짐 */
-}
-
-
-.user_login {
+    z-index: 5;
+  }
+  .user_login{
+    position: absolute;
+    top: 8px;
+    right: 150px;
     font-family: "Noto Sans KR-Bold", Helvetica;
-    font-weight: 700;
+    font-weight: 500;
     color: #f5efe6;
-    font-size: 18px;
+    font-size: 24px;
     text-decoration: none;
-    position: relative;
-    right: -130px; /* 로그인 텍스트를 오른쪽으로 60px 이동 */
-}
-
-.user_login:hover {
+  }
+  .user_login:hover{
     text-decoration: underline;
-}
-
-.reserv_view {
+  }
+  .reserv_view {
+    position: absolute;
+    top: 8px;
+    right: 30px;
     font-family: "Noto Sans KR-Bold", Helvetica;
-    font-weight: 700;
+    font-weight: 500;
     color: #f5efe6;
-    font-size: 18px;
+    font-size: 24px;
     text-decoration: none;
-}
-
-.reserv_view:hover {
+  }
+  .reserv_view:hover{
     text-decoration: underline;
-}
-
-.reserv_make {
+  }
+  .logo-small {
+    position: absolute;
+    width: 225px;
+    height: 102px;
+    top: 0;
+    left: calc(50% - 112.5px);
+  }
+  .reserv_make{
+    position: absolute;
+    text-decoration: none;
+    top: 22px;
+    left: 59px;
     font-family: "Noto Sans KR-Bold", Helvetica;
     font-weight: 700;
     color: #1a4d2e;
+    font-size: 24px;
+    text-align: center;
     background-color: #f5efe6;
-    padding: 10px 20px;
-    border: none;
     border-radius: 5px;
-    cursor: pointer;
-}
-
-.reserv_make:hover {
-    background-color: #4f6f52;
+    padding: 12px 40px;
+  }
+  .reserv_make:hover{
     color: #f5efe6;
+    background-color: #4f6f52;
+    cursor: pointer;
+  }
+  /*NAV*/
+  .main-nav {
+    position: fixed;
+    width: 100%;
+    top: 102px;
+    left: 0;
 }
-
-.main-nav {
-    background-color: #b2b59b;
-    padding: 10px 0;
+  
+.navbar {
+    position: relative;
     display: flex;
-    justify-content: center; /* 중앙 정렬 */
+    align-content: space-between;
+    width: 100%;
+    height: 60px;
+    background-color: #f5efe699;
 }
-
-.main-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+.navbar-menu{
+   width: 25%;
+   text-align: center;
+   padding: 8px 0;
+}
+.navbar-menu>a{
+    text-decoration: none;
+    font-family: "Noto Sans KR-Medium", Helvetica;
+    font-weight: 500;
+    color: #1a4d2e;
+    font-size: 30px;
+}
+.nav-menu{
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: #f5efe699;
     display: flex;
-    gap: 110px; /* 각 항목 사이에 60px 간격 설정 */
 }
-
-.main-nav ul li {
-    list-style: none;
+.nav-col{
+    width: 25%;
+    display: none;
 }
-
-.main-nav ul li a {
+.nav-col>a{
+    width: 100%;
+    display: block;
     text-decoration: none;
     color: #1a4d2e;
-    font-size: 18px;
-    font-family: "Noto Sans KR-Bold", Helvetica;
+    font-weight: 500;
+    text-align: center;
+    font-family: "Noto Sans KR-Medium", Helvetica;
+    font-size: 21px;
+    padding: 15px 0;
 }
-
-.main-nav ul li a:hover {
-    color: #f5efe6;
+.nav-col>a:hover{
+    background-color: #c4bcb599;
+}
+/*HAM,HAM-NAV*/
+  .ham{
+    display: none;
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    cursor: pointer;
+  }
+  .ham div {
+    width: 30px;
+    height: 3px;
+    background-color: #1a4d2e; 
+    margin: 6px 0; 
+  }
+  .ham-nav{
+    display: none;
+    position: absolute;
+    top: 102px;
+    width: 100%;
+    background-color: #f5efe6;
+    padding: 15px;
+  }
+  #ham-user-login{
+    text-decoration: none;
+    color: #1a4d2e;
+    font-size: 20px;
+    font-weight: 500;
+    margin-right: 30px;
+  }
+  #ham-user-login:hover{
     text-decoration: underline;
-}
+  }
+  #ham-reserv-view{
+    text-decoration: none;
+    color: #1a4d2e;
+    font-size: 20px;
+    font-weight: 500;
+    margin-right: 30px;
+  }
+  #ham-reserv-view:hover{
+    text-decoration: underline;
+  }
+  .ham-nav-col{
+    text-align: left;
+    width: 100%;
+    background-color: #f5efe6;
+  }
+  .ham-nav-col>p{
+    border-bottom: 1px solid #4f6f52;
+    font-size: 25px;
+    font-weight: 500;
+    color: #1a4d2e;
+    width: 100%;
+    background-color: #f5efe6;
+  }
+  .ham-nav-col>a{
+    display: block;
+    text-decoration: none;
+    background-color: #f5efe6;
+    color: #1a4d2e;
+    width: 100%;
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  .ham-nav-col>a:hover{
+    background-color: #c4bcb599;
+  }
+  @media (max-width: 768px) {
+    header{
+      background-color: #f5efe6;
+      z-index: 5;
+    }
+    header>a{
+      display: none;
+    }
+    .main-nav{
+      display: none;
+    }
+    .ham{
+      display: block;
+      position: fixed;
+      z-index: 5;
+    }
+    .ham-nav{
+      display: none;
+    }
+  }
