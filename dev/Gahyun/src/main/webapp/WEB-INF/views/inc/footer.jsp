@@ -11,26 +11,26 @@
             </div>
             <div class="footer-links">
                 <ul>
-                    <li><strong>시설소개</strong></li>
+                    <li><a href="facilites"><strong>시설소개</strong></a></li>
                     <li><a href="#">리조트소개</a></li>
-                    <li><a href="#">다이닝</a></li>
-                    <li><a href="#">편의시설</a></li>
-                    <li><a href="#">오락</a></li>
+                    <li><a href="facilites#facilities-dining">다이닝</a></li>
+                    <li><a href="facilites#facilities-convenient">편의시설</a></li>
+                    <li><a href="facilites#facilities-game">오락</a></li>
                 </ul>
                 <ul>
-                    <li><strong>테마파크</strong></li>
+                    <li><a href="#"><strong>테마파크</strong></a></li>
                     <li><a href="#">루프탑</a></li>
                     <li><a href="#">스파</a></li>
                     <li><a href="#">휘트니스센터</a></li>
                 </ul>
                 <ul>
-                    <li><strong>객실</strong></li>
+                    <li><a href="#"><strong>객실</strong></a></</li>
                     <li><a href="#">타입A(2인)</a></li>
                     <li><a href="#">타입B(4인, 침대O)</a></li>
                     <li><a href="#">타입B(4인, 침대X)</a></li>
                 </ul>
                 <ul>
-                    <li><strong>공지사항</strong></li>
+                    <li><a href="#"><strong>공지사항</strong></a></</li>
                     <li><a href="#">이달의 이벤트</a></li>
                     <li><a href="#">QnA</a></li>
                     <li><a href="#">고객센터</a></li>

@@ -10,7 +10,7 @@
         </section>
       
         <section class="facilities">
-          <h3>다이닝</h3>
+          <h3 id="facilities-dining">다이닝</h3>
     
           <!-- facility slider with drag functionality -->
           <div class="facility-slider-container">
@@ -41,7 +41,7 @@
               </div>
             </div>
     
-            <h3>편의시설</h3>
+            <h3 id="facilities-convenient">편의시설</h3>
           
             <div class="facility-grid-slider">
               <div class="facility-card fffimg">
@@ -70,7 +70,7 @@
               </div>
             </div>
     
-            <h3>오락</h3>
+            <h3 id="facilities-game">오락</h3>
           
             <div class="facility-grid-slider">
               <div class="facility-card fffimg">
