@@ -21,18 +21,21 @@
                 </div>
             </div>
         </section>
+        <form name="resConfirm" action="/dev/ResComplte" method="post">
         <section class="guest-info">
             <h2>숙박자 정보</h2>
             <div class="input-fields">
                 <div class="input-group">
                     <label for="guest-name">성명</label>
                     <input type="text" id="guest-name">
+                    <input type="hidden" id="gname" name="gname"/>
                 </div>
                 <div class="input-group">
                     <label for="phone-number">휴대폰번호</label>
                     <input type="text" id="phone-number" maxlength="3"> - 
-                    <input type="text" maxlength="4"> - 
-                    <input type="text" maxlength="4">
+                    <input type="text" id="phone-number2" maxlength="4"> - 
+                    <input type="text" id="phone-number3" maxlength="4">
+                    <input type="hidden" id="gtel" name="gtel"/>
                 </div>
                 <div class="checkbox">
                     <input type="checkbox" id="same-info">
@@ -46,8 +49,13 @@
         </section>
         <section class="payment-info">
             <h2>결제방법</h2>
-            <div class="payment-api">이하 결제 api 적용</div>
+            <button class="payment-api">이하 결제 api 적용</button>
         </section>
+        <input type="hidden" id="startDate" name="startDate" value="${startDate}">
+        <input type="hidden" id="endDate" name="endDate" value="${endDate}">
+        <input type="hidden" id="roomid" name="roomid" value="${resInfo.roomId}">
+        <input type="hidden" id="user_id" name="user_id" value="1"><!-- 임시 테스트용 -->
+        </form>
  <script>
  
 	const sliceSdate  = "${startDate}"; // yyyy-mm-dd
@@ -114,9 +122,19 @@
 
 	checkInOutText.innerHTML = checkInOut;
 	
-	
+	$(function(){
+		$('form[name="resConfirm"]').on('submit',function(event){
+			event.preventDefault();
+			
+			const tel = $("#phone-number").val() + "-" + $("#phone-number2").val() + "-" + $("#phone-number3").val();
+            
+			$('#gtel').val(tel);
+			$('#gname').val($('#guest-name').val());
+			const formData = $(this).serializeArray();
+			console.log(formData);
+			this.submit();
+		});
+	});
 
-	
-	
 </script>       
    

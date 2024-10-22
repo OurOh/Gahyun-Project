@@ -3,19 +3,10 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.gahyun.dev.mapper.ReservationsMapper">
-  <insert id="setInsertRes" parameterType="ReservationsDto"
-  		  useGeneratedKeys="true" keyProperty="reservation_id">
-     insert into reservations
-     (
-        userid, roomid, check_in_date, check_out_date, total_price, status
-     )
-     values
-     (
-       #{userid}, #{roomid}, #{check_in_date}, #{check_out_date}, #{total_price}, #{status}
-   
-     )
+  <insert id="insertResRooms" parameterType="ReservationsDto">
+     INSERT INTO reservations
+     	(user_id, room_id, check_in_date, check_out_date, total_price)
+     VALUES
+     	(#{user_id}, #{roomid}, #{startDate}, #{endDate}, #{totalPrice})
   </insert>
-  <select id="selectResByUserId" parameterType = "int" resultType="ReservationsDto">
-		SELECT * FROM reservations WHERE userid=#{userid} ORDER BY reservation_id;
-	</select>
 </mapper>

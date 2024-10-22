@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.gahyun.dev.mapper.Room_availabilityMapper">
+  <update id="updateAvailabilityRooms" parameterType="Room_availabilityDto">
+     UPDATE room_availability SET    
+     	date = #{endDate},
+     	is_available = #{isAvail}
+     WHERE
+     	room_availability_id = #{roomid}
+  </update>
+</mapper>
+
