@@ -21,12 +21,12 @@ public class UserDaoImpl implements UserDao {
         return jdbcTemplate.queryForObject(sql, new Object[]{userid}, userRowMapper);
     }
 
+    //데이터베이스의 각 행(row)을 UserDto 객체로 변환하여 반환하는 역할
     private RowMapper<UserDto> userRowMapper = (rs, rowNum) -> {
         UserDto user = new UserDto();
         user.setUserid(rs.getString("userid"));
         user.setPassword(rs.getString("password"));
         user.setName(rs.getString("name"));
-        user.setEmail(rs.getString("email"));
         user.setPhone_num(rs.getString("phone_num"));
         user.setUser_birth(rs.getString("user_birth"));
         return user;
@@ -36,13 +36,14 @@ public class UserDaoImpl implements UserDao {
     //정보수정
     @Override
     public void updateUser(UserDto user) {
-        String sql = "UPDATE users SET password = ?, name = ?, phone_num = ?, user_birth = ? WHERE userid = ?";
+        String sql = "UPDATE users SET name = ?, password = ?, phone_num = ?, user_birth = ? WHERE userid = ?";
         jdbcTemplate.update(sql, 
-        		user.getPassword(), 
-        		user.getName(), 
-        		user.getPhone_num(), 
-        		user.getUser_birth(), 
-        		user.getUserid());
+            user.getName(), 
+            user.getPassword(), 
+            user.getPhone_num(), 
+            user.getUser_birth(), 
+            user.getUserid());
+        
     }
 
     
@@ -56,6 +57,7 @@ public class UserDaoImpl implements UserDao {
     			 user.getName(), 
     			 user.getPhone_num(), 
     			 user.getUser_birth());
+    	 
     }
     
     
