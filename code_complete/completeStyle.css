@@ -1847,3 +1847,94 @@ button:hover {
   width: 15%;
 }
 }
+
+/*CUSTOMER-CENTER*/
+.customer-center h1{
+  background-color: #4a6543; /* 초록색 배경 */
+  color: #f5efe6; 
+  text-align: center;
+  padding: 20px 0; /* 상하 여백 추가 */
+  margin-top: 0; /* 위아래 여백 제거 */
+  margin-bottom: 40px;
+  font-size: 2em; /* 텍스트 크기 설정 */
+  font-weight: bold; /* 굵은 텍스트 */
+  letter-spacing: 5px;
+}
+.customer-center h2{
+  text-align: center;
+  font-weight: bold;
+  color: #1a4d2e;
+  letter-spacing: 5px;
+  margin: 100px 0;
+}
+.customer-center-contact{
+  display: flex;
+  width: 100%;
+  margin-top: 50px;
+}
+.contact-box{
+  width: 33.33%;
+  padding: 50px 20px;
+  color: #f5efe6;
+  background-color: #4a6543;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+}
+.kakao-contact{
+  background-color: #f5efe6;
+  color: #4a6543;
+}
+.contact-box>p{
+  font-size: 20px;
+}
+.contact-box>a{
+  color: #f5efe6;
+  margin-top: 30px;
+  font-size: 20px;
+}
+.contact-box>a:hover{
+  cursor: pointer;
+  text-decoration: underline;
+  font-weight: bold;
+}
+.kakao-contact>a{
+  color: #4a6543;
+  margin-top: 30px;
+  font-size: 20px;
+}
+.kakao-contact>a:hover{
+  cursor: pointer;
+  text-decoration: underline;
+  font-weight: bold;
+}
+.icon-box{
+  width: 70px;
+  height: 70px;
+  padding: 10px;
+  border: 2px solid #f5efe6;
+  border-radius: 50%;
+  margin: 30px 0;
+}
+.icon-box>i{
+  font-size: 50px;
+  line-height: 1.5;
+}
+.kakao-contact>.icon-box{
+  width: 70px;
+  height: 70px;
+  padding: 10px;
+  border: 2px solid #4a6543;
+  border-radius: 50%;
+  margin: 30px 0;
+}
+@media (max-width: 768px) {
+  .customer-center-contact{
+      flex-direction: column;
+      width: 100%;
+  }
+  .contact-box{
+      width: 95%;
+  }
+}
