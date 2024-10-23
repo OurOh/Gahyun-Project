@@ -8,6 +8,14 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath}/res/css/footer/style.css">   
     <link rel="stylesheet" href="${pageContext.request.contextPath}/res/css/header/style.css">
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.0/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/res/css/event/event.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/res/css/facilites/facilites.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/res/css/login/login.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/res/css/main/style.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/res/css/resortdetail/resortdetail.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/res/css/roomdetail/roomdetail.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/res/css/userEdit/userEdit.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/res/css/UserRegister/UserRegister.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/res/css/facilites/facilites.css?v=<%= System.currentTimeMillis() %>">
 
     
