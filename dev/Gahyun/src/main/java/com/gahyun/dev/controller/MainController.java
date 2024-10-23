@@ -180,4 +180,9 @@ public class MainController {
         return "roomdetail";
     }
     
+    @GetMapping("/Customer-center")
+    public String showCustomerCenter(Model model) {
+        return "Customer-center";
+    }
+    
 }

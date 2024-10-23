@@ -4,33 +4,20 @@
 <%@ page session="false" pageEncoding="UTF-8" %>
 
 
-    <main class="login-content">
-        <section class="login-image-section">
-            <div class="login-image-slider">
-                    <img src="${pageContext.request.contextPath}/res/images/pool003.jpg" alt="리조트 이미지 1" class="active">
-                    <img src="${pageContext.request.contextPath}/res/images/outside001.jpg" alt="리조트 이미지 1">
-                    <img src="${pageContext.request.contextPath}/res/images/yoga003.jpg" alt="리조트 이미지 3">
-                </div>
-            </section>
-
-            <section class="login-section">
-                <div class="login-container">
-                    <h2>로그인</h2>
-                    <form action="${pageContext.request.contextPath}/login" method="post">
-					    <div>
-					        <label for="userid">아이디:</label>
-					        <input type="text" id="userid" name="userid" required>
-					    </div>
-					    <div>
-					        <label for="password">비밀번호:</label>
-					        <input type="password" id="password" name="password" required>
-					    </div>
-					    <div>
-					        <button type="submit" id="loginsubmit">로그인</button>
-					        <button type="button" id="userregister">회원가입</button>
-					    </div>
-					</form>
-
-                </div>
-            </section>
-        </main>
+<main class="login-content">
+    <div class="login-image-section">
+        <img src="${pageContext.request.contextPath}/res/images/pool003.jpg" alt="리조트 이미지 1">
+        <div class="login-section">
+            <div class="login-container">
+                <h2>로그인</h2>
+                <form action="${pageContext.request.contextPath}/login" method="post">
+                    <input type="text" placeholder="아이디" id="userid" name="userid" required>
+                    <input type="password" placeholder="비밀번호" id="password" name="password" required>
+                    <button type="submit" id="loginsubmit">로그인</button>
+                    <button type="button" id="userregister">회원가입</button>
+                    <a href="#">아이디/비밀번호 찾기</a>
+                </form>
+            </div>
+        </div>
+    </div>  
+</main>

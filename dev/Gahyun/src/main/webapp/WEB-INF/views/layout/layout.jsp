@@ -10,13 +10,16 @@
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.0/themes/base/jquery-ui.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/res/css/event/event.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/res/css/facilites/facilites.css">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/res/css/login/login.css">
+
     <link rel="stylesheet" href="${pageContext.request.contextPath}/res/css/main/style.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/res/css/resortdetail/resortdetail.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/res/css/roomdetail/roomdetail.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/res/css/userEdit/userEdit.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/res/css/UserRegister/UserRegister.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/res/css/completeStyle.css"><!-- 전 페이지 적용 통합본 stylesheet -->
     <link rel="stylesheet" href="${pageContext.request.contextPath}/res/css/facilites/facilites.css?v=<%= System.currentTimeMillis() %>">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/res/remixicon/remixicon.css"> <!-- remixicon 아이콘 css -->
+
 
     
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- jQuery 최신 버전 -->

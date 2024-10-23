@@ -13,15 +13,14 @@
             </div>
             <div class="footer-links">
                 <ul>
-                    <li><a href="/dev/resort"><strong>시설소개</strong></a></li>
-                    <li><a href="/dev/resort">리조트소개</a></li>
+                    <li><a href="/dev/resort"><strong>리조트소개</strong></a></li>
                     <li><a href="/dev/resort">오시는길</a></li>
                 </ul>
                 <ul>
                     <li><a href="/dev/facilites"><strong>시설소개</strong></a></li>
-                    <li><a href="/dev/facilites">다이닝</a></li>
-                    <li><a href="/dev/facilites">편의시설</a></li>
-                    <li><a href="/dev/facilites">ENJOY</a></li>
+                    <li><a href="/dev/facilites#facilities-dining">다이닝</a></li>
+                    <li><a href="/dev/facilites#facilities-convenient">편의시설</a></li>
+                    <li><a href="/dev/facilites#facilities-game">ENJOY</a></li>
                 </ul>
                 <ul>
                     <li><a href="/dev/room"><strong>객실</strong></a></li>
@@ -30,9 +29,7 @@
                     <li><a href="/dev/room">타입B(4인, 침대X)</a></li>
                 </ul>
                 <ul>
-                    <li><strong>공지사항</strong></li>
-                    <li><a href="/dev/event">이달의 이벤트</a></li>
-                    <li><a href="#">QnA</a></li>
+                    <li><strong><a href="/dev/event">이벤트</a></strong></li>
                     <li><a href="#">고객센터</a></li>
                 </ul>
             </div>
