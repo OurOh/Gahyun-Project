@@ -55,6 +55,7 @@
         <input type="hidden" id="endDate" name="endDate" value="${endDate}">
         <input type="hidden" id="roomid" name="roomid" value="${resInfo.roomId}">
         <input type="hidden" id="user_id" name="user_id" value="1"><!-- 임시 테스트용 -->
+        <input type="hidden" id="price" name="price" value="${resInfo.pricePerNight}">
         </form>
  <script>
  
@@ -123,11 +124,13 @@
 	checkInOutText.innerHTML = checkInOut;
 	
 	$(function(){
+		console.log($('#roomid').val());
 		$('form[name="resConfirm"]').on('submit',function(event){
 			event.preventDefault();
 			
 			const tel = $("#phone-number").val() + "-" + $("#phone-number2").val() + "-" + $("#phone-number3").val();
-            
+            const price = (${resInfo.pricePerNight} *  dayDiff);
+            $('#price').val(price);
 			$('#gtel').val(tel);
 			$('#gname').val($('#guest-name').val());
 			const formData = $(this).serializeArray();

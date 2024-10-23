@@ -76,7 +76,7 @@ $(function(){
    
     $('.startdate').datepicker({
     	inline: true,
-    	dateFormat: 'yy/mm/dd',
+    	dateFormat: 'yy-mm-dd',
     	prevText: '이전 달',
 		nextText: '다음 달',
 		monthNames: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
@@ -94,7 +94,7 @@ $(function(){
     });
     $('.enddate').datepicker({
     	inline: true,
-    	dateFormat: 'yy/mm/dd',
+    	dateFormat: 'yy-mm-dd',
     	prevText: '이전 달',
 		nextText: '다음 달',
 		monthNames: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
@@ -110,11 +110,20 @@ $(function(){
         	$('.enddateval').val($('.enddate').val());
         }
     });
-
+	
+	//날짜포멧변경
+	function convertToDashFormat(dateStr) {
+    	return dateStr.replace(/\//g, '-'); // '/'를 '-'로 변환
+	}
+	
 	// 사용가능한 방 ajax 처리
 	$('form[name="findAvailableRooms"]').on('submit',function(event){
 		event.preventDefault();
 		console.log("AJAX 요청 시작");
+		
+		// 날짜 형식 변환
+    	var startDateFormatted = convertToDashFormat($('#startdateval').val());
+    	var endDateFormatted = convertToDashFormat($('#enddateval').val());
 		
 		//ajax
 		
@@ -124,8 +133,8 @@ $(function(){
 			data:{
 				roomCount: $('#roomCountInput').val(),
 				guestCount: $('#guestCountInput').val(),
-				startDate: $('#startdateval').val(),
-				endDate: $('#enddateval').val()
+				startDate: startDateFormatted,
+				endDate: endDateFormatted
 			},
 			success: function(response){
 				 console.log('Response:', response); 

@@ -85,11 +85,12 @@ public class ResController {
 			@RequestParam("startDate") String startDateStr,
 			@RequestParam("endDate") String endDateStr,
 			@RequestParam("roomid") int roomid,
+			@RequestParam("price") int price,
 			@RequestParam("user_id") int user_id, //test
 			HttpServletRequest request,
 			Model model) {
 		boolean  isAvail = false;
-		BigDecimal totalPrice = new BigDecimal(30000); //test
+		BigDecimal totalPrice = new BigDecimal(price); //test
 		
 		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 	     
@@ -113,13 +114,14 @@ public class ResController {
 			@RequestParam("guestCount") int guestCount, 
 			@RequestParam("startDate") String startDateStr,
 			@RequestParam("endDate") String endDateStr
+			
 	) {
 		 
-		 DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy/MM/dd");
+		 DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 	     
 		 LocalDate startDate = LocalDate.parse(startDateStr, formatter);
 		 LocalDate endDate = LocalDate.parse(endDateStr, formatter);
-		 
+		 System.out.println(startDate+"+"+ endDate);
 		 System.out.println("availableRooms ½ÇÇà");
 		 List<RoomDetailDto> availableRooms = roomService.getAvailableRoomDetails(roomCount, guestCount, startDate, endDate);
 		
