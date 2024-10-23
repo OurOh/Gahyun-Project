@@ -3,13 +3,7 @@
 
 <%@ page session="false" pageEncoding="UTF-8" %>
 
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="EUC-KR">
-<title>Insert title here</title>
-</head>
-<body>
+
     <main class="login-content">
         <section class="login-image-section">
             <div class="login-image-slider">
@@ -32,12 +26,11 @@
 					        <input type="password" id="password" name="password" required>
 					    </div>
 					    <div>
-					        <button type="submit">로그인</button>
+					        <button type="submit" id="loginsubmit">로그인</button>
+					        <button type="button" id="userregister">회원가입</button>
 					    </div>
 					</form>
 
                 </div>
             </section>
         </main>
-</body>
-</html>
