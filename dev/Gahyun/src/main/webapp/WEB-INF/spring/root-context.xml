@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<!-- db설정 -->
+	<bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource">
+		<property name="driverClassName" value="com.mysql.cj.jdbc.Driver"></property>
+		<property name="url" value="jdbc:mysql://localhost:3306/myprojectdb?serverTimezone=UTC"/>
+		<property name="username" value="root"/>
+		<property name="password" value="0321"/>
+	</bean>
+	
+	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+       <property name="dataSource" ref="dataSource" />
+       <property name="configLocation" value="classpath:mybatis-config.xml" />
+       <property name="mapperLocations" value="classpath*:mapper/*-mapper.xml" />
+    </bean>
+    
+    	<!-- MyBatis Mapper 스캔 -->
+	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+      <property name="basePackage" value="com.gahyun.dev.mapper" />
+      <property name="sqlSessionFactory" ref="sqlSessionFactory" />
+    </bean>  
+    
+    
+</beans>

@@ -1,0 +1,41 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles" %>    
+
+<%@ page session="false" pageEncoding="UTF-8" %>
+      <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <a href="/dev/"><img src="${pageContext.request.contextPath}/res/images/logo1.jpg" alt="Gahyeon Resort 로고"></a>
+                <p>(주)가현리조트 컴퍼니<br>호텔 이용약관 | 개인정보처리방침</p>
+                <p>대표자명: 정가현 | 주소: 경기 김포시 포로정리 호도공원로 326번길<br>사업자등록번호: 105-00-00000</p>
+                <p>TEL: 031-988-8888 | KakaoTalk: 가현리조트 | Instagram: @gahyeon_resort</p>
+                <p>COPYRIGHT © 2023 가현리조트. ALL RIGHTS RESERVED.</p>
+            </div>
+            <div class="footer-links">
+                <ul>
+                    <li><a href="/dev/resort"><strong>리조트소개</strong></a></li>
+                    <li><a href="/dev/resort">오시는길</a></li>
+                </ul>
+                <ul>
+                    <li><a href="/dev/facilites"><strong>시설소개</strong></a></li>
+                    <li><a href="/dev/facilites#facilities-dining">다이닝</a></li>
+                    <li><a href="/dev/facilites#facilities-convenient">편의시설</a></li>
+                    <li><a href="/dev/facilites#facilities-game">ENJOY</a></li>
+                </ul>
+                <ul>
+                    <li><a href="/dev/room"><strong>객실</strong></a></li>
+                    <li><a href="/dev/room">타입A(2인)</a></li>
+                    <li><a href="/dev/room">타입B(4인, 침대O)</a></li>
+                    <li><a href="/dev/room">타입B(4인, 침대X)</a></li>
+                </ul>
+                <ul>
+                    <li><strong><a href="/dev/event">이벤트</a></strong></li>
+                    <li><a href="#">고객센터</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    </div>
+</body>
+</html>
+        
