@@ -1,44 +1,51 @@
+*{box-sizing: border-box;}
 main {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 40px 20px;
+    padding: 40px 0;
   }
 .login-content {
-    display: flex;
     align-items: center;
     justify-content: center;
     min-height: 80vh;
-    padding: 40px 0;
+    background-color: #1a4d2e;
+    height: 100%;
 }
 
 .login-image-section {
     flex: 1;
-    padding-right: 20px;
+    width: 100%;
+    height: 600px;
+    margin-top: 10%;
 }
 
-.login-image-slider {
+.login-image-section img {
     width: 100%;
     height: 100%;
-    position: relative;
-}
-
-.login-image-slider img {
-    width: 100%;
-    height: auto;
     object-fit: cover;
-    display: none; /* 슬라이드 이미지를 처음엔 숨김 */
 }
 
-.login-image-slider img.active {
-    display: block; /* 활성화된 이미지 표시 */
+.login-section{
+    display: flex;
+    flex-direction: column;
+    background-color: #4f6f52;
+    width: 400px;
+    height: 100%;
+    position: relative;
+    float: right;
+    margin-right: 10%;
+    top: -605px;
+    justify-content: center;
 }
 
-.login-section {
-    flex: 0.4;
+.login-container {
+    
     background-color: #f5f1e7;
     padding: 40px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    justify-content: center;
+    width: 100%;
 }
 
 .login-container h2 {
@@ -62,7 +69,7 @@ main {
 #loginsubmit {
     padding: 15px;
     margin-bottom: 10px;
-    background-color: #004d1a;
+    background-color: #1a4d2e;
     color: white;
     border-radius: 5px;
     border: none;
@@ -89,12 +96,16 @@ main {
 }
 
 @media screen and (max-width: 768px) {
-    .image-section {
+    .login-image-section img {
         display: none; /* 작은 화면에서 이미지 숨김 */
     }
 
     .login-section {
+        top: 0;
+        margin: 0;
+        float: none;
+        position: absolute;
         flex: 1; /* 로그인 폼이 전체 너비를 차지하도록 설정 */
-        max-width: 100%;
+        width: 100%;
     }
 }
