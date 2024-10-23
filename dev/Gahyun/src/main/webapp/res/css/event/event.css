@@ -1,6 +1,7 @@
-.container {
+main {
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 122px auto;
+    padding: 40px 20px;
   }
 .event-content {
     display: flex;

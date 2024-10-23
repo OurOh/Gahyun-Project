@@ -5,7 +5,7 @@
       <footer>
         <div class="footer-content">
             <div class="footer-logo">
-                <img src="${pageContext.request.contextPath}/res/images/logo1.jpg" alt="Gahyeon Resort 로고">
+                <a href="/dev/"><img src="${pageContext.request.contextPath}/res/images/logo1.jpg" alt="Gahyeon Resort 로고"></a>
                 <p>(주)가현리조트 컴퍼니<br>호텔 이용약관 | 개인정보처리방침</p>
                 <p>대표자명: 정가현 | 주소: 경기 김포시 포로정리 호도공원로 326번길<br>사업자등록번호: 105-00-00000</p>
                 <p>TEL: 031-988-8888 | KakaoTalk: 가현리조트 | Instagram: @gahyeon_resort</p>
@@ -13,27 +13,25 @@
             </div>
             <div class="footer-links">
                 <ul>
-                    <li><strong>시설소개</strong></li>
-                    <li><a href="#">리조트소개</a></li>
-                    <li><a href="#">다이닝</a></li>
-                    <li><a href="#">편의시설</a></li>
-                    <li><a href="#">오락</a></li>
+                    <li><a href="/dev/resort"><strong>시설소개</strong></a></li>
+                    <li><a href="/dev/resort">리조트소개</a></li>
+                    <li><a href="/dev/resort">오시는길</a></li>
                 </ul>
                 <ul>
-                    <li><strong>테마파크</strong></li>
-                    <li><a href="#">루프탑</a></li>
-                    <li><a href="#">스파</a></li>
-                    <li><a href="#">휘트니스센터</a></li>
+                    <li><a href="/dev/facilites"><strong>시설소개</strong></a></li>
+                    <li><a href="/dev/facilites">다이닝</a></li>
+                    <li><a href="/dev/facilites">편의시설</a></li>
+                    <li><a href="/dev/facilites">ENJOY</a></li>
                 </ul>
                 <ul>
-                    <li><strong>객실</strong></li>
-                    <li><a href="#">타입A(2인)</a></li>
-                    <li><a href="#">타입B(4인, 침대O)</a></li>
-                    <li><a href="#">타입B(4인, 침대X)</a></li>
+                    <li><a href="/dev/room"><strong>객실</strong></a></li>
+                    <li><a href="/dev/room">타입A(2인)</a></li>
+                    <li><a href="/dev/room">타입B(4인, 침대O)</a></li>
+                    <li><a href="/dev/room">타입B(4인, 침대X)</a></li>
                 </ul>
                 <ul>
                     <li><strong>공지사항</strong></li>
-                    <li><a href="#">이달의 이벤트</a></li>
+                    <li><a href="/dev/event">이달의 이벤트</a></li>
                     <li><a href="#">QnA</a></li>
                     <li><a href="#">고객센터</a></li>
                 </ul>

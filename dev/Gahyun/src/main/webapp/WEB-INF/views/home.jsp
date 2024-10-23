@@ -138,7 +138,7 @@
           </div>
           <div class="spa-text">
               <h2>Relaxable Spa</h2>
-              <a href="#">스파에 대해 더 알아보기 &#62;</a>
+              <a href="/dev/facilites">시설 더 알아보기 &#62;</a>
           </div>
         </div>
     </main>
