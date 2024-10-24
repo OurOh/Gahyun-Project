@@ -15,6 +15,12 @@ header {
     padding: 20px;
 }
 
+form {
+    display: inline-block;
+    width: 100%;
+   
+}
+
 .nav-menu {
     list-style: none;
     display: flex;
@@ -123,9 +129,9 @@ h2 {
 input[type="text"] {
     padding: 10px;
     border: 1px solid #d3d3d3;
-    width: 200px; /* 기본 너비 설정 */
-    max-width: 100%; /* 화면에 맞춰 조정되도록 설정 */
-    box-sizing: border-box; /* 패딩을 포함한 너비 계산 */
+    width: 200px; /* 湲곕낯 �꼫鍮� �꽕�젙 */
+    max-width: 100%; /* �솕硫댁뿉 留욎떠 議곗젙�릺�룄濡� �꽕�젙 */
+    box-sizing: border-box; /* �뙣�뵫�쓣 �룷�븿�븳 �꼫鍮� 怨꾩궛 */
 }
 
 .checkbox {
@@ -211,12 +217,12 @@ footer {
     }
 
     input[type="text"] {
-        width: 100%; /* 작은 화면에서 입력 필드가 가득 차도록 설정 */
-        margin-bottom: 15px; /* 입력 필드 간 간격 추가 */
+        width: 100%; /* �옉�� �솕硫댁뿉�꽌 �엯�젰 �븘�뱶媛� 媛��뱷 李⑤룄濡� �꽕�젙 */
+        margin-bottom: 15px; /* �엯�젰 �븘�뱶 媛� 媛꾧꺽 異붽� */
     }
 
     .input-fields {
-        flex-direction: column; /* 작은 화면에서 필드를 세로로 배치 */
+        flex-direction: column; /* �옉�� �솕硫댁뿉�꽌 �븘�뱶瑜� �꽭濡쒕줈 諛곗튂 */
     }
 
 

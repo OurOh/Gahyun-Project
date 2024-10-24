@@ -17,5 +17,7 @@ public class ResService {
 		
 		return reservationMapper.insertResRooms(user_id, roomid, startDate, endDate, totalPrice);
 	}
-	
+	public int resSetStatus(int user_id, int roomid, String status) {
+		return reservationMapper.setStatus(user_id, roomid, status);
+	}
 }

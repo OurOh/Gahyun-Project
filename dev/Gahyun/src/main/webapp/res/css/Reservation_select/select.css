@@ -180,13 +180,19 @@ form {
     transform: translateY(-5px);
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
 }
+.selected {
+	background-color: #F5EFE6;
+    transform: translateY(-5px);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+}
+
 
 .room-card img {
     width: 100%;
-    height: 280px; /* 怨좎젙�맂 �넂�씠 */
-    object-fit: cover; /* �씠誘몄� 鍮꾩쑉 �쑀吏��븯硫댁꽌 諛뺤뒪�뿉 留욊쾶 �옄瑜닿린 */
+    height: 280px; 
+    object-fit: cover; 
     margin-bottom: 15px;
-    border-radius: 5px; /* 議곌툑 �뜑 遺��뱶�윭�슫 �뒓�굦�쓣 �쐞�빐 異붽� */
+    border-radius: 5px;
 }
 
 .room-card p {

@@ -21,8 +21,9 @@
                 </div>
             </div>
         </section>
-        <form name="resConfirm" action="/dev/ResComplte" method="post">
+        
         <section class="guest-info">
+        <form name="resConfirm" action="/dev/ResComplte" method="post">
             <h2>숙박자 정보</h2>
             <div class="input-fields">
                 <div class="input-group">
@@ -42,6 +43,12 @@
                     <label for="same-info">예약자 정보와 동일</label>
                 </div>
             </div>
+            <input type="hidden" id="startDate" name="startDate" value="${startDate}">
+        	<input type="hidden" id="endDate" name="endDate" value="${endDate}">
+        	<input type="hidden" id="roomid" name="roomid" value="${resInfo.roomId}">
+        	<input type="hidden" id="user_id" name="user_id" value="1"><!-- 임시 테스트용 -->
+        	<input type="hidden" id="price" name="price" value="${resInfo.pricePerNight}">
+        </form>
         </section>
         <section class="discount-info">
             <h2>할인정보</h2>
@@ -50,13 +57,9 @@
         <section class="payment-info">
             <h2>결제방법</h2>
             <button class="payment-api">이하 결제 api 적용</button>
+            
         </section>
-        <input type="hidden" id="startDate" name="startDate" value="${startDate}">
-        <input type="hidden" id="endDate" name="endDate" value="${endDate}">
-        <input type="hidden" id="roomid" name="roomid" value="${resInfo.roomId}">
-        <input type="hidden" id="user_id" name="user_id" value="1"><!-- 임시 테스트용 -->
-        <input type="hidden" id="price" name="price" value="${resInfo.pricePerNight}">
-        </form>
+        
  <script>
  
 	const sliceSdate  = "${startDate}"; // yyyy-mm-dd

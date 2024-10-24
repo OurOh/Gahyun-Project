@@ -61,7 +61,7 @@ public class ResController {
 			HttpServletRequest request,
 			Model model
 			) {
-		 	DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy/MM/dd");
+		 	DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 	     
 		 	LocalDate startDate = LocalDate.parse(startDateStr, formatter);
 		 	LocalDate endDate = LocalDate.parse(endDateStr, formatter);
@@ -89,7 +89,7 @@ public class ResController {
 			@RequestParam("user_id") int user_id, //test
 			HttpServletRequest request,
 			Model model) {
-		boolean  isAvail = false;
+		String status = "BOOKED";
 		BigDecimal totalPrice = new BigDecimal(price); //test
 		
 		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
@@ -99,8 +99,9 @@ public class ResController {
 	 	
 	 	
 	 	
-	 	availService.updateavail(roomid, endDate, isAvail);
+	 	
 		resService.reservationInsert(user_id, roomid, startDate, endDate, totalPrice);
+		resService.resSetStatus(user_id, roomid, status);
 	 	System.out.println("실행완료");
 	 	
 		return "home";

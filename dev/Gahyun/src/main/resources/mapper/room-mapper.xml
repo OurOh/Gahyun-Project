@@ -38,18 +38,16 @@
 
 	
 	<select id="findAvailableRooms" resultMap="roomDetailMap">
-	<![CDATA[
-		SELECT r.*, p.photo_id, p.photo_url
-    	FROM rooms r
-    	INNER JOIN room_photos p ON r.room_id = p.room_id
-    	INNER JOIN room_availability a ON r.room_id = a.room_id
-    	LEFT JOIN reservations res ON r.room_id = res.room_id 
-   			AND (res.check_in_date < #{endDate} AND res.check_out_date > #{startDate})
-    	WHERE r.capacity >= #{guestCount}
-    		AND a.date BETWEEN #{startDate} AND #{endDate}
-    		AND a.is_available = 1
-    		AND r.total_rooms >= #{roomCount}
-      		AND res.room_id IS NULL
+	<![CDATA[      		
+      	SELECT r.*, p.photo_id, p.photo_url
+		FROM rooms r
+		INNER JOIN room_photos p ON r.room_id = p.room_id
+		LEFT JOIN reservations res ON r.room_id = res.room_id 
+    		AND (res.check_in_date < #{endDate} AND res.check_out_date > #{startDate})
+    		AND res.status = 'BOOKED' 
+		WHERE r.capacity >= #{guestCount}
+    		AND (res.room_id IS NULL
+        	OR (res.status IS NULL OR res.status != 'BOOKED'))
 	]]>
 	</select>
   

@@ -9,4 +9,12 @@
      VALUES
      	(#{user_id}, #{roomid}, #{startDate}, #{endDate}, #{totalPrice})
   </insert>
+  
+  <update id="setStatus" parameterType="ReservationsDto">
+  	UPDATE reservations
+  	SET status = #{status}
+  	WHERE user_id = #{user_id}
+  	AND room_id = #{roomid}
+  </update>
+ 
 </mapper>
