@@ -19,16 +19,19 @@
     <input type="text" id="name" name="name" required>
 
     <!-- 생년월일 -->
-    <label for="birth">생년월일</label>
-    <input type="text" id="year" name="year" placeholder="년" required>
-    <input type="text" id="month" name="month" placeholder="월" required>
-    <input type="text" id="day" name="day" placeholder="일" required>
+   <label for="birthdate">생년월일</label>
+<div class="birthdate">
+    <input type="text" id="year" name="year" placeholder="년" required class="birth-input">
+    <input type="text" id="month" name="month" placeholder="월" required class="birth-input">
+    <input type="text" id="day" name="day" placeholder="일" required class="birth-input">
+</div>
 
-    <!-- 전화번호 -->
     <label for="phone">전화번호</label>
+<div class="phone">
     <input type="text" id="phone1" name="phone1" maxlength="3" required>
     <input type="text" id="phone2" name="phone2" maxlength="4" required>
     <input type="text" id="phone3" name="phone3" maxlength="4" required>
+</div>
 
     <button type="submit">가입하기</button>
 </form>

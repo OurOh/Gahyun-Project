@@ -3,11 +3,13 @@ package com.gahyun.dev.controller;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.gahyun.dev.dao.UserDao;
 import com.gahyun.dev.model.UserDto;
@@ -21,6 +23,9 @@ public class MainController {
 
     @Autowired
     private UserService userService;
+
+    @Autowired
+    private PasswordEncoder passwordEncoder;
 
     // 홈 페이지 이동
     @GetMapping("/home")
@@ -82,7 +87,7 @@ public class MainController {
         UserDto loginUser = userDao.getUserByUserId(userid);
 
         // 사용자 정보가 있고 비밀번호가 일치할 경우
-        if (loginUser != null && loginUser.getPassword().equals(password)) {
+        if (loginUser != null && passwordEncoder.matches(password, loginUser.getPassword())) {
             session.setAttribute("user", loginUser); // 로그인 성공 시 세션에 사용자 정보 저장
             return "redirect:/home"; // 홈 페이지로 리다이렉트
         } else {
@@ -111,7 +116,8 @@ public class MainController {
                                  @RequestParam("password") String password,
                                  @RequestParam("birth") String birth,
                                  @RequestParam("phone") String phone,
-                                 HttpSession session, Model model) {
+                                 HttpSession session, Model model,
+                                 RedirectAttributes redirectAttributes) {
 
         // 세션에서 현재 로그인된 사용자 정보 가져오기
         UserDto loggedInUser = (UserDto) session.getAttribute("user");
@@ -124,7 +130,7 @@ public class MainController {
         // 사용자 정보 수정
         loggedInUser.setName(name);
         if (password != null && !password.isEmpty()) {
-            loggedInUser.setPassword(password);  // 비밀번호는 이후 암호화 필요
+            loggedInUser.setPassword(passwordEncoder.encode(password));  // 비밀번호 암호화 후 저장
         }
         loggedInUser.setUser_birth(birth);
         loggedInUser.setPhone_num(phone);
@@ -134,6 +140,9 @@ public class MainController {
 
         // 세션에 수정된 사용자 정보 반영
         session.setAttribute("user", loggedInUser);
+
+        // 수정 완료 메시지 전달
+        redirectAttributes.addFlashAttribute("message", "개인정보가 성공적으로 수정되었습니다.");
 
         // 수정 완료 후 홈 페이지로 리다이렉트
         return "redirect:/home";
