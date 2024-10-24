@@ -3,6 +3,54 @@
 
 <%@ page session="false" pageEncoding="UTF-8" %>
 
+<script>
+    $(document).ready(function() {
+        // 슬라이드 이미지 설정
+        const images = $('.hero-image'); // 모든 이미지 선택
+        let currentImageIndex = 0; // 현재 이미지 인덱스 초기화
+
+        // 첫 번째 이미지를 보이게 설정
+        images.eq(currentImageIndex).addClass('active');
+
+        function changeImage() {
+            images.removeClass('active'); // 현재 이미지 숨김
+            currentImageIndex = (currentImageIndex + 1) % images.length; // 인덱스 증가 및 순환
+            images.eq(currentImageIndex).addClass('active'); // 다음 이미지 보임
+        }
+
+        // 4초마다 이미지 변경
+        setInterval(changeImage, 4000);
+
+        /***********************************************************************************************/
+
+        // 이벤트 슬라이더 설정
+        let currentIndex = 0;
+
+		const prevButton = document.querySelector('.prev1');
+		const nextButton = document.querySelector('.next1');
+		const sliderBoxes = document.querySelectorAll('.event-slider-box');
+		
+		function updateSlider() {
+		    sliderBoxes.forEach((box, index) => {
+		        box.style.transform = `translateX(${-currentIndex * 100}%)`;
+		    });
+		}
+		
+		prevButton.addEventListener('click', () => {
+		    currentIndex = (currentIndex > 0) ? currentIndex - 1 : sliderBoxes.length - 1;
+		    updateSlider();
+		});
+		
+		nextButton.addEventListener('click', () => {
+		    currentIndex = (currentIndex < sliderBoxes.length - 1) ? currentIndex + 1 : 0;
+		    updateSlider();
+		});
+		
+		// 초기 슬라이더 상태 업데이트
+		updateSlider();
+	});
+</script>
+
          <main>
         <div class="hero">
             <img class="hero-image" src="${pageContext.request.contextPath}/res/images/outside001.jpg" alt="Image Slider" />
@@ -13,7 +61,10 @@
         
             <!-- 예약 바 -->
             <div class="reservation-bar">
-                <h3>예약하기</h3>
+            	<div class="resevation-bar-title">
+	            	<i class="ri-hotel-bed-line"></i>
+	                <p>예약하기</p>
+                </div>
                 <form class="reservation-bar-form">
                     <div class="bar-group">
                         <label for="date">날짜:</label>
@@ -32,7 +83,7 @@
                         <label for="guests">인원:</label>
                         <input type="number" id="guests" name="guests" min="1" required>
                     </div>
-                    <button type="submit">예약하기</button>
+                    <button type="submit" class="reservation-bar-button">예약하기</button>
                 </form>
             </div>
         
@@ -138,56 +189,10 @@
           </div>
           <div class="spa-text">
               <h2>Relaxable Spa</h2>
-              <a href="/dev/facilites">시설 더 알아보기 &#62;</a>
+              <a href="/dev/facilites">시설 더 알아보기 <i class="ri-arrow-right-line"></i></a>
           </div>
         </div>
     </main>
     
     
-    <script>
-    $(document).ready(function() {
-        // 슬라이드 이미지 설정
-        const images = $('.hero-image'); // 모든 이미지 선택
-        let currentImageIndex = 0; // 현재 이미지 인덱스 초기화
-
-        // 첫 번째 이미지를 보이게 설정
-        images.eq(currentImageIndex).addClass('active');
-
-        function changeImage() {
-            images.removeClass('active'); // 현재 이미지 숨김
-            currentImageIndex = (currentImageIndex + 1) % images.length; // 인덱스 증가 및 순환
-            images.eq(currentImageIndex).addClass('active'); // 다음 이미지 보임
-        }
-
-        // 4초마다 이미지 변경
-        setInterval(changeImage, 4000);
-
-        /***********************************************************************************************/
-
-        // 이벤트 슬라이더 설정
-        let currentIndex = 0;
-
-const prevButton = document.querySelector('.prev1');
-const nextButton = document.querySelector('.next1');
-const sliderBoxes = document.querySelectorAll('.event-slider-box');
-
-function updateSlider() {
-    sliderBoxes.forEach((box, index) => {
-        box.style.transform = `translateX(${-currentIndex * 100}%)`;
-    });
-}
-
-prevButton.addEventListener('click', () => {
-    currentIndex = (currentIndex > 0) ? currentIndex - 1 : sliderBoxes.length - 1;
-    updateSlider();
-});
-
-nextButton.addEventListener('click', () => {
-    currentIndex = (currentIndex < sliderBoxes.length - 1) ? currentIndex + 1 : 0;
-    updateSlider();
-});
-
-// 초기 슬라이더 상태 업데이트
-updateSlider();
-});
-</script>
+    

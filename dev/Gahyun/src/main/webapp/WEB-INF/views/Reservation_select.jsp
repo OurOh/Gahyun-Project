@@ -3,31 +3,29 @@
 
 <%@ page session="false" pageEncoding="UTF-8" %>
 
+<main>
 <section class="reservation-section">
-<form name="findAvailableRooms" method="POST">
-            <h1>예약페이지</h1>
-
-	            <div class="date-selection">
-	                <p>날짜와 인원수를 선택하세요</p>
-	                <div class="reservation-container">
-	                    <div class="api-placeholder">
-	                    	<div class="startdate" ></div>
-	                    	<div class="enddate"  ></div>
-	                    	<input type="hidden"  id="startdateval" name="startDate" class="startdateval" />
-	                    	<input type="hidden"  id="enddateval" name="endDate" class="enddateval"/>
-	                    	
-	                    </div>
-	                    
-	                    <div class="guest-selection">
-	                        <div class="input-group">
-	                            <label>객실 수</label>
-	                            <div class="control-buttons">
-	                                <button class="control-button" type="button" onclick="event.preventDefault(); decrease('roomCount')">-</button>
-	                                <span id="roomCount">1</span>
-	                                <button class="control-button" onclick="event.preventDefault(); increase('roomCount')">+</button>
-	                                <input type="hidden" type="button"  name="roomCount" class="roomCountval" id="roomCountInput" value=1 />
-	                            </div>
-	                        </div>
+	<h1>예약페이지</h1>
+	<form name="findAvailableRooms" method="POST">
+       <div class="date-selection">
+	      <p>예약하실 날짜와 인원수를 선택하세요</p>
+	      <div class="reservation-container">
+	         <div class="api-placeholder">
+	            <div class="startdate" ></div>
+	            <div class="enddate"  ></div>
+	            <input type="hidden"  id="startdateval" name="startDate" class="startdateval" />
+	            <input type="hidden"  id="enddateval" name="endDate" class="enddateval"/>
+	         </div>
+	         <div class="guest-selection">
+	            <div class="input-group">
+	            <label>객실 수</label>
+	            <div class="control-buttons">
+	            <button class="control-button" type="button" onclick="event.preventDefault(); decrease('roomCount')">-</button>
+	            <span id="roomCount">1</span>
+	            <button class="control-button" onclick="event.preventDefault(); increase('roomCount')">+</button>
+	            <input type="hidden" type="button"  name="roomCount" class="roomCountval" id="roomCountInput" value=1 />
+	         </div>
+	       </div>
 	                        <div class="input-group">
 	                            <label>인원</label>
 	                            <div class="control-buttons">
@@ -74,4 +72,4 @@
                 <button class="next-button" type="button" onclick="location.href='/dev/Reservation2'">다음으로</button>
             </div>
         </section>
-   		
+</main>   		

@@ -16,8 +16,18 @@
   }
   main {
     max-width: 1200px;
-    margin: 0 auto;
-    padding: 40px 20px;
+    margin: 162px auto 0 auto;
+  }
+  @media screen and (max-width: 768px) {
+  	body{
+  		padding: 0;
+  		margin: 0;
+  	}
+  	main {
+  	 width: 100%;
+     margin: 102px 0 0 0;
+     padding: 0;
+  	}
   }
 button{
     background: inherit ; 
@@ -128,6 +138,7 @@ button{
   .nav-col{
       width: 25%;
       display: none;
+      z-index: 100;
   }
   .nav-col>a{
       width: 100%;
@@ -164,6 +175,7 @@ button{
       width: 100%;
       background-color: #f5efe6;
       padding: 15px;
+      z-index: 100;
     }
     #ham-user-login{
       text-decoration: none;
@@ -293,6 +305,9 @@ footer {
   }
   
   @media screen and (max-width: 768px) {
+    footer{
+     width: 100%;
+    }
     .footer-content {
       flex-direction: column;
       align-items: center;
@@ -311,20 +326,18 @@ footer {
   }
 
 /*LOGIN*/
-.login-content {
-    align-items: center;
-    justify-content: center;
-    min-height: 80vh;
+.login-background {
     background-color: #1a4d2e;
-    height: 100%;
     max-width: 1200px;
+    height: 1000px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .login-image-section {
-    flex: 1;
     width: 100%;
     height: 600px;
-    margin-top: 10%;
 }
 
 .login-image-section img {
@@ -347,7 +360,6 @@ footer {
 }
 
 .login-container {
-    
     background-color: #f5f1e7;
     padding: 50px;
     border-radius: 10px;
@@ -406,12 +418,19 @@ footer {
 }
 
 @media screen and (max-width: 768px) {
+	.login-background {
+		height: 600px;
+		width: 100%;
+		margin: 0;
+		left: 0;
+	}
     .login-image-section img {
         display: none; /* �옉�� �솕硫댁뿉�꽌 �씠誘몄� �닲源� */
     }
 
     .login-section {
         top: 0;
+        left: 0;
         margin: 0;
         float: none;
         position: absolute;
@@ -450,11 +469,8 @@ footer {
   max-width: 1200px; /* �룞�씪�븳 理쒕� �꼫鍮꾨줈 �꽕�젙 (1200px) */
   margin: 0 auto; /* 以묒븰 �젙�젹 */
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border: 1px solid #d3d3d3;
+  justify-content: center;
   padding: 30px;
-  background-color: #f5f5f5;
 }
 
 .api-placeholder {
@@ -466,7 +482,7 @@ footer {
   justify-content: center;
   font-size: 1.2em;
   color: #777;
-  margin-right: 20px;
+  margin-right: 30px;
 }
 
 .guest-selection {
@@ -1061,7 +1077,7 @@ main {
 /* �뒳�씪�씠�뱶 而⑦뀒�씠�꼫 */
 .showroom-slider {
   width: 50%;
-  height: 640px;
+  height: 600px;
   margin: auto;
   overflow: hidden;
   position: relative;
@@ -1100,6 +1116,8 @@ main {
   .room-content {
       flex-direction: column;
       gap: 20px;
+      width: 100%;
+      position: relative;
   }
   .showroom-slider{
       width: 100%;
@@ -1110,11 +1128,14 @@ main {
       margin: 0 auto;
   }
   .room-info-box{
-      width: 90%;
+  	  position: relative;
+      width: 100%;
+      height: 500px;
   }
   .room-info-A {
       position: absolute;
       max-width: 100%;
+      
   }
   .room-info-B1 {
       position: absolute;
@@ -1596,21 +1617,32 @@ main {
 .reservation-bar {
   display: flex; /* �뵆�젆�뒪 諛뺤뒪瑜� �궗�슜�븯�뿬 媛�濡� �젙�젹 */
   justify-content: center; /* 以묒븰 �젙�젹 */
+  allign-items: center;
   margin: 20px 0; /* �긽�븯 �뿬諛� �꽕�젙 */
   background-color: #f5efe6; /* 諛곌꼍�깋 �꽕�젙 */
-  padding: 20px 10px; /* �궡遺� �뿬諛� �꽕�젙 */
+  padding: 20px 20px; /* �궡遺� �뿬諛� �꽕�젙 */
   border-radius: 8px; /* 紐⑥꽌由� �뫁湲�寃� 泥섎━ */
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* 洹몃┝�옄 異붽� */
   width: 100%; /* 媛�濡� �꼫鍮� �꽕�젙 */
-  /* max-width: 600px; /* 理쒕� �꼫鍮� �젣嫄고븯�뿬 �쟾泥� �꼫鍮� �궗�슜 */
 }
-
-.reservation-bar h3 {
-  font-size: 24px; /* �젣紐� �겕湲� �꽕�젙 */
+.resevation-bar-title{
+	width: 100px;
+	height: 100px;
+	display: flex;
+	flex-direction: column;
+	margin-left: 10px;
+	bottom: 20px;
+}
+.resevation-bar-title i{
+	font-size: 40px;
+	color: #1a4d2e;
+	text-align: center;
+	bottom: -20px;
+}
+.resevation-bar-title p {
+  font-size: 23px; /* �젣紐� �겕湲� �꽕�젙 */
   color: #1a4d2e; /* �젣紐� �깋�긽 �꽕�젙 */
   text-align: center; /* �젣紐� 以묒븰 �젙�젹 */
-  margin-right: 10px;
-  line-height: 3;
 }
 
 .reservation-bar-form {
@@ -1643,14 +1675,16 @@ main {
   max-width: 100%;
 }
 
-button {
+.reservation-bar-button {
   background-color: #1a4d2e; /* 踰꾪듉 諛곌꼍�깋 �꽕�젙 */
   color: white; /* 踰꾪듉 �뀓�뒪�듃 �깋�긽 �꽕�젙 */
-  padding: 7px 5px; /* 踰꾪듉 �궡遺� �뿬諛� �꽕�젙 */
+  padding: 5px 8px; /* 踰꾪듉 �궡遺� �뿬諛� �꽕�젙 */
   border: none; /* �뀒�몢由� �젣嫄� */
   border-radius: 4px; /* 踰꾪듉 紐⑥꽌由� �뫁湲�寃� 泥섎━ */
   font-size: 18px; /* 踰꾪듉 �뀓�뒪�듃 �겕湲� �꽕�젙 */
   cursor: pointer; /* 而ㅼ꽌 紐⑥뼇 �꽕�젙 */
+  height: 50px;
+  margin-top: 30px;
 }
 
 button:hover {
@@ -1684,6 +1718,9 @@ button:hover {
   text-align: center;
   padding: 20px;
   margin-bottom: 30px;
+}
+.main-event-header h2{
+	color: white;
 }
 
 .event-slider-controls {

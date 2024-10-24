@@ -3,7 +3,45 @@
 
 <%@ page session="false" pageEncoding="UTF-8" %>
 
-
+<script>
+     $(document).ready(function() {
+    	 let pageUrl = window.location.href;
+    	 $(window).on('load', function(){
+    		 if(pageUrl.indexOf('roomA') > -1){
+    	         	$(".room-info-A").show();
+    	             $(".room-info-B1").hide();
+    	             $(".room-info-B2").hide();
+    	         }else if(pageUrl.indexOf('roomB1') > -1){
+    	         	$(".room-info-A").hide();
+    	             $(".room-info-B1").show();
+    	             $(".room-info-B2").hide();
+    	         }else(pageUrl.indexOf('roomB2') > -1){
+    	        	 $(".room-info-A").hide();
+    	             $(".room-info-B1").hide();
+    	             $(".room-info-B2").show();
+    	         }
+    	 });
+         
+    	 
+        $("#roomTypeA").click(function() {
+            $(".room-info-A").show();
+            $(".room-info-B1").hide();
+            $(".room-info-B2").hide();
+        });
+        $("#roomTypeB1").click(function() {
+            $(".room-info-A").hide();
+            $(".room-info-B1").show();
+            $(".room-info-B2").hide();
+        });
+        $("#roomTypeB2").click(function() {
+            $(".room-info-A").hide();
+            $(".room-info-B1").hide();
+            $(".room-info-B2").show();
+        });
+        
+        
+     });
+</script>
 
  <main>
         <!-- 객실소개 섹션 -->
@@ -111,42 +149,4 @@
             </div>
         </section>
     </main>
-    <script>
-     $(document).ready(function() {
-    	 let pageUrl = window.location.href;
-    	 $(window).on('load', function(){
-    		 if(pageUrl.indexOf('roomA') > -1){
-    	         	$(".room-info-A").show();
-    	             $(".room-info-B1").hide();
-    	             $(".room-info-B2").hide();
-    	         }else if(pageUrl.indexOf('roomB1') > -1){
-    	         	$(".room-info-A").hide();
-    	             $(".room-info-B1").show();
-    	             $(".room-info-B2").hide();
-    	         }else(pageUrl.indexOf('roomB2') > -1){
-    	        	 $(".room-info-A").hide();
-    	             $(".room-info-B1").hide();
-    	             $(".room-info-B2").show();
-    	         }
-    	 });
-         
-    	 
-        $("#roomTypeA").click(function() {
-            $(".room-info-A").show();
-            $(".room-info-B1").hide();
-            $(".room-info-B2").hide();
-        });
-        $("#roomTypeB1").click(function() {
-            $(".room-info-A").hide();
-            $(".room-info-B1").show();
-            $(".room-info-B2").hide();
-        });
-        $("#roomTypeB2").click(function() {
-            $(".room-info-A").hide();
-            $(".room-info-B1").hide();
-            $(".room-info-B2").show();
-        });
-        
-        
-     });
-</script>
+    
