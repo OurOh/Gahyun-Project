@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.gahyun.dev.mapper.ReservationsMapper">
+     <!-- 유저 ID로 예약 정보 가져오기 -->
+    <select id="getReservationByUserId" parameterType="int" resultType="ReservationsDto">
+        SELECT * FROM reservations WHERE user_id = #{userId}
+    </select>
+
+    <!-- 예약 정보 삽입 -->
+    <insert id="insertReservation" parameterType="ReservationsDto">
+        INSERT INTO reservations (user_id, room_id, check_in_date, check_out_date, total_price, status)
+        VALUES (#{user_id}, #{room_id}, #{check_in_date}, #{check_out_date}, #{total_price}, #{status})
+    </insert>
+    <!-- 유저 ID로 결제 세부 정보 가져오기 -->
+    <select id="getPaymentDetailsByUserId" parameterType="int" resultType="map">
+        SELECT 
+            r.total_price AS amount, 
+            u.name AS buyerName, 
+            u.phone_num AS buyerTel, 
+            u.email AS buyerEmail 
+        FROM 
+            reservations r
+        JOIN 
+            user u ON r.user_id = u.user_id
+        WHERE 
+            r.user_id = #{userId}
+    </select>
+</mapper>

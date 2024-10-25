@@ -10,7 +10,7 @@ public class RoomsDto {
 	private int roomId;
 	private String roomName;
 	private String roomType;
-	private BigDecimal pricePerNight;  // °¡°ÝÀÌ ¼ýÀÚ °ªÀÏ °æ¿ì
+	private BigDecimal pricePerNight;  // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
 	private int capacity;
 	private String description;
 	private Date createdAt;
