@@ -38,16 +38,5 @@ public class HomeController {
 	}
 	
 	
-	@GetMapping("/check1")
-	public String check1(Model model) {
-		System.out.println("check1 실행");
-	
-		return "home";
-		
-	}
-	@GetMapping("/check2")
-	public String check2(Model model) {
-		System.out.println("check2실행");
-		return "home";
-	}
+
 }

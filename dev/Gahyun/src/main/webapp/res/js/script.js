@@ -55,15 +55,15 @@ $(function(){
       if(!regex.value("#phone1", "전화번호를 입력하세요.")){ return false; }
       if(!regex.value("#phone2", "전화번호를 입력하세요.")){ return false; }
       if(!regex.value("#phone3", "전화번호를 입력하세요.")){ return false; }
-      
-      /* 전화번호 변환 */
+      /*
+     
       const tel = $("#phone1").val() + "-" + $("#phone2").val() + "-" + $("#phone3").val();
                   
                   $("#tel").val(tel);
-      /* 생년월일 변환 */
+     
       const birth = $("#year").val() + "-" + $("#month").val() + "-" + $("#day").val();
       			    $("#birth").val(birth);
-      
+      */
       /* 이메일 검증 
       if(!regex.value("#useremail", "이메일을 입력하세요.")){ return false; }
       if(!regex.email("#useremail", "이메일 형식이 아닙니다.")){ return false; }

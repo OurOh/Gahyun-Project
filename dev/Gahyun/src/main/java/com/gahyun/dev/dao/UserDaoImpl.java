@@ -17,7 +17,7 @@ public class UserDaoImpl implements UserDao {
 
     @Override
     public UserDto getUserByUserId(String userid) {
-        String sql = "SELECT * FROM users WHERE userid = ?";
+        String sql = "SELECT * FROM user WHERE userid = ?";
         return jdbcTemplate.queryForObject(sql, new Object[]{userid}, userRowMapper);
     }
 
@@ -36,7 +36,7 @@ public class UserDaoImpl implements UserDao {
     //정보수정
     @Override
     public void updateUser(UserDto user) {
-        String sql = "UPDATE users SET name = ?, password = ?, phone_num = ?, user_birth = ? WHERE userid = ?";
+        String sql = "UPDATE user SET name = ?, password = ?, phone_num = ?, user_birth = ? WHERE userid = ?";
         jdbcTemplate.update(sql, 
             user.getName(), 
             user.getPassword(), 
@@ -50,7 +50,7 @@ public class UserDaoImpl implements UserDao {
      //새로운 사용자 등록
      @Override
      public void insertUser(UserDto user) {
-    	 String sql = "INSERT INTO users (userid, password, name, phone_num, user_birth) VALUES (?, ?, ?, ?, ?)";
+    	 String sql = "INSERT INTO user (userid, password, name, phone_num, user_birth) VALUES (?, ?, ?, ?, ?)";
     	 jdbcTemplate.update(sql, 
     			 user.getUserid(), 
     			 user.getPassword(), 

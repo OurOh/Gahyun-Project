@@ -23,20 +23,20 @@ public class PaymentsController {
     @Autowired
     private PaymentService paymentService;
 
-    // 결제 페이지로 이동
+
     @GetMapping("/page")
     public String paymentPage(Model model) {
-        return "payment";  // 결제 페이지 (payment.jsp로 이동)
+        return "payment";  //
     }
 
-    // 결제 정보 가져오기 (결제 전 사용자 정보, 금액 등 제공)
+ 
     @GetMapping("/getPaymentDetails")
     @ResponseBody
     public Map<String, Object> getPaymentDetails(@RequestParam("userId") int userId) {
-        return paymentService.getPaymentDetails(userId);  // 유저 ID에 따른 결제 정보를 가져옴
+        return paymentService.getPaymentDetails(userId);  
     }
 
-    // 결제 완료 후 처리
+  
     @PostMapping("/complete")
     @ResponseBody
     public Map<String, Object> paymentComplete(@RequestBody Map<String, Object> paymentData) {
@@ -49,12 +49,12 @@ public class PaymentsController {
             String checkInDateStr = (String) paymentData.get("checkInDate");
             String checkOutDateStr = (String) paymentData.get("checkOutDate");
 
-            // String 날짜를 java.sql.Date로 변환
+           
             SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
             Date checkInDate = new Date(dateFormat.parse(checkInDateStr).getTime());
             Date checkOutDate = new Date(dateFormat.parse(checkOutDateStr).getTime());
 
-            // 결제 및 예약 정보 저장
+    
             boolean success = paymentService.saveReservation(userId, roomId, checkInDate, checkOutDate, paidAmount);
 
             if (success) {

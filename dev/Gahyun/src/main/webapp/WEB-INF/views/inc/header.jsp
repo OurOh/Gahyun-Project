@@ -1,13 +1,20 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles" %>    
+<%@ taglib uri="http://www.springframework.org/security/tags" prefix="sec" %>   
 
 <%@ page session="false" pageEncoding="UTF-8" %>
 
    <header>
         <a href="/dev/Reservation1" id="reserv_make"><button type="button" class="reserv_make btn">예약하기</button></a>
         <a href="/dev/"><img class="logo-small allign-center" src="${pageContext.request.contextPath}/res/images/logo1.jpg" /></a>
-        <a href="/dev/login" id="user_login" class="user_login">로그인</a>
-        <a href="#" id="reserv_view" class="reserv_view">예약확인</a>
+        <sec:authorize access="isAuthenticated()">
+    		<a href="#" id="reserv_view" class="reserv_view">예약확인</a>
+    		<button type="submit">로그아웃</button>
+		</sec:authorize>
+
+		<sec:authorize access="isAnonymous()">
+    		<a href="/dev/login" id="user_login" class="user_login">로그인</a>
+		</sec:authorize>
     </header>
     <div class="main-nav">
         <div class="navbar">

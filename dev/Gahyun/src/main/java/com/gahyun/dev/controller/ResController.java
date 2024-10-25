@@ -38,8 +38,7 @@ public class ResController {
 	private ReservationsMapper reservationsdao;
 	@Autowired 
 	private RoomsService roomService;
-	@Autowired
-	private AvailabilityService availService;
+
 	@Autowired
 	private ResService resService;
 	

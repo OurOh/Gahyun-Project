@@ -26,7 +26,7 @@ import com.gahyun.dev.service.UserService;
 public class MainController {
 
 	@Autowired
-	private UserDao dao;
+	private UserDao userDao;
 	@Autowired
 	private RoomsService roomService;
 	
@@ -41,24 +41,41 @@ public class MainController {
 	}
 	
 
-		
-	@PostMapping("/register")
-	public String RegisterForm(
-			@RequestParam("userid") String userid,
-			@RequestParam("password") String password,
-			@RequestParam("name") String name,
-			@RequestParam("birth") String user_birth,
-			@RequestParam("tel") String phone_num,
-			HttpServletRequest request,
-			RedirectAttributes redirectAttributes
-			) {
-	
-		
-	
-			
-			UserDto dto = new UserDto();
-			return "Mainpage";
-	}
+	// 회원가입 처리
+    @PostMapping("/register")
+    public String registerUser(@RequestParam("userid") String userid,
+                               @RequestParam("password") String password,
+                               @RequestParam("name") String name,
+                               @RequestParam("year") String year,
+                               @RequestParam("month") String month,
+                               @RequestParam("day") String day,
+                               @RequestParam("phone1") String phone1,
+                               @RequestParam("phone2") String phone2,
+                               @RequestParam("phone3") String phone3,
+                               HttpSession session, Model model) {
+
+        // 새로운 UserDto 객체 생성 및 데이터 설정
+        UserDto newUser = new UserDto();
+        newUser.setUserid(userid);
+        newUser.setPassword(password);
+        newUser.setName(name);
+
+        // 생년월일 결합 (yyyy-MM-dd 형식)
+        String birth = year + "-" + month + "-" + day;
+        newUser.setUser_birth(birth);
+
+        // 전화번호 결합 (전화번호 형식)
+        String tel = phone1 + "-" + phone2 + "-" + phone3;
+        newUser.setPhone_num(tel);
+
+        // 데이터베이스에 사용자 정보 저장
+        userService.insertUser(newUser);
+        
+        
+        
+        // 회원가입 완료 후 로그인 페이지로 이동
+        return "redirect:/login";
+    }
 
     @Autowired
     private UserService userService;
@@ -66,10 +83,10 @@ public class MainController {
     @Autowired
     private PasswordEncoder passwordEncoder;
 
-    // Ȩ ������ �̵�
+   
     @GetMapping("/home")
     public String showHomePage(Model model) {
-        return "home";  // home.jsp�� �̵�
+        return "home";  
     }
     
     
@@ -97,39 +114,43 @@ public class MainController {
     @GetMapping("/Customer-center")
     public String showCustomerCenter(Model model) {
         return "Customer-center";
-
-    // �α��� ó��
+    }
+    @GetMapping("/login")
+    public String login(Model model) {
+    	return "login";
+    }
+    
     @PostMapping("/login")
     public String loginUser(@RequestParam("userid") String userid,
                             @RequestParam("password") String password,
                             HttpSession session, Model model) {
         UserDto loginUser = userDao.getUserByUserId(userid);
 
-        // ����� ������ �ְ� ��й�ȣ�� ��ġ�� ���
+       
         if (loginUser != null && passwordEncoder.matches(password, loginUser.getPassword())) {
-            session.setAttribute("user", loginUser); // �α��� ���� �� ���ǿ� ����� ���� ����
-            return "redirect:/home"; // Ȩ �������� �����̷�Ʈ
+            session.setAttribute("user", loginUser); 
+            return "redirect:/home"; 
         } else {
-            model.addAttribute("errorMessage", "���̵� �Ǵ� ��й�ȣ�� ��ġ���� �ʽ��ϴ�.");
-            return "login"; // �α��� ���� �� �α��� �������� ���ư�
+            model.addAttribute("errorMessage", "아이디 또는 비밀번호가 틀렸습니다.");
+            return "login"; 
         }
     }
 
-    // �������� ���� ������ �̵�
+    
     @GetMapping("/edit")
     public String showEditUserInfoPage(HttpSession session, Model model) {
         UserDto loggedInUser = (UserDto) session.getAttribute("user");
 
-        // �α��ε��� ���� ��� �α��� �������� �����̷�Ʈ
+        
         if (loggedInUser == null) {
-            return "redirect:/login"; // �α��� �������� �̵�
+            return "redirect:/login"; 
         }
 
         model.addAttribute("user", loggedInUser);
-        return "UserEdit";  // UserEdit.jsp�� �̵�
+        return "UserEdit"; 
     }
 
-    // �������� ���� ó��
+ 
     @PostMapping("/updateUserInfo")
     public String updateUserInfo(@RequestParam("name") String name,
                                  @RequestParam("password") String password,
@@ -138,32 +159,32 @@ public class MainController {
                                  HttpSession session, Model model,
                                  RedirectAttributes redirectAttributes) {
 
-        // ���ǿ��� ���� �α��ε� ����� ���� ��������
+     
         UserDto loggedInUser = (UserDto) session.getAttribute("user");
 
-        // �α��ε��� ���� ���, �α��� �������� �����̷�Ʈ
+        
         if (loggedInUser == null) {
-            return "redirect:/login";  // �α��� �������� �̵�
+            return "redirect:/login";  
         }
 
-        // ����� ���� ����
+        
         loggedInUser.setName(name);
         if (password != null && !password.isEmpty()) {
-            loggedInUser.setPassword(passwordEncoder.encode(password));  // ��й�ȣ ��ȣȭ �� ����
+            loggedInUser.setPassword(passwordEncoder.encode(password)); 
         }
         loggedInUser.setUser_birth(birth);
         loggedInUser.setPhone_num(phone);
 
-        // �����ͺ��̽� ������Ʈ
+   
         userService.updateUser(loggedInUser);
 
-        // ���ǿ� ������ ����� ���� �ݿ�
+     
         session.setAttribute("user", loggedInUser);
 
-        // ���� �Ϸ� �޽��� ����
-        redirectAttributes.addFlashAttribute("message", "���������� ���������� �����Ǿ����ϴ�.");
+       
+        redirectAttributes.addFlashAttribute("message", "회원정보가 수정되었습니다.");
 
-        // ���� �Ϸ� �� Ȩ �������� �����̷�Ʈ
+        
         return "redirect:/home";
     }
     
