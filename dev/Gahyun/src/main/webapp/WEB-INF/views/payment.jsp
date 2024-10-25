@@ -45,7 +45,7 @@
             	    alert('결제가 완료되었습니다.');
             	    
             	    $.ajax({
-            	    	url: '/payment/complete', // /payment/complete로 설정 (추가 경로 없음)
+            	    	url: '/dev/payment/complete', // /payment/complete로 설정 (추가 경로 없음)
             	        type: 'POST',
             	        contentType: 'application/json',
             	        data: JSON.stringify({
@@ -59,7 +59,7 @@
             	        }),
             	        success: function (data) {
             	            if (data.result === "success") {
-            	                window.location.href = "/home"; // 성공시 리다이렉트
+            	                window.location.href = "/dev/home"; // 성공시 리다이렉트
             	            } else {
             	                alert('결제 정보 저장에 실패했습니다.');
             	                console.log("결제 실패 이유: ", data.message); // 로그 추가

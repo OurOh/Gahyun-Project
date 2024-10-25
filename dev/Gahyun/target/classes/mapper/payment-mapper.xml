@@ -9,4 +9,14 @@
         INSERT INTO payments (reservation_id, payment_method, payment_amount, payment_date, payment_status)
         VALUES (#{reservation_id}, #{payment_method}, #{payment_amount}, NOW(), #{payment_status})
     </insert>
+
+    <!-- 가장 최근의 예약 ID 조회 -->
+    <select id="getLatestReservationId" parameterType="map" resultType="int">
+        SELECT reservation_id 
+        FROM reservations 
+        WHERE user_id = #{userId} 
+        AND room_id = #{roomId} 
+        ORDER BY reservation_id DESC 
+        LIMIT 1
+    </select>
 </mapper>

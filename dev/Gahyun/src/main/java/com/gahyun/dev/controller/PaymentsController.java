@@ -37,8 +37,9 @@ public class PaymentsController {
             // 1. 요청 데이터 수신 및 변환
             System.out.println("1. 결제 데이터 수신: " + paymentData);
 
-            int userId = (Integer) paymentData.get("userId");
-            int roomId = (Integer) paymentData.get("roomId");
+         // Double 타입으로 받아 Integer로 변환
+            int userId = ((Double) paymentData.get("userId")).intValue();
+            int roomId = ((Double) paymentData.get("roomId")).intValue();
             double paidAmount = ((Number) paymentData.get("paid_amount")).doubleValue();
 
             String checkInDateStr = (String) paymentData.get("checkInDate");
@@ -63,6 +64,7 @@ public class PaymentsController {
 
                 response.put("result", paymentSuccess ? "success" : "failure");
                 response.put("message", paymentSuccess ? "결제가 완료되었습니다." : "결제 정보 저장 실패");
+                System.out.println("결제 정보 저장에 실패했습니다."); // 로그 추가
             } else {
                 response.put("result", "failure");
                 response.put("message", "예약 정보 저장 실패");
