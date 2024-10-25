@@ -10,55 +10,100 @@
     <script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.2.0.js"></script>
 </head>
 <body>
-    <h1>결제 토큰</h1>
-    <p>${token}</p>
-    <button id="paymentButton">결제하기</button>
-    <script type="text/javascript">
-        $(document).ready(function() {
-            $('#paymentButton').click(function() {
-                var IMP = window.IMP; // 생략 가능
-                IMP.init('imp12151020'); // 'your_imp_uid'는 포트원 가맹점 식별코드
+    <h1>결제 페이지</h1>
 
-                // 결제 요청
+     <!-- 결제 정보를 동적으로 보여줄 영역 -->
+    <div id="paymentInfo">
+        <p>결제 금액: <input type="text" id="paymentAmount" /></p>
+        <p>구매자 이름: <input type="text" id="buyerName" /></p>
+        <p>구매자 전화번호: <input type="text" id="buyerTel" /></p>
+        <p>구매자 이메일: <input type="text" id="buyerEmail" /></p>
+    </div>
+
+    <!-- 결제 요청 시 사용할 데이터 -->
+    <input type="hidden" id="userId" value="1"> <!-- 테스트 사용자 ID -->
+    <input type="hidden" id="roomId" value="1"> <!-- 테스트 객실 ID -->
+    <input type="date" id="checkInDate" value="2024-11-01">
+    <input type="date" id="checkOutDate" value="2024-11-03">
+    <button id="paymentButton">결제하기</button>
+
+
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var userId = $('#userId').val();
+
+            // 페이지 로드 시 서버에서 결제 정보를 가져옴
+            $.ajax({
+                url: '/payment/getPaymentDetails',  // 서버에서 결제 정보를 받아올 엔드포인트
+                type: 'GET',
+                data: { userId: userId },
+                success: function (data) {
+                    if (data.error) {
+                        alert(data.error);
+                    } else {
+                    	  // 결제 정보 업데이트
+                        $('#paymentAmount').val(data.amount);  // 결제 금액
+                        $('#buyerName').val(data.buyerName);   // 구매자 이름
+                        $('#buyerTel').val(data.buyerTel);     // 구매자 전화번호
+                        $('#buyerEmail').val(data.buyerEmail); // 구매자 이메일
+                    }
+                },
+                error: function () {
+                    alert("결제 정보를 가져오는 중 오류가 발생했습니다.");
+                }
+            });
+
+            var IMP = window.IMP;
+            IMP.init('imp12151020'); // 포트원 가맹점 식별코드
+
+            $('#paymentButton').click(function () {
+                var roomId = $('#roomId').val();
+                var checkInDate = $('#checkInDate').val();
+                var checkOutDate = $('#checkOutDate').val();
+
                 IMP.request_pay({
-                    pg: 'html5_inicis', // PG사 (이니시스 예시)
-                    pay_method: 'card', // 결제 방법
-                    merchant_uid: 'merchant_' + new Date().getTime(), // 주문번호
-                    name: '주문명: 결제 테스트', // 결제창에 표시될 상품명
-                    amount: 100, // 결제 금액
-                    buyer_email: 'test@test.com', // 구매자 이메일
-                    buyer_name: '홍길동', // 구매자 이름
-                    buyer_tel: '010-1234-5678', // 구매자 전화번호
-                    buyer_addr: '서울특별시 강남구 삼성동', // 구매자 주소
-                    buyer_postcode: '123-456', // 구매자 우편번호
-                    m_redirect_url: 'http://localhost:8080/paymentResult' // 결제 완료 후 이동할 URL
+                    pg: 'html5_inicis', 
+                    pay_method: 'card',
+                    merchant_uid: 'merchant_' + new Date().getTime(),
+                    name: '객실 예약 결제 테스트',
+                    amount: parseFloat($('#paymentAmount').val()),  // 서버에서 가져온 결제 금액
+                    buyer_email: $('#buyerEmail').val(),  // 서버에서 가져온 구매자 이메일
+                    buyer_name: $('#buyerName').val(),    // 서버에서 가져온 구매자 이름
+                    buyer_tel: $('#buyerTel').val(),      // 서버에서 가져온 구매자 전화번호
+                    m_redirect_url: 'http://localhost:8080/paymentResult'
                 }, function (rsp) {
-                    // 결제 완료 후 콜백
                     if (rsp.success) {
                         alert('결제가 완료되었습니다.');
-                        var msg = '결제가 완료되었습니다.\n' + '고유ID : ' + rsp.imp_uid + '\n' + '상점 거래ID : ' + rsp.merchant_uid + '\n' + '결제 금액 : ' + rsp.paid_amount + '\n';
-                        console.log(msg);
-
-                        // 서버로 결제 데이터 전송 (AJAX)
-                        fetch('/payment/complete', {
-                            method: 'POST',
-                            headers: {
-                                'Content-Type': 'application/json',
+                        
+                        // 서버로 결제 데이터 전송
+                        $.ajax({
+                            url: '/payment/complete',
+                            type: 'POST',
+                            contentType: 'application/json',
+                            data: JSON.stringify({
+                                imp_uid: rsp.imp_uid,
+                                merchant_uid: rsp.merchant_uid,
+                                paid_amount: rsp.paid_amount,
+                                userId: userId,
+                                roomId: roomId,
+                                checkInDate: checkInDate,
+                                checkOutDate: checkOutDate
+                            }),
+                            success: function (data) {
+                                if (data.result === "success") {
+                                    window.location.href = "/home";
+                                } else {
+                                    alert('결제 정보 저장에 실패했습니다.');
+                                }
                             },
-                            body: JSON.stringify({
-                                imp_uid: rsp.imp_uid, // 결제 고유번호
-                                merchant_uid: rsp.merchant_uid, // 주문번호
-                                paid_amount: rsp.paid_amount // 결제 금액
-                            })
-                        }).then(function (response) {
-                            return response.json();
-                        }).then(function (data) {
-                            console.log(data);
-                        }).catch(function (error) {
-                            console.error('Error:', error);
+                            error: function (error) {
+                                alert('결제 후 처리 중 오류가 발생했습니다.');
+                                console.log(error);
+                            }
                         });
                     } else {
-                        alert('결제에 실패하였습니다. 에러 내용: ' + rsp.error_msg);
+                        alert('결제에 실패했습니다. 에러 내용: ' + rsp.error_msg);
                     }
                 });
             });
