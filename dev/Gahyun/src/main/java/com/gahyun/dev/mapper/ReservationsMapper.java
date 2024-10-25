@@ -23,4 +23,7 @@ public interface ReservationsMapper {
     // 예약이 완료되지 않은 남은 방 목록을 가져오는 메서드
     @Select("SELECT * FROM rooms WHERE room_id NOT IN (SELECT room_id FROM reservations WHERE check_out_date >= CURDATE())")
     List<RoomsDto> getAvailableRooms();
+
+ // 예약 ID를 가져오는 메서드 추가
+    int getLatestReservationId(int userId, int roomId);
 }

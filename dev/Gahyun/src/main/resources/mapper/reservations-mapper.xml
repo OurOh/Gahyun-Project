@@ -27,4 +27,11 @@
         WHERE 
             r.user_id = #{userId}
     </select>
+    <select id="getLatestReservationId" parameterType="map" resultType="int">
+    SELECT reservation_id 
+    FROM reservations 
+    WHERE user_id = #{userId} AND room_id = #{roomId} 
+    ORDER BY created_at DESC 
+    LIMIT 1
+</select>
 </mapper>
