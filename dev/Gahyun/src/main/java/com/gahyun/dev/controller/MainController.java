@@ -39,10 +39,7 @@ public class MainController {
 		return "UserRegister";
 	}
 	
-	@GetMapping("/facilites")
-	public String Facilites(Model model) {
-		return "facilites";
-	}
+
 		
 	@PostMapping("/register")
 	public String RegisterForm(
@@ -65,22 +62,11 @@ public class MainController {
     @Autowired
     private UserService userService;
     
-   
-
     public String mainPage(Model model) {
         return "MainPage";
     }
     
     
-    @GetMapping("/Reservation1")
-    public String showReservationPage1(Model model) {
-        return "Reservation_select";
-    }
-
-    @GetMapping("/Reservation2")
-    public String showReservationPage2(Model model) {
-        return "Reservation_confirm";
-    }
     
     @GetMapping("/facilites")
     public String showFacilites(Model model) {
