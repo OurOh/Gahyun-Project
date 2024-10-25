@@ -61,13 +61,13 @@ public class PaymentService {
     }
 
     // 예약 저장 메서드
-    public boolean saveReservation(int userId, int roomId, Date checkInDate, Date checkOutDate, double totalPrice) {
+    public boolean saveReservation(int userId, int roomId, Date checkInDate, Date checkOutDate, BigDecimal totalPrice) {
         ReservationsDto reservation = new ReservationsDto();
         reservation.setUser_id(userId);
         reservation.setRoom_id(roomId);
         reservation.setCheck_in_date(checkInDate);
         reservation.setCheck_out_date(checkOutDate);
-        reservation.setTotal_price(totalPrice);
+        reservation.setTotal_price(totalPrice);  // BigDecimal 사용
         reservation.setStatus("PAID");
 
         try {
@@ -80,11 +80,11 @@ public class PaymentService {
     }
 
  // 결제 저장 메서드
-    public boolean savePayment(int reservationId, String paymentMethod, double amount) {
+    public boolean savePayment(int reservationId, String paymentMethod, BigDecimal amount) {
         PaymentsDto payment = new PaymentsDto();
         payment.setReservation_id(reservationId);
         payment.setPayment_method(paymentMethod);
-        payment.setPayment_amount(BigDecimal.valueOf(amount));
+        payment.setPayment_amount(amount);  // BigDecimal 사용
         payment.setPayment_status("PAID");
 
         try {
@@ -97,6 +97,6 @@ public class PaymentService {
     }
 
     public int getLatestReservationId(int userId, int roomId) {
-        return reservationsMapper.getLatestReservationId(userId, roomId);
+    	return paymentMapper.getLatestReservationId(userId, roomId);
     }
 }

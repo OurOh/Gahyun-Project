@@ -1,5 +1,6 @@
 package com.gahyun.dev.controller;
 
+import java.math.BigDecimal;
 import java.sql.Date;
 import java.text.SimpleDateFormat;
 import java.util.HashMap;
@@ -37,10 +38,9 @@ public class PaymentsController {
             // 1. 요청 데이터 수신 및 변환
             System.out.println("1. 결제 데이터 수신: " + paymentData);
 
-         // Double 타입으로 받아 Integer로 변환
-            int userId = ((Double) paymentData.get("userId")).intValue();
-            int roomId = ((Double) paymentData.get("roomId")).intValue();
-            double paidAmount = ((Number) paymentData.get("paid_amount")).doubleValue();
+            int userId = ((Number) paymentData.get("userId")).intValue();
+            int roomId = ((Number) paymentData.get("roomId")).intValue();
+            BigDecimal paidAmount = new BigDecimal(paymentData.get("paid_amount").toString());  // BigDecimal로 변환
 
             String checkInDateStr = (String) paymentData.get("checkInDate");
             String checkOutDateStr = (String) paymentData.get("checkOutDate");
