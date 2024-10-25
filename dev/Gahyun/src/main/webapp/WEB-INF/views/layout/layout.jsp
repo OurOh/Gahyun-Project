@@ -4,24 +4,32 @@
 <%@ page session="false" pageEncoding="UTF-8"%>
 <html>
 <head>
-    <title><tiles:getAsString name="title"/></title>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/res/css/main/bootstrap.min.css" />
     <link rel="stylesheet" href="${pageContext.request.contextPath}/res/css/footer/style.css">   
     <link rel="stylesheet" href="${pageContext.request.contextPath}/res/css/header/style.css">
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.0/themes/base/jquery-ui.css">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/res/css/UserRegister/UserRegister.css" />
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/res/css/Reservation_confirm/confirm.css" />
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/res/css/Reservation_select/select.css" />
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/res/css/facilites/facilites.css" />
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/res/css/login/login.css" />
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/res/css/event/event.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/res/css/facilites/facilites.css">
+
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/res/css/main/style.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/res/css/resortdetail/resortdetail.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/res/css/roomdetail/roomdetail.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/res/css/userEdit/userEdit.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/res/css/UserRegister/UserRegister.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/res/css/completeStyle.css"><!-- 전 페이지 적용 통합본 stylesheet -->
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/res/css/facilites/facilites.css?v=<%= System.currentTimeMillis() %>">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/res/remixicon/remixicon.css"> <!-- remixicon 아이콘 css -->
+
+
     
-      
-    <script src="${pageContext.request.contextPath}/res/js/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- jQuery 최신 버전 -->
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script> <!-- jQuery UI 버전 조정 -->
+    
 	<script src="${pageContext.request.contextPath}/res/js/bootstrap.min.js"></script>
 	<script src="${pageContext.request.contextPath}/res/js/popper.min.js"></script>
 	<script src="${pageContext.request.contextPath}/res/js/regex.js"></script>
 	<script src="${pageContext.request.contextPath}/res/js/script.js"></script>
-	<script src="https://code.jquery.com/ui/1.14.0/jquery-ui.min.js"></script>
+	
 	
 	
 	

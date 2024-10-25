@@ -1,0 +1,184 @@
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+  }
+.room-intro h1 {
+    background-color: #4a6543; /* 초록색 배경 */
+    color: #f5efe6; 
+    text-align: center;
+    padding: 20px 0; /* 상하 여백 추가 */
+    margin-top: 0; /* 위아래 여백 제거 */
+    margin-bottom: 40px;
+    font-size: 2em; /* 텍스트 크기 설정 */
+    font-weight: bold; /* 굵은 텍스트 */
+    letter-spacing: 5px;
+  }
+
+.room-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.room-tabs button {
+    background-color: #1a4d2e;
+    font-size: 18px;
+    color: white;
+    padding: 10px 30px;
+    border: none;
+    cursor: pointer;
+}
+.room-tabs button:hover{
+    background-color: #4a6543;
+    cursor: pointer;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+}
+
+.room-content {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+}
+
+/***room image***/
+.showroom-image {
+    width: 50%;
+}
+.room-info-box{
+    width: 50%;
+}
+.room-info-A {
+    position: absolute;
+    max-width: 29%;
+    background-color: #f5efe6;
+    padding: 20px;
+    border-radius: 10px;
+}
+.room-info-B1 {
+    position: absolute;
+    max-width: 29%;
+    background-color: #f5efe6;
+    padding: 20px;
+    border-radius: 10px;
+    display: none;
+}
+.room-info-B2 {
+    position: absolute;
+    max-width: 29%;
+    background-color: #f5efe6;
+    padding: 20px;
+    border-radius: 10px;
+    display: none;
+}
+
+.room-info h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.room-info p {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.warnings {
+    margin-top: 20px;
+    background-color: #fefefe;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.reserve-btn {
+    display: block;
+    background-color: #1a4d2e;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    margin: 20px 0;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.reserve-btn:hover {
+    background-color: #4a6543;
+    cursor: pointer;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+}
+
+/*****/
+/* 슬라이드 컨테이너 */
+.showroom-slider {
+    width: 50%;
+    height: 640px;
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+    justify-content: center;
+}
+
+/* 슬라이드 안의 이미지들을 나란히 배치 */
+.showroom-slides {
+    display: flex;
+    height: 100%;
+    width: 300%; /* 3개의 슬라이드가 한 줄에 배치되도록 */
+    animation: slide 12s infinite; /* 슬라이드가 12초 동안 돌아감 */
+}
+
+/* 각 슬라이드의 개별 설정 */
+.showroom-slide {
+    width: 33.3333%; /* 슬라이드 각각의 너비 */
+}
+
+.showroom-slide img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+/* 애니메이션 설정 */
+@keyframes slide {
+    0% { transform: translateX(0); }
+    33% { transform: translateX(-33.3333%); }
+    66% { transform: translateX(-66.6666%); }
+    100% { transform: translateX(0); }
+}
+@media screen and (max-width: 768px) {
+
+    .room-content {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .showroom-slider{
+        width: 100%;
+        height: 400px;
+    }
+    .room-image, .room-info {
+        width: 90%;
+        margin: 0 auto;
+    }
+    .room-info-box{
+        width: 90%;
+    }
+    .room-info-A {
+        position: absolute;
+        max-width: 100%;
+    }
+    .room-info-B1 {
+        position: absolute;
+        max-width: 100%;
+        display: none;
+    }
+    .room-info-B2 {
+        position: absolute;
+        max-width: 100%;
+        display: none;
+    }
+    .reserve-btn{
+        width: 50%;
+        margin: 20px auto 0 auto;
+    }
+}

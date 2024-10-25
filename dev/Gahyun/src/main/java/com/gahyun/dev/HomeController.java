@@ -36,6 +36,8 @@ public class HomeController {
 		
 		return "home";
 	}
+	
+	
 	@GetMapping("/check1")
 	public String check1(Model model) {
 		System.out.println("check1 ½ÇÇà");

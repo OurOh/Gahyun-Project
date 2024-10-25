@@ -1,33 +1,25 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="EUC-KR">
-<title>Insert title here</title>
-</head>
-<body>
-<main class="main-content">
-            <section class="image-section">
-                <div class="image-slider">
-                    <img src="${pageContext.request.contextPath}/res/images/pool003.jpg" alt="¸®Á¶Æ® ÀÌ¹ÌÁö 1" class="active">
-                    <img src="${pageContext.request.contextPath}/res/images/outside001.jpg" alt="¸®Á¶Æ® ÀÌ¹ÌÁö 1">
-                    <img src="${pageContext.request.contextPath}/res/images/yoga003.jpg" alt="¸®Á¶Æ® ÀÌ¹ÌÁö 3">
-                </div>
-            </section>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles" %>    
 
-            <section class="login-section">
-                <div class="login-container">
-                    <h2>·Î±×ÀÎ</h2>
-                    <form>
-                        <input type="text" placeholder="¾ÆÀÌµð">
-                        <input type="password" placeholder="ºñ¹Ð¹øÈ£">
-                        <button type="submit" id="loginsubmit">·Î±×ÀÎ</button>
-                        <button type="button" id="userregister">È¸¿ø°¡ÀÔ</button>
-                        <a href="#">¾ÆÀÌµð/ºñ¹Ð¹øÈ£ Ã£±â</a>
-                    </form>
-                </div>
-            </section>
-        </main>
-</body>
-</html>
+<%@ page session="false" pageEncoding="UTF-8" %>
+
+
+<main>
+	<div class="login-background">
+	    <div class="login-image-section">
+	        <img src="${pageContext.request.contextPath}/res/images/pool003.jpg" alt="ë¦¬ì¡°íŠ¸ ì´ë¯¸ì§€ 1">
+	        <div class="login-section">
+	            <div class="login-container">
+	                <h2>ë¡œê·¸ì¸</h2>
+	                <form action="${pageContext.request.contextPath}/login" method="post">
+	                    <input type="text" placeholder="ì•„ì´ë””" id="userid" name="userid" required>
+	                    <input type="password" placeholder="ë¹„ë°€ë²ˆí˜¸" id="password" name="password" required>
+	                    <button type="submit" id="loginsubmit">ë¡œê·¸ì¸</button>
+	                    <button type="button" id="userregister">íšŒì›ê°€ìž…</button>
+	                    <a href="#">ì•„ì´ë””/ë¹„ë°€ë²ˆí˜¸ ì°¾ê¸°</a>
+	                </form>
+	            </div>
+	        </div>
+	    </div>
+    </div>  
+</main>
