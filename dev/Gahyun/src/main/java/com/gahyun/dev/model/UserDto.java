@@ -1,20 +1,19 @@
 package com.gahyun.dev.model;
 
-import java.sql.Timestamp;
-import java.time.LocalDate;
-
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
 
 @Data
 public class UserDto {
-	
-	private int user_id;
-	private String name;
-	private String email;
-	private String password;
-	private String phone_num;
-	private Timestamp created_at;
-	private LocalDate user_birth;
-	private String userid;
-	
+    
+	 // Lombok으로 자동 생성되므로 명시적인 Getters and Setters는 필요하지 않음
+    private String userid;
+    private String password;
+    private String name;
+    private String phone_num;
+    private String user_birth;  // 생년월일 필드
+    private String email;
+   
 }

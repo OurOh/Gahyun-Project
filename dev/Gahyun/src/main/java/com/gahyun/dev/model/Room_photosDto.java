@@ -4,9 +4,9 @@ import lombok.Data;
 
 @Data
 public class Room_photosDto {
-	private int photo_id;
+	private int photoId;
 	private int room_id;
-	private String photo_url;
+	private String photoUrl;
 	
 
 }

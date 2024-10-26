@@ -24,10 +24,10 @@ public class PaymentsController {
     @Autowired
     private PaymentService paymentService;
 
-    // 결제 페이지로 이동
+
     @GetMapping("/page")
     public String paymentPage(Model model) {
-        return "payment";  // 결제 페이지 (payment.jsp로 이동)
+        return "payment";  //
     }
 
     @PostMapping("/complete")  // /payment/complete 경로 설정

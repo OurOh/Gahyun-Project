@@ -218,24 +218,55 @@
             <version>2.3.0</version>
         </dependency> 
 		
-				
-		<!-- security -->
+		
+		
+		 <!-- Spring Security Web Module -->
+    <dependency>
+        <groupId>org.springframework.security</groupId>
+        <artifactId>spring-security-web</artifactId>
+        <version>5.4.11</version>
+    </dependency>
+
+    <!-- Spring Security Config Module -->
+    <dependency>
+        <groupId>org.springframework.security</groupId>
+        <artifactId>spring-security-config</artifactId>
+        <version>5.4.11</version>
+    </dependency>
+
+    <!-- Spring Security Taglibs (for JSP support) -->
+    <dependency>
+        <groupId>org.springframework.security</groupId>
+        <artifactId>spring-security-taglibs</artifactId>
+        <version>5.4.11</version>
+    </dependency>
+
+    <!-- Spring Security Crypto (for password encryption) -->
+    <dependency>
+        <groupId>org.springframework.security</groupId>
+        <artifactId>spring-security-crypto</artifactId>
+        <version>5.4.11</version>
+    </dependency>
+		
+		
+		
+		
+		
 		<dependency>
-		    <groupId>org.springframework.security</groupId>
-		    <artifactId>spring-security-web</artifactId>
-		    <version>5.4.11</version>
+		    <groupId>com.fasterxml.jackson.core</groupId>
+		    <artifactId>jackson-databind</artifactId>
+		    <version>2.17.2</version>
 		</dependency>
 		<dependency>
-		    <groupId>org.springframework.security</groupId>
-		    <artifactId>spring-security-config</artifactId>
-		    <version>5.4.11</version>
+    		<groupId>com.fasterxml.jackson.core</groupId>
+   			<artifactId>jackson-core</artifactId>
+    		<version>2.17.2</version>
 		</dependency>
 		<dependency>
-		    <groupId>org.springframework.security</groupId>
-		    <artifactId>spring-security-taglibs</artifactId>
-		    <version>5.4.11</version>
+    		<groupId>com.fasterxml.jackson.core</groupId>
+    		<artifactId>jackson-annotations</artifactId>
+   			<version>2.17.2</version>
 		</dependency>
-		<!-- /security -->
 	
 	</dependencies>
     <build>

@@ -1,0 +1,66 @@
+.form-section {
+    flex: 1;
+    padding: 30px;
+    text-align: center;
+}
+
+.form-section h1 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+form {
+    width: 50%;
+    margin: 0 auto;
+}
+
+form label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 18px;
+    text-align: left;
+}
+
+form input[type="text"],
+form input[type="password"],
+form select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.birthdate,
+.phone {
+    display: flex;
+    justify-content: space-between;
+}
+
+.birthdate select,
+.phone input {
+    width: 32%;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.submit-btn,
+.cancel-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.submit-btn {
+    background-color: #3b5338;
+    color: #fff;
+}
+
+.cancel-btn {
+    background-color: #ccc;
+    color: #333;
+}

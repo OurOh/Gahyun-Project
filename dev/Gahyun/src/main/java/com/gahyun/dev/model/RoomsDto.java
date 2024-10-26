@@ -13,7 +13,7 @@ public class RoomsDto {
 	private BigDecimal pricePerNight;  // BigDecimal로 변경
 	private int capacity;
 	private String description;
-	private Timestamp created_at;
+	private Date createdAt;
 	
 	
 }

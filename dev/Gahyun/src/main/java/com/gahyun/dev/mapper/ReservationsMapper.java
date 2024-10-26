@@ -1,5 +1,11 @@
 package com.gahyun.dev.mapper;
 
+import java.math.BigDecimal;
+import java.time.LocalDate;
+
+import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
+
 import java.util.List;
 import java.util.Map;
 
@@ -11,6 +17,9 @@ import com.gahyun.dev.model.RoomsDto;
 
 @Mapper
 public interface ReservationsMapper {
+
+    int insertResRooms(@Param("user_id")int user_id, @Param("roomid")int roomid, @Param("startDate")LocalDate startDate, @Param("endDate")LocalDate endDate ,@Param("totalPrice")BigDecimal totalPrice);
+	int setStatus(@Param("user_id")int user_id, @Param("roomid")int roomid, @Param("status")String status);
     // 예약 정보를 삽입하는 메서드
     void insertReservation(ReservationsDto reservation);
 
