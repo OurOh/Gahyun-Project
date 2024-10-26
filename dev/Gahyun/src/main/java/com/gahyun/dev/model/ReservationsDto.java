@@ -1,5 +1,6 @@
 package com.gahyun.dev.model;
 
+import java.math.BigDecimal;
 import java.sql.Date;
 import java.sql.Timestamp;
 
@@ -12,7 +13,7 @@ public class ReservationsDto {
 	private int room_id;
 	private Date check_in_date;
 	private Date check_out_date;
-	private double total_price;
+	private BigDecimal total_price;
 	private String status;
 	private Timestamp created_at;
 	
