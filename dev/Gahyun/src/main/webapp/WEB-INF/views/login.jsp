@@ -1,6 +1,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles" %>    
-
+<%@ taglib uri="http://www.springframework.org/security/tags" prefix="sec" %>
 <%@ page session="false" pageEncoding="UTF-8" %>
 
 
@@ -11,9 +11,10 @@
 	        <div class="login-section">
 	            <div class="login-container">
 	                <h2>로그인</h2>
-	                <form action="${pageContext.request.contextPath}/login" method="post">
-	                    <input type="text" placeholder="아이디" id="userid" name="userid" required>
+	                <form action="./login" method="post">
+	                    <input type="text" placeholder="아이디" id="userid" name="username" required>
 	                    <input type="password" placeholder="비밀번호" id="password" name="password" required>
+	                    <input type="hidden" name="test" value="test용">
 	                    <button type="submit" id="loginsubmit">로그인</button>
 	                    <button type="button" id="userregister">회원가입</button>
 	                    <a href="#">아이디/비밀번호 찾기</a>
@@ -23,3 +24,8 @@
 	    </div>
     </div>  
 </main>
+<c:if test="${param.error == 'true'}">
+    <script>
+        alert("로그인에 실패했습니다. 아이디와 비밀번호를 확인하세요.");
+    </script>
+</c:if>

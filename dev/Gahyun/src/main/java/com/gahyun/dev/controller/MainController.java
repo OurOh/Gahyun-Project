@@ -119,22 +119,25 @@ public class MainController {
     public String login(Model model) {
     	return "login";
     }
-    
-    @PostMapping("/login")
-    public String loginUser(@RequestParam("userid") String userid,
-                            @RequestParam("password") String password,
-                            HttpSession session, Model model) {
-        UserDto loginUser = userDao.getUserByUserId(userid);
-
-       
-        if (loginUser != null && passwordEncoder.matches(password, loginUser.getPassword())) {
-            session.setAttribute("user", loginUser); 
-            return "redirect:/home"; 
-        } else {
-            model.addAttribute("errorMessage", "아이디 또는 비밀번호가 틀렸습니다.");
-            return "login"; 
-        }
-    }
+//    
+//    @PostMapping("/login")
+//    public String loginUser(@RequestParam("userid") String userid,
+//                            @RequestParam("password") String password,
+//                            HttpSession session, Model model) {
+//    	 System.out.println("로그인 시도 중: " + userid);
+//        UserDto loginUser = userDao.getUserByUserId(userid);
+//        System.out.println("사용자 조회 결과: " + (loginUser != null));
+//       
+//        if (loginUser != null && passwordEncoder.matches(password, loginUser.getPassword())) {
+//            session.setAttribute("user", loginUser); 
+//            System.out.println("로그인 성공");
+//            return "redirect:/home"; 
+//        } else {
+//        	System.out.println("로그인 실패: 아이디 또는 비밀번호 불일치");
+//            model.addAttribute("errorMessage", "아이디 또는 비밀번호가 틀렸습니다.");
+//            return "login"; 
+//        }
+//    }
 
     
     @GetMapping("/edit")
