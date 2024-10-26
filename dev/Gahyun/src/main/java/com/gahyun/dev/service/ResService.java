@@ -13,9 +13,9 @@ public class ResService {
 	@Autowired
 	private ReservationsMapper reservationMapper;
 	
-	public int reservationInsert(int user_id, int roomid, LocalDate startDate, LocalDate endDate ,BigDecimal totalPrice) {
+	public int reservationInsert(int user_id, int roomid, LocalDate startDate, LocalDate endDate ,BigDecimal totalPrice, String status ) {
 		
-		return reservationMapper.insertResRooms(user_id, roomid, startDate, endDate, totalPrice);
+		return reservationMapper.insertReservation(user_id, roomid, startDate, endDate, totalPrice, status);
 	}
 	public int resSetStatus(int user_id, int roomid, String status) {
 		return reservationMapper.setStatus(user_id, roomid, status);

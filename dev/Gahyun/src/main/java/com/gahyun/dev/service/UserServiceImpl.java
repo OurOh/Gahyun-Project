@@ -1,6 +1,8 @@
 package com.gahyun.dev.service;
 
 import com.gahyun.dev.dao.UserDao;
+import com.gahyun.dev.dao.UserDaoImpl;
+import com.gahyun.dev.model.CustomUserDetails;
 import com.gahyun.dev.model.UserDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.User;
@@ -26,11 +28,13 @@ public class UserServiceImpl implements UserService {
         if (user == null) {
             throw new UsernameNotFoundException("User not found with userid: " + userid);
         }
-
-        return User.withUsername(user.getUserid())
-                   .password(user.getPassword())  // 이미 암호화된 비밀번호
-                   .authorities("ROLE_USER")      // 권한 부여
-                   .build();
+        System.out.println("User found: " + user);
+        System.out.println("User ID: " + user.getUserid());
+        System.out.println("User Password: " + user.getPassword());
+        
+      
+        
+        return new CustomUserDetails(user);
     }
 
     // 사용자 인증 (로그인 시 사용)

@@ -156,7 +156,7 @@ $(function(){
 				
 					var roomCard = `
 						<div class="room-card" data-room-id="${room.roomId}">
-							<img src="/dev/${imageUrl}" alt="객실 이미지">
+							<img src="/dev${imageUrl}" alt="객실 이미지">
 							<p>객실 타입: ${room.roomType}<br>조식: 불포함</p>
 						</div>
 						`;

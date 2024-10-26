@@ -4,25 +4,38 @@ package com.gahyun.dev.controller;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.core.context.SecurityContext;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.gahyun.dev.dao.UserDaoImpl;
 import com.gahyun.dev.mapper.MemberMapper;
 import com.gahyun.dev.mapper.ReservationsMapper;
 import com.gahyun.dev.mapper.RoomsMapper;
+import com.gahyun.dev.model.CustomUserDetails;
 import com.gahyun.dev.model.RoomDetailDto;
+import com.gahyun.dev.model.UserDto;
 import com.gahyun.dev.service.ResService;
 import com.gahyun.dev.service.RoomsService;
+import com.gahyun.dev.service.UserService;
+
 
 
 
@@ -30,18 +43,92 @@ import com.gahyun.dev.service.RoomsService;
 @PreAuthorize("isAuthenticated()")
 public class ResController {
 	
-	@Autowired
-	private MemberMapper userdao;
 	
-	@Autowired
-	private RoomsMapper roomsdao;
-	@Autowired
+	
+	
 	private ReservationsMapper reservationsdao;
+	@Autowired
+	private UserService userService;
+	
 	@Autowired 
 	private RoomsService roomService;
 
 	@Autowired
 	private ResService resService;
+	
+	@Autowired
+	UserDaoImpl uDao;
+
+	
+	public void findIdbyUsername(Model model ) {		
+		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+		CustomUserDetails user = (CustomUserDetails) authentication.getPrincipal();
+		String username = user.getUsername();
+		
+		String  userPid = uDao.getPidByUserid(username);		
+		if (userPid != null) {
+
+	        model.addAttribute("user_id", userPid);
+	    }
+	}
+	
+	//edit
+	@GetMapping("/edit")
+    public String showEditUserInfoPage(Model model) {
+		 Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+		 if (authentication == null || !(authentication.getPrincipal() instanceof CustomUserDetails)) {
+		        return "redirect:/home"; 
+		    }      
+        return "UserEdit"; 
+    }
+
+ 
+    @PostMapping("/updateUserInfo")
+    public String updateUserInfo(    							
+    							 @RequestParam("name") String name,
+    							 @RequestParam("password") String password,
+                                 @RequestParam("birth") String birth,
+                                 @RequestParam("phone") String phone,
+                                 HttpSession session, Model model,
+                                 RedirectAttributes redirectAttributes) {
+
+    	findIdbyUsername(model);
+    	String userId = (String) model.getAttribute("user_id");    	
+        
+        if (userId == null) {
+            return "redirect:/login";  
+        }        
+        UserDto loggedInUser = uDao.getUserByUserPid(userId);
+        
+        loggedInUser.setName(name);        
+        loggedInUser.setUser_birth(birth);
+        loggedInUser.setPassword(password);
+        loggedInUser.setPhone_num(phone);
+        System.out.println("loggInuser출력"+ loggedInUser);
+   
+        userService.updateUser(loggedInUser);
+
+       
+        redirectAttributes.addFlashAttribute("message", "회원정보가 수정되었습니다.");
+
+        
+        return "redirect:/home";
+    }
+	
+	
+	@PostMapping("/samePerson")
+	public ResponseEntity<Map<String, Object>> samePerson(Model model) {
+		findIdbyUsername(model);
+    	String userId = (String) model.getAttribute("user_id");    	
+    	UserDto loggedInUser = uDao.getUserByUserPid(userId);
+    	Map<String, Object> response = new HashMap<>();
+        response.put("phoneNum", loggedInUser.getPhone_num());
+        response.put("name", loggedInUser.getName());
+    	
+    	
+		return ResponseEntity.ok(response);
+	}
+	
 	
 	@GetMapping("/Reservation1")
 	public String Reservation1(Model model) {
@@ -79,16 +166,19 @@ public class ResController {
 		return "Reservation_confirm";
 	}
 	@PostMapping("/ResComplte")
-	public String home(
+	public String ResComplte(
 			@RequestParam("gname") String gName,
 			@RequestParam("gtel") String gTel,
 			@RequestParam("startDate") String startDateStr,
 			@RequestParam("endDate") String endDateStr,
 			@RequestParam("roomid") int roomid,
 			@RequestParam("price") int price,
-			@RequestParam("user_id") int user_id, //test
 			HttpServletRequest request,
 			Model model) {
+		findIdbyUsername(model);
+		String userId = (String) model.getAttribute("user_id");    
+		int user_id = Integer.parseInt(userId);
+		
 		String status = "BOOKED";
 		BigDecimal totalPrice = new BigDecimal(price); //test
 		
@@ -100,8 +190,8 @@ public class ResController {
 	 	
 	 	
 	 	
-		resService.reservationInsert(user_id, roomid, startDate, endDate, totalPrice);
-		resService.resSetStatus(user_id, roomid, status);
+		resService.reservationInsert(user_id, roomid, startDate, endDate, totalPrice, status);
+		//resService.resSetStatus(user_id, roomid, status);
 	 	System.out.println("실행완료");
 	 	
 		return "home";

@@ -14,7 +14,6 @@
 	                <form action="./login" method="post">
 	                    <input type="text" placeholder="아이디" id="userid" name="username" required>
 	                    <input type="password" placeholder="비밀번호" id="password" name="password" required>
-	                    <input type="hidden" name="test" value="test용">
 	                    <button type="submit" id="loginsubmit">로그인</button>
 	                    <button type="button" id="userregister">회원가입</button>
 	                    <a href="#">아이디/비밀번호 찾기</a>
