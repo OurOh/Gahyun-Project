@@ -33,7 +33,6 @@
     <input type="text" id="phone3" name="phone3" maxlength="4" required>
 </div>
 
-    <button type="submit">가입하기</button>
 </form>
 
 </section>

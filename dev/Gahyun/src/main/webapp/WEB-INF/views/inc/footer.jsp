@@ -14,7 +14,6 @@
             <div class="footer-links">
                 <ul>
                     <li><a href="/dev/resort"><strong>리조트소개</strong></a></li>
-                    <li><a href="/dev/resort">오시는길</a></li>
                 </ul>
                 <ul>
                     <li><a href="/dev/facilites"><strong>시설소개</strong></a></li>
@@ -24,13 +23,9 @@
                 </ul>
                 <ul>
                     <li><a href="/dev/room"><strong>객실</strong></a></li>
-                    <li><a href="/dev/room">타입A(2인)</a></li>
-                    <li><a href="/dev/room">타입B(4인, 침대O)</a></li>
-                    <li><a href="/dev/room">타입B(4인, 침대X)</a></li>
                 </ul>
                 <ul>
                     <li><strong><a href="/dev/event">이벤트</a></strong></li>
-                    <li><a href="#">고객센터</a></li>
                 </ul>
             </div>
         </div>
