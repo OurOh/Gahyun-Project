@@ -18,21 +18,21 @@ import com.gahyun.dev.model.RoomsDto;
 @Mapper
 public interface ReservationsMapper {
 
-    int insertResRooms(@Param("user_id")int user_id, @Param("roomid")int roomid, @Param("startDate")LocalDate startDate, @Param("endDate")LocalDate endDate ,@Param("totalPrice")BigDecimal totalPrice);
+    int insertReservation(@Param("user_id")int user_id, @Param("roomid")int roomid, @Param("startDate")LocalDate startDate, @Param("endDate")LocalDate endDate ,@Param("totalPrice")BigDecimal totalPrice, @Param("status")String status);
 	int setStatus(@Param("user_id")int user_id, @Param("roomid")int roomid, @Param("status")String status);
-    // 예약 정보를 삽입하는 메서드
+    // �삁�빟 �젙蹂대�� �궫�엯�븯�뒗 硫붿꽌�뱶
     void insertReservation(ReservationsDto reservation);
 
-    // 특정 유저의 결제 세부 정보를 가져오는 메서드
+    // �듅�젙 �쑀���쓽 寃곗젣 �꽭遺� �젙蹂대�� 媛��졇�삤�뒗 硫붿꽌�뱶
     Map<String, Object> getPaymentDetailsByUserId(int userId);
 
-    // 특정 유저의 예약 정보를 가져오는 메서드
+    // �듅�젙 �쑀���쓽 �삁�빟 �젙蹂대�� 媛��졇�삤�뒗 硫붿꽌�뱶
     ReservationsDto getReservationByUserId(int userId);
 
-    // 예약이 완료되지 않은 남은 방 목록을 가져오는 메서드
+    // �삁�빟�씠 �셿猷뚮릺吏� �븡�� �궓�� 諛� 紐⑸줉�쓣 媛��졇�삤�뒗 硫붿꽌�뱶
     @Select("SELECT * FROM rooms WHERE room_id NOT IN (SELECT room_id FROM reservations WHERE check_out_date >= CURDATE())")
     List<RoomsDto> getAvailableRooms();
 
- // 예약 ID를 가져오는 메서드 추가
+ // �삁�빟 ID瑜� 媛��졇�삤�뒗 硫붿꽌�뱶 異붽�
     int getLatestReservationId(int userId, int roomId);
 }

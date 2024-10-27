@@ -48,7 +48,7 @@
         	<input type="hidden" id="roomid" name="roomid" value="${resInfo.roomId}">
         	<input type="hidden" id="user_id" name="user_id" value="1"><!-- 임시 테스트용 -->
         	<input type="hidden" id="price" name="price" value="${resInfo.pricePerNight}">
-        </form>
+        
         </section>
         <section class="discount-info">
             <h2>할인정보</h2>
@@ -57,7 +57,7 @@
         <section class="payment-info">
             <h2>결제방법</h2>
             <button class="payment-api">이하 결제 api 적용</button>
-            
+        </form>   
         </section>
         
  <script>
@@ -126,6 +126,7 @@
 
 	checkInOutText.innerHTML = checkInOut;
 	
+	// 예약하기
 	$(function(){
 		console.log($('#roomid').val());
 		$('form[name="resConfirm"]').on('submit',function(event){
@@ -141,6 +142,48 @@
 			this.submit();
 		});
 	});
-
+	
+	//예약자와 같음 체크박스 설정
+	$(document).ready(function() {
+	    $('#same-info').change(function() {
+	        if ($(this).is(':checked')) {
+	        	console.log("checkbox 체크 ajax전송")
+	        	// 선택된 방 정보와 날짜 정보를 서버로 POST 요청
+	            $.ajax({
+					url: '/dev/samePerson',
+					type:'POST',					
+					success: function(response){
+						 
+						var sPhoneNum = response.phoneNum; //000-0000-0000 형식
+						var sName = response.name;
+						
+						
+						
+						$("#guest-name").val(sName)
+						var phoneParts = sPhoneNum.split('-');
+	                    $("#phone-number").val(phoneParts[0]);
+	                    $("#phone-number2").val(phoneParts[1]);
+	                    $("#phone-number3").val(phoneParts[2]);
+						
+					},
+					error:function(xhr, status, error){
+					console.error("Error입니다.",error);
+					console.log("Response Text:", xhr.responseText);  // 서버 응답 확인
+		    		console.log("Status:", status);  // HTTP 상태 코드 확인
+					}
+				
+				});
+			} else {
+		           
+				$('#guest-name').val('');
+		        $("#phone-number").val('');
+		        $("#phone-number2").val('');
+		        $("#phone-number3").val('');
+		            
+		    }
+	    });
+	});
+	
+	
 </script>       
    

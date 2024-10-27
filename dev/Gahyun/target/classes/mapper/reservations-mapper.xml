@@ -11,7 +11,7 @@
     <!-- 예약 정보 삽입 -->
     <insert id="insertReservation" parameterType="ReservationsDto">
         INSERT INTO reservations (user_id, room_id, check_in_date, check_out_date, total_price, status)
-        VALUES (#{user_id}, #{room_id}, #{check_in_date}, #{check_out_date}, #{total_price}, #{status})
+        VALUES (#{user_id}, #{roomid}, #{startDate}, #{endDate}, #{totalPrice}, #{status})
     </insert>
     <!-- 유저 ID로 결제 세부 정보 가져오기 -->
     <select id="getPaymentDetailsByUserId" parameterType="int" resultType="map">
