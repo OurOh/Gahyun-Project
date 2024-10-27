@@ -30,8 +30,10 @@ import com.gahyun.dev.mapper.MemberMapper;
 import com.gahyun.dev.mapper.ReservationsMapper;
 import com.gahyun.dev.mapper.RoomsMapper;
 import com.gahyun.dev.model.CustomUserDetails;
+import com.gahyun.dev.model.MypageDto;
 import com.gahyun.dev.model.RoomDetailDto;
 import com.gahyun.dev.model.UserDto;
+import com.gahyun.dev.service.MypageService;
 import com.gahyun.dev.service.ResService;
 import com.gahyun.dev.service.RoomsService;
 import com.gahyun.dev.service.UserService;
@@ -55,6 +57,9 @@ public class ResController {
 
 	@Autowired
 	private ResService resService;
+	
+	@Autowired
+	private MypageService mypageService;
 	
 	@Autowired
 	UserDaoImpl uDao;
@@ -104,12 +109,12 @@ public class ResController {
         loggedInUser.setUser_birth(birth);
         loggedInUser.setPassword(password);
         loggedInUser.setPhone_num(phone);
-        System.out.println("loggInuserÃâ·Â"+ loggedInUser);
+        System.out.println("loggInuserì¶œë ¥"+ loggedInUser);
    
         userService.updateUser(loggedInUser);
 
        
-        redirectAttributes.addFlashAttribute("message", "È¸¿øÁ¤º¸°¡ ¼öÁ¤µÇ¾ú½À´Ï´Ù.");
+        redirectAttributes.addFlashAttribute("message", "íšŒì›ì •ë³´ê°€ ìˆ˜ì •ë˜ì—ˆìŠµë‹ˆë‹¤.");
 
         
         return "redirect:/home";
@@ -192,7 +197,7 @@ public class ResController {
 	 	
 		resService.reservationInsert(user_id, roomid, startDate, endDate, totalPrice, status);
 		//resService.resSetStatus(user_id, roomid, status);
-	 	System.out.println("½ÇÇà¿Ï·á");
+	 	System.out.println("ì‹¤í–‰ì™„ë£Œ");
 	 	
 		return "home";
 	}
@@ -213,10 +218,29 @@ public class ResController {
 		 LocalDate startDate = LocalDate.parse(startDateStr, formatter);
 		 LocalDate endDate = LocalDate.parse(endDateStr, formatter);
 		 System.out.println(startDate+"+"+ endDate);
-		 System.out.println("availableRooms ½ÇÇà");
+		 System.out.println("availableRooms ì‹¤í–‰");
 		 List<RoomDetailDto> availableRooms = roomService.getAvailableRoomDetails(roomCount, guestCount, startDate, endDate);
 		
-		 System.out.println("µ¥ÀÌÅÍ :" + availableRooms);
+		 System.out.println("ë°ì´í„° :" + availableRooms);
 		 return ResponseEntity.ok(availableRooms);
 	}
+	
+    @GetMapping("/mypage")
+    public String showMyPage(Model model) {
+        findIdbyUsername(model); // user_id 
+        String userId = (String) model.getAttribute("user_id");
+
+        
+        List<MypageDto> currentMypage = mypageService.getCurrentMypage(userId);
+        
+        List<MypageDto> pastMypage = mypageService.getPastMypage(userId);
+
+        model.addAttribute("currentMypage", currentMypage);
+        model.addAttribute("pastMypage", pastMypage);
+
+        return "UserMyPage";
+    }
+		
+
+
 }
