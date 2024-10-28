@@ -8,6 +8,6 @@ import com.gahyun.dev.model.MypageDto;
 
 @Mapper
 public interface MypageMapper {
-    List<MypageDto> findCurrentMypage();
-    List<MypageDto> findPastMypage();
+    List<MypageDto> findPastMypage(String userId);
+	List<MypageDto> findCurrentMypage(String userId);
 }

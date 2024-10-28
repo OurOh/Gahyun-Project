@@ -226,19 +226,34 @@ public class ResController {
 	}
 	
     @GetMapping("/mypage")
-    public String showMyPage(Model model) {
-        findIdbyUsername(model); // user_id 
+    public String showMyPage(HttpSession session, Model model) {
+        // findIdbyUsername을 호출하여 모델에 user_id 추가
+        findIdbyUsername(model);
+
+        // 모델에서 user_id를 가져옴
         String userId = (String) model.getAttribute("user_id");
+        
+        if (userId == null) {
+            return "redirect:/login";
+        }
 
         
         List<MypageDto> currentMypage = mypageService.getCurrentMypage(userId);
-        
         List<MypageDto> pastMypage = mypageService.getPastMypage(userId);
+        
+        // 예약 데이터가 없을 경우의 메시지 설정
+        if (currentMypage.isEmpty()) {
+            model.addAttribute("currentMypageMessage", "현재 예약이 없습니다.");
+        }
+        if (pastMypage.isEmpty()) {
+            model.addAttribute("pastMypageMessage", "과거 예약이 없습니다.");
+        }        
+        
 
         model.addAttribute("currentMypage", currentMypage);
         model.addAttribute("pastMypage", pastMypage);
 
-        return "UserMyPage";
+        return "UserMypage";
     }
 		
 

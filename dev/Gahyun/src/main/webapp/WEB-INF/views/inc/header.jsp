@@ -8,7 +8,7 @@
         <a href="/dev/Reservation1" id="reserv_make"><button type="button" class="reserv_make btn">예약하기</button></a>
         <a href="/dev/"><img class="logo-small allign-center" src="${pageContext.request.contextPath}/res/images/logo1.jpg" /></a>
         <sec:authorize access="isAuthenticated()">
-    		<a href="#" id="reserv_view" class="reserv_view">예약확인</a>
+    		<a href="/dev/mypage" id="reserv_view" class="reserv_view">예약확인</a>
     		<button type="submit">로그아웃</button>
 		</sec:authorize>
 

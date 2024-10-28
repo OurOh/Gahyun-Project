@@ -17,10 +17,11 @@ public class MypageService {
     private MypageMapper mypageMapper;
 
     public List<MypageDto> getCurrentMypage(String userId) {
-        return mypageMapper.findCurrentMypage();
+        return mypageMapper.findCurrentMypage(userId);
     }
 
     public List<MypageDto> getPastMypage(String userId) {
-        return mypageMapper.findPastMypage();
+        return mypageMapper.findPastMypage(userId);
     }
+   
 }
