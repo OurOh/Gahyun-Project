@@ -2,10 +2,10 @@
 <%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles" %>    
 
 <%@ page session="false" pageEncoding="UTF-8" %>
-
-<section class="form-section">
+<main>
+<section class="register-section">
     <h1>회원가입</h1>
-    <form action="${pageContext.request.contextPath}/register" method="POST">
+    <form action="${pageContext.request.contextPath}/register" method="POST" id="register-form">
     <!-- 아이디 -->
     <label for="userid">아이디</label>
     <input type="text" id="userid" name="userid" required>
@@ -28,16 +28,41 @@
 
     <label for="phone">전화번호</label>
 <div class="phone">
-    <input type="text" id="phone1" name="phone1" maxlength="3" required>
+    <input type="text" id="phone1" name="phone1" placeholder="010" maxlength="3" required>
     <input type="text" id="phone2" name="phone2" maxlength="4" required>
     <input type="text" id="phone3" name="phone3" maxlength="4" required>
 </div>
+<div class="marketing-agree">
+                    <h2>마케팅문자수신동의</h2>
+                    <span>
+                        <p>
+                            가현리조트(이하 “회사”)는 개인정보보호법 및 정보통신망법 등에 따라 회원님의 개인정보 및 서비스 이용정보를 활용한 마케팅 동의 절차를 운영하고 있으며, 
+                            이에 따라 회원님께서 서비스 이용 중에 개인정보 수집, 이용, 제공 동의 시 마케팅 수신동의를 하신 경우에만 마케팅 및 광고 정보를 수신하실 수 있습니다. 
+                            회원님은 아래 내용을 확인하고 동의 여부를 선택할 수 있습니다.
+                        </p>
+                    </span>
+                    <p>동의 내용:</p>
+                    <ol>
+                        <li>마케팅 정보 제공(이벤트, 혜택 안내 등), 맞춤형 서비스 제공</li>
+                        <li>기타 관련 서비스 및 상품에 대한 정보 제공</li>
+                    </ol>
+        
+                    <label>
+                        <input type="checkbox" id="marketing_agree" name="marketing_agree" required> 
+                        위 내용을 확인하였으며 마케팅 문자 수신에 동의합니다.
+                    </label>
+</div>
+<div class="form-buttons">
+	<button type="submit" class="submit-btn">가입하기</button>
+	<a href="/dev/"><button type="button" class="cancel-btn">취소</button></a>
+</div>
 
-    <button type="submit">가입하기</button>
+
+
 </form>
 
 </section>
-
+</main>
 <script>
     document.getElementById('register').addEventListener('submit', function(event) {
         const year = document.getElementById('year').value;

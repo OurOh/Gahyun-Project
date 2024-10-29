@@ -8,7 +8,7 @@
         <a href="/dev/Reservation1" id="reserv_make"><button type="button" class="reserv_make btn">예약하기</button></a>
         <a href="/dev/"><img class="logo-small allign-center" src="${pageContext.request.contextPath}/res/images/logo1.jpg" /></a>
         <sec:authorize access="isAuthenticated()">
-    		<a href="#" id="reserv_view" class="reserv_view">예약확인</a>
+    		<a href="/dev/mypage" id="reserv_view" class="reserv_view">예약확인</a>
     		<button type="submit">로그아웃</button>
 		</sec:authorize>
 
@@ -25,7 +25,6 @@
         </div>
         <div class="nav-menu">
             <div class="nav-col">
-                <a href="/dev/resort">오시는길</a>
             </div>
             <div class="nav-col">
                 <a href="/dev/facilites#facilities-dining">다이닝</a>
@@ -53,7 +52,6 @@
         <div class="ham-nav-col">
             <p>리조트소개</p>
             <a href="/dev/resort">리조트소개</a>
-            <a href="/dev/resort">오시는길</a>
         </div>
         <div class="ham-nav-col">
             <p>시설소개</p>
@@ -63,15 +61,10 @@
         </div>
         <div class="ham-nav-col">
             <p>객실</p>
-            <a href="/dev/room">타입A(2인실)</a>
-            <a href="/dev/room">타입B(4인실, 침대O)</a>
-            <a href="/dev/room">타입B(4인실, 침대X)</a>
         </div>
         <div class="ham-nav-col">
             <p>공지사항</p>
             <a href="/dev/event">이벤트</a>
-            <a href="#">문의사항</a>
-            <a href="#">고객센터</a>
         </div>
     </div>
     <script>

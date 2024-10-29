@@ -899,7 +899,6 @@ h2 {
   object-fit: cover;
 }
 
-.prev, .next {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -911,11 +910,9 @@ h2 {
   z-index: 10;
 }
 
-.prev {
   left: 10px;
 }
 
-.next {
   right: 10px;
 }
 
@@ -926,7 +923,6 @@ h2 {
 
 .info h2 {
   font-size: 28px;
-  margin-bottom: 20px;
 }
 
 .location-info {
@@ -939,7 +935,6 @@ h2 {
   flex: 1;
   margin-top: 50px;
   min-width: 300px;
-  height: 200px;
   margin-right: 20px;
   display: flex;
   justify-content: center;
@@ -947,7 +942,6 @@ h2 {
 }
 
 .public-transport {
-  flex: 1;
   min-width: 300px;
   text-align: left;
 }
@@ -1154,11 +1148,8 @@ main {
 }
 
 /*USER-REGISTER*/
-.register-section {
-  padding: 30px;
 }
 
-.register-section h1 {
   text-align: center;
   background-color: #4a6543; /* 珥덈줉�깋 諛곌꼍 */
   color: #f5efe6; 
@@ -1214,32 +1205,16 @@ main {
   justify-content: space-between;
 }
 
-.submit-btn, .cancel-btn {
   display: inline-block;
   padding: 10px 20px;
   border-radius: 5px;
   font-size: 16px;
   text-align: center;
   text-decoration: none;
-  margin-top: 10px; 
-}
-
-.submit-btn {
   background-color: #1a4d2e;
-  color: #fff;
 }
-
-.cancel-btn {
-  background-color: #ccc;
-  color: #333;
-}
-
 .submit-btn:hover {
   background-color: #4a6543;
-}
-
-.cancel-btn:hover {
-  background-color: #aaa;
 }
 
 /* 以묐났�솗�씤*/
@@ -1714,7 +1689,6 @@ button:hover {
 
 .main-event-header {
   margin-top: 50px;
-  margin-bottom: px; /* �씠踰ㅽ듃 �뿤�뜑�� 踰꾪듉 媛꾩쓽 �뿬諛� �꽕�젙 */
   text-align: center;
   padding: 20px;
   margin-bottom: 30px;
@@ -1726,7 +1700,6 @@ button:hover {
 .event-slider-controls {
   display: flex; /* 踰꾪듉�쓣 媛�濡쒕줈 �젙�젹 */
   justify-content: center; /* 以묒븰 �젙�젹 */
-  margin-top: 20px; /* 踰꾪듉怨� �뿤�뜑 媛� 媛꾧꺽 �꽕�젙 */
 }
 .event-slide-view{
   overflow: hidden; /* �꽆移섎뒗 遺�遺� �닲湲곌린 */
@@ -1734,14 +1707,11 @@ button:hover {
   width: 938.61px;
   height: 307px;
 }
-.event-slider {
   width: 2815.83px;
-  display: flex; /* �씠踰ㅽ듃瑜� 媛�濡쒕줈 �젙�젹 */
 }
 .event-slider-box{
   display: flex;
   width: 938.61px;
-  transition: transform 0.5s ease;
 }
 
 .event {

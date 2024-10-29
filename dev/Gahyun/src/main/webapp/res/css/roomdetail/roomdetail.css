@@ -108,6 +108,18 @@ main {
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
 }
 
+<style>
+    .warnings {
+        margin-left: 50px; /* 주의사항과 이용약관 전체 위치 */
+    }
+    
+    .warnings ul li {
+        margin-left: 30px; /* 리스트 항목들도 오른쪽으로 이동 */
+    }
+</style>
+
+
+
 /*****/
 /* 슬라이드 컨테이너 */
 .showroom-slider {
@@ -181,4 +193,6 @@ main {
         width: 50%;
         margin: 20px auto 0 auto;
     }
+    
+    
 }

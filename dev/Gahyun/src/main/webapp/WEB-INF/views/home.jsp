@@ -53,8 +53,6 @@
                         <p>특별한 이벤트</p>
                     </div>
                     <div class="event-slider-controls">
-                        <button class="prev1">&#60;</button>
-                        <button class="next1">&#62;</button>
                     </div>
                 </div>
                 <div class="event-slide-view">
@@ -168,31 +166,6 @@
         /***********************************************************************************************/
 
         // 이벤트 슬라이더 설정
-        let currentIndex = 0;
-
-		const prevButton = document.querySelector('.prev1');
-		$('.prev1').click(alert("test"));
-		const nextButton = document.querySelector('.next1');
-		const sliderBoxes = document.querySelectorAll('.event-slider-box');
-		
-		function updateSlider() {
-		    sliderBoxes.forEach((box, index) => {
-		        box.style.transform = `translateX(${-currentIndex * 100}%)`;
-		    });
-		}
-		
-		prevButton.addEventListener('click', () => {
-		    currentIndex = (currentIndex > 0) ? currentIndex - 1 : sliderBoxes.length - 1;
-		    updateSlider();
-		});
-		
-		nextButton.addEventListener('click', () => {
-		    currentIndex = (currentIndex < sliderBoxes.length - 1) ? currentIndex + 1 : 0;
-		    updateSlider();
-		});
-		
-		// 초기 슬라이더 상태 업데이트
-		updateSlider();
 	});
 </script>
     

@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath}/res/css/roomdetail/roomdetail.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/res/css/userEdit/userEdit.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/res/css/UserRegister/UserRegister.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/res/css/UserMypage/UserMypage.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/res/css/completeStyle.css"><!-- 전 페이지 적용 통합본 stylesheet -->
     <link rel="stylesheet" href="${pageContext.request.contextPath}/res/css/facilites/facilites.css?v=<%= System.currentTimeMillis() %>">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/res/remixicon/remixicon.css"> <!-- remixicon 아이콘 css -->

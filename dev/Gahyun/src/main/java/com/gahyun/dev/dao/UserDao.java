@@ -2,10 +2,12 @@ package com.gahyun.dev.dao;
 
 
 
+import org.springframework.stereotype.Repository;
+
 import com.gahyun.dev.model.UserDto;
 
 
-
+@Repository
 public interface UserDao {
     UserDto getUserByUserId(String userid);	 // MySQL에서 사용자 정보 조회
     void updateUser(UserDto user);  // 사용자 정보를 MySQL에 업데이트

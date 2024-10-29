@@ -20,6 +20,16 @@ public class UserDaoImpl implements UserDao {
         String sql = "SELECT * FROM user WHERE userid = ?";
         return jdbcTemplate.queryForObject(sql, new Object[]{userid}, userRowMapper);
     }
+    public UserDto getUserByUserPid(String user_id) {
+    	String sql = "SELECT * FROM user WHERE user_id = ?";
+    	return jdbcTemplate.queryForObject(sql, new Object[] {user_id}, userRowMapper);
+    }
+    
+    public String getPidByUserid(String userid) {
+    	String sql = "SELECT user_id FROM user WHERE userid = ?";
+    	return jdbcTemplate.queryForObject(sql, new Object[]{userid}, String.class);
+    }
+
 
     //데이터베이스의 각 행(row)을 UserDto 객체로 변환하여 반환하는 역할
     private RowMapper<UserDto> userRowMapper = (rs, rowNum) -> {
@@ -28,7 +38,7 @@ public class UserDaoImpl implements UserDao {
         user.setPassword(rs.getString("password"));
         user.setName(rs.getString("name"));
         user.setPhone_num(rs.getString("phone_num"));
-        user.setUser_birth(rs.getString("user_birth"));
+        user.setUser_birth(rs.getString("user_birth"));	
         return user;
     };
 
