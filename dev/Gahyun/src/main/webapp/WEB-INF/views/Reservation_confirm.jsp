@@ -30,7 +30,7 @@
                 <input type="text" id="guest-name">
                 <input type="hidden" id="gname" name="gname"/>
             </div>
-            <div class="phone">
+            <div class="phone input-group">
                 <input type="text" id="phone1" name="phone1" placeholder="010" maxlength="3" required>
                 <input type="text" id="phone2" name="phone2" maxlength="4" required>
                 <input type="text" id="phone3" name="phone3" maxlength="4" required>
@@ -45,6 +45,8 @@
         <input type="hidden" id="roomid" name="roomid" value="${resInfo.roomId}">
         <input type="hidden" id="user_id" name="user_id" value="1"><!-- 임시 테스트용 -->
         <input type="hidden" id="price" name="price" value="${resInfo.pricePerNight}">
+        
+        
     </form>
 </section>
 

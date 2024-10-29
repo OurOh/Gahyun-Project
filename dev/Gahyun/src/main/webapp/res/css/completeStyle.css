@@ -874,19 +874,19 @@ h2 {
   overflow: hidden;
 }
 
-.slides {
+.slidesR {
   display: flex;
   transition: transform 0.5s ease-in-out;
   width: 100%;
   height: 100%;
 }
 
-.slide {
+.slideR {
   min-width: 100%;
   transition: transform 0.5s ease-in-out;
 }
 
-.slide img {
+.slideR img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -1079,7 +1079,6 @@ main {
   display: flex;
   height: 100%;
   width: 300%; /* 3媛쒖쓽 �뒳�씪�씠�뱶媛� �븳 以꾩뿉 諛곗튂�릺�룄濡� */
-  animation: slide 12s infinite; /* �뒳�씪�씠�뱶媛� 12珥� �룞�븞 �룎�븘媛� */
 }
 
 /* 媛� �뒳�씪�씠�뱶�쓽 媛쒕퀎 �꽕�젙 */
@@ -1095,12 +1094,6 @@ main {
 }
 
 /* �븷�땲硫붿씠�뀡 �꽕�젙 */
-@keyframes slide {
-  0% { transform: translateX(0); }
-  33% { transform: translateX(-33.3333%); }
-  66% { transform: translateX(-66.6666%); }
-  100% { transform: translateX(0); }
-}
 @media screen and (max-width: 768px) {
 
   .room-content {
