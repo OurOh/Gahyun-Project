@@ -50,8 +50,8 @@ button{
     }
     .user_login{
       position: absolute;
-      top: 8px;
-      right: 150px;
+      top: 10px;
+      right: 20px;
       font-family: "Noto Sans KR-Bold", Helvetica;
       font-weight: 500;
       color: #f5efe6;
@@ -63,8 +63,8 @@ button{
     }
     #user_logout{
       position: absolute;
-      top: 8px;
-      right: 150px;
+      top: 10px;
+      right: 170px;
       font-family: "Noto Sans KR-Bold", Helvetica;
       font-weight: 500;
       color: #f5efe6;
@@ -74,18 +74,43 @@ button{
     #user_logout:hover{
       text-decoration: underline;
     }
-    .reserv_view {
+    #header-user-menu {
       position: absolute;
-      top: 8px;
-      right: 30px;
+      top: 11px;
+      right: 10px;
       font-family: "Noto Sans KR-Bold", Helvetica;
       font-weight: 500;
       color: #f5efe6;
       font-size: 24px;
-      text-decoration: none;
+      width: 140px;
+      border: none;
+      background-color: transparent;
+      display: inline-block;
+      cursor: pointer;
     }
-    .reserv_view:hover{
-      text-decoration: underline;
+    .user-menu-selected{
+    	display:flex;
+    	justify-content: space-between;
+    }
+    .user-menu-options{
+    	list-style-type: none;
+    	padding: 5px;
+      	color: #f5efe6;
+      	background-color: #1a4d2e;
+      	border: 1px solid #f5efe6;
+      	border-radius: 5px;
+      	display: none;
+      	z-index: 300;
+      	position: absolute; /* 추가: absolute로 설정 */
+    	top: 100%; /* 추가: 부모 요소의 아래에 위치 */
+    	left: 0; /* 추가: 왼쪽 정렬 */
+    }
+    .user-menu-options li{
+    	font-size: 20px;
+    	padding: 5px 8px;
+    }
+    .user-menu-options li:hover{
+    	text-decoration: underline;
     }
     .logo-small {
       position: absolute;
@@ -127,6 +152,7 @@ button{
       width: 100%;
       top: 102px;
       left: 0;
+      z-index: 1;
   }
   .navbar {
       position: relative;
@@ -155,7 +181,6 @@ button{
       width: 100%;
       background-color: #f5efe699;
       display: flex;
-      z-index: 100;
   }
   .nav-col{
       width: 25%;
@@ -192,7 +217,7 @@ button{
     }
     .ham-nav{
       display: none;
-      position: absolute;
+      position: fixed;
       top: 102px;
       width: 100%;
       background-color: #f5efe6;
@@ -219,14 +244,14 @@ button{
     #ham-user-logout:hover{
       text-decoration: underline;
     }
-    #ham-reserv-view{
+    .ham-nav>a{
       text-decoration: none;
       color: #1a4d2e;
       font-size: 20px;
       font-weight: 500;
       margin-right: 30px;
     }
-    #ham-reserv-view:hover{
+    .ham-nav>a:hover{
       text-decoration: underline;
     }
     .ham-nav-col{
@@ -440,6 +465,7 @@ footer {
   border-radius: 5px;
   border: none;
   font-size: 18px;
+  width: 100%;
 }
 .login-container a {
     font-size: 14px;
@@ -447,6 +473,7 @@ footer {
     text-decoration: none;
     color: #1a4d2e;
     text-align: center;
+    display: block;
 }
 .login-container a:hover{
   text-decoration: underline;
@@ -1263,11 +1290,6 @@ main {
 
 /*USER-EDIT*/
 /*user-register �슂�냼�� 以묐났�� �깮�왂*/
-.edit-section {
-  padding: 30px;
-  text-align: center;
-}
-
 .edit-section h1 {
   text-align: center;
   background-color: #4a6543; /* 珥덈줉�깋 諛곌꼍 */

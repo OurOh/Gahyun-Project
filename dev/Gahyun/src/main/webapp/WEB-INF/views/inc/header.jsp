@@ -9,7 +9,17 @@
         <a href="/dev/"><img class="logo-small allign-center" src="${pageContext.request.contextPath}/res/images/logo1.jpg" /></a>
         <img class="ham-logo-small" src="${pageContext.request.contextPath}/res/images/logo1.jpg" />
         <sec:authorize access="isAuthenticated()">
-    		<a href="/dev/mypage" id="reserv_view" class="reserv_view">예약확인</a>
+        	<div id="header-user-menu">
+        		<div class="user-menu-selected">
+        			<div class="user-menu-selected-value">회원메뉴</div>
+        			<div class="user-menu-arrow"><i class="ri-arrow-drop-down-line"></i></div>
+        		</div>
+        		<ul class="user-menu-options">
+        			<li onclick="location.href='/dev/mypage'">예약확인</li>
+        			<li onclick="location.href='/dev/edit'">회원정보수정</li>
+        		</ul>
+        	</div>
+    		
     		<button type="submit" id="user_logout">로그아웃</button>
 		</sec:authorize>
 
@@ -50,12 +60,14 @@
     <div class="ham-nav">
         <sec:authorize access="isAuthenticated()">
     		<a href="/dev/mypage" id="ham-reserv-view" class="ham-reserv-view">예약확인</a>
+    		<a href="/dev/edit" id="ham-user-edit" class="ham-user-edit">회원정보수정</a>
     		<button type="submit" id="ham-user-logout">로그아웃</button>
 		</sec:authorize>
 
 		<sec:authorize access="isAnonymous()">
     		<a href="/dev/login" id="ham-user-login" class="ham-user-login">로그인</a>
 		</sec:authorize>
+		
         <div class="ham-nav-col">
             <p>리조트소개</p>
             <a href="/dev/resort">리조트소개</a>
@@ -86,6 +98,12 @@
         $(".ham").click(function(){
             $(".ham-nav").stop().slideToggle(300);
         })
+        
+        $(document).ready(function() {
+            $('.user-menu-selected').click(function() {
+                $('.user-menu-options').slideToggle(); // 메뉴 옵션 토글
+            });
+        });
     }); //jquery
     </script>
 
