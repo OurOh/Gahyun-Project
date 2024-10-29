@@ -25,6 +25,7 @@
     
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- jQuery 최신 버전 -->
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script> <!-- jQuery UI 버전 조정 -->
+    <script src="https://cdn.iamport.kr/js/iamport.payment-1.1.7.js"></script>
     
 	<script src="${pageContext.request.contextPath}/res/js/bootstrap.min.js"></script>
 	<script src="${pageContext.request.contextPath}/res/js/popper.min.js"></script>

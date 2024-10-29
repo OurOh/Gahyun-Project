@@ -31,9 +31,10 @@
                 <input type="hidden" id="gname" name="gname"/>
             </div>
             <div class="phone">
-                <input type="text" id="phone1" name="phone1" placeholder="010" maxlength="3" required>
-                <input type="text" id="phone2" name="phone2" maxlength="4" required>
-                <input type="text" id="phone3" name="phone3" maxlength="4" required>
+                <input type="text" id="phone-number" placeholder="010" maxlength="3" required>
+                <input type="text" id="phone-number2" maxlength="4" required>
+                <input type="text" id="phone-number3" maxlength="4" required>
+                <input type="hidden" id="gtel" name="gtel"/>
             </div>
             <div class="checkbox">
                 <input type="checkbox" id="same-info">
@@ -43,9 +44,8 @@
         <input type="hidden" id="startDate" name="startDate" value="${startDate}">
         <input type="hidden" id="endDate" name="endDate" value="${endDate}">
         <input type="hidden" id="roomid" name="roomid" value="${resInfo.roomId}">
-        <input type="hidden" id="user_id" name="user_id" value="1"><!-- 임시 테스트용 -->
         <input type="hidden" id="price" name="price" value="${resInfo.pricePerNight}">
-    </form>
+    
 </section>
 
 <section class="discount-info">
@@ -56,6 +56,7 @@
 <section class="payment-info">
     <h2>결제방법</h2>
     <button class="payment-api">이하 결제 api 적용</button>
+    </form>
 </section>
 
 <script>
@@ -107,17 +108,81 @@
     checkInOutText.innerHTML = checkInOut;
 
     $(function () {
+    	//포트원
+    	var IMP = window.IMP;
+    	IMP.init('imp12151020'); // 포트원 가맹점 식별코드
+    	
         console.log($('#roomid').val());
         $('form[name="resConfirm"]').on('submit', function (event) {
             event.preventDefault();
             const tel = $("#phone-number").val() + "-" + $("#phone-number2").val() + "-" + $("#phone-number3").val();
-            const price = (${resInfo.pricePerNight} * dayDiff);
+            const price = Math.floor(${resInfo.pricePerNight} * dayDiff);
+            console.log(price);
             $('#price').val(price);
             $('#gtel').val(tel);
             $('#gname').val($('#guest-name').val());
             const formData = $(this).serializeArray();
             console.log(formData);
-            this.submit();
+            
+            //결제처리
+       		// 고정 결제 정보
+            var userId = ${user_id};
+            var roomId = ${resInfo.roomId};
+            var checkInDate = '${startDate}';
+            var checkOutDate = '${endDate}';
+            const uname = $('#gname').val();
+            
+
+            IMP.request_pay({
+                pg: 'html5_inicis',
+                pay_method: 'card',
+                merchant_uid: 'merchant_' + new Date().getTime(),
+                name: '객실 예약 결제 테스트',
+                amount: price, // 결제 금액 100원으로 고정
+                buyer_email: 'testuser@example.com',  // 고정된 이메일
+                buyer_name: uname,            // 고정된 이름
+                buyer_tel: tel,           // 고정된 전화번호
+                m_redirect_url: 'http://localhost:8080/paymentResult'
+            }, function (rsp) {
+            	if (rsp.success) {
+            	    alert('결제가 완료되었습니다.');
+            	    
+            	    $.ajax({
+            	    	url: '/dev/payment/complete', // /payment/complete로 설정 (추가 경로 없음)
+            	        type: 'POST',
+            	        contentType: 'application/json',
+            	        data: JSON.stringify({
+            	            imp_uid: rsp.imp_uid,
+            	            merchant_uid: rsp.merchant_uid,
+            	            paid_amount: rsp.paid_amount,
+            	            userId: userId,
+            	            roomId: roomId,
+            	            checkInDate: checkInDate,
+            	            checkOutDate: checkOutDate
+            	        }),
+            	        success: function (data) {
+            	            if (data.result === "success") {
+            	                window.location.href = "/dev/home"; // 성공시 리다이렉트
+            	                alert('결제에 성공 했습니다.');
+            	                
+            	            } else {
+            	                alert('결제 정보 저장에 실패했습니다.');
+            	                console.log("결제 실패 이유: ", data.message); // 로그 추가
+            	            }
+            	        },
+            	        error: function (xhr, status, error) {
+            	            alert('결제 후 처리 중 오류가 발생했습니다.');
+            	            console.log("AJAX 오류: ", xhr.responseText); // 로그 추가
+            	        }
+            	    });
+      	    
+            	} else {
+            	    alert('결제에 실패했습니다.');
+            	}
+            });
+            
+            
+            //this.submit();
         });
     });
 

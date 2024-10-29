@@ -142,6 +142,8 @@ public class ResController {
 	
 	@GetMapping("/Reservation2")
 	public String Reservation2(Model model) {
+		findIdbyUsername(model);
+		System.out.println("Getre2 모델값"+ model);
 		return "Reservation_confirm";
 	}
 	@PostMapping("/Reservation2")
@@ -153,6 +155,9 @@ public class ResController {
 			HttpServletRequest request,
 			Model model
 			) {
+			findIdbyUsername(model);
+			System.out.println("postre2 모델값"+ model);	
+		
 		 	DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 	     
 		 	LocalDate startDate = LocalDate.parse(startDateStr, formatter);
