@@ -28,7 +28,7 @@
 
     <label for="phone">전화번호</label>
 <div class="phone">
-    <input type="text" id="phone1" name="phone1" placeholder="010" maxlength="3" required>
+    <input type="text" id="phone1" name="phone1" maxlength="3" required>
     <input type="text" id="phone2" name="phone2" maxlength="4" required>
     <input type="text" id="phone3" name="phone3" maxlength="4" required>
 </div>

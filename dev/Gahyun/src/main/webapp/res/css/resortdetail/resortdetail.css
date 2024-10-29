@@ -25,19 +25,19 @@ main {
     overflow: hidden;
 }
 
-.slides {
+.slidesR {
     display: flex;
     transition: transform 0.5s ease-in-out;
     width: 100%;
     height: 100%;
 }
 
-.slide {
+.slideR {
     min-width: 100%;
     transition: transform 0.5s ease-in-out;
 }
 
-.slide img {
+.slideR img {
     width: 100%;
     height: 100%;
     object-fit: cover;

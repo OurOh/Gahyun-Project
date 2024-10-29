@@ -14,9 +14,10 @@
 	                <form action="./login" method="post">
 	                    <input type="text" placeholder="아이디" id="userid" name="username" required>
 	                    <input type="password" placeholder="비밀번호" id="password" name="password" required>
-	                    <button type="submit" id="loginsubmit">로그인</button>
-	                    <a href="#">아이디/비밀번호 찾기</a>
+	                    <button type="submit" id="loginsubmit">로그인</button> 
 	                </form>
+	                <button type="button" id="userregister" onclick="location.href='/dev/register'">회원가입</button>
+	                <a href="#">아이디/비밀번호 찾기</a>
 	            </div>
 	        </div>
 	    </div>
