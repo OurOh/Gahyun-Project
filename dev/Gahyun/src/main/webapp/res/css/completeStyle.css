@@ -61,6 +61,19 @@ button{
     .user_login:hover{
       text-decoration: underline;
     }
+    #user_logout{
+      position: absolute;
+      top: 8px;
+      right: 150px;
+      font-family: "Noto Sans KR-Bold", Helvetica;
+      font-weight: 500;
+      color: #f5efe6;
+      font-size: 24px;
+      text-decoration: none;
+    }
+    #user_logout:hover{
+      text-decoration: underline;
+    }
     .reserv_view {
       position: absolute;
       top: 8px;
@@ -80,6 +93,14 @@ button{
       height: 102px;
       top: 0;
       left: calc(50% - 112.5px);
+    }
+    .ham-logo-small {
+      position: absolute;
+      width: 225px;
+      height: 102px;
+      top: 0;
+      left: calc(50% - 112.5px);
+      display: none;
     }
     .reserv_make{
       position: absolute;
@@ -134,6 +155,7 @@ button{
       width: 100%;
       background-color: #f5efe699;
       display: flex;
+      z-index: 100;
   }
   .nav-col{
       width: 25%;
@@ -187,6 +209,16 @@ button{
     #ham-user-login:hover{
       text-decoration: underline;
     }
+    #ham-user-logout{
+      text-decoration: none;
+      color: #1a4d2e;
+      font-size: 20px;
+      font-weight: 500;
+      margin-right: 30px;
+    }
+    #ham-user-logout:hover{
+      text-decoration: underline;
+    }
     #ham-reserv-view{
       text-decoration: none;
       color: #1a4d2e;
@@ -230,6 +262,9 @@ button{
       header>a{
         display: none;
       }
+      .ham-logo-small {
+      display:block;
+    }
       .main-nav{
         display: none;
       }
@@ -583,6 +618,12 @@ footer {
   cursor: pointer;
 }
 
+.room-card .selected {
+  background-color: #F5EFE6;
+  transform: translateY(-5px);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+}
+
 .room-card img {
   width: 100%;
   height: 280px; /* 怨좎젙�맂 �넂�씠 */
@@ -610,82 +651,7 @@ footer {
 .next-button:hover {
   background-color: #4a6543;
 }
-/*�뙘�뾽李�*/
-.room-popup{
-  position: absolute;
-  top: 80%;
-  left: calc(50% - 400px);
-  width: 800px;
-  height: 500px;
-  background-color: #1a4d2e;
-  display: flex;
-}
-.room-popup img{
-  width: 50%;
-  height: 300px;
-  margin: auto 0;
-}
-.room-popup-text{
-  width: 50%;
-  height: 100%;
-  background-color: #f5efe6;
-  padding: 0 30px;
-  text-align: left;
-}
-.room-popup-text h2{
-  margin-top: 80px;
-}
-.room-popup-select{
-  display: block;
-  position: relative;
-  background-color: #1a4d2e;
-  border: none;
-  border-radius: 7px;
-  color: #ffffff;
-  padding: 8px 20px;
-  font-size: 15px;
-  margin: 0 auto;
-  top: 30%;
-}
-.room-popup-select:hover{
-  background-color: #4a6543;
-  cursor: pointer;
-}
-.room-popup-close{
-  position: absolute;
-  display: flex;
-  right: 0;
-  font-weight: bold;
-  color: #1a4d2e;
-  width: 100px;
-}
-.popup-close-button{
-  position: relative;
-  width: 20px;
-  height: 20px;
-  background-color: transparent;
-  border: 2px solid #1a4d2e;
-  margin: 16px 5px;
-}
-.popup-close-button::before, .popup-close-button::after{
-  position: absolute;
-  content: "";
-  width: 0;
-  height: 27px;
-  border: 1px solid #1a4d2e;
-  background-color: #1a4d2e;
-  left: 9px;
-  top: -4px;
-}
-.popup-close-button::after{
-  transform: rotate(45deg);
-}
-.popup-close-button::before{
-  transform: rotate(-45deg);
-}
-.room-popup-close:hover{
-  cursor: pointer;
-}
+
 @media (max-width: 768px) {
   
   .reservation-container {
@@ -943,7 +909,10 @@ h2 {
 
 .public-transport {
   min-width: 300px;
-  text-align: left;
+  padding: 30px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 @media (max-width: 768px) {
   .location-info {
@@ -1705,8 +1674,9 @@ button:hover {
   overflow: hidden; /* �꽆移섎뒗 遺�遺� �닲湲곌린 */
   position: relative; /* �쐞移� �꽕�젙 */
   width: 938.61px;
-  height: 307px;
+  height: 300px;
 }
+.event-slider1{
   width: 2815.83px;
 }
 .event-slider-box{

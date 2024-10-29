@@ -23,9 +23,13 @@
                 </ul>
                 <ul>
                     <li><a href="/dev/room"><strong>객실</strong></a></li>
+                    <li><a href="/dev/room">타입A(2인실)</a></li>
+                	<li><a href="/dev/room">타입B(4인실, 침대O)</a></li>
+                	<li><a href="/dev/room">타입B(4인실, 침대X)</a></li>
                 </ul>
                 <ul>
                     <li><strong><a href="/dev/event">이벤트</a></strong></li>
+                    <li><a href="/dev/Customer-center">고객센터</a></li>
                 </ul>
             </div>
         </div>
