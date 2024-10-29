@@ -136,7 +136,7 @@ main {
     display: flex;
     height: 100%;
     width: 300%; /* 3개의 슬라이드가 한 줄에 배치되도록 */
-    animation: slide 12s infinite; /* 슬라이드가 12초 동안 돌아감 */
+    transition: transform 0.5s ease-in-out;
 }
 
 /* 각 슬라이드의 개별 설정 */
@@ -151,13 +151,6 @@ main {
     object-fit: cover;
 }
 
-/* 애니메이션 설정 */
-@keyframes slide {
-    0% { transform: translateX(0); }
-    33% { transform: translateX(-33.3333%); }
-    66% { transform: translateX(-66.6666%); }
-    100% { transform: translateX(0); }
-}
 @media screen and (max-width: 768px) {
 
     .room-content {

@@ -21,13 +21,13 @@
                     <div class="showroom-slides">
                         <!-- 각 이미지 슬라이드를 위한 div -->
                         <div class="showroom-slide">
-                            <img src="../../images/room001.jpg" alt="객실 이미지 1" class="showroom-image">
+                            <img src="${pageContext.request.contextPath}/res/images/room001.jpg" alt="객실 이미지 1" class="showroom-image">
                         </div>
                         <div class="showroom-slide">
-                            <img src="../../images/room008.jpg" alt="객실 이미지 2" class="showroom-image">
+                            <img src="${pageContext.request.contextPath}/res/images/room008.jpg" alt="객실 이미지 2" class="showroom-image">
                         </div>
                         <div class="showroom-slide">
-                            <img src="../../images/room009.jpg" alt="객실 이미지 3" class="showroom-image">
+                            <img src="${pageContext.request.contextPath}/res/images/room009.jpg" alt="객실 이미지 3" class="showroom-image">
                         </div>
                     </div>
                 </div>
@@ -114,22 +114,28 @@
         </section>
     </main>
 </body>
+
 <script>
      $(document).ready(function() {
+
+        // 버튼 클릭 시에만 슬라이드 이동
         $("#roomTypeA").click(function() {
             $(".room-info-A").show();
-            $(".room-info-B1").hide();
-            $(".room-info-B2").hide();
+            $(".room-info-B1, .room-info-B2").hide();
+            $(".showroom-slides").css("transform", "translateX(0)");
         });
+        
         $("#roomTypeB1").click(function() {
-            $(".room-info-A").hide();
             $(".room-info-B1").show();
-            $(".room-info-B2").hide();
+            $(".room-info-A, .room-info-B2").hide();
+            $(".showroom-slides").css("transform", "translateX(-33.3333%)");
         });
+        
         $("#roomTypeB2").click(function() {
-            $(".room-info-A").hide();
-            $(".room-info-B1").hide();
             $(".room-info-B2").show();
+            $(".room-info-A, .room-info-B1").hide();
+            $(".showroom-slides").css("transform", "translateX(-66.6666%)");
         });
+        
      });
 </script>
