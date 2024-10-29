@@ -6,8 +6,18 @@
 <html>
 <head>
     <title>결제 페이지</title>
-    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <!-- jQuery 먼저 로드 -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- jQuery UI 로드 -->
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+
+    <!-- iamport 결제 라이브러리 로드 -->
     <script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.2.0.js"></script>
+
+    
+    
 </head>
 <body>
     <h1>결제 페이지</h1>
