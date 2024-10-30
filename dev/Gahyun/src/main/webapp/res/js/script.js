@@ -183,7 +183,7 @@ $(function(){
     
     // 클릭된 방을 선택 상태로 표시
     $(this).addClass('selected');
-
+	
     // 클릭된 방의 roomId를 저장
     selectedRoomId = $(this).data('room-id');
 
