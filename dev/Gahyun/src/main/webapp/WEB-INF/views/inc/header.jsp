@@ -92,19 +92,28 @@
     </div>
     <script>
     $(function(){
-        $(".main-nav").hover(function(){
-            $(".nav-col").stop().slideToggle(300);
-        });
+        // 새로고침 시 초기 상태 설정
+        $(".nav-col, .ham-nav").hide();
+
+        $(".main-nav").hover(
+            function(){
+                $(".nav-col").stop().slideDown(300);
+            },
+            function(){
+                $(".nav-col").stop().slideUp(300);
+            }
+        );
+
         $(".ham").click(function(){
-            $(".ham-nav").stop().slideToggle(300);
-        })
-        
-        $(document).ready(function() {
-            $('.user-menu-selected').click(function() {
-                $('.user-menu-options').slideToggle(); // 메뉴 옵션 토글
-            });
+            // 현재 상태를 확인하고 토글 방식으로 작동
+            if ($(".ham-nav").is(":visible")) {
+                $(".ham-nav").stop().slideUp(300);
+            } else {
+                $(".ham-nav").stop().slideDown(300);
+            }
         });
-    }); //jquery
+    });
+
     </script>
 
 </html>
