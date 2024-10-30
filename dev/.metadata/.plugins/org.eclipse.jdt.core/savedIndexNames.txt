@@ -52,7 +52,6 @@ INDEX VERSION 1.131+C:\Users\i7E-009\Documents\GitHub\Gahyun-Project\dev\.metada
 82621027.index
 1270446086.index
 3819973275.index
-3365793137.index
 4232300411.index
 1696420968.index
 78429242.index
