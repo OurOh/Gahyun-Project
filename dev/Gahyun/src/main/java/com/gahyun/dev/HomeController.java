@@ -38,13 +38,14 @@ public class HomeController {
 		String formattedDate = dateFormat.format(date);
 		
 		model.addAttribute("serverTime", formattedDate );
-		/*
+		
 		LocalDate today = LocalDate.now();
 		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 		String nowDateStr = today.format(formatter);
-		LocalDate noewDate = (LocalDate) nowDateStr;
+		LocalDate nowDate = LocalDate.parse(nowDateStr, formatter);
+		
 		resService.resSetUsedStatus(nowDate);
-		*/
+
 		
 		return "home";
 	}

@@ -38,8 +38,8 @@
 	<update id="updateUsedReservations" parameterType="map">	
 	    <![CDATA[
 	        UPDATE reservations
-	        SET status = 'used'
-	        WHERE end_date < #{specificDate}
+	        SET status = 'USED'
+	        WHERE check_out_date < #{specificDate}
 	    ]]>
 	</update>
 </mapper>
