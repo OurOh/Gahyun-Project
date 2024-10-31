@@ -7,10 +7,10 @@
 
          <main>
         <div class="hero">
-            <img class="hero-image" src="${pageContext.request.contextPath}/res/images/outside001.jpg" alt="Image Slider" />
-            <img class="hero-image" src="${pageContext.request.contextPath}/res/images/pool001.jpg" alt="Image Slider" />
-            <img class="hero-image" src="${pageContext.request.contextPath}/res/images/waterfall.jpg" alt="Image Slider" />
-            <img class="hero-image" src="${pageContext.request.contextPath}/res/images/rooftop007.jpg" alt="Image Slider" />
+            <img class="hero-image" src="${pageContext.request.contextPath}/res/images/outside001.jpg" alt="Image Slider"loading="lazy"/>
+            <img class="hero-image" src="${pageContext.request.contextPath}/res/images/pool001.jpg" alt="Image Slider" loading="lazy"/>
+            <img class="hero-image" src="${pageContext.request.contextPath}/res/images/waterfall.jpg" alt="Image Slider" loading="lazy"/>
+            <img class="hero-image" src="${pageContext.request.contextPath}/res/images/rooftop007.jpg" alt="Image Slider" loading="lazy" />
         </div>
         
             <!-- 예약 바 -->
@@ -56,7 +56,9 @@
                         <p>가현리조트만의</p>
                         <p>특별한 이벤트</p>
                     </div>
-                    <div class="event-slider-controls">
+                     <div class="event-slider-controls">
+                        <button class="prev1">&#60;</button>
+                        <button class="next1">&#62;</button>
                     </div>
                 </div>
                 <div class="event-slide-view">
@@ -149,29 +151,7 @@
           </div>
         </div>
     </main>
-    <script>
-    $(document).ready(function() {
-        // 슬라이드 이미지 설정
-        const images = $('.hero-image'); // 모든 이미지 선택
-        let currentImageIndex = 0; // 현재 이미지 인덱스 초기화
-
-        // 첫 번째 이미지를 보이게 설정
-        images.eq(currentImageIndex).addClass('active');
-
-        function changeImage() {
-            images.removeClass('active'); // 현재 이미지 숨김
-            currentImageIndex = (currentImageIndex + 1) % images.length; // 인덱스 증가 및 순환
-            images.eq(currentImageIndex).addClass('active'); // 다음 이미지 보임
-        }
-
-        // 4초마다 이미지 변경
-        setInterval(changeImage, 4000);
-
-        /***********************************************************************************************/
-
-        // 이벤트 슬라이더 설정
-	});
-</script>
+   
     
     
     
