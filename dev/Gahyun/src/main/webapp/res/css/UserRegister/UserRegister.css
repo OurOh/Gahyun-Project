@@ -161,11 +161,23 @@ main {
     margin-bottom: 5px;
   }
   
+ /* 이메일 스타일 */
+#register-form input[type="email"] {
+    width: 60%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+  
+  
+  
   /* 반응형: 작은 화면에서는 마케팅 수신동의 섹션 숨기기 */
   @media screen and (max-width: 768px) {
     .marketing-agree>span {
         display: none;
     }
+ 
   }
 
   

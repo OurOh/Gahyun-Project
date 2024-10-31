@@ -88,37 +88,37 @@ public class ResController {
     }
 
  
-    @PostMapping("/updateUserInfo")
-    public String updateUserInfo(    							
-    							 @RequestParam("name") String name,
-    							 @RequestParam("password") String password,
-                                 @RequestParam("birth") String birth,
-                                 @RequestParam("phone") String phone,
-                                 HttpSession session, Model model,
-                                 RedirectAttributes redirectAttributes) {
+	@PostMapping("/updateUserInfo")
+	public String updateUserInfo(@RequestParam("name") String name,
+	                             @RequestParam("password") String password,
+	                             @RequestParam("email") String email,
+	                             @RequestParam("year") String year,
+	                             @RequestParam("month") String month,
+	                             @RequestParam("day") String day,
+	                             @RequestParam("phone1") String phone1,
+	                             @RequestParam("phone2") String phone2,
+	                             @RequestParam("phone3") String phone3) {
 
-    	findIdbyUsername(model);
-    	String userId = (String) model.getAttribute("user_id");    	
-        
-        if (userId == null) {
-            return "redirect:/login";  
-        }        
-        UserDto loggedInUser = uDao.getUserByUserPid(userId);
-        
-        loggedInUser.setName(name);        
-        loggedInUser.setUser_birth(birth);
-        loggedInUser.setPassword(password);
-        loggedInUser.setPhone_num(phone);
-        System.out.println("loggInuser출력"+ loggedInUser);
-   
-        userService.updateUser(loggedInUser);
+	    // 현재 인증된 사용자 정보 가져오기
+	    Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+	    String userid = authentication.getName(); // 로그인된 사용자의 아이디를 가져옴
 
-       
-        redirectAttributes.addFlashAttribute("message", "회원정보가 수정되었습니다.");
+	    // UserDto 객체에 데이터 설정
+	    UserDto user = new UserDto();
+	    user.setUserid(userid);
+	    user.setName(name);
+	    user.setPassword(password);
+	    user.setEmail(email);
 
-        
-        return "redirect:/home";
-    }
+	    // 생년월일과 전화번호 결합
+	    user.setUser_birth(year + "-" + month + "-" + day);
+	    user.setPhone_num(phone1 + "-" + phone2 + "-" + phone3);
+
+	    // 업데이트 실행
+	    userService.updateUser(user);
+
+	    return "redirect:/home";
+	}
 	
 	
 	@PostMapping("/samePerson")

@@ -38,36 +38,37 @@ public class UserDaoImpl implements UserDao {
         user.setPassword(rs.getString("password"));
         user.setName(rs.getString("name"));
         user.setPhone_num(rs.getString("phone_num"));
-        user.setUser_birth(rs.getString("user_birth"));	
+        user.setUser_birth(rs.getString("user_birth"));
+        user.setEmail(rs.getString("email")); // 이메일 필드 추가
         return user;
     };
 
     
     //정보수정
-    @Override
     public void updateUser(UserDto user) {
-        String sql = "UPDATE user SET name = ?, password = ?, phone_num = ?, user_birth = ? WHERE userid = ?";
+        String sql = "UPDATE user SET name = ?, password = ?, email = ?, phone_num = ?, user_birth = ? WHERE userid = ?";
         jdbcTemplate.update(sql, 
-            user.getName(), 
-            user.getPassword(), 
-            user.getPhone_num(), 
-            user.getUser_birth(), 
+            user.getName(),
+            user.getPassword(),
+            user.getEmail(),
+            user.getPhone_num(),
+            user.getUser_birth(),
             user.getUserid());
-        
     }
 
+
     
-     //새로운 사용자 등록
-     @Override
-     public void insertUser(UserDto user) {
-    	 String sql = "INSERT INTO user (userid, password, name, phone_num, user_birth) VALUES (?, ?, ?, ?, ?)";
-    	 jdbcTemplate.update(sql, 
-    			 user.getUserid(), 
-    			 user.getPassword(), 
-    			 user.getName(), 
-    			 user.getPhone_num(), 
-    			 user.getUser_birth());
-    	 
+    // 새로운 사용자 등록
+    @Override
+    public void insertUser(UserDto user) {
+        String sql = "INSERT INTO user (userid, password, name, phone_num, user_birth, email) VALUES (?, ?, ?, ?, ?, ?)";
+        jdbcTemplate.update(sql, 
+            user.getUserid(), 
+            user.getPassword(), 
+            user.getName(), 
+            user.getPhone_num(), 
+            user.getUser_birth(), 
+            user.getEmail()); // 이메일 추가
     }
     
     
