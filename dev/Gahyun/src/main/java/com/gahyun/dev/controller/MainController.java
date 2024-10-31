@@ -19,6 +19,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import com.gahyun.dev.dao.UserDao;
 import com.gahyun.dev.model.RoomDetailDto;
 import com.gahyun.dev.model.UserDto;
+import com.gahyun.dev.service.ResService;
 import com.gahyun.dev.service.RoomsService;
 import com.gahyun.dev.service.UserService;
 
@@ -29,6 +30,9 @@ public class MainController {
 	private UserDao userDao;
 	@Autowired
 	private RoomsService roomService;
+	
+	@Autowired
+	private ResService resService;
 	
 	/*
 	@Autowired
@@ -86,6 +90,13 @@ public class MainController {
    
     @GetMapping("/home")
     public String showHomePage(Model model) {
+    	LocalDate today = LocalDate.now();
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+		String nowDateStr = today.format(formatter);
+		LocalDate nowDate = LocalDate.parse(nowDateStr, formatter);
+		
+		resService.resSetUsedStatus(nowDate);
+		System.out.println("resService resSetUsedStatus 실행!");
         return "home";  
     }
     

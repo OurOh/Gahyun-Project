@@ -73,7 +73,9 @@ $(function(){
    });
    
    //datepicker
-   
+    const firstminday = new Date();
+    const secondminday = new Date();
+    secondminday.setDate(firstminday.getDate() + 1);
     $('.startdate').datepicker({
     	inline: true,
     	dateFormat: 'yy-mm-dd',
@@ -86,6 +88,7 @@ $(function(){
 		dayNamesMin: ['일', '월', '화', '수', '목', '금', '토'],
 		showMonthAfterYear: true,
 		yearSuffix: '년',
+		minDate: firstminday,
 		onSelect: function(selectedDate) {
             // 시작 날짜 선택 후 종료 날짜는 시작 날짜보다 이후로 설정
              $('.enddate').datepicker('option', 'minDate', selectedDate);
@@ -104,6 +107,7 @@ $(function(){
 		dayNamesMin: ['일', '월', '화', '수', '목', '금', '토'],
 		showMonthAfterYear: true,
 		yearSuffix: '년',
+		minDate: secondminday,
 		onSelect: function(selectedDate) {
             // 종료 날짜 선택 후 시작 날짜는 종료 날짜보다 이전으로 설정
         	$('.startdate').datepicker('option', 'maxDate', selectedDate);
@@ -183,7 +187,7 @@ $(function(){
     
     // 클릭된 방을 선택 상태로 표시
     $(this).addClass('selected');
-
+	
     // 클릭된 방의 roomId를 저장
     selectedRoomId = $(this).data('room-id');
 
