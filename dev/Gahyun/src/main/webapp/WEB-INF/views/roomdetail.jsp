@@ -54,7 +54,7 @@
             </ul>
         </div>
         
-        <button class="reserve-btn">예약 바로가기</button>
+        <button class="reserve-btn" onclick="location.href='${pageContext.request.contextPath}/Reservation1'">예약 바로가기</button>
     </div>
     
     <div class="room-info-B2">
@@ -79,7 +79,7 @@
             </ul>
         </div>
         
-        <button class="reserve-btn">예약 바로가기</button>
+        <button class="reserve-btn" onclick="location.href='${pageContext.request.contextPath}/Reservation1'">예약 바로가기</button>
     </div>
     
     <div class="room-info-A">
@@ -106,7 +106,7 @@
             </ul>
         </div>
         
-        <button class="reserve-btn">예약 바로가기</button>
+        <button class="reserve-btn" onclick="location.href='${pageContext.request.contextPath}/Reservation1'">예약 바로가기</button>
     </div>
 </div>
 
