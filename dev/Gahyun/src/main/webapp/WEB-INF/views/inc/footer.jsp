@@ -12,6 +12,15 @@
                 <p>COPYRIGHT © 2023 가현리조트. ALL RIGHTS RESERVED.</p>
             </div>
             <div class="footer-links">
+               <ul>
+                 <li><strong>Developers</strong></li>
+                 <li><a href="https://github.com/zoilee">오수석</a></li>
+                 <li><a href="https://github.com/Ginie-J">제규진</a></li>
+                 <li><a href="https://github.com/Minh137">이민형</a></li>
+                 <li><a href="https://github.com/parkminjung-als">박민정</a></li>
+                 <li><a href="https://github.com/OurOh">오승안</a></li>
+             </ul>
+       
                 <ul>
                     <li><a href="/dev/resort"><strong>리조트소개</strong></a></li>
                 </ul>
@@ -24,8 +33,8 @@
                 <ul>
                     <li><a href="/dev/room"><strong>객실</strong></a></li>
                     <li><a href="/dev/room">타입A(2인실)</a></li>
-                	<li><a href="/dev/room">타입B(4인실, 침대O)</a></li>
-                	<li><a href="/dev/room">타입B(4인실, 침대X)</a></li>
+                   <li><a href="/dev/room">타입B(4인실, 침대O)</a></li>
+                   <li><a href="/dev/room">타입B(4인실, 침대X)</a></li>
                 </ul>
                 <ul>
                     <li><strong><a href="/dev/event">이벤트</a></strong></li>

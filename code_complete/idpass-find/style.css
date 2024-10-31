@@ -1,0 +1,78 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Noto Sans KR', 'Arial' sans-serif;
+    background-color: #f9f9f9;
+    padding-left: 15%;
+    padding-right: 15%;
+  }
+  main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+  }
+button{
+    background: inherit ; 
+    border:none; 
+    box-shadow:none; 
+    border-radius:0; 
+    padding:0; 
+    overflow:visible; 
+    cursor:pointer
+  }
+  .idpass-find-section h1 {
+    background-color: #4a6543; /* 초록색 배경 */
+    color: #f5efe6; 
+    text-align: center;
+    padding: 20px 0; /* 상하 여백 추가 */
+    margin-top: 0; /* 위아래 여백 제거 */
+    margin-bottom: 40px;
+    font-size: 2em; /* 텍스트 크기 설정 */
+    font-weight: bold; /* 굵은 텍스트 */
+    letter-spacing: 5px;
+  }
+.idpass-find-container{
+    background-color: #f5efe6;
+    color: #1a4d2e;
+    padding: 50px 40px;
+    width: 50%;
+    margin: 20px auto;
+    border-radius: 8px;
+}
+.idpass-find-container h2{
+    margin-bottom: 30px;
+}
+.idpass-find-container form {
+    display: flex;
+    flex-direction: column;
+}
+
+.idpass-find-container input {
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.find-phone{
+    display: flex;
+}
+#find-phone1, #find-phone2{
+    width: 33%;
+    margin-right: 10px;
+}
+#find-phone3{
+    width: 33%;
+}
+#find-id-button, #find-pass-button {
+    padding: 15px;
+    margin-bottom: 10px;
+    background-color: #1a4d2e;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    font-size: 18px;
+}
