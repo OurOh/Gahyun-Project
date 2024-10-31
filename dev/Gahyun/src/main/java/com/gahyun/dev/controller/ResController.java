@@ -30,8 +30,10 @@ import com.gahyun.dev.mapper.MemberMapper;
 import com.gahyun.dev.mapper.ReservationsMapper;
 import com.gahyun.dev.mapper.RoomsMapper;
 import com.gahyun.dev.model.CustomUserDetails;
+import com.gahyun.dev.model.MypageDto;
 import com.gahyun.dev.model.RoomDetailDto;
 import com.gahyun.dev.model.UserDto;
+import com.gahyun.dev.service.MypageService;
 import com.gahyun.dev.service.ResService;
 import com.gahyun.dev.service.RoomsService;
 import com.gahyun.dev.service.UserService;
@@ -55,6 +57,9 @@ public class ResController {
 
 	@Autowired
 	private ResService resService;
+	
+	@Autowired
+	private MypageService mypageService;
 	
 	@Autowired
 	UserDaoImpl uDao;
@@ -104,12 +109,12 @@ public class ResController {
         loggedInUser.setUser_birth(birth);
         loggedInUser.setPassword(password);
         loggedInUser.setPhone_num(phone);
-        System.out.println("loggInuser���"+ loggedInUser);
+        System.out.println("loggInuser출력"+ loggedInUser);
    
         userService.updateUser(loggedInUser);
 
        
-        redirectAttributes.addFlashAttribute("message", "ȸ�������� �����Ǿ����ϴ�.");
+        redirectAttributes.addFlashAttribute("message", "회원정보가 수정되었습니다.");
 
         
         return "redirect:/home";
@@ -137,6 +142,8 @@ public class ResController {
 	
 	@GetMapping("/Reservation2")
 	public String Reservation2(Model model) {
+		findIdbyUsername(model);
+		System.out.println("Getre2 모델값"+ model);
 		return "Reservation_confirm";
 	}
 	@PostMapping("/Reservation2")
@@ -148,6 +155,9 @@ public class ResController {
 			HttpServletRequest request,
 			Model model
 			) {
+			findIdbyUsername(model);
+			System.out.println("postre2 모델값"+ model);	
+		
 		 	DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 	     
 		 	LocalDate startDate = LocalDate.parse(startDateStr, formatter);
@@ -192,7 +202,7 @@ public class ResController {
 	 	
 		resService.reservationInsert(user_id, roomid, startDate, endDate, totalPrice, status);
 		//resService.resSetStatus(user_id, roomid, status);
-	 	System.out.println("����Ϸ�");
+	 	System.out.println("실행완료");
 	 	
 		return "home";
 	}
@@ -213,10 +223,44 @@ public class ResController {
 		 LocalDate startDate = LocalDate.parse(startDateStr, formatter);
 		 LocalDate endDate = LocalDate.parse(endDateStr, formatter);
 		 System.out.println(startDate+"+"+ endDate);
-		 System.out.println("availableRooms ����");
+		 System.out.println("availableRooms 실행");
 		 List<RoomDetailDto> availableRooms = roomService.getAvailableRoomDetails(roomCount, guestCount, startDate, endDate);
 		
-		 System.out.println("������ :" + availableRooms);
+		 System.out.println("데이터 :" + availableRooms);
 		 return ResponseEntity.ok(availableRooms);
 	}
+	
+    @GetMapping("/mypage")
+    public String showMyPage(HttpSession session, Model model) {
+        // findIdbyUsername을 호출하여 모델에 user_id 추가
+        findIdbyUsername(model);
+
+        // 모델에서 user_id를 가져옴
+        String userId = (String) model.getAttribute("user_id");
+        
+        if (userId == null) {
+            return "redirect:/login";
+        }
+
+        
+        List<MypageDto> currentMypage = mypageService.getCurrentMypage(userId);
+        List<MypageDto> pastMypage = mypageService.getPastMypage(userId);
+        
+        // 예약 데이터가 없을 경우의 메시지 설정
+        if (currentMypage.isEmpty()) {
+            model.addAttribute("currentMypageMessage", "현재 예약이 없습니다.");
+        }
+        if (pastMypage.isEmpty()) {
+            model.addAttribute("pastMypageMessage", "과거 예약이 없습니다.");
+        }        
+        
+
+        model.addAttribute("currentMypage", currentMypage);
+        model.addAttribute("pastMypage", pastMypage);
+
+        return "UserMypage";
+    }
+		
+
+
 }

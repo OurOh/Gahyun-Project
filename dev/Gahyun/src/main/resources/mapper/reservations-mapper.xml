@@ -11,7 +11,7 @@
     <!-- 예약 정보 삽입 -->
     <insert id="insertReservation" parameterType="ReservationsDto">
         INSERT INTO reservations (user_id, room_id, check_in_date, check_out_date, total_price, status)
-        VALUES (#{user_id}, #{roomid}, #{startDate}, #{endDate}, #{totalPrice}, #{status})
+        VALUES (#{user_id}, #{room_id}, #{check_in_date}, #{check_out_date}, #{total_price}, #{status})
     </insert>
     <!-- 유저 ID로 결제 세부 정보 가져오기 -->
     <select id="getPaymentDetailsByUserId" parameterType="int" resultType="map">
@@ -28,10 +28,18 @@
             r.user_id = #{userId}
     </select>
     <select id="getLatestReservationId" parameterType="map" resultType="int">
-    SELECT reservation_id 
-    FROM reservations 
-    WHERE user_id = #{userId} AND room_id = #{roomId} 
-    ORDER BY created_at DESC 
-    LIMIT 1
-</select>
+	    SELECT reservation_id 
+	    FROM reservations 
+	    WHERE user_id = #{userId} AND room_id = #{roomId} 
+	    ORDER BY created_at DESC 
+	    LIMIT 1
+	</select>
+	
+	<update id="updateUsedReservations" parameterType="map">	
+	    <![CDATA[
+	        UPDATE reservations
+	        SET status = 'used'
+	        WHERE end_date < #{specificDate}
+	    ]]>
+	</update>
 </mapper>

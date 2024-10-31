@@ -3,6 +3,7 @@ package com.gahyun.dev.service;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -19,5 +20,9 @@ public class ResService {
 	}
 	public int resSetStatus(int user_id, int roomid, String status) {
 		return reservationMapper.setStatus(user_id, roomid, status);
+	}
+	
+	public void resSetUsedStatus(LocalDate specificDate) {
+		reservationMapper.updateUsedReservations(specificDate);
 	}
 }

@@ -2,8 +2,8 @@
 <%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles" %>    
 
 <%@ page session="true" pageEncoding="UTF-8" %>
-
-<section class="form-section">
+<main>
+<section class="form-section edit-section">
     <h1>개인정보 수정</h1>
     <form action="${pageContext.request.contextPath}/updateUserInfo" method="POST"> <!-- 정보 수정 폼 제출 경로 -->
 
@@ -33,6 +33,7 @@
         </div>
     </form>
 </section>
+</main>
 
 <script>
 

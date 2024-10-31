@@ -43,7 +43,7 @@ public class PaymentService {
             return null;
         }
     }
-    // 결제 세부 정보 메서드
+    // 寃곗젣 �꽭遺� �젙蹂� 硫붿꽌�뱶
     public Map<String, Object> getPaymentDetails(int userId) {
         Map<String, Object> paymentDetails = new HashMap<>();
         UserDto user = userMapper.getUserById(userId);
@@ -54,21 +54,21 @@ public class PaymentService {
             paymentDetails.put("buyerTel", user.getPhone_num());
 
             ReservationsDto reservation = reservationsMapper.getReservationByUserId(userId);
-            paymentDetails.put("amount", reservation != null ? reservation.getTotal_price() : 100); // 고정 금액 예시
+            paymentDetails.put("amount", reservation != null ? reservation.getTotal_price() : 100); // 怨좎젙 湲덉븸 �삁�떆
         }
 
         return paymentDetails;
     }
 
-    // 예약 저장 메서드
+    // �삁�빟 ���옣 硫붿꽌�뱶
     public boolean saveReservation(int userId, int roomId, Date checkInDate, Date checkOutDate, BigDecimal totalPrice) {
         ReservationsDto reservation = new ReservationsDto();
         reservation.setUser_id(userId);
         reservation.setRoom_id(roomId);
         reservation.setCheck_in_date(checkInDate);
         reservation.setCheck_out_date(checkOutDate);
-        reservation.setTotal_price(totalPrice);  // BigDecimal 사용
-        reservation.setStatus("PAID");
+        reservation.setTotal_price(totalPrice);  // BigDecimal �궗�슜
+        reservation.setStatus("BOOKED");
 
         try {
             reservationsMapper.insertReservation(reservation);
@@ -79,12 +79,12 @@ public class PaymentService {
         }
     }
 
- // 결제 저장 메서드
+ // 寃곗젣 ���옣 硫붿꽌�뱶
     public boolean savePayment(int reservationId, String paymentMethod, BigDecimal amount) {
         PaymentsDto payment = new PaymentsDto();
         payment.setReservation_id(reservationId);
         payment.setPayment_method(paymentMethod);
-        payment.setPayment_amount(amount);  // BigDecimal 사용
+        payment.setPayment_amount(amount);  // BigDecimal �궗�슜
         payment.setPayment_status("PAID");
 
         try {

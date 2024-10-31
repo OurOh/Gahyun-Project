@@ -183,7 +183,7 @@ $(function(){
     
     // 클릭된 방을 선택 상태로 표시
     $(this).addClass('selected');
-
+	
     // 클릭된 방의 roomId를 저장
     selectedRoomId = $(this).data('room-id');
 
@@ -242,6 +242,73 @@ $(function(){
    $("#day").datepicker({
    
    });
-   */   
+   */ 
+   
    
 });
+ $(document).ready(function () {
+        let currentSlide = 1; // Initialize the current slide index
+        const $slidesContainer = $('.slidesR');
+        const $slides = $('.slideR');
+        const totalSlides = $slides.length;
+
+        // Clone the first and last slides for a seamless loop
+        const $firstSlideClone = $slides.eq(0).clone();
+        const $lastSlideClone = $slides.eq(totalSlides - 1).clone();
+        $slidesContainer.append($firstSlideClone).prepend($lastSlideClone);
+
+        // Set initial position (move to the first actual slide)
+        $slidesContainer.css('transform', 'translateX(-100%)');
+
+        function moveToSlide(index) {
+            $slidesContainer.css({
+                'transition': 'transform 0.5s ease-in-out',
+                'transform': `translateX(-${index * 100}%)`
+            });
+
+            // Reset position if we are at a cloned slide
+            $slidesContainer.one('transitionend', function () {
+                if (index === totalSlides + 1) { // Clone of the first slide (end of list)
+                    $slidesContainer.css('transition', 'none');
+                    currentSlide = 1;
+                    $slidesContainer.css('transform', 'translateX(-100%)');
+                }
+                if (index === 0) { // Clone of the last slide (start of list)
+                    $slidesContainer.css('transition', 'none');
+                    currentSlide = totalSlides;
+                    $slidesContainer.css('transform', `translateX(-${totalSlides * 100}%)`);
+                }
+            });
+        }
+
+        let slideInterval;
+
+        function startAutoSlide() {
+            slideInterval = setInterval(function () {
+                currentSlide++;
+                moveToSlide(currentSlide);
+            }, 3000);
+        }
+
+        function stopAutoSlide() {
+            clearInterval(slideInterval);
+        }
+
+        // Button click event handlers
+        $('.prev').on('click', function () {
+            stopAutoSlide();
+            currentSlide--;
+            moveToSlide(currentSlide);
+            startAutoSlide();
+        });
+
+        $('.next').on('click', function () {
+            stopAutoSlide();
+            currentSlide++;
+            moveToSlide(currentSlide);
+            startAutoSlide();
+        });
+
+        // Start the automatic sliding
+        startAutoSlide();
+    });  

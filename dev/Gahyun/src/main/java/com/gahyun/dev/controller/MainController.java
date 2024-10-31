@@ -19,6 +19,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import com.gahyun.dev.dao.UserDao;
 import com.gahyun.dev.model.RoomDetailDto;
 import com.gahyun.dev.model.UserDto;
+import com.gahyun.dev.service.ResService;
 import com.gahyun.dev.service.RoomsService;
 import com.gahyun.dev.service.UserService;
 

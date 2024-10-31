@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath}/res/css/roomdetail/roomdetail.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/res/css/userEdit/userEdit.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/res/css/UserRegister/UserRegister.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/res/css/UserMypage/UserMypage.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/res/css/completeStyle.css"><!-- 전 페이지 적용 통합본 stylesheet -->
     <link rel="stylesheet" href="${pageContext.request.contextPath}/res/css/facilites/facilites.css?v=<%= System.currentTimeMillis() %>">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/res/remixicon/remixicon.css"> <!-- remixicon 아이콘 css -->
@@ -24,8 +25,10 @@
     
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- jQuery 최신 버전 -->
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script> <!-- jQuery UI 버전 조정 -->
+    <script src="https://cdn.iamport.kr/js/iamport.payment-1.1.7.js"></script>
     
-	<script src="${pageContext.request.contextPath}/res/js/bootstrap.min.js"></script>
+    
+
 	<script src="${pageContext.request.contextPath}/res/js/popper.min.js"></script>
 	<script src="${pageContext.request.contextPath}/res/js/regex.js"></script>
 	<script src="${pageContext.request.contextPath}/res/js/script.js"></script>

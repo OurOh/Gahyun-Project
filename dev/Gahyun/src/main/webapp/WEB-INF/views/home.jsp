@@ -21,8 +21,12 @@
                 </div>
                 <form class="reservation-bar-form">
                     <div class="bar-group">
-                        <label for="date">날짜:</label>
-                        <input type="date" id="date" name="date" required>
+                        <label for="date">체크인날짜:</label>
+                        <input type="date" id="bar-checkin-date" name="bar-checkin-date" required>
+                    </div>
+                    <div class="bar-group">
+                        <label for="date">체크아웃날짜:</label>
+                        <input type="date" id="bar-checkout-date" name="bar-checkout-date" required>
                     </div>
                     <div class="bar-group">
                         <label for="room-type">룸 타입:</label>
@@ -37,7 +41,7 @@
                         <label for="guests">인원:</label>
                         <input type="number" id="guests" name="guests" min="1" required>
                     </div>
-                    <button type="submit" class="reservation-bar-button">예약하기</button>
+                    <button type="submit" class="reservation-bar-button" onclick="location.href='/dev/Reservation1'">예약하기</button>
                 </form>
             </div>
         
@@ -53,8 +57,6 @@
                         <p>특별한 이벤트</p>
                     </div>
                     <div class="event-slider-controls">
-                        <button class="prev1">&#60;</button>
-                        <button class="next1">&#62;</button>
                     </div>
                 </div>
                 <div class="event-slide-view">
@@ -168,31 +170,6 @@
         /***********************************************************************************************/
 
         // 이벤트 슬라이더 설정
-        let currentIndex = 0;
-
-		const prevButton = document.querySelector('.prev1');
-		$('.prev1').click(alert("test"));
-		const nextButton = document.querySelector('.next1');
-		const sliderBoxes = document.querySelectorAll('.event-slider-box');
-		
-		function updateSlider() {
-		    sliderBoxes.forEach((box, index) => {
-		        box.style.transform = `translateX(${-currentIndex * 100}%)`;
-		    });
-		}
-		
-		prevButton.addEventListener('click', () => {
-		    currentIndex = (currentIndex > 0) ? currentIndex - 1 : sliderBoxes.length - 1;
-		    updateSlider();
-		});
-		
-		nextButton.addEventListener('click', () => {
-		    currentIndex = (currentIndex < sliderBoxes.length - 1) ? currentIndex + 1 : 0;
-		    updateSlider();
-		});
-		
-		// 초기 슬라이더 상태 업데이트
-		updateSlider();
 	});
 </script>
     

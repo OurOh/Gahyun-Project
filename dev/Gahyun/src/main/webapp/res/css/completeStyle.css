@@ -50,8 +50,8 @@ button{
     }
     .user_login{
       position: absolute;
-      top: 8px;
-      right: 150px;
+      top: 10px;
+      right: 20px;
       font-family: "Noto Sans KR-Bold", Helvetica;
       font-weight: 500;
       color: #f5efe6;
@@ -61,18 +61,56 @@ button{
     .user_login:hover{
       text-decoration: underline;
     }
-    .reserv_view {
+    #user_logout{
       position: absolute;
-      top: 8px;
-      right: 30px;
+      top: 10px;
+      right: 170px;
       font-family: "Noto Sans KR-Bold", Helvetica;
       font-weight: 500;
       color: #f5efe6;
       font-size: 24px;
       text-decoration: none;
     }
-    .reserv_view:hover{
+    #user_logout:hover{
       text-decoration: underline;
+    }
+    #header-user-menu {
+      position: absolute;
+      top: 11px;
+      right: 10px;
+      font-family: "Noto Sans KR-Bold", Helvetica;
+      font-weight: 500;
+      color: #f5efe6;
+      font-size: 24px;
+      width: 140px;
+      border: none;
+      background-color: transparent;
+      display: inline-block;
+      cursor: pointer;
+    }
+    .user-menu-selected{
+    	display:flex;
+    	justify-content: space-between;
+    }
+    .user-menu-options{
+    	list-style-type: none;
+    	padding: 5px;
+      	color: #f5efe6;
+      	background-color: #1a4d2e;
+      	border: 1px solid #f5efe6;
+      	border-radius: 5px;
+      	display: none;
+      	z-index: 300;
+      	position: absolute; /* 추가: absolute로 설정 */
+    	top: 100%; /* 추가: 부모 요소의 아래에 위치 */
+    	left: 0; /* 추가: 왼쪽 정렬 */
+    }
+    .user-menu-options li{
+    	font-size: 20px;
+    	padding: 5px 8px;
+    }
+    .user-menu-options li:hover{
+    	text-decoration: underline;
     }
     .logo-small {
       position: absolute;
@@ -80,6 +118,14 @@ button{
       height: 102px;
       top: 0;
       left: calc(50% - 112.5px);
+    }
+    .ham-logo-small {
+      position: absolute;
+      width: 225px;
+      height: 102px;
+      top: 0;
+      left: calc(50% - 112.5px);
+      display: none;
     }
     .reserv_make{
       position: absolute;
@@ -106,6 +152,7 @@ button{
       width: 100%;
       top: 102px;
       left: 0;
+      z-index: 1;
   }
   .navbar {
       position: relative;
@@ -170,7 +217,7 @@ button{
     }
     .ham-nav{
       display: none;
-      position: absolute;
+      position: fixed;
       top: 102px;
       width: 100%;
       background-color: #f5efe6;
@@ -187,14 +234,24 @@ button{
     #ham-user-login:hover{
       text-decoration: underline;
     }
-    #ham-reserv-view{
+    #ham-user-logout{
       text-decoration: none;
       color: #1a4d2e;
       font-size: 20px;
       font-weight: 500;
       margin-right: 30px;
     }
-    #ham-reserv-view:hover{
+    #ham-user-logout:hover{
+      text-decoration: underline;
+    }
+    .ham-nav>a{
+      text-decoration: none;
+      color: #1a4d2e;
+      font-size: 20px;
+      font-weight: 500;
+      margin-right: 30px;
+    }
+    .ham-nav>a:hover{
       text-decoration: underline;
     }
     .ham-nav-col{
@@ -230,6 +287,9 @@ button{
       header>a{
         display: none;
       }
+      .ham-logo-small {
+      display:block;
+    }
       .main-nav{
         display: none;
       }
@@ -405,6 +465,7 @@ footer {
   border-radius: 5px;
   border: none;
   font-size: 18px;
+  width: 100%;
 }
 .login-container a {
     font-size: 14px;
@@ -412,6 +473,7 @@ footer {
     text-decoration: none;
     color: #1a4d2e;
     text-align: center;
+    display: block;
 }
 .login-container a:hover{
   text-decoration: underline;
@@ -583,6 +645,12 @@ footer {
   cursor: pointer;
 }
 
+.room-card .selected {
+  background-color: #F5EFE6;
+  transform: translateY(-5px);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+}
+
 .room-card img {
   width: 100%;
   height: 280px; /* 怨좎젙�맂 �넂�씠 */
@@ -610,82 +678,7 @@ footer {
 .next-button:hover {
   background-color: #4a6543;
 }
-/*�뙘�뾽李�*/
-.room-popup{
-  position: absolute;
-  top: 80%;
-  left: calc(50% - 400px);
-  width: 800px;
-  height: 500px;
-  background-color: #1a4d2e;
-  display: flex;
-}
-.room-popup img{
-  width: 50%;
-  height: 300px;
-  margin: auto 0;
-}
-.room-popup-text{
-  width: 50%;
-  height: 100%;
-  background-color: #f5efe6;
-  padding: 0 30px;
-  text-align: left;
-}
-.room-popup-text h2{
-  margin-top: 80px;
-}
-.room-popup-select{
-  display: block;
-  position: relative;
-  background-color: #1a4d2e;
-  border: none;
-  border-radius: 7px;
-  color: #ffffff;
-  padding: 8px 20px;
-  font-size: 15px;
-  margin: 0 auto;
-  top: 30%;
-}
-.room-popup-select:hover{
-  background-color: #4a6543;
-  cursor: pointer;
-}
-.room-popup-close{
-  position: absolute;
-  display: flex;
-  right: 0;
-  font-weight: bold;
-  color: #1a4d2e;
-  width: 100px;
-}
-.popup-close-button{
-  position: relative;
-  width: 20px;
-  height: 20px;
-  background-color: transparent;
-  border: 2px solid #1a4d2e;
-  margin: 16px 5px;
-}
-.popup-close-button::before, .popup-close-button::after{
-  position: absolute;
-  content: "";
-  width: 0;
-  height: 27px;
-  border: 1px solid #1a4d2e;
-  background-color: #1a4d2e;
-  left: 9px;
-  top: -4px;
-}
-.popup-close-button::after{
-  transform: rotate(45deg);
-}
-.popup-close-button::before{
-  transform: rotate(-45deg);
-}
-.room-popup-close:hover{
-  cursor: pointer;
-}
+
 @media (max-width: 768px) {
   
   .reservation-container {
@@ -881,25 +874,24 @@ h2 {
   overflow: hidden;
 }
 
-.slides {
+.slidesR {
   display: flex;
   transition: transform 0.5s ease-in-out;
   width: 100%;
   height: 100%;
 }
 
-.slide {
+.slideR {
   min-width: 100%;
   transition: transform 0.5s ease-in-out;
 }
 
-.slide img {
+.slideR img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.prev, .next {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -911,11 +903,9 @@ h2 {
   z-index: 10;
 }
 
-.prev {
   left: 10px;
 }
 
-.next {
   right: 10px;
 }
 
@@ -926,7 +916,6 @@ h2 {
 
 .info h2 {
   font-size: 28px;
-  margin-bottom: 20px;
 }
 
 .location-info {
@@ -939,7 +928,6 @@ h2 {
   flex: 1;
   margin-top: 50px;
   min-width: 300px;
-  height: 200px;
   margin-right: 20px;
   display: flex;
   justify-content: center;
@@ -947,9 +935,11 @@ h2 {
 }
 
 .public-transport {
-  flex: 1;
   min-width: 300px;
-  text-align: left;
+  padding: 30px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 @media (max-width: 768px) {
   .location-info {
@@ -1089,7 +1079,6 @@ main {
   display: flex;
   height: 100%;
   width: 300%; /* 3媛쒖쓽 �뒳�씪�씠�뱶媛� �븳 以꾩뿉 諛곗튂�릺�룄濡� */
-  animation: slide 12s infinite; /* �뒳�씪�씠�뱶媛� 12珥� �룞�븞 �룎�븘媛� */
 }
 
 /* 媛� �뒳�씪�씠�뱶�쓽 媛쒕퀎 �꽕�젙 */
@@ -1105,12 +1094,6 @@ main {
 }
 
 /* �븷�땲硫붿씠�뀡 �꽕�젙 */
-@keyframes slide {
-  0% { transform: translateX(0); }
-  33% { transform: translateX(-33.3333%); }
-  66% { transform: translateX(-66.6666%); }
-  100% { transform: translateX(0); }
-}
 @media screen and (max-width: 768px) {
 
   .room-content {
@@ -1154,11 +1137,8 @@ main {
 }
 
 /*USER-REGISTER*/
-.register-section {
-  padding: 30px;
 }
 
-.register-section h1 {
   text-align: center;
   background-color: #4a6543; /* 珥덈줉�깋 諛곌꼍 */
   color: #f5efe6; 
@@ -1214,32 +1194,16 @@ main {
   justify-content: space-between;
 }
 
-.submit-btn, .cancel-btn {
   display: inline-block;
   padding: 10px 20px;
   border-radius: 5px;
   font-size: 16px;
   text-align: center;
   text-decoration: none;
-  margin-top: 10px; 
-}
-
-.submit-btn {
   background-color: #1a4d2e;
-  color: #fff;
 }
-
-.cancel-btn {
-  background-color: #ccc;
-  color: #333;
-}
-
 .submit-btn:hover {
   background-color: #4a6543;
-}
-
-.cancel-btn:hover {
-  background-color: #aaa;
 }
 
 /* 以묐났�솗�씤*/
@@ -1319,11 +1283,6 @@ main {
 
 /*USER-EDIT*/
 /*user-register �슂�냼�� 以묐났�� �깮�왂*/
-.edit-section {
-  padding: 30px;
-  text-align: center;
-}
-
 .edit-section h1 {
   text-align: center;
   background-color: #4a6543; /* 珥덈줉�깋 諛곌꼍 */
@@ -1714,7 +1673,6 @@ button:hover {
 
 .main-event-header {
   margin-top: 50px;
-  margin-bottom: px; /* �씠踰ㅽ듃 �뿤�뜑�� 踰꾪듉 媛꾩쓽 �뿬諛� �꽕�젙 */
   text-align: center;
   padding: 20px;
   margin-bottom: 30px;
@@ -1726,22 +1684,19 @@ button:hover {
 .event-slider-controls {
   display: flex; /* 踰꾪듉�쓣 媛�濡쒕줈 �젙�젹 */
   justify-content: center; /* 以묒븰 �젙�젹 */
-  margin-top: 20px; /* 踰꾪듉怨� �뿤�뜑 媛� 媛꾧꺽 �꽕�젙 */
 }
 .event-slide-view{
   overflow: hidden; /* �꽆移섎뒗 遺�遺� �닲湲곌린 */
   position: relative; /* �쐞移� �꽕�젙 */
   width: 938.61px;
-  height: 307px;
+  height: 300px;
 }
-.event-slider {
+.event-slider1{
   width: 2815.83px;
-  display: flex; /* �씠踰ㅽ듃瑜� 媛�濡쒕줈 �젙�젹 */
 }
 .event-slider-box{
   display: flex;
   width: 938.61px;
-  transition: transform 0.5s ease;
 }
 
 .event {

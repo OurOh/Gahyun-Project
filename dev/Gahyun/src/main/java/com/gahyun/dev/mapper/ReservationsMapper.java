@@ -17,9 +17,11 @@ import com.gahyun.dev.model.RoomsDto;
 
 @Mapper
 public interface ReservationsMapper {
-
+	//방 예약 삽입
     int insertReservation(@Param("user_id")int user_id, @Param("roomid")int roomid, @Param("startDate")LocalDate startDate, @Param("endDate")LocalDate endDate ,@Param("totalPrice")BigDecimal totalPrice, @Param("status")String status);
-	int setStatus(@Param("user_id")int user_id, @Param("roomid")int roomid, @Param("status")String status);
+	
+    // 상태 업데이트 
+    int setStatus(@Param("user_id") int user_id, @Param("roomid")int roomid, @Param("status")String status);
     // �삁�빟 �젙蹂대�� �궫�엯�븯�뒗 硫붿꽌�뱶
     void insertReservation(ReservationsDto reservation);
 
@@ -35,4 +37,7 @@ public interface ReservationsMapper {
 
  // �삁�빟 ID瑜� 媛��졇�삤�뒗 硫붿꽌�뱶 異붽�
     int getLatestReservationId(int userId, int roomId);
+    
+    // 예약상태 최신화
+    int updateUsedReservations(@Param("specificDate") LocalDate specificDate);
 }
