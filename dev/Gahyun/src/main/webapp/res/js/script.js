@@ -123,11 +123,15 @@ $(function(){
 	// 사용가능한 방 ajax 처리
 	$('form[name="findAvailableRooms"]').on('submit',function(event){
 		event.preventDefault();
-		console.log("AJAX 요청 시작");
-		
-		// 날짜 형식 변환
-    	var startDateFormatted = convertToDashFormat($('#startdateval').val());
-    	var endDateFormatted = convertToDashFormat($('#enddateval').val());
+		    // 날짜 값 확인
+    var startDate = $('#startdateval').val();
+    var endDate = $('#enddateval').val();
+    
+    // startDate나 endDate가 빈 경우 경고 메시지를 표시하고 요청을 중단
+    if (!startDate || !endDate) {
+        alert("날짜를 모두 선택해 주세요.");
+        return; // AJAX 요청을 중단
+    }
 		
 		//ajax
 		
@@ -137,8 +141,8 @@ $(function(){
 			data:{
 				roomCount: $('#roomCountInput').val(),
 				guestCount: $('#guestCountInput').val(),
-				startDate: startDateFormatted,
-				endDate: endDateFormatted
+				startDate: startDate,
+            	endDate: endDate
 			},
 			success: function(response){
 				 console.log('Response:', response); 

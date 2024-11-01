@@ -12,7 +12,7 @@
             <c:when test="${not empty currentMypage}">
                 <c:forEach var="current" items="${currentMypage}">
                     <!-- 예약 데이터 표시 -->
-                   <div class="mypage-card">
+                   <div class="mypage-card" id="reservation-${current.reservationId}">
                    <div class="card-info-section">
 	            <img src="${pageContext.request.contextPath}${current.image}" alt="room image">
 	            <div class="history-info">
@@ -21,6 +21,8 @@
 	                <p><strong>결제금액:</strong> ${current.totalPrice}</p>
 	                </div>
 	            </div>
+	             <!-- 예약 취소하기 버튼 추가 -->
+                        <button onclick="confirmCancel('${current.reservationId}')">예약 취소하기</button>
 	        </div>
                 </c:forEach>
             </c:when>
@@ -54,3 +56,32 @@
         </c:choose>
     </section>
  </main>
+ <script>
+    // 예약 취소를 위한 JavaScript 함수
+    function confirmCancel(reservationId) {
+        if (confirm("정말 예약을 취소하시겠습니까?")) {
+            $.ajax({
+                url: '/dev/cancelReservation', // URL 경로를 서버와 일치시킵니다.
+                type: 'POST',
+                contentType: 'application/json',
+                data: JSON.stringify({ reservationId: reservationId }),
+                success: function(response) {
+                    if (response.success) {
+                        alert("예약이 취소되었습니다.");
+                     	// 예약 취소가 성공적으로 이루어진 후 UI 업데이트
+                        // 예약 현황을 삭제하거나 숨깁니다
+                        $("#reservation-" + reservationId).remove(); // 예약 요소를 삭제
+                        //location.reload(); 전체 페이지를 새로고침 
+                        
+                    } else {
+                        alert("예약 취소에 실패했습니다: " + response.message);
+                    }
+                },
+                error: function(xhr, status, error) {
+                    console.error("Error:", error);
+                    console.log("Response Text:", xhr.responseText);
+                }
+            });
+        }
+    }
+</script>
