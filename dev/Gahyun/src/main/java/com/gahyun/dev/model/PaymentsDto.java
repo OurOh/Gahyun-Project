@@ -13,5 +13,6 @@ public class PaymentsDto {
     private BigDecimal payment_amount; // 결제 금액
     private Timestamp payment_date;    // 결제 날짜
     private String payment_status;     // 결제 상태 (예: PAID, CANCELED 등)
+    private String paymentKey; //결제 취소
 	
 }

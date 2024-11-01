@@ -55,7 +55,7 @@
 
 <section class="payment-info">
     <h2>결제방법</h2>
-    <button class="payment-api">이하 결제 api 적용</button>
+    <button class="payment-api">결제하기</button>
     </form>
 </section>
 
@@ -149,7 +149,7 @@
             	    alert('결제가 완료되었습니다.');
             	    
             	    $.ajax({
-            	    	url: '/dev/payment/complete', // /payment/complete로 설정 (추가 경로 없음)
+            	    	url: '/dev/complete', 
             	        type: 'POST',
             	        contentType: 'application/json',
             	        data: JSON.stringify({

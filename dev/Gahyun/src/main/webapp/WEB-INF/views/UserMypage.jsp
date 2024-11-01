@@ -21,6 +21,8 @@
 	                <p><strong>결제금액:</strong> ${current.totalPrice}</p>
 	                </div>
 	            </div>
+	             <!-- 예약 취소하기 버튼 추가 -->
+                        <button onclick="confirmCancel('${current.reservationId}')">예약 취소하기</button>
 	        </div>
                 </c:forEach>
             </c:when>
@@ -54,3 +56,28 @@
         </c:choose>
     </section>
  </main>
+ <script>
+    // 예약 취소를 위한 JavaScript 함수
+    function confirmCancel(reservationId) {
+        if (confirm("정말 예약을 취소하시겠습니까?")) {
+            $.ajax({
+                url: '/dev/cancelReservation', // URL 경로를 서버와 일치시킵니다.
+                type: 'POST',
+                contentType: 'application/json',
+                data: JSON.stringify({ reservationId: reservationId }),
+                success: function(response) {
+                    if (response.success) {
+                        alert("예약이 취소되었습니다.");
+                        location.reload();
+                    } else {
+                        alert("예약 취소에 실패했습니다: " + response.message);
+                    }
+                },
+                error: function(xhr, status, error) {
+                    console.error("Error:", error);
+                    console.log("Response Text:", xhr.responseText);
+                }
+            });
+        }
+    }
+</script>

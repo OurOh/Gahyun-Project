@@ -6,8 +6,8 @@
 <mapper namespace="com.gahyun.dev.mapper.PaymentMapper">
     <!-- 결제 정보 삽입 -->
     <insert id="insertPayment" parameterType="com.gahyun.dev.model.PaymentsDto">
-        INSERT INTO payments (reservation_id, payment_method, payment_amount, payment_date, payment_status)
-        VALUES (#{reservation_id}, #{payment_method}, #{payment_amount}, NOW(), #{payment_status})
+        INSERT INTO payments (reservation_id, payment_method, payment_amount, payment_date, payment_status, payment_key)
+        VALUES (#{reservation_id}, #{payment_method}, #{payment_amount}, NOW(), #{payment_status}, #{paymentKey})
     </insert>
 
     <!-- 가장 최근의 예약 ID 조회 -->
@@ -19,4 +19,26 @@
         ORDER BY reservation_id DESC 
         LIMIT 1
     </select>
+    
+    <!-- 결제 상태 업데이트 (취소 시) -->
+    <update id="updatePaymentStatus" parameterType="map">
+        UPDATE payments
+	    SET payment_status = #{status}
+	    WHERE imp_uid = #{impUid}
+    </update>
+
+   <!-- 결제 키 조회 -->
+	<select id="getPaymentKeyFromReservation" parameterType="String" resultType="String">
+	    SELECT payment_key
+	    FROM payments
+	    WHERE reservation_id = #{reservationId}
+	</select>
+
+    <!-- 예약 상태 업데이트 -->
+    <update id="updateReservationStatus" parameterType="map">
+        UPDATE reservations
+        SET status = #{status}
+        WHERE reservation_id = #{reservationId}
+    </update>
+	
 </mapper>
