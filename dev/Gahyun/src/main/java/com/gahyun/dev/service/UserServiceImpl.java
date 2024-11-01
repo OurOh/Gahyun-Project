@@ -1,16 +1,16 @@
 package com.gahyun.dev.service;
 
-import com.gahyun.dev.dao.UserDao;
-import com.gahyun.dev.dao.UserDaoImpl;
-import com.gahyun.dev.model.CustomUserDetails;
-import com.gahyun.dev.model.UserDto;
+import java.util.UUID;
+
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
+
+import com.gahyun.dev.dao.UserDao;
+import com.gahyun.dev.model.CustomUserDetails;
+import com.gahyun.dev.model.UserDto;
 
 
 @Service
@@ -74,5 +74,36 @@ public class UserServiceImpl implements UserService {
 
         // DB 업데이트
         userDao.updateUser(user);
+    }
+    
+    
+    // 이름과 이메일을 이용하여 아이디 찾기
+    @Override
+    public String findUserIdByNameAndEmail(String name, String email) {
+        return userDao.findUserIdByNameAndEmail(name, email);
+    }
+    
+    //비밀번호 초기화.
+    @Override
+    public void resetPassword(String userid, String encodedPassword, String tempPassword) {
+        UserDto user = userDao.getUserByUserId(userid);
+        if (user != null) {
+            user.setPassword(encodedPassword);
+            userDao.updateUser(user);
+            sendTemporaryPasswordEmail(user.getEmail(), tempPassword);
+        }
+    }
+
+    @Override
+    public boolean isUserValidForPasswordReset(String userid, String name, String email) {
+        UserDto user = userDao.getUserByUserId(userid);
+        return user != null && user.getName().equals(name) && user.getEmail().equals(email);
+    }
+
+    private void sendTemporaryPasswordEmail(String email, String tempPassword) {
+        // 여기에 이메일 전송 로직 추가
+        System.out.println("Sending temporary password to: " + email);
+        System.out.println("Temporary password: " + tempPassword);
+        // 실제 이메일 전송 코드 구현 필요
     }
 }

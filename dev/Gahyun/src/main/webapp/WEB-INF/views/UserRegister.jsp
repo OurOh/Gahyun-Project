@@ -25,7 +25,7 @@
 
     <!-- 이메일 -->
     <label for="email">이메일</label>
-	<input type="email" id="email" name="email" placeholder="이메일을 입력하세요" required>
+	<input type="email" id="email" name="email" placeholder="이메일을 입력하세요(네이버)" required>
 
     <!-- 생년월일 -->
    <label for="birthdate">생년월일</label>

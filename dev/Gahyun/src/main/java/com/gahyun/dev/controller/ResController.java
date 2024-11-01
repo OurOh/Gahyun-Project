@@ -1,6 +1,5 @@
 package com.gahyun.dev.controller;
 
-
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -15,9 +14,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.Authentication;
-import org.springframework.security.core.annotation.AuthenticationPrincipal;
-import org.springframework.security.core.context.SecurityContext;
 import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -38,32 +36,29 @@ import com.gahyun.dev.service.ResService;
 import com.gahyun.dev.service.RoomsService;
 import com.gahyun.dev.service.UserService;
 
-
-
-
 @Controller
 @PreAuthorize("isAuthenticated()")
 public class ResController {
-	
-	
-	
-	
-	private ReservationsMapper reservationsdao;
-	@Autowired
-	private UserService userService;
-	
-	@Autowired 
-	private RoomsService roomService;
+    
+    private ReservationsMapper reservationsdao;
+    
+    @Autowired
+    private UserService userService;
+    
+    @Autowired 
+    private RoomsService roomService;
 
-	@Autowired
-	private ResService resService;
-	
-	@Autowired
-	private MypageService mypageService;
-	
-	@Autowired
-	UserDaoImpl uDao;
-
+    @Autowired
+    private ResService resService;
+    
+    @Autowired
+    private MypageService mypageService;
+    
+    @Autowired
+    UserDaoImpl uDao;
+    
+    @Autowired
+    private PasswordEncoder passwordEncoder;
 	
 	public void findIdbyUsername(Model model ) {		
 		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
@@ -119,6 +114,91 @@ public class ResController {
 
 	    return "redirect:/home";
 	}
+	
+	
+	
+	// 아이디 찾기 페이지 이동
+	@PreAuthorize("permitAll()")
+    @GetMapping("/findId")
+    public String showFindIdPage() {
+        return "findId"; // findId.jsp 페이지로 이동
+    }
+
+    // 아이디 찾기 처리
+	@PreAuthorize("permitAll()")
+    @PostMapping("/findId")
+    public String findId(@RequestParam("name") String name,
+                         @RequestParam("email") String email,
+                         Model model) {
+
+        // UserService를 통해 아이디 조회
+        String userId = userService.findUserIdByNameAndEmail(name, email);
+
+        if (userId != null) {
+            model.addAttribute("userId", userId);  // 조회된 아이디 전달
+        } else {
+            model.addAttribute("message", "입력하신 정보와 일치하는 아이디가 없습니다.");
+        }
+
+        return "findId";  // 결과를 표시하기 위해 findId.jsp 페이지로 리턴
+    }
+	
+
+	// 비밀번호 재설정 페이지 이동
+	@PreAuthorize("permitAll()")
+	@GetMapping("/findPassword")
+	public String showFindPasswordPage() {
+	    return "findPassword"; // findPassword.jsp 페이지로 이동
+	}
+
+	// 비밀번호 재설정 처리
+	@PreAuthorize("permitAll()")
+	@PostMapping("/resetPassword")
+	public String resetPassword(
+	        @RequestParam("userid") String userid,
+	        @RequestParam("name") String name,
+	        @RequestParam("email") String email,
+	        RedirectAttributes redirectAttributes) {
+
+	    // 사용자 정보 유효성 검사
+	    if (userService.isUserValidForPasswordReset(userid, name, email)) {
+	        // 임시 비밀번호 생성
+	        String tempPassword = generateTemporaryPassword();
+	        String encodedPassword = passwordEncoder.encode(tempPassword);
+
+	        // 비밀번호 업데이트 및 이메일 발송
+	        userService.resetPassword(userid, encodedPassword, tempPassword);
+	        redirectAttributes.addFlashAttribute("message", "임시 비밀번호가 이메일로 전송되었습니다.");
+	    } else {
+	        redirectAttributes.addFlashAttribute("error", "입력하신 정보가 일치하지 않습니다.");
+	    }
+
+	    return "redirect:/findPassword";
+	}
+
+	// 임시 비밀번호 생성 메서드
+	private String generateTemporaryPassword() {
+	    String chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%";
+	    StringBuilder tempPassword = new StringBuilder();
+	    for (int i = 0; i < 8; i++) {
+	        int randomIndex = (int) (Math.random() * chars.length());
+	        tempPassword.append(chars.charAt(randomIndex));
+	    }
+	    return tempPassword.toString();
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	@PostMapping("/samePerson")
