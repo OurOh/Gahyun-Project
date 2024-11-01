@@ -16,27 +16,27 @@
           <div class="facility-slider-container">
             <div class="facility-grid-slider">
               <div class="facility-card fffimg">
-                <img src="${pageContext.request.contextPath}/res/images/breakfast001.jpg" alt="조식뷔페">
+                <img src="${pageContext.request.contextPath}/res/images/breakfast001.webp" alt="조식뷔페" loading="lazy">
                 <p>조식뷔페 <span>Tiffany</span></p>
               </div>
               <div class="facility-card">
-                <img src="${pageContext.request.contextPath}/res/images/breakfast002.jpg" alt="비건전문">
+                <img src="${pageContext.request.contextPath}/res/images/breakfast002.webp" alt="비건전문" loading="lazy">
                 <p>비건전문 <span>La'bia</span></p>
               </div>
               <div class="facility-card">
-                <img src="${pageContext.request.contextPath}/res/images/party001.jpg" alt="파티">
+                <img src="${pageContext.request.contextPath}/res/images/party001.webp" alt="파티" loading="lazy">
                 <p>파티룸 <span>Party</span></p>
               </div>
               <div class="facility-card">
-                <img src="${pageContext.request.contextPath}/res/images/cafe.jpg" alt="카페">
+                <img src="${pageContext.request.contextPath}/res/images/cafe.webp" alt="카페" loading="lazy">
                 <p>카페 <span>Cafe</span></p>
               </div>
               <div class="facility-card">
-                <img src="${pageContext.request.contextPath}/res/images/rooftop006.jpg" alt="루프탑">
+                <img src="${pageContext.request.contextPath}/res/images/rooftop006.webp" alt="루프탑" loading="lazy">
                 <p>루프탑 <span>Rooftop</span></p>
               </div>
               <div class="facility-card">
-                <img src="${pageContext.request.contextPath}/res/images/dining002.jpg" alt="레스토랑">
+                <img src="${pageContext.request.contextPath}/res/images/dining002.webp" alt="레스토랑" loading="lazy">
                 <p>레스토랑 <span>Restaurant</span></p>
               </div>
             </div>
@@ -45,27 +45,27 @@
           
             <div class="facility-grid-slider">
               <div class="facility-card fffimg">
-                <img src="${pageContext.request.contextPath}/res/images/gym007.jpg" alt="피트니스">
+                <img src="${pageContext.request.contextPath}/res/images/gym007.webp" alt="피트니스" loading="lazy">
                 <p>피트니스 <span>Tiffany</span></p>
               </div>
               <div class="facility-card">
-                <img src="${pageContext.request.contextPath}/res/images/spa002.jpg" alt="스파">
+                <img src="${pageContext.request.contextPath}/res/images/spa002.webp" alt="스파" loading="lazy">
                 <p>스파 <span>Spa</span></p>
               </div>
               <div class="facility-card">
-                <img src="${pageContext.request.contextPath}/res/images/yoga001.jpg" alt="요가">
+                <img src="${pageContext.request.contextPath}/res/images/yoga001.webp" alt="요가" loading="lazy">
                 <p>요가 <span>Yoga</span></p>
               </div>
               <div class="facility-card">
-                <img src="${pageContext.request.contextPath}/res/images/pool001.jpg" alt="수영장">
+                <img src="${pageContext.request.contextPath}/res/images/pool001.webp" alt="수영장" loading="lazy">
                 <p>수영장 <span>Pool</span></p>
               </div>
               <div class="facility-card">
-                <img src="${pageContext.request.contextPath}/res/images/ski.jpg" alt="비건전문">
+                <img src="${pageContext.request.contextPath}/res/images/ski.webp" alt="비건전문" loading="lazy">
                 <p>스키장 <span>Ski</span></p>
               </div>
               <div class="facility-card">
-                <img src="${pageContext.request.contextPath}/res/images/convenience.jpg" alt="조식">
+                <img src="${pageContext.request.contextPath}/res/images/convenience.webp" alt="조식" loading="lazy">
                 <p>편의점 <span>Store</span></p>
               </div>
             </div>
@@ -74,19 +74,19 @@
           
             <div class="facility-grid-slider">
               <div class="facility-card fffimg">
-                <img src="${pageContext.request.contextPath}/res/images/arcade1.jpg" alt="조식뷔페">
+                <img src="${pageContext.request.contextPath}/res/images/arcade1.webp" alt="조식뷔페" loading="lazy">
                 <p>오락실 <span>Jolly</span></p>
               </div>
               <div class="facility-card">
-                <img src="${pageContext.request.contextPath}/res/images/arcade2.jpg" alt="비건전문">
+                <img src="${pageContext.request.contextPath}/res/images/arcade2.webp" alt="비건전문" loading="lazy">
                 <p>당구장 <span>Hit’O</span></p>
               </div>
               <div class="facility-card">
-                <img src="${pageContext.request.contextPath}/res/images/arcade3.jpg" alt="조식">
+                <img src="${pageContext.request.contextPath}/res/images/arcade3.webp" alt="조식" loading="lazy">
                 <p>볼링장<span>Bowling</span></p>
               </div>
               <div class="facility-card">
-              <img src="${pageContext.request.contextPath}/res/images/arcade4vr.jpg" alt="조식뷔페">
+              <img src="${pageContext.request.contextPath}/res/images/arcade4vr.webp" alt="조식뷔페" loading="lazy">
               <p>VR존</p>
             </div>
             </div>
@@ -95,37 +95,3 @@
     
         </section>
       </main>  
-<script>
-    $(document).ready(function() {
-      $('.facility-grid-slider').each(function() {
-        const $slider = $(this);
-        let isDragging = false;
-        let startX, scrollLeft;
-    
-        $slider.on('mousedown', function(e) {
-          isDragging = true;
-          startX = e.pageX - $slider.offset().left;
-          scrollLeft = $slider.scrollLeft();
-          $slider.css('cursor', 'grabbing');
-          e.preventDefault();
-        });
-    
-        $(window).on('mousemove', function(e) {
-          if (!isDragging) return;
-          const x = e.pageX - $slider.offset().left;
-          const walk = (x - startX) * 2;
-          $slider.scrollLeft(scrollLeft - walk);
-        });
-    
-        $(window).on('mouseup', function() {
-          isDragging = false;
-          $slider.css('cursor', 'grab');
-        });
-    
-        $slider.on('mouseleave', function() {
-          isDragging = false;
-          $slider.css('cursor', 'grab');
-        });
-      });
-    });
-</script>

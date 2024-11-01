@@ -73,7 +73,9 @@ $(function(){
    });
    
    //datepicker
-   
+    const firstminday = new Date();
+    const secondminday = new Date();
+    secondminday.setDate(firstminday.getDate() + 1);
     $('.startdate').datepicker({
     	inline: true,
     	dateFormat: 'yy-mm-dd',
@@ -86,6 +88,7 @@ $(function(){
 		dayNamesMin: ['일', '월', '화', '수', '목', '금', '토'],
 		showMonthAfterYear: true,
 		yearSuffix: '년',
+		minDate: firstminday,
 		onSelect: function(selectedDate) {
             // 시작 날짜 선택 후 종료 날짜는 시작 날짜보다 이후로 설정
              $('.enddate').datepicker('option', 'minDate', selectedDate);
@@ -104,6 +107,7 @@ $(function(){
 		dayNamesMin: ['일', '월', '화', '수', '목', '금', '토'],
 		showMonthAfterYear: true,
 		yearSuffix: '년',
+		minDate: secondminday,
 		onSelect: function(selectedDate) {
             // 종료 날짜 선택 후 시작 날짜는 종료 날짜보다 이전으로 설정
         	$('.startdate').datepicker('option', 'maxDate', selectedDate);
@@ -183,7 +187,7 @@ $(function(){
     
     // 클릭된 방을 선택 상태로 표시
     $(this).addClass('selected');
-
+	
     // 클릭된 방의 roomId를 저장
     selectedRoomId = $(this).data('room-id');
 
@@ -312,3 +316,83 @@ $(function(){
         // Start the automatic sliding
         startAutoSlide();
     });  
+    
+    
+    $(document).ready(function() {
+      $('.facility-grid-slider').each(function() {
+        const $slider = $(this);
+        let isDragging = false;
+        let startX, scrollLeft;
+    
+        $slider.on('mousedown', function(e) {
+          isDragging = true;
+          startX = e.pageX - $slider.offset().left;
+          scrollLeft = $slider.scrollLeft();
+          $slider.css('cursor', 'grabbing');
+          e.preventDefault();
+        });
+    
+        $(window).on('mousemove', function(e) {
+          if (!isDragging) return;
+          const x = e.pageX - $slider.offset().left;
+          const walk = (x - startX) * 2;
+          $slider.scrollLeft(scrollLeft - walk);
+        });
+    
+        $(window).on('mouseup', function() {
+          isDragging = false;
+          $slider.css('cursor', 'grab');
+        });
+    
+        $slider.on('mouseleave', function() {
+          isDragging = false;
+          $slider.css('cursor', 'grab');
+        });
+      });
+    });
+    
+    $(document).ready(function() {
+        // 슬라이드 이미지 설정
+        const images = $('.hero-image'); // 모든 이미지 선택
+        let currentImageIndex = 0; // 현재 이미지 인덱스 초기화
+
+        // 첫 번째 이미지를 보이게 설정
+        images.eq(currentImageIndex).addClass('active');
+
+        function changeImage() {
+            images.removeClass('active'); // 현재 이미지 숨김
+            currentImageIndex = (currentImageIndex + 1) % images.length; // 인덱스 증가 및 순환
+            images.eq(currentImageIndex).addClass('active'); // 다음 이미지 보임
+        }
+
+        // 4초마다 이미지 변경
+        setInterval(changeImage, 4000);
+
+        /***********************************************************************************************/
+
+        // 이벤트 슬라이더 설정
+        let currentIndex = 0;
+
+		const prevButton = document.querySelector('.prev1');
+		const nextButton = document.querySelector('.next1');
+		const sliderBoxes = document.querySelectorAll('.event-slider-box');
+		
+		function updateSlider() {
+		    sliderBoxes.forEach((box, index) => {
+		        box.style.transform = `translateX(${-currentIndex * 100}%)`;
+		    });
+		}
+		
+		prevButton.addEventListener('click', () => {
+		    currentIndex = (currentIndex > 0) ? currentIndex - 1 : sliderBoxes.length - 1;
+		    updateSlider();
+		});
+		
+		nextButton.addEventListener('click', () => {
+		    currentIndex = (currentIndex < sliderBoxes.length - 1) ? currentIndex + 1 : 0;
+		    updateSlider();
+		});
+		
+		// 초기 슬라이더 상태 업데이트
+		updateSlider();
+		});

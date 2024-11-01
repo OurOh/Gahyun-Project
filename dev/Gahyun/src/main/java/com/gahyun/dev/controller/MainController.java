@@ -19,6 +19,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import com.gahyun.dev.dao.UserDao;
 import com.gahyun.dev.model.RoomDetailDto;
 import com.gahyun.dev.model.UserDto;
+import com.gahyun.dev.service.ResService;
 import com.gahyun.dev.service.RoomsService;
 import com.gahyun.dev.service.UserService;
 
@@ -29,6 +30,9 @@ public class MainController {
 	private UserDao userDao;
 	@Autowired
 	private RoomsService roomService;
+	
+	@Autowired
+	private ResService resService;
 	
 	/*
 	@Autowired
@@ -46,6 +50,7 @@ public class MainController {
     public String registerUser(@RequestParam("userid") String userid,
                                @RequestParam("password") String password,
                                @RequestParam("name") String name,
+                               @RequestParam("email") String email,
                                @RequestParam("year") String year,
                                @RequestParam("month") String month,
                                @RequestParam("day") String day,
@@ -59,7 +64,7 @@ public class MainController {
         newUser.setUserid(userid);
         newUser.setPassword(password);
         newUser.setName(name);
-
+        newUser.setEmail(email);
         // 생년월일 결합 (yyyy-MM-dd 형식)
         String birth = year + "-" + month + "-" + day;
         newUser.setUser_birth(birth);
@@ -86,6 +91,13 @@ public class MainController {
    
     @GetMapping("/home")
     public String showHomePage(Model model) {
+    	LocalDate today = LocalDate.now();
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+		String nowDateStr = today.format(formatter);
+		LocalDate nowDate = LocalDate.parse(nowDateStr, formatter);
+		
+		resService.resSetUsedStatus(nowDate);
+		System.out.println("resService resSetUsedStatus 실행!");
         return "home";  
     }
     

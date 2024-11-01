@@ -23,6 +23,7 @@ form label {
 
 form input[type="text"],
 form input[type="password"],
+form input[type="email"], /* 이메일 스타일 추가 */
 form select {
     width: 100%;
     padding: 10px;
@@ -64,3 +65,7 @@ form select {
     background-color: #ccc;
     color: #333;
 }
+
+//이메일 부분 추가
+
+
