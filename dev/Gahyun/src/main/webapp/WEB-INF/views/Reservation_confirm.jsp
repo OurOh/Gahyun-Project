@@ -118,6 +118,7 @@
             const tel = $("#phone-number").val() + "-" + $("#phone-number2").val() + "-" + $("#phone-number3").val();
             
             const price = Math.floor(${resInfo.pricePerNight} * dayDiff);
+           	const disprice = price / ${xxx}
             console.log(price);
             $('#price').val(price);
             $('#gtel').val(tel);

@@ -50,6 +50,7 @@ public class MainController {
     public String registerUser(@RequestParam("userid") String userid,
                                @RequestParam("password") String password,
                                @RequestParam("name") String name,
+                               @RequestParam("email") String email,
                                @RequestParam("year") String year,
                                @RequestParam("month") String month,
                                @RequestParam("day") String day,
@@ -63,7 +64,7 @@ public class MainController {
         newUser.setUserid(userid);
         newUser.setPassword(password);
         newUser.setName(name);
-
+        newUser.setEmail(email);
         // 생년월일 결합 (yyyy-MM-dd 형식)
         String birth = year + "-" + month + "-" + day;
         newUser.setUser_birth(birth);
