@@ -7,10 +7,10 @@
 
          <main>
         <div class="hero">
-            <img class="hero-image" src="${pageContext.request.contextPath}/res/images/outside001.jpg" alt="Image Slider"loading="lazy"/>
-            <img class="hero-image" src="${pageContext.request.contextPath}/res/images/pool001.jpg" alt="Image Slider" loading="lazy"/>
-            <img class="hero-image" src="${pageContext.request.contextPath}/res/images/waterfall.jpg" alt="Image Slider" loading="lazy"/>
-            <img class="hero-image" src="${pageContext.request.contextPath}/res/images/rooftop007.jpg" alt="Image Slider" loading="lazy" />
+            <img class="hero-image" src="${pageContext.request.contextPath}/res/images/bannerimg/hero1.webp" alt="Image Slider"loading="lazy"/>
+            <img class="hero-image" src="${pageContext.request.contextPath}/res/images/bannerimg/hero2.webp" alt="Image Slider" loading="lazy"/>
+            <img class="hero-image" src="${pageContext.request.contextPath}/res/images/bannerimg/hero3.webp" alt="Image Slider" loading="lazy"/>
+            <img class="hero-image" src="${pageContext.request.contextPath}/res/images/bannerimg/hero4.webp" alt="Image Slider" loading="lazy" />
         </div>
         
             <!-- 예약 바 -->
