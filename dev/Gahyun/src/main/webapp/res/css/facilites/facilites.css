@@ -34,7 +34,7 @@ main {
     overflow-x: scroll; /* 스크롤 기능 유지 */
     white-space: nowrap;
     scroll-behavior: smooth;
-    margin-bottom: 60px;
+    margin-bottom: 30px;
     will-change: scroll-position; /* GPU 가속 유도 */
     -ms-overflow-style: none;  /* IE, Edge에서 스크롤바 숨김 */
     scrollbar-width: none;     /* Firefox에서 스크롤바 숨김 */
@@ -53,13 +53,21 @@ main {
   .facility-card {
     flex: 0 0 auto;
     width: 400px;
-    margin-right: 50px;
+    height: 440px; /* 카드 높이를 고정 */
+    margin-right: 37px;
     background-color: white;
     text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 15px;
     border-radius: 15px;
+    overflow: hidden; /* 카드 내부의 오버플로우가 밖으로 넘치지 않게 설정 */
   }
+  
+  .facility-card .img-container {
+    overflow: hidden;
+    height: 370px;
+    transition: height 0.3s ease;
+}
   
   .facility-card:hover {
     background-color: #F5EFE6;
@@ -69,8 +77,42 @@ main {
   
   .facility-card img {
     width: 100%;
-    height: 370px;
+    transition: transform 0.3s ease; /* 축소 애니메이션 */
   }
+  
+
+.facility-card .facility-title {
+	margin-top: 12px;
+    font-weight: 600;
+    color: #413A2B;
+    font-size: 17px;
+    text-align: center;
+    line-height: 1.4;
+    transition: transform 0.3s ease;
+}
+.facility-card .facility-description {
+    display: none;           /* 기본적으로 숨김 */
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: opacity 0.3s ease, max-height 0.3s ease, padding 0.3s ease;
+    font-size: 15px;
+    color: #666;
+    line-height: 1.6;
+}
+.facility-card.activeF .img-container {
+    height: 300px; /* 이미지 컨테이너 높이를 축소 */
+}
+
+.facility-card.activeF img {
+    transform: scale(0.94); /* 이미지가 약간 축소되면서 위로 이동 */
+}
+
+.facility-card.activeF .facility-description {
+    display: block;          /* 활성화 시 표시 */
+    opacity: 1;
+    max-height: 100px;       /* 최대 높이를 설정하여 텍스트가 보임 */
+}
   .facility-card p{
     font-weight: 600;
     color: #413A2B;

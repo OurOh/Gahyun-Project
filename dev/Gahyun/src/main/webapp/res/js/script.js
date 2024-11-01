@@ -159,7 +159,7 @@ $(function(){
             
 				
 					var roomCard = `
-						<div class="room-card" data-room-id="${room.roomId}">
+						<div class="room-card" data-room-id="${room.roomId}" onclick="toggleText(this)">
 							<img src="/dev${imageUrl}" alt="객실 이미지">
 							<p>객실 타입: ${room.roomType}<br>조식: 불포함</p>
 						</div>
@@ -351,6 +351,10 @@ $(function(){
       });
     });
     
+    function toggleText(card) {
+    	card.classList.toggle('activeF');
+	}
+    
     $(document).ready(function() {
         // 슬라이드 이미지 설정
         const images = $('.hero-image'); // 모든 이미지 선택
@@ -396,3 +400,7 @@ $(function(){
 		// 초기 슬라이더 상태 업데이트
 		updateSlider();
 		});
+		
+		
+		
+		
