@@ -187,19 +187,7 @@ public class ResController {
 	    return tempPassword.toString();
 	}
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
 	
 	@PostMapping("/samePerson")
 	public ResponseEntity<Map<String, Object>> samePerson(Model model) {

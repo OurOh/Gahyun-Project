@@ -1,17 +1,15 @@
 package com.gahyun.dev.service;
 
-import java.util.UUID;
-
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.mail.SimpleMailMessage;
+import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
-
 import com.gahyun.dev.dao.UserDao;
 import com.gahyun.dev.model.CustomUserDetails;
 import com.gahyun.dev.model.UserDto;
-
 
 @Service
 public class UserServiceImpl implements UserService {
@@ -22,20 +20,16 @@ public class UserServiceImpl implements UserService {
     @Autowired
     private PasswordEncoder passwordEncoder;
 
-    // Spring Security가 요구하는 메서드: 사용자의 인증 정보 로드
+    @Autowired
+    private JavaMailSender mailSender;
+
+    // 사용자 인증 정보 로드
     @Override
     public UserDetails loadUserByUsername(String userid) throws UsernameNotFoundException {
         UserDto user = userDao.getUserByUserId(userid);
-
         if (user == null) {
             throw new UsernameNotFoundException("User not found with userid: " + userid);
         }
-        System.out.println("User found: " + user);
-        System.out.println("User ID: " + user.getUserid());
-        System.out.println("User Password: " + user.getPassword());
-        
-      
-        
         return new CustomUserDetails(user);
     }
 
@@ -43,47 +37,44 @@ public class UserServiceImpl implements UserService {
     @Override
     public UserDto authenticate(String userid, String password) {
         UserDto user = userDao.getUserByUserId(userid);
-
-        // 비밀번호 비교 (Spring Security에서 제공하는 passwordEncoder 사용)
         if (user != null && passwordEncoder.matches(password, user.getPassword())) {
             return user;
         } else {
-            return null;  // 인증 실패
+            return null;
         }
     }
 
-    // 회원가입 처리 (비밀번호 암호화 포함)
+    // 회원가입 처리
     @Override
     public void insertUser(UserDto newUser) {
-        // 비밀번호를 BCrypt로 암호화
         String encodedPassword = passwordEncoder.encode(newUser.getPassword());
         newUser.setPassword(encodedPassword);
-
-        // DB에 사용자 정보 저장
         userDao.insertUser(newUser);
+    }
+
+ // 아이디 중복 체크
+    @Override
+    public boolean isUserIdAvailable(String userid) {
+        return !userDao.isUserIdExists(userid); // isUserIdExists 호출하여 아이디가 없을 때 true 반환
     }
 
     // 사용자 정보 업데이트 처리
     @Override
     public void updateUser(UserDto user) {
-        // 비밀번호가 이미 암호화되어 있지 않다면 암호화
-        if (!user.getPassword().startsWith("$2a$")) {  // BCrypt 암호화된 비밀번호는 $2a$로 시작
+        if (!user.getPassword().startsWith("$2a$")) {
             String encodedPassword = passwordEncoder.encode(user.getPassword());
             user.setPassword(encodedPassword);
         }
-
-        // DB 업데이트
         userDao.updateUser(user);
     }
-    
-    
-    // 이름과 이메일을 이용하여 아이디 찾기
+
+    // 아이디 찾기
     @Override
     public String findUserIdByNameAndEmail(String name, String email) {
         return userDao.findUserIdByNameAndEmail(name, email);
     }
-    
-    //비밀번호 초기화.
+
+    // 비밀번호 초기화
     @Override
     public void resetPassword(String userid, String encodedPassword, String tempPassword) {
         UserDto user = userDao.getUserByUserId(userid);
@@ -100,10 +91,20 @@ public class UserServiceImpl implements UserService {
         return user != null && user.getName().equals(name) && user.getEmail().equals(email);
     }
 
+    // 임시 비밀번호 이메일 전송 메서드
     private void sendTemporaryPasswordEmail(String email, String tempPassword) {
-        // 여기에 이메일 전송 로직 추가
         System.out.println("Sending temporary password to: " + email);
-        System.out.println("Temporary password: " + tempPassword);
-        // 실제 이메일 전송 코드 구현 필요
+        SimpleMailMessage message = new SimpleMailMessage();
+        message.setTo(email);
+        message.setSubject("임시 비밀번호 안내");
+        message.setText("안녕하세요,\n\n요청하신 임시 비밀번호는 다음과 같습니다: " + tempPassword + "\n\n로그인 후 비밀번호를 변경해주세요.\n감사합니다.");
+
+        try {
+            mailSender.send(message);
+            System.out.println("Temporary password email sent successfully!");
+        } catch (Exception e) {
+            System.out.println("Failed to send temporary password email.");
+            e.printStackTrace();
+        }
     }
 }

@@ -32,6 +32,14 @@ public class UserDaoImpl implements UserDao {
     	return jdbcTemplate.queryForObject(sql, new Object[]{userid}, String.class);
     }
 
+    @Override
+    public boolean isUserIdExists(String userid) {
+        String sql = "SELECT COUNT(*) FROM user WHERE userid = ?";
+        Integer count = jdbcTemplate.queryForObject(sql, new Object[]{userid}, Integer.class);
+        return count != null && count > 0;  // 
+    }
+    
+    
 
     //데이터베이스의 각 행(row)을 UserDto 객체로 변환하여 반환하는 역할
     private RowMapper<UserDto> userRowMapper = (rs, rowNum) -> {

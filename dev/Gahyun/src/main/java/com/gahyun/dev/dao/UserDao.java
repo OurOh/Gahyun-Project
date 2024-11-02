@@ -15,4 +15,7 @@ public interface UserDao {
     
     String findUserIdByNameAndEmail(String name, String email);
     void resetPassword(String email, String userid);
+    
+    // 아이디 중복 체크 메서드 추가
+    boolean isUserIdExists(String userid);
 }
