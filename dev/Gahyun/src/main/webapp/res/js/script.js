@@ -405,6 +405,25 @@ $(function(){
 		updateSlider();
 		});
 		
+//메인페이지 예약넘어가기 페이지
+$(function() {
+	$(".reservation-bar-form").on("submit", function(event){
+		event.preventDefault();
+		
+		const roomCount = $("#rooms").val();
+		const guestCount = $("#guests").val();
+		const startDate = $("#bar-checkin-date").val();
+		const endDate = $("#bar-checkout-date").val();
+		
+		
+  		const url = `/dev/Reservation1?startDate=${startDate}&endDate=${endDate}&roomCount=${roomCount}&guestCount=${guestCount}`;
+	    window.location.href = url;
+		
+
+	});  
+});
+
+
 		
 		
 		

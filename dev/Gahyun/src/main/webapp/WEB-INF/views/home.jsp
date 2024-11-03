@@ -19,7 +19,7 @@
 	            	<i class="ri-hotel-bed-line"></i>
 	                <p>예약하기</p>
                 </div>
-                <form class="reservation-bar-form">
+                <form class="reservation-bar-form" method="post" action="/dev/Reservation1">
                     <div class="bar-group">
                         <label for="date">체크인날짜:</label>
                         <input type="date" id="bar-checkin-date" name="bar-checkin-date" required>
@@ -29,19 +29,14 @@
                         <input type="date" id="bar-checkout-date" name="bar-checkout-date" required>
                     </div>
                     <div class="bar-group">
-                        <label for="room-type">룸 타입:</label>
-                        <select id="room-type" name="room-type" required>
-                            <option value="">선택하세요</option>
-                            <option value="standard">타입A</option>
-                            <option value="deluxe">타입B(침대O)</option>
-                            <option value="suite">타입B(침대X)</option>
-                        </select>
+                        <label for="rooms">객실 수:</label>
+                        <input type="number" id="rooms" name="rooms" min="1" required>
                     </div>
                     <div class="bar-group">
                         <label for="guests">인원:</label>
                         <input type="number" id="guests" name="guests" min="1" required>
                     </div>
-                    <button type="submit" class="reservation-bar-button" onclick="location.href='/dev/Reservation1'">예약하기</button>
+                    <button type="submit" class="reservation-bar-button">예약하기</button>
                 </form>
             </div>
         
