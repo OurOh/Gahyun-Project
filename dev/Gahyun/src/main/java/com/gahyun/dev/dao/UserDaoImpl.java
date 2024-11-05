@@ -1,6 +1,8 @@
 package com.gahyun.dev.dao;
 
 import javax.sql.DataSource;
+
+import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
@@ -30,6 +32,14 @@ public class UserDaoImpl implements UserDao {
     	return jdbcTemplate.queryForObject(sql, new Object[]{userid}, String.class);
     }
 
+    @Override
+    public boolean isUserIdExists(String userid) {
+        String sql = "SELECT COUNT(*) FROM user WHERE userid = ?";
+        Integer count = jdbcTemplate.queryForObject(sql, new Object[]{userid}, Integer.class);
+        return count != null && count > 0;  // 
+    }
+    
+    
 
     //데이터베이스의 각 행(row)을 UserDto 객체로 변환하여 반환하는 역할
     private RowMapper<UserDto> userRowMapper = (rs, rowNum) -> {
@@ -55,8 +65,6 @@ public class UserDaoImpl implements UserDao {
             user.getUser_birth(),
             user.getUserid());
     }
-
-
     
     // 새로운 사용자 등록
     @Override
@@ -70,6 +78,25 @@ public class UserDaoImpl implements UserDao {
             user.getUser_birth(), 
             user.getEmail()); // 이메일 추가
     }
+    
+    // 이름과 이메일을 이용하여 아이디 조회
+    @Override
+    public String findUserIdByNameAndEmail(String name, String email) {
+        String sql = "SELECT userid FROM user WHERE name = ? AND email = ?";
+        try {
+            return jdbcTemplate.queryForObject(sql, new Object[]{name, email}, String.class);
+        } catch (EmptyResultDataAccessException e) {
+            return null;  // 일치하는 사용자가 없을 경우 null 반환
+        }
+    }
+
+    // 비밀번호 재설정 (임시 비밀번호 업데이트)
+    public void resetPassword(String userid, String encodedPassword) {
+        String sql = "UPDATE user SET password = ? WHERE userid = ?";
+        jdbcTemplate.update(sql, encodedPassword, userid);
+    }
+    
+    
     
     
 }

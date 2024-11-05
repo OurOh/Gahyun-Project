@@ -32,7 +32,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http
             .csrf().disable()
             .authorizeRequests()
-                .antMatchers("/res/**").permitAll()
+                .antMatchers("/res/**", "/findId").permitAll()
             .and()
             .formLogin()
                 .loginPage("/login")  // GET 요청 처리용 로그인 페이지 설정

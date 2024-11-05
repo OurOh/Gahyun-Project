@@ -16,19 +16,21 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.gahyun.dev.dao.UserDaoImpl;
+import com.gahyun.dev.mapper.MemberMapper;
 import com.gahyun.dev.mapper.ReservationsMapper;
+import com.gahyun.dev.mapper.RoomsMapper;
 import com.gahyun.dev.model.CustomUserDetails;
 import com.gahyun.dev.model.MypageDto;
 import com.gahyun.dev.model.RoomDetailDto;
-import com.gahyun.dev.model.RoomRequestDto;
 import com.gahyun.dev.model.UserDto;
 import com.gahyun.dev.service.MypageService;
 import com.gahyun.dev.service.ResService;
@@ -116,6 +118,78 @@ public class ResController {
 
 	    return "redirect:/home";
 	}
+	
+	@PreAuthorize("permitAll()")
+    @GetMapping("/findId")
+    public String showFindIdPage() {
+        return "findId"; // findId.jsp �럹�씠吏�濡� �씠�룞
+    }
+
+    // �븘�씠�뵒 李얘린 泥섎━
+	@PreAuthorize("permitAll()")
+	   @PostMapping("/findId")
+	   public String findId(@RequestParam("name") String name,
+	                        @RequestParam("email") String email,
+	                        Model model) {
+	       String userId = userService.findUserIdByNameAndEmail(name, email);
+
+	       if (userId != null) {
+	           model.addAttribute("userId", userId);  // 찾은 아이디를 JSP로 전달
+	       } else {
+	           model.addAttribute("errorMessage", "등록되지 않은 사용자입니다.");
+	       }
+	       return "findId";  // 아이디 찾기 페이지로 돌아가기
+	   }
+	
+
+
+	@PreAuthorize("permitAll()")
+	@GetMapping("/findPassword")
+	public String showFindPasswordPage() {
+	    return "findPassword"; // findPassword.jsp �럹�씠吏�濡� �씠�룞
+	}
+
+	
+	@PreAuthorize("permitAll()")
+	@PostMapping("/resetPassword")
+	public String resetPassword(
+	        @RequestParam("userid") String userid,
+	        @RequestParam("name") String name,
+	        @RequestParam("email") String email,
+	        RedirectAttributes redirectAttributes) {
+
+	   
+	    if (userService.isUserValidForPasswordReset(userid, name, email)) {
+	        // �엫�떆 鍮꾨�踰덊샇 �깮�꽦
+	        String tempPassword = generateTemporaryPassword();
+	        String encodedPassword = passwordEncoder.encode(tempPassword);
+
+	        
+	        userService.resetPassword(userid, encodedPassword, tempPassword);
+	        redirectAttributes.addFlashAttribute("message", "�엫�떆 鍮꾨�踰덊샇媛� �씠硫붿씪濡� �쟾�넚�릺�뿀�뒿�땲�떎.");
+	    } else {
+	        redirectAttributes.addFlashAttribute("error", "�엯�젰�븯�떊 �젙蹂닿� �씪移섑븯吏� �븡�뒿�땲�떎.");
+	    }
+
+	    return "redirect:/findPassword";
+	}
+
+	
+	private String generateTemporaryPassword() {
+	    String chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%";
+	    StringBuilder tempPassword = new StringBuilder();
+	    for (int i = 0; i < 8; i++) {
+	        int randomIndex = (int) (Math.random() * chars.length());
+	        tempPassword.append(chars.charAt(randomIndex));
+	    }
+	    return tempPassword.toString();
+	}
+	
+	
+	
+	
+	
+	
 	
 	
 	@PostMapping("/samePerson")
