@@ -18,9 +18,17 @@
             <button type="submit" class="submit-btn">아이디 찾기</button>
         </form>
 
-         <c:if test="${not empty userId}">
+          <!-- 아이디를 찾았을 때 알림 -->
+        <c:if test="${not empty userId}">
             <script>
                 alert("고객님의 아이디는: ${userId}");
+            </script>
+        </c:if>
+
+        <!-- 등록되지 않은 사용자일 때 알림 -->
+        <c:if test="${not empty errorMessage}">
+            <script>
+                alert("${errorMessage}");
             </script>
         </c:if>
     </section>
