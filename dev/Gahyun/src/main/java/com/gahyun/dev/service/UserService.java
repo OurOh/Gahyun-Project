@@ -9,6 +9,13 @@ public interface UserService extends UserDetailsService {
     UserDto authenticate(String userid, String password);  // 사용자 인증 메서드
 
     void insertUser(UserDto user);  // 회원가입 메서드
-
     void updateUser(UserDto user);  // 사용자 정보를 업데이트하는 메서드
+    String findUserIdByNameAndEmail(String name, String email);
+ 
+    void resetPassword(String userid, String encodedPassword, String tempPassword); // 암호 업데이트
+    boolean isUserValidForPasswordReset(String userid, String name, String email);
+    
+    // 아이디 중복 체크 메서드 추가
+    boolean isUserIdAvailable(String userid);
+    
 }
