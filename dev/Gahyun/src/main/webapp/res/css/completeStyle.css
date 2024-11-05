@@ -1539,16 +1539,6 @@ main {
 }
 /*MAIN-PAGE*/
 /* �뒳�씪�씠�뱶 �씠誘몄� �뒪���씪 */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-main {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 40px 20px;
-}
 .hero {
   position: relative; /* �옄�떇 �슂�냼瑜� �젅�� �쐞移섎줈 �꽕�젙�븯湲� �쐞�빐 �긽���쟻�쑝濡� �쐞移� �꽕�젙 */
   width: 100%; /* �뒳�씪�씠�뱶 �씠誘몄� �꼫鍮� �꽕�젙 */

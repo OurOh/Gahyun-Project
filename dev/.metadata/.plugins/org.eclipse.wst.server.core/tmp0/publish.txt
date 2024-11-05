@@ -1,8 +1,19 @@
 #Tomcat publish data
 <<<<<<< HEAD
-#Thu Oct 31 17:10:20 KST 2024
+<<<<<<< Updated upstream
 =======
+<<<<<<< HEAD
+<<<<<<< HEAD
+#Thu Oct 31 18:00:20 KST 2024
+=======
+#Thu Oct 31 17:10:20 KST 2024
+>>>>>>> 056197ac246df163e608ebd746403c5d58443f57
+=======
+>>>>>>> 7e2497383d0eb160d8895a7c336294ff047e839a
 #Thu Oct 31 17:43:17 KST 2024
+=======
+#Thu Oct 31 16:11:01 KST 2024
+>>>>>>> Stashed changes
 org.eclipse.jst.jee.server\:/binary\:C\:\\Users\\i7E-009\\.m2\\repository\\org\\springframework\\spring-web\\5.2.25.RELEASE\\spring-web-5.2.25.RELEASE.jar=WEB-INF/lib/spring-web-5.2.25.RELEASE.jar
 >>>>>>> 6b325f064ed6597743bf24364c1e9b7934b544fc
 org.eclipse.jst.jee.server\:/binary\:C\:\\Users\\i7E-011\\.m2\\repository\\org\\springframework\\spring-web\\5.2.25.RELEASE\\spring-web-5.2.25.RELEASE.jar=WEB-INF/lib/spring-web-5.2.25.RELEASE.jar

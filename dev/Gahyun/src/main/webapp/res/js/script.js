@@ -123,11 +123,15 @@ $(function(){
 	// 사용가능한 방 ajax 처리
 	$('form[name="findAvailableRooms"]').on('submit',function(event){
 		event.preventDefault();
-		console.log("AJAX 요청 시작");
-		
-		// 날짜 형식 변환
-    	var startDateFormatted = convertToDashFormat($('#startdateval').val());
-    	var endDateFormatted = convertToDashFormat($('#enddateval').val());
+		    // 날짜 값 확인
+    var startDate = $('#startdateval').val();
+    var endDate = $('#enddateval').val();
+    
+    // startDate나 endDate가 빈 경우 경고 메시지를 표시하고 요청을 중단
+    if (!startDate || !endDate) {
+        alert("날짜를 모두 선택해 주세요.");
+        return; // AJAX 요청을 중단
+    }
 		
 		//ajax
 		
@@ -137,8 +141,8 @@ $(function(){
 			data:{
 				roomCount: $('#roomCountInput').val(),
 				guestCount: $('#guestCountInput').val(),
-				startDate: startDateFormatted,
-				endDate: endDateFormatted
+				startDate: startDate,
+            	endDate: endDate
 			},
 			success: function(response){
 				 console.log('Response:', response); 
@@ -159,7 +163,7 @@ $(function(){
             
 				
 					var roomCard = `
-						<div class="room-card" data-room-id="${room.roomId}">
+						<div class="room-card" data-room-id="${room.roomId}" onclick="toggleText(this)">
 							<img src="/dev${imageUrl}" alt="객실 이미지">
 							<p>객실 타입: ${room.roomType}<br>조식: 불포함</p>
 						</div>
@@ -351,6 +355,10 @@ $(function(){
       });
     });
     
+    function toggleText(card) {
+    	card.classList.toggle('activeF');
+	}
+    
     $(document).ready(function() {
         // 슬라이드 이미지 설정
         const images = $('.hero-image'); // 모든 이미지 선택
@@ -396,3 +404,26 @@ $(function(){
 		// 초기 슬라이더 상태 업데이트
 		updateSlider();
 		});
+		
+//메인페이지 예약넘어가기 페이지
+$(function() {
+	$(".reservation-bar-form").on("submit", function(event){
+		event.preventDefault();
+		
+		const roomCount = $("#rooms").val();
+		const guestCount = $("#guests").val();
+		const startDate = $("#bar-checkin-date").val();
+		const endDate = $("#bar-checkout-date").val();
+		
+		
+  		const url = `/dev/Reservation1?startDate=${startDate}&endDate=${endDate}&roomCount=${roomCount}&guestCount=${guestCount}`;
+	    window.location.href = url;
+		
+
+	});  
+});
+
+
+		
+		
+		

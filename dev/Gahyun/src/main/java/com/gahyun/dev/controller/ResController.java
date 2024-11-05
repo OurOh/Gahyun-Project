@@ -15,23 +15,20 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.Authentication;
-import org.springframework.security.core.annotation.AuthenticationPrincipal;
-import org.springframework.security.core.context.SecurityContext;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.gahyun.dev.dao.UserDaoImpl;
-import com.gahyun.dev.mapper.MemberMapper;
 import com.gahyun.dev.mapper.ReservationsMapper;
-import com.gahyun.dev.mapper.RoomsMapper;
 import com.gahyun.dev.model.CustomUserDetails;
 import com.gahyun.dev.model.MypageDto;
 import com.gahyun.dev.model.RoomDetailDto;
+import com.gahyun.dev.model.RoomRequestDto;
 import com.gahyun.dev.model.UserDto;
 import com.gahyun.dev.service.MypageService;
 import com.gahyun.dev.service.ResService;
@@ -230,11 +227,36 @@ public class ResController {
 		 return ResponseEntity.ok(availableRooms);
 	}
 	
+	
+	//메인페이지에서 에약확인처리
+	@PostMapping("/available1")
+	public  ResponseEntity<List<RoomDetailDto>> getAvailableRooms1(
+			@RequestBody RoomRequestDto requestDto
+			
+	) {
+		 
+		 DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+	     
+		 LocalDate startDate = LocalDate.parse(requestDto.getStartDate(), formatter);
+		 LocalDate endDate = LocalDate.parse(requestDto.getEndDate(), formatter);
+		 System.out.println(startDate+"+"+ endDate);
+		 System.out.println("availableRooms1 실행");
+		 List<RoomDetailDto> availableRooms = roomService.getAvailableRoomDetails(requestDto.getRoomCount(), requestDto.getGuestCount(), startDate, endDate);
+		
+		 System.out.println("데이터 :" + availableRooms);
+		 return ResponseEntity.ok(availableRooms);
+	}
+	
+	
+	
+	
+	
+	
     @GetMapping("/mypage")
     public String showMyPage(HttpSession session, Model model) {
         // findIdbyUsername을 호출하여 모델에 user_id 추가
         findIdbyUsername(model);
-
+ 
         // 모델에서 user_id를 가져옴
         String userId = (String) model.getAttribute("user_id");
         

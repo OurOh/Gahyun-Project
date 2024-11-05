@@ -11,9 +11,9 @@
             <section class="event-section">
                 <h2 class="left-align">특별 행사</h2>
                 <div class="event-slider">
-                    <img src="${pageContext.request.contextPath}/res/images/outside001.jpg" alt="특별 행사 1" class="active">
-                    <img src="${pageContext.request.contextPath}/res/images/pool001.jpg" alt="특별 행사 2">
-                    <img src="${pageContext.request.contextPath}/res/images/pool003.jpg" alt="특별 행사 3">
+                    <img src="${pageContext.request.contextPath}/res/images/bannerimg/event_pool.webp" alt="특별 행사 1" class="active">
+                    <img src="${pageContext.request.contextPath}/res/images/bannerimg/event_rooftop.webp" alt="특별 행사 2">
+                    <img src="${pageContext.request.contextPath}/res/images/bannerimg/event_hanbok.webp" alt="특별 행사 3">
                 </div>
             </section>
         
@@ -21,9 +21,9 @@
             <section class="promo-section">
                 <h2 class="left-align">특가 프로모션</h2>
                 <div class="promo-slider">
-                    <img src="${pageContext.request.contextPath}/res/images/outside001.jpg" alt="프로모션 1" class="active">
-                    <img src="${pageContext.request.contextPath}/res/images/pool001.jpg" alt="프로모션 2">
-                    <img src="${pageContext.request.contextPath}/res/images/pool003.jpg" alt="프로모션 3">
+                    <img src="${pageContext.request.contextPath}/res/images/bannerimg/event_breakfast.webp" alt="프로모션 1" class="active">
+                    <img src="${pageContext.request.contextPath}/res/images/bannerimg/event_gogi.webp" alt="프로모션 2">
+                    <img src="${pageContext.request.contextPath}/res/images/bannerimg/event_happy.webp" alt="프로모션 3">
                 </div>
             </section>
         </div>
