@@ -161,6 +161,36 @@ main {
     margin-bottom: 5px;
   }
   
+  /*아이디 중복체크 박스*/
+  /* CSS to align the ID input and duplicate check button horizontally */
+.userid-field {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* 간격 조정 */
+    margin-bottom: 20px;
+}
+
+.userid-field input[type="text"] {
+    width: 70%; /* ID 입력 칸 너비 조정 */
+}
+
+.duplicate-check-btn {
+    background-color: #1a4d2e;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 140px; /* 버튼을 왼쪽으로 10px 이동 */
+}
+
+.duplicate-check-btn:hover {
+    background-color: #4a6543;
+}
+
+
+  
  /* 이메일 스타일 */
 #register-form input[type="email"] {
     width: 60%;

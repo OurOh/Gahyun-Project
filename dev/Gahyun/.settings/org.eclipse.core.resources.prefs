@@ -1,9 +1,7 @@
 eclipse.preferences.version=1
 encoding//src/main/java/com/gahyun/dev/controller/MainController.java=UTF-8
-encoding//src/main/java/com/gahyun/dev/controller/PaymentsController.java=UTF-8
 encoding//src/main/java/com/gahyun/dev/controller/ResController.java=UTF-8
-encoding//src/main/java/com/gahyun/dev/mapper/ReservationsMapper.java=UTF-8
-encoding//src/main/java/com/gahyun/dev/service/PaymentService.java=UTF-8
+encoding//src/main/webapp/WEB-INF/views/UserRegister.jsp=UTF-8
 encoding//src/main/webapp/WEB-INF/views/roomdetail.jsp=UTF-8
 encoding//src/main/webapp/res/css/Reservation_confirm/confirm.css=UTF-8
 encoding//src/main/webapp/res/css/Reservation_select/select.css=UTF-8

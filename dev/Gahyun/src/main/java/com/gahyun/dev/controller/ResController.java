@@ -1,6 +1,5 @@
 package com.gahyun.dev.controller;
 
-
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -37,32 +36,29 @@ import com.gahyun.dev.service.ResService;
 import com.gahyun.dev.service.RoomsService;
 import com.gahyun.dev.service.UserService;
 
-
-
-
 @Controller
 @PreAuthorize("isAuthenticated()")
 public class ResController {
-	
-	
-	
-	
-	private ReservationsMapper reservationsdao;
-	@Autowired
-	private UserService userService;
-	
-	@Autowired 
-	private RoomsService roomService;
+    
+    private ReservationsMapper reservationsdao;
+    
+    @Autowired
+    private UserService userService;
+    
+    @Autowired 
+    private RoomsService roomService;
 
-	@Autowired
-	private ResService resService;
-	
-	@Autowired
-	private MypageService mypageService;
-	
-	@Autowired
-	UserDaoImpl uDao;
-
+    @Autowired
+    private ResService resService;
+    
+    @Autowired
+    private MypageService mypageService;
+    
+    @Autowired
+    UserDaoImpl uDao;
+    
+    @Autowired
+    private PasswordEncoder passwordEncoder;
 	
 	public void findIdbyUsername(Model model ) {		
 		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
@@ -98,27 +94,30 @@ public class ResController {
 	                             @RequestParam("phone2") String phone2,
 	                             @RequestParam("phone3") String phone3) {
 
-	    // 현재 인증된 사용자 정보 가져오기
+	    // �쁽�옱 �씤利앸맂 �궗�슜�옄 �젙蹂� 媛��졇�삤湲�
 	    Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-	    String userid = authentication.getName(); // 로그인된 사용자의 아이디를 가져옴
+	    String userid = authentication.getName(); // 濡쒓렇�씤�맂 �궗�슜�옄�쓽 �븘�씠�뵒瑜� 媛��졇�샂
 
-	    // UserDto 객체에 데이터 설정
+	    // UserDto 媛앹껜�뿉 �뜲�씠�꽣 �꽕�젙
 	    UserDto user = new UserDto();
 	    user.setUserid(userid);
 	    user.setName(name);
 	    user.setPassword(password);
 	    user.setEmail(email);
 
-	    // 생년월일과 전화번호 결합
+	    // �깮�뀈�썡�씪怨� �쟾�솕踰덊샇 寃고빀
 	    user.setUser_birth(year + "-" + month + "-" + day);
 	    user.setPhone_num(phone1 + "-" + phone2 + "-" + phone3);
 
-	    // 업데이트 실행
+	    // �뾽�뜲�씠�듃 �떎�뻾
 	    userService.updateUser(user);
 
 	    return "redirect:/home";
 	}
 	
+	
+	
+	// �븘�씠�뵒 李얘린 �럹�씠吏� �씠�룞
 	@PreAuthorize("permitAll()")
     @GetMapping("/findId")
     public String showFindIdPage() {
@@ -142,14 +141,14 @@ public class ResController {
 	   }
 	
 
-
+	// 鍮꾨�踰덊샇 �옱�꽕�젙 �럹�씠吏� �씠�룞
 	@PreAuthorize("permitAll()")
 	@GetMapping("/findPassword")
 	public String showFindPasswordPage() {
 	    return "findPassword"; // findPassword.jsp �럹�씠吏�濡� �씠�룞
 	}
 
-	
+	// 鍮꾨�踰덊샇 �옱�꽕�젙 泥섎━
 	@PreAuthorize("permitAll()")
 	@PostMapping("/resetPassword")
 	public String resetPassword(
@@ -158,13 +157,13 @@ public class ResController {
 	        @RequestParam("email") String email,
 	        RedirectAttributes redirectAttributes) {
 
-	   
+	    // �궗�슜�옄 �젙蹂� �쑀�슚�꽦 寃��궗
 	    if (userService.isUserValidForPasswordReset(userid, name, email)) {
 	        // �엫�떆 鍮꾨�踰덊샇 �깮�꽦
 	        String tempPassword = generateTemporaryPassword();
 	        String encodedPassword = passwordEncoder.encode(tempPassword);
 
-	        
+	        // 鍮꾨�踰덊샇 �뾽�뜲�씠�듃 諛� �씠硫붿씪 諛쒖넚
 	        userService.resetPassword(userid, encodedPassword, tempPassword);
 	        redirectAttributes.addFlashAttribute("message", "�엫�떆 鍮꾨�踰덊샇媛� �씠硫붿씪濡� �쟾�넚�릺�뿀�뒿�땲�떎.");
 	    } else {
@@ -174,7 +173,7 @@ public class ResController {
 	    return "redirect:/findPassword";
 	}
 
-	
+	// �엫�떆 鍮꾨�踰덊샇 �깮�꽦 硫붿꽌�뱶
 	private String generateTemporaryPassword() {
 	    String chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%";
 	    StringBuilder tempPassword = new StringBuilder();
@@ -185,12 +184,7 @@ public class ResController {
 	    return tempPassword.toString();
 	}
 	
-	
-	
-	
-	
-	
-	
+
 	
 	@PostMapping("/samePerson")
 	public ResponseEntity<Map<String, Object>> samePerson(Model model) {
@@ -214,7 +208,7 @@ public class ResController {
 	@GetMapping("/Reservation2")
 	public String Reservation2(Model model) {
 		findIdbyUsername(model);
-		System.out.println("Getre2 모델값"+ model);
+		System.out.println("Getre2 紐⑤뜽媛�"+ model);
 		return "Reservation_confirm";
 	}
 	@PostMapping("/Reservation2")
@@ -227,7 +221,7 @@ public class ResController {
 			Model model
 			) {
 			findIdbyUsername(model);
-			System.out.println("postre2 모델값"+ model);	
+			System.out.println("postre2 紐⑤뜽媛�"+ model);	
 		
 		 	DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 	     
@@ -273,7 +267,7 @@ public class ResController {
 	 	
 		resService.reservationInsert(user_id, roomid, startDate, endDate, totalPrice, status);
 		//resService.resSetStatus(user_id, roomid, status);
-	 	System.out.println("실행완료");
+	 	System.out.println("�떎�뻾�셿猷�");
 	 	
 		return "home";
 	}
@@ -294,44 +288,19 @@ public class ResController {
 		 LocalDate startDate = LocalDate.parse(startDateStr, formatter);
 		 LocalDate endDate = LocalDate.parse(endDateStr, formatter);
 		 System.out.println(startDate+"+"+ endDate);
-		 System.out.println("availableRooms 실행");
+		 System.out.println("availableRooms �떎�뻾");
 		 List<RoomDetailDto> availableRooms = roomService.getAvailableRoomDetails(roomCount, guestCount, startDate, endDate);
 		
-		 System.out.println("데이터 :" + availableRooms);
+		 System.out.println("�뜲�씠�꽣 :" + availableRooms);
 		 return ResponseEntity.ok(availableRooms);
 	}
-	
-	
-	//메인페이지에서 에약확인처리
-	@PostMapping("/available1")
-	public  ResponseEntity<List<RoomDetailDto>> getAvailableRooms1(
-			@RequestBody RoomRequestDto requestDto
-			
-	) {
-		 
-		 DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-	     
-		 LocalDate startDate = LocalDate.parse(requestDto.getStartDate(), formatter);
-		 LocalDate endDate = LocalDate.parse(requestDto.getEndDate(), formatter);
-		 System.out.println(startDate+"+"+ endDate);
-		 System.out.println("availableRooms1 실행");
-		 List<RoomDetailDto> availableRooms = roomService.getAvailableRoomDetails(requestDto.getRoomCount(), requestDto.getGuestCount(), startDate, endDate);
-		
-		 System.out.println("데이터 :" + availableRooms);
-		 return ResponseEntity.ok(availableRooms);
-	}
-	
-	
-	
-	
-	
 	
     @GetMapping("/mypage")
     public String showMyPage(HttpSession session, Model model) {
-        // findIdbyUsername을 호출하여 모델에 user_id 추가
+        // findIdbyUsername�쓣 �샇異쒗븯�뿬 紐⑤뜽�뿉 user_id 異붽�
         findIdbyUsername(model);
- 
-        // 모델에서 user_id를 가져옴
+
+        // 紐⑤뜽�뿉�꽌 user_id瑜� 媛��졇�샂
         String userId = (String) model.getAttribute("user_id");
         
         if (userId == null) {
@@ -342,12 +311,12 @@ public class ResController {
         List<MypageDto> currentMypage = mypageService.getCurrentMypage(userId);
         List<MypageDto> pastMypage = mypageService.getPastMypage(userId);
         
-        // 예약 데이터가 없을 경우의 메시지 설정
+        // �삁�빟 �뜲�씠�꽣媛� �뾾�쓣 寃쎌슦�쓽 硫붿떆吏� �꽕�젙
         if (currentMypage.isEmpty()) {
-            model.addAttribute("currentMypageMessage", "현재 예약이 없습니다.");
+            model.addAttribute("currentMypageMessage", "�쁽�옱 �삁�빟�씠 �뾾�뒿�땲�떎.");
         }
         if (pastMypage.isEmpty()) {
-            model.addAttribute("pastMypageMessage", "과거 예약이 없습니다.");
+            model.addAttribute("pastMypageMessage", "怨쇨굅 �삁�빟�씠 �뾾�뒿�땲�떎.");
         }        
         
 
