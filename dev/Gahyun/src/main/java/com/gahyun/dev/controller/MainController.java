@@ -27,7 +27,7 @@ public class MainController {
 
     @Autowired
     private RoomsService roomService;
-    
+
     @Autowired
     private ResService resService;
 
@@ -42,7 +42,7 @@ public class MainController {
         return "UserRegister";
     }
 
-    // �쉶�썝媛��엯 泥섎━
+    // 회원가입 처리
     @PostMapping("/register")
     public String registerUser(@RequestParam("userid") String userid,
                                @RequestParam("password") String password,
@@ -57,31 +57,31 @@ public class MainController {
                                RedirectAttributes redirectAttributes,
                                Model model) {
 
-        // �븘�씠�뵒 以묐났 泥댄겕
+        // 아이디 중복 체크
         if (!userService.isUserIdAvailable(userid)) {
-            redirectAttributes.addFlashAttribute("errorMessage", "�씠誘� �궗�슜 以묒씤 �븘�씠�뵒�엯�땲�떎.");
-            return "redirect:/register";  // 以묐났�맂 寃쎌슦 �쉶�썝媛��엯 �럹�씠吏�濡� 由щ떎�씠�젆�듃
+            redirectAttributes.addFlashAttribute("errorMessage", "이미 사용 중인 아이디입니다.");
+            return "redirect:/register";  // 중복된 경우 회원가입 페이지로 리다이렉트
         }
 
-        // �깉濡쒖슫 UserDto 媛앹껜 �깮�꽦 諛� �뜲�씠�꽣 �꽕�젙
+        // 새로운 UserDto 객체 생성 및 데이터 설정
         UserDto newUser = new UserDto();
         newUser.setUserid(userid);
-        newUser.setPassword(passwordEncoder.encode(password));  // 鍮꾨�踰덊샇 �븫�샇�솕
+        newUser.setPassword(passwordEncoder.encode(password));  // 비밀번호 암호화
         newUser.setName(name);
         newUser.setEmail(email);
         
-        // �깮�뀈�썡�씪 寃고빀 (yyyy-MM-dd �삎�떇)
+        // 생년월일 설정 (yyyy-MM-dd 형식)
         String birth = year + "-" + month + "-" + day;
         newUser.setUser_birth(birth);
 
-        // �쟾�솕踰덊샇 寃고빀 (�쟾�솕踰덊샇 �삎�떇)
+        // 전화번호 설정 (전화번호 형식)
         String tel = phone1 + "-" + phone2 + "-" + phone3;
         newUser.setPhone_num(tel);
 
-        // �뜲�씠�꽣踰좎씠�뒪�뿉 �궗�슜�옄 �젙蹂� ���옣
+        // 데이터베이스에 사용자 정보 저장
         userService.insertUser(newUser);
 
-        // �쉶�썝媛��엯 �셿猷� �썑 濡쒓렇�씤 �럹�씠吏�濡� �씠�룞
+        // 회원가입 성공 후 로그인 페이지로 이동
         return "redirect:/login";
     }
 
@@ -94,8 +94,6 @@ public class MainController {
         return response;
     }
 
-    
-    
     @GetMapping("/home")
     public String showHomePage(Model model) {
         LocalDate today = LocalDate.now();
@@ -104,30 +102,30 @@ public class MainController {
         LocalDate nowDate = LocalDate.parse(nowDateStr, formatter);
         
         resService.resSetUsedStatus(nowDate);
-        System.out.println("resService resSetUsedStatus �떎�뻾!");
+        System.out.println("resService resSetUsedStatus 실행!");
         return "home";  
     }
-    
+
     @GetMapping("/facilites")
     public String showFacilites(Model model) {
         return "facilites";
     }
-    
+
     @GetMapping("/resort")
     public String showResortDetail(Model model) {
         return "resort-detail";
     }
-    
+
     @GetMapping("/event")
     public String showEvent(Model model) {
         return "event";
     }
-    
+
     @GetMapping("/room")
     public String showRoomDetail(Model model) {
         return "roomdetail";
     }
-    
+
     @GetMapping("/Customer-center")
     public String showCustomerCenter(Model model) {
         return "Customer-center";
