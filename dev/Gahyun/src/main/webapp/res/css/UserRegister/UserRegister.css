@@ -1,0 +1,428 @@
+/* 공통 스타일 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f9f9f9;
+  padding-left: 15%;
+  padding-right: 15%;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* 헤더 스타일 */
+header {
+  width: 100%;
+  background-color: #1a4d2e;
+}
+
+.top-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #1a4d2e;
+}
+
+.logo-small {
+  width: 200px;
+  height: 80px;
+  margin-top: -20px;
+  margin-bottom: -20px;
+  margin-left: 230px;
+  margin-right: 10px;
+  object-fit: cover;
+}
+
+.user_login, .reserv_view {
+  font-family: "Noto Sans KR-Bold", Helvetica;
+  font-weight: 700;
+  color: #f5efe6;
+  font-size: 18px;
+  text-decoration: none;
+}
+
+.user_login:hover, .reserv_view:hover {
+  text-decoration: underline;
+}
+
+.reserv_make {
+  font-family: "Noto Sans KR-Bold", Helvetica;
+  font-weight: 700;
+  color: #1a4d2e;
+  background-color: #f5efe6;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.reserv_make:hover {
+  background-color: #4f6f52;
+  color: #f5efe6;
+}
+
+/* 네비게이션 메뉴 */
+.main-nav {
+  background-color: #b2b59b;
+  padding: 10px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.main-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 110px;
+}
+
+.main-nav ul li a {
+  text-decoration: none;
+  color: #1a4d2e;
+  font-size: 18px;
+  font-family: "Noto Sans KR-Bold", Helvetica;
+}
+
+.main-nav ul li a:hover {
+  color: #f5efe6;
+  text-decoration: underline;
+}
+
+/* 폼 스타일 */
+.form-section {
+  padding: 30px;
+  text-align: center;
+}
+
+.form-section h1 {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+form {
+  width: 50%;
+  margin: 0 auto;
+}
+
+form label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 18px;
+  text-align: left;
+}
+
+form input[type="text"], 
+form input[type="password"],
+form select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.birthdate, .phone {
+  display: flex;
+  justify-content: space-between;
+}
+
+.birthdate select, .phone input {
+  width: 32%;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.submit-btn, .cancel-btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.submit-btn {
+  background-color: #3b5338;
+  color: #fff;
+}
+
+.cancel-btn {
+  background-color: #ccc;
+  color: #333;
+}
+
+/* 중복확인 버튼 스타일 */
+.username-field {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.username-field input[type="text"] {
+  width: 75%;
+}
+
+.duplicate-check-btn {
+  background-color: #3b5338;
+  color: #fff;
+  border: none;
+  padding: 8px 15px;
+  font-size: 14px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: -3px;
+}
+
+/* 반응형: 작은 화면에서는 중복확인 버튼 숨기기 */
+@media screen and (max-width: 768px) {
+  .duplicate-check-btn {
+      display: none;
+  }
+}
+
+
+/* 연락처 스타일 */
+.phone {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.phone input[type="text"] {
+  width: 32%; /* 생년월일 입력 필드와 동일한 크기 */
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+
+
+/* 마케팅 수신동의 섹션 스타일 */
+.marketing-section {
+  margin-top: 30px;
+  padding: 20px;
+  background-color: #f0f4f3;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  text-align: left;
+}
+
+.marketing-section h2 {
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+.marketing-section p {
+  font-size: 14px;
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+
+.marketing-section ol {
+  padding-left: 20px;
+  margin-bottom: 15px;
+}
+
+.marketing-section ol li {
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 5px;
+}
+
+.marketing-section label {
+  font-size: 14px;
+}
+
+/* 반응형: 작은 화면에서는 마케팅 수신동의 섹션 숨기기 */
+@media screen and (max-width: 768px) {
+  .marketing-section {
+      display: none;
+  }
+}
+
+
+
+/****/
+.username-field input[type="text"] {
+  width: 75%;
+}
+
+.duplicate-check-btn {
+  background-color: #3b5338;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.duplicate-check-btn:hover {
+  background-color: #2f4330;
+}
+/****/
+
+/* 링크 버튼 스타일 */
+.submit-btn, .cancel-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  text-align: center;
+  text-decoration: none;
+  margin-top: 10px; /* 버튼을 아래로 3px 이동 */
+}
+
+.submit-btn {
+  background-color: #3b5338;
+  color: #fff;
+}
+
+.cancel-btn {
+  background-color: #ccc;
+  color: #333;
+}
+
+.submit-btn:hover {
+  background-color: #2f4330;
+}
+
+.cancel-btn:hover {
+  background-color: #aaa;
+}
+
+
+
+
+/* 푸터 스타일 */
+footer {
+  background-color: #004d1a;
+  color: white;
+  padding: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  font-size: 14px;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.footer-logo {
+  max-width: 400px;
+}
+
+.footer-logo img {
+  width: 150px;
+  margin-bottom: 15px;
+}
+
+.footer-logo p {
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.footer-links ul {
+  list-style-type: none;
+}
+
+.footer-links li {
+  margin-bottom: 10px;
+}
+
+.footer-links a {
+  color: white;
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+/* 반응형 스타일 */
+@media screen and (max-width: 768px) {
+  body {
+      padding-left: 5%;
+      padding-right: 5%;
+  }
+
+  .header-container {
+      flex-direction: column;
+      text-align: center;
+      gap: 10px;
+  }
+
+  .reservation-btn {
+      margin-top: 10px;
+  }
+
+  .right-nav {
+      flex-direction: row;
+      justify-content: center;
+      gap: 15px;
+  }
+
+  .nav-menu {
+      flex-direction: row;
+      justify-content: center;
+      gap: 20px;
+      text-align: center;
+      margin-top: 15px;
+  }
+
+  .room-content {
+      flex-direction: column;
+      gap: 20px;
+  }
+
+  .room-image, .room-info {
+      width: 100%;
+  }
+
+  .footer-content {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+  }
+
+  .footer-links {
+      flex-direction: row;
+      gap: 20px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .nav-menu {
+      flex-direction: column;
+      gap: 10px;
+      font-size: 14px;
+  }
+
+  .footer-links {
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+  }
+}
