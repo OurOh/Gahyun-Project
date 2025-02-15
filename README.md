@@ -71,12 +71,6 @@ Spring Framework 기반 리조트 홈페이지 구축 프로젝트
 
 ---
 
-## 📊 ERD  
-| ![ERD 다이어그램](https://example.com/erd-image-url) |  
-|---|  
-| 데이터베이스 ERD |  
-
----
 
 ## 📂 폴더 구조  
 ---
