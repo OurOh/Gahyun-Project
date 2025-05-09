@@ -1,0 +1,148 @@
+main {
+    max-width: 1200px;
+    margin: 122px auto;
+    padding: 40px 20px;
+  }
+  .facility-title h1 {
+    background-color: #4a6543; /* 초록색 배경 */
+    color: #f5efe6; 
+    text-align: center;
+    padding: 20px 0; /* 상하 여백 추가 */
+    margin-top: 0; /* 위아래 여백 제거 */
+    margin-bottom: 40px;
+    font-size: 2em; /* 텍스트 크기 설정 */
+    font-weight: bold; /* 굵은 텍스트 */
+    letter-spacing: 5px;
+  }
+  .facilities h3{
+    font-size: 22px;
+    color: #46684a;
+    margin-bottom: 13px;
+  }
+  
+  /* Slider Container */
+  .facility-slider-container {
+    display: flex;
+    flex-direction: column;
+    cursor: grab; /* Default cursor */
+    width: 100%;
+    margin-bottom: 80px;
+  }
+  
+  .facility-grid-slider {
+    display: flex;
+    overflow-x: scroll; /* 스크롤 기능 유지 */
+    white-space: nowrap;
+    scroll-behavior: smooth;
+    margin-bottom: 30px;
+    will-change: scroll-position; /* GPU 가속 유도 */
+    -ms-overflow-style: none;  /* IE, Edge에서 스크롤바 숨김 */
+    scrollbar-width: none;     /* Firefox에서 스크롤바 숨김 */
+  }
+  
+  /* 스크롤바 숨기기 */
+  .facility-grid-slider::-webkit-scrollbar {
+    display: none; /* 웹킷 브라우저에서 스크롤바 숨김 */
+  }
+  
+  .facility-grid-slider {
+    -ms-overflow-style: none;  /* IE 및 Edge에서 스크롤바 숨김 */
+    scrollbar-width: none;     /* Firefox에서 스크롤바 숨김 */
+  }
+  
+  .facility-card {
+    flex: 0 0 auto;
+    width: 400px;
+    height: 440px; /* 카드 높이를 고정 */
+    margin-right: 37px;
+    background-color: white;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    border-radius: 15px;
+    overflow: hidden; /* 카드 내부의 오버플로우가 밖으로 넘치지 않게 설정 */
+  }
+  
+  .facility-card .img-container {
+    overflow: hidden;
+    height: 370px;
+    transition: height 0.3s ease;
+}
+  
+  .facility-card:hover {
+    background-color: #F5EFE6;
+    transform: translateY(-5px);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+  }
+  
+  .facility-card img {
+    width: 100%;
+    transition: transform 0.3s ease; /* 축소 애니메이션 */
+  }
+  
+
+.facility-card .facility-title {
+	margin-top: 12px;
+    font-weight: 600;
+    color: #413A2B;
+    font-size: 17px;
+    text-align: center;
+    line-height: 1.4;
+    transition: transform 0.3s ease;
+}
+.facility-card .facility-description {
+    display: none;           /* 기본적으로 숨김 */
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: opacity 0.3s ease, max-height 0.3s ease, padding 0.3s ease;
+    font-size: 15px;
+    color: #666;
+    line-height: 1.6;
+}
+.facility-card.activeF .img-container {
+    height: 300px; /* 이미지 컨테이너 높이를 축소 */
+}
+
+.facility-card.activeF img {
+    transform: scale(0.94); /* 이미지가 약간 축소되면서 위로 이동 */
+}
+
+.facility-card.activeF .facility-description {
+    display: block;          /* 활성화 시 표시 */
+    opacity: 1;
+    max-height: 100px;       /* 최대 높이를 설정하여 텍스트가 보임 */
+}
+  .facility-card p{
+    font-weight: 600;
+    color: #413A2B;
+    font-size: 17px;
+  }
+  .facility-card p span{
+    font-family: "Albert Sans";
+  }
+  @media (min-width: 1200px) {
+  
+    .facility-slider-container{
+      width: 100%;
+    }
+  
+    .fffimg{
+      margin-left: 20px;
+    }
+  
+    .facilities h3{
+      margin-left: 20px;
+    }
+  
+  }
+  @media (max-width: 480px) {
+    .facility-card {
+      width: 200px;
+    }
+  
+    .top-header {
+      flex-direction: column;
+      gap: 5px;
+    }
+  }

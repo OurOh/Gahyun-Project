@@ -1,0 +1,429 @@
+
+    
+	// Reservation 방갯수
+	function increase(id) {
+	    let element = document.getElementById(id);
+	    let inputElement = document.getElementById(id + "Input");
+	    let value = parseInt(element.textContent);
+	    if (value < 10) { // 최대 10개로 제한
+	    	value ++;
+	        element.textContent = value
+			inputElement.value = value;
+	    }
+	}
+	
+	function decrease(id) {
+	    let element = document.getElementById(id);
+	    let inputElement = document.getElementById(id + "Input");
+	    let value = parseInt(element.textContent);
+	    if (value > 1) { // 최소 1개로 제한
+	    	value --;
+	        element.textContent = value;
+	        inputElement.value = value;
+	    }
+	}
+		
+
+
+$(function(){
+	//register 빈칸 검증
+   $("#register").submit(function(){
+      //e.preventDefault();
+      
+      /* 아이디 검증 */
+      if(!regex.value("#userid", "아이디를 입력하세요")){ return false; }      
+      if(!regex.uid("#userid", "아이디는 영문과 숫자만 가능합니다. 첫 글자에 숫자는 올 수 없어요.")){ return false;}
+      if(!regex.max_length("#userid", 10, "최대 10자까지만 허용해요.")){return false;}
+      
+      /* 비밀번호 검증 */
+      if(!regex.value("#password", "비밀번호를 입력하세요.")){ return false; }
+      if(!regex.min_length("#password", 4, "비밀번호는 최소4자 까지 입니다.")){ return false; }
+      if(!regex.value("#password", "비밀번호를 다시 확인해 주세요.")){ return false; }
+      if(!regex.equalField("#password", "#confirm_password", "비밀번호가 일치하지 않습니다.")){ return false; }
+      
+      /* 이름 검증 */
+      if(!regex.value("#name", "이름을 입력하세요.")){ return false; }
+      
+      
+      /* 생년월일 검증*/
+      if(!regex.value("#year", "해당하는 년도를 입력하세요.")){ return false; }
+      if(!regex.value("#month", "해당하는 월을 입력하세요.")){ return false; }
+      if(!regex.value("#day", "해당하는 날짜를 입력하세요.")){ return false; }
+      
+      
+      /* 전화번호 검증 */ 
+      if(!regex.value("#phone1", "전화번호를 입력하세요.")){ return false; }
+      if(!regex.value("#phone2", "전화번호를 입력하세요.")){ return false; }
+      if(!regex.value("#phone3", "전화번호를 입력하세요.")){ return false; }
+      /*
+     
+      const tel = $("#phone1").val() + "-" + $("#phone2").val() + "-" + $("#phone3").val();
+                  
+                  $("#tel").val(tel);
+     
+      const birth = $("#year").val() + "-" + $("#month").val() + "-" + $("#day").val();
+      			    $("#birth").val(birth);
+      */
+      /* 이메일 검증 
+      if(!regex.value("#useremail", "이메일을 입력하세요.")){ return false; }
+      if(!regex.email("#useremail", "이메일 형식이 아닙니다.")){ return false; }
+      */
+      
+      
+   });
+   
+   //datepicker
+    const firstminday = new Date();
+    const secondminday = new Date();
+    secondminday.setDate(firstminday.getDate() + 1);
+    $('.startdate').datepicker({
+    	inline: true,
+    	dateFormat: 'yy-mm-dd',
+    	prevText: '이전 달',
+		nextText: '다음 달',
+		monthNames: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
+		monthNamesShort: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
+		dayNames: ['일', '월', '화', '수', '목', '금', '토'],
+		dayNamesShort: ['일', '월', '화', '수', '목', '금', '토'],
+		dayNamesMin: ['일', '월', '화', '수', '목', '금', '토'],
+		showMonthAfterYear: true,
+		yearSuffix: '년',
+		minDate: firstminday,
+		onSelect: function(selectedDate) {
+            // 시작 날짜 선택 후 종료 날짜는 시작 날짜보다 이후로 설정
+             $('.enddate').datepicker('option', 'minDate', selectedDate);
+             $('.startdateval').val($('.startdate').val());
+        }
+    });
+    $('.enddate').datepicker({
+    	inline: true,
+    	dateFormat: 'yy-mm-dd',
+    	prevText: '이전 달',
+		nextText: '다음 달',
+		monthNames: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
+		monthNamesShort: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
+		dayNames: ['일', '월', '화', '수', '목', '금', '토'],
+		dayNamesShort: ['일', '월', '화', '수', '목', '금', '토'],
+		dayNamesMin: ['일', '월', '화', '수', '목', '금', '토'],
+		showMonthAfterYear: true,
+		yearSuffix: '년',
+		minDate: secondminday,
+		onSelect: function(selectedDate) {
+            // 종료 날짜 선택 후 시작 날짜는 종료 날짜보다 이전으로 설정
+        	$('.startdate').datepicker('option', 'maxDate', selectedDate);
+        	$('.enddateval').val($('.enddate').val());
+        }
+    });
+	
+	//날짜포멧변경
+	function convertToDashFormat(dateStr) {
+    	return dateStr.replace(/\//g, '-'); // '/'를 '-'로 변환
+	}
+	
+	// 사용가능한 방 ajax 처리
+	$('form[name="findAvailableRooms"]').on('submit',function(event){
+		event.preventDefault();
+		    // 날짜 값 확인
+    var startDate = $('#startdateval').val();
+    var endDate = $('#enddateval').val();
+    
+    // startDate나 endDate가 빈 경우 경고 메시지를 표시하고 요청을 중단
+    if (!startDate || !endDate) {
+        alert("날짜를 모두 선택해 주세요.");
+        return; // AJAX 요청을 중단
+    }
+		
+		//ajax
+		
+		$.ajax({
+			url: '/dev/available',
+			type:'POST',
+			data:{
+				roomCount: $('#roomCountInput').val(),
+				guestCount: $('#guestCountInput').val(),
+				startDate: startDate,
+            	endDate: endDate
+			},
+			success: function(response){
+				 console.log('Response:', response); 
+				var roomList = $('.rooms-list');
+				roomList.empty();
+				
+				if (response.length > 0) {
+                	$('.recommended-title').text('사용 가능 객실');
+            	} else {
+                	$('.recommended-title').text('추천 객실');
+            	}
+				
+				
+				//받은 데이터 표시
+				$.each(response, function(index, room){
+				
+					var imageUrl = (room.photos && room.photos.length > 0) ? room.photos[0].photoUrl : '/default/image.jpg';
+            
+				
+					var roomCard = `
+						<div class="room-card" data-room-id="${room.roomId}" onclick="toggleText(this)">
+							<img src="/dev${imageUrl}" alt="객실 이미지">
+							<p>객실 타입: ${room.roomType}<br>조식: 불포함</p>
+						</div>
+						`;
+					roomList.append(roomCard);
+				});	
+			},
+			error:function(xhr, status, error){
+			console.error("Error입니다.",error);
+			console.log("Response Text:", xhr.responseText);  // 서버 응답 확인
+    		console.log("Status:", status);  // HTTP 상태 코드 확인
+			
+			}
+			
+		});
+	
+	});
+   // Reservation select의 값 넘기기 241021 작업중	 
+   // 방선택
+	let selectedRoomId = null;  // 선택된 방의 ID를 저장할 변수
+
+	$(document).on('click', '.room-card', function () {
+   
+    $('.room-card').removeClass('selected');
+    
+    // 클릭된 방을 선택 상태로 표시
+    $(this).addClass('selected');
+	
+    // 클릭된 방의 roomId를 저장
+    selectedRoomId = $(this).data('room-id');
+
+    console.log("선택된 방 ID:", selectedRoomId);  // 디버깅용 콘솔 출력
+	});
+   
+   $('.next-button').on('click', function () {
+    // 사용자가 방을 선택하지 않은 경우 경고 메시지
+    if (selectedRoomId === null) {
+        alert("먼저 방을 선택해 주세요!");
+        return; 
+    }
+
+    // 정보 가져오기
+    const startDate = $('#startdateval').val();
+    const endDate = $('#enddateval').val();
+	const guestCount = $('#guestCountInput').val();
+    // 선택된 방 정보와 날짜 정보를 서버로 POST 요청
+    const form = $('<form></form>');
+    form.attr('method', 'POST');
+    form.attr('action', '/dev/Reservation2');  // 정보를 전달할 서버 경로
+
+    // 선택된 방의 ID를 폼에 추가
+    const roomIdInput = $('<input>').attr('type', 'hidden').attr('name', 'roomId').val(selectedRoomId);
+    form.append(roomIdInput);
+
+    // 선택한 날짜 정보를 폼에 추가
+    const startDateInput = $('<input>').attr('type', 'hidden').attr('name', 'startDate').val(startDate);
+    const endDateInput = $('<input>').attr('type', 'hidden').attr('name', 'endDate').val(endDate);
+    const guestCountInput = $('<input>').attr('type', 'hidden').attr('name', 'guestCount').val(guestCount);
+    
+    form.append(startDateInput);
+    form.append(endDateInput);
+	form.append(guestCountInput);
+	
+    // 폼을 body에 추가하고 제출
+    $('body').append(form);
+    form.submit();
+	});
+      
+   
+   /*
+   
+   $("#year").datepicker({
+   	changeYear: true,
+   	yearRange: "1900:" + new Date().getFullYear(),
+   	dateFormat: "yy",
+   	minDate: new Date(1900, 0, 1),
+   	maxDate: new Date() 
+   });
+   $("#month").datepicker({
+   	changeMonth: true,
+   	MonthRange: "1" + new Date().getFullYear(),
+   	dateFormat: "mm",
+   });
+   $("#day").datepicker({
+   
+   });
+   */ 
+   
+   
+});
+ $(document).ready(function () {
+        let currentSlide = 1; // Initialize the current slide index
+        const $slidesContainer = $('.slidesR');
+        const $slides = $('.slideR');
+        const totalSlides = $slides.length;
+
+        // Clone the first and last slides for a seamless loop
+        const $firstSlideClone = $slides.eq(0).clone();
+        const $lastSlideClone = $slides.eq(totalSlides - 1).clone();
+        $slidesContainer.append($firstSlideClone).prepend($lastSlideClone);
+
+        // Set initial position (move to the first actual slide)
+        $slidesContainer.css('transform', 'translateX(-100%)');
+
+        function moveToSlide(index) {
+            $slidesContainer.css({
+                'transition': 'transform 0.5s ease-in-out',
+                'transform': `translateX(-${index * 100}%)`
+            });
+
+            // Reset position if we are at a cloned slide
+            $slidesContainer.one('transitionend', function () {
+                if (index === totalSlides + 1) { // Clone of the first slide (end of list)
+                    $slidesContainer.css('transition', 'none');
+                    currentSlide = 1;
+                    $slidesContainer.css('transform', 'translateX(-100%)');
+                }
+                if (index === 0) { // Clone of the last slide (start of list)
+                    $slidesContainer.css('transition', 'none');
+                    currentSlide = totalSlides;
+                    $slidesContainer.css('transform', `translateX(-${totalSlides * 100}%)`);
+                }
+            });
+        }
+
+        let slideInterval;
+
+        function startAutoSlide() {
+            slideInterval = setInterval(function () {
+                currentSlide++;
+                moveToSlide(currentSlide);
+            }, 3000);
+        }
+
+        function stopAutoSlide() {
+            clearInterval(slideInterval);
+        }
+
+        // Button click event handlers
+        $('.prev').on('click', function () {
+            stopAutoSlide();
+            currentSlide--;
+            moveToSlide(currentSlide);
+            startAutoSlide();
+        });
+
+        $('.next').on('click', function () {
+            stopAutoSlide();
+            currentSlide++;
+            moveToSlide(currentSlide);
+            startAutoSlide();
+        });
+
+        // Start the automatic sliding
+        startAutoSlide();
+    });  
+    
+    
+    $(document).ready(function() {
+      $('.facility-grid-slider').each(function() {
+        const $slider = $(this);
+        let isDragging = false;
+        let startX, scrollLeft;
+    
+        $slider.on('mousedown', function(e) {
+          isDragging = true;
+          startX = e.pageX - $slider.offset().left;
+          scrollLeft = $slider.scrollLeft();
+          $slider.css('cursor', 'grabbing');
+          e.preventDefault();
+        });
+    
+        $(window).on('mousemove', function(e) {
+          if (!isDragging) return;
+          const x = e.pageX - $slider.offset().left;
+          const walk = (x - startX) * 2;
+          $slider.scrollLeft(scrollLeft - walk);
+        });
+    
+        $(window).on('mouseup', function() {
+          isDragging = false;
+          $slider.css('cursor', 'grab');
+        });
+    
+        $slider.on('mouseleave', function() {
+          isDragging = false;
+          $slider.css('cursor', 'grab');
+        });
+      });
+    });
+    
+    function toggleText(card) {
+    	card.classList.toggle('activeF');
+	}
+    
+    $(document).ready(function() {
+        // 슬라이드 이미지 설정
+        const images = $('.hero-image'); // 모든 이미지 선택
+        let currentImageIndex = 0; // 현재 이미지 인덱스 초기화
+
+        // 첫 번째 이미지를 보이게 설정
+        images.eq(currentImageIndex).addClass('active');
+
+        function changeImage() {
+            images.removeClass('active'); // 현재 이미지 숨김
+            currentImageIndex = (currentImageIndex + 1) % images.length; // 인덱스 증가 및 순환
+            images.eq(currentImageIndex).addClass('active'); // 다음 이미지 보임
+        }
+
+        // 4초마다 이미지 변경
+        setInterval(changeImage, 4000);
+
+        /***********************************************************************************************/
+
+        // 이벤트 슬라이더 설정
+        let currentIndex = 0;
+
+		const prevButton = document.querySelector('.prev1');
+		const nextButton = document.querySelector('.next1');
+		const sliderBoxes = document.querySelectorAll('.event-slider-box');
+		
+		function updateSlider() {
+		    sliderBoxes.forEach((box, index) => {
+		        box.style.transform = `translateX(${-currentIndex * 100}%)`;
+		    });
+		}
+		
+		prevButton.addEventListener('click', () => {
+		    currentIndex = (currentIndex > 0) ? currentIndex - 1 : sliderBoxes.length - 1;
+		    updateSlider();
+		});
+		
+		nextButton.addEventListener('click', () => {
+		    currentIndex = (currentIndex < sliderBoxes.length - 1) ? currentIndex + 1 : 0;
+		    updateSlider();
+		});
+		
+		// 초기 슬라이더 상태 업데이트
+		updateSlider();
+		});
+		
+//메인페이지 예약넘어가기 페이지
+$(function() {
+	$(".reservation-bar-form").on("submit", function(event){
+		event.preventDefault();
+		
+		const roomCount = $("#rooms").val();
+		const guestCount = $("#guests").val();
+		const startDate = $("#bar-checkin-date").val();
+		const endDate = $("#bar-checkout-date").val();
+		
+		
+  		const url = `/dev/Reservation1?startDate=${startDate}&endDate=${endDate}&roomCount=${roomCount}&guestCount=${guestCount}`;
+	    window.location.href = url;
+		
+
+	});  
+});
+
+
+		
+		
+		
